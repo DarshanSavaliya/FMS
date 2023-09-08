@@ -1,2 +1,144 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2"></adfc-config>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="home"></view>
+  <view id="search"></view>
+  <view id="flight"></view>
+  <view id="profile"></view>
+  <view id="updateProfile"></view>
+  <view id="viewBookings"></view>
+  <view id="manageBooking"></view>
+  <view id="viewPassenger"></view>
+  <view id="managePassenger"></view>
+  <view id="viewPaymentMethods"></view>
+  <view id="managePaymentMathods"></view>
+  <view id="about"></view>
+  <task-flow-call id="booking"></task-flow-call>
+  <view id="adminDashBoard"></view>
+  <view id="createFlights"></view>
+  <view id="analytics"></view>
+  <view id="manageFlights"></view>
+  <view id="manageBookingForFlight"></view>
+  <view id="bookingsManagement"></view>
+  <view id="customerDetailManagement"></view>
+  <control-flow-rule id="__1">
+    <from-activity-id>home</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>search</from-outcome>
+      <to-activity-id>search</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__29">
+      <from-outcome>isAdmin</from-outcome>
+      <to-activity-id>adminDashBoard</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__4">
+    <from-activity-id>viewBookings</from-activity-id>
+    <control-flow-case id="__5">
+      <from-outcome>edit</from-outcome>
+      <to-activity-id>manageBooking</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__6">
+    <from-activity-id>profile</from-activity-id>
+    <control-flow-case id="__7">
+      <from-outcome>update</from-outcome>
+      <to-activity-id>updateProfile</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>viewBooking</from-outcome>
+      <to-activity-id>viewBookings</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>viewPassenger</from-outcome>
+      <to-activity-id>viewPassenger</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__14">
+      <from-outcome>viewPaymentMethods</from-outcome>
+      <to-activity-id>viewPaymentMethods</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__10">
+    <from-activity-id>viewPassenger</from-activity-id>
+    <control-flow-case id="__11">
+      <from-outcome>edit</from-outcome>
+      <to-activity-id>managePassenger</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__12">
+    <from-activity-id>viewPaymentMethods</from-activity-id>
+    <control-flow-case id="__13">
+      <from-outcome>edit</from-outcome>
+      <to-activity-id>managePaymentMathods</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__17">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__18">
+      <from-outcome>profile</from-outcome>
+      <to-activity-id>profile</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__21">
+      <from-outcome>about</from-outcome>
+      <to-activity-id>about</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__22">
+      <from-outcome>home</from-outcome>
+      <to-activity-id>home</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__19">
+    <from-activity-id>search</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome>view</from-outcome>
+      <to-activity-id>flight</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__23">
+    <from-activity-id>flight</from-activity-id>
+    <control-flow-case id="__24">
+      <from-outcome>book</from-outcome>
+      <to-activity-id>booking</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__25">
+    <from-activity-id>booking</from-activity-id>
+    <control-flow-case id="__26">
+      <from-outcome>success</from-outcome>
+      <to-activity-id>home</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__27">
+      <from-outcome>failed</from-outcome>
+      <to-activity-id>flight</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__30">
+    <from-activity-id>adminDashBoard</from-activity-id>
+    <control-flow-case id="__31">
+      <from-outcome>createFlights</from-outcome>
+      <to-activity-id>createFlights</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__32">
+      <from-outcome>analytics</from-outcome>
+      <to-activity-id>analytics</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__33">
+      <from-outcome>manageFlights</from-outcome>
+      <to-activity-id>manageFlights</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__36">
+      <from-outcome>bookingsManagement</from-outcome>
+      <to-activity-id>bookingsManagement</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__37">
+      <from-outcome>customerDetailManagement</from-outcome>
+      <to-activity-id>customerDetailManagement</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__34">
+    <from-activity-id>manageFlights</from-activity-id>
+    <control-flow-case id="__35">
+      <from-outcome>toManageBookings</from-outcome>
+      <to-activity-id>manageBookingForFlight</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>
