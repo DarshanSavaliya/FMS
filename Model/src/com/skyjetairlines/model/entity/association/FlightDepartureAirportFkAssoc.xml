@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FlightDepartureAirportFkAssoc"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Airport1"
+    Cardinality="1"
+    Source="true"
+    Owner="com.skyjetairlines.model.entity.AirportEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Airport1"/>
+      <Attr Name="_foreignKey" Value="com.skyjetairlines.model.entity.AirportEO.AirportPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.AirportEO.AirportCode"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Flight1"
+    Cardinality="-1"
+    Owner="com.skyjetairlines.model.entity.FlightEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Flight1"/>
+      <Attr Name="_foreignKey" Value="com.skyjetairlines.model.entity.FlightEO.FlightDepartureAirportFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.FlightEO.DepartureAirport"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

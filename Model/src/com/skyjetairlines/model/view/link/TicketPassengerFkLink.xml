@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TicketPassengerFkLink"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  EntityAssociation="com.skyjetairlines.model.entity.association.TicketPassengerFkAssoc">
+  <ViewLinkDefEnd
+    Name="Passengers"
+    Cardinality="1"
+    Source="true"
+    Owner="com.skyjetairlines.model.view.PassengersVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="Passengers"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.view.PassengersVO.PassengerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Tickets"
+    Cardinality="-1"
+    Owner="com.skyjetairlines.model.view.TicketsVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="Tickets"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.view.TicketsVO.PassengerId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

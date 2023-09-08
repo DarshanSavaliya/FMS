@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AirportEO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="AIRPORTS"
+  AliasName="AirportEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="AirportCode"
+    IsNotNull="true"
+    Precision="3"
+    ColumnName="AIRPORT_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AIRPORTS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AirportName"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="AIRPORT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AIRPORTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="City"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="AIRPORTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Flight"
+    Association="com.skyjetairlines.model.entity.association.FlightArrivalAirportFkAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.FlightArrivalAirportFkAssoc.Flight"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.FlightArrivalAirportFkAssoc.Airport"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Flight1"
+    Association="com.skyjetairlines.model.entity.association.FlightDepartureAirportFkAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.FlightDepartureAirportFkAssoc.Flight1"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.FlightDepartureAirportFkAssoc.Airport1"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AirportPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="AIRPORT_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.AirportEO.AirportCode"/>
+    </AttrArray>
+  </Key>
+</Entity>

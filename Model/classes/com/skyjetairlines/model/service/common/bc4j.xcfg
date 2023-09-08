@@ -1,0 +1,16 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.skyjetairlines.model.service.FlightManagementSystemAM">
+      <AppModuleConfig name="AppModuleAMLocal" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory"
+                       ApplicationName="com.skyjetairlines.model.service.FlightManagementSystemAM" jbo.project="com.skyjetairlines.model.Model">
+         <Database jbo.locking.mode="optimistic" JDBCDataSource="java:comp/env/jdbc/smacdbDS" jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.skyjetairlines.model.service.FlightManagementSystemAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="AppModuleAMShared" DeployPlatform="LOCAL" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory"
+                       ApplicationName="com.skyjetairlines.model.service.FlightManagementSystemAM" jbo.project="com.skyjetairlines.model.Model">
+         <AM-Pooling jbo.ampool.isuseexclusive="false" jbo.ampool.maxpoolsize="1"/>
+         <Database jbo.locking.mode="optimistic" JDBCDataSource="java:comp/env/jdbc/smacdbDS" jbo.TypeMapEntries="OracleApps"/>
+         <Security AppModuleJndiName="com.skyjetairlines.model.service.FlightManagementSystemAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
