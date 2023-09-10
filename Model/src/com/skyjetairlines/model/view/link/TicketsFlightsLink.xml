@@ -3,18 +3,24 @@
 <!---->
 <ViewLink
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="TicketFlightTicketFkLink"
+  Name="TicketsFlightsLink"
   Version="12.2.1.22.48"
   InheritPersonalization="merge"
-  EntityAssociation="com.skyjetairlines.model.entity.association.TicketFlightTicketFkAssoc">
+  EntityAssociation="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.skyjetairlines.model.view.link.TicketsFlightsLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
   <ViewLinkDefEnd
     Name="Tickets"
-    Cardinality="1"
+    Cardinality="-1"
     Source="true"
     Owner="com.skyjetairlines.model.view.TicketsVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_accessor" Value="true"/>
       <Attr Name="_finderName" Value="Tickets"/>
     </DesignTime>
     <AttrArray Name="Attributes">
@@ -22,15 +28,19 @@
     </AttrArray>
   </ViewLinkDefEnd>
   <ViewLinkDefEnd
-    Name="TicketFlights"
+    Name="Flights"
     Cardinality="-1"
-    Owner="com.skyjetairlines.model.view.TicketFlightsVO">
+    Owner="com.skyjetairlines.model.view.FlightsVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
-      <Attr Name="_finderName" Value="TicketFlights"/>
+      <Attr Name="_finderName" Value="Flights"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="com.skyjetairlines.model.view.TicketFlightsVO.TicketId"/>
+      <Item Value="com.skyjetairlines.model.view.FlightsVO.FlightId"/>
     </AttrArray>
   </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </ViewLink>

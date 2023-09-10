@@ -100,8 +100,8 @@
     </Properties>
   </ViewAttribute>
   <ViewLinkAccessor
-    Name="TicketFlights"
-    ViewLink="com.skyjetairlines.model.view.link.TicketFlightTicketFkLink"
+    Name="Flights"
+    ViewLink="com.skyjetairlines.model.view.link.TicketsFlightsLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

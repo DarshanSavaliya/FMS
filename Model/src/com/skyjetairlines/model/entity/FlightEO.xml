@@ -235,10 +235,10 @@
     Type="oracle.jbo.server.EntityImpl"
     IsUpdateable="true"/>
   <AccessorAttribute
-    Name="TicketFlight"
-    Association="com.skyjetairlines.model.entity.association.TicketFlightFlightFkAssoc"
-    AssociationEnd="com.skyjetairlines.model.entity.association.TicketFlightFlightFkAssoc.TicketFlight"
-    AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketFlightFlightFkAssoc.Flight"
+    Name="Ticket"
+    Association="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc.Ticket"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc.Flight"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

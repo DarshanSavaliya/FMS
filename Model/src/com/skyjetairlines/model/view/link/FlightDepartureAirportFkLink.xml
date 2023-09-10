@@ -8,14 +8,15 @@
   InheritPersonalization="merge"
   EntityAssociation="com.skyjetairlines.model.entity.association.FlightDepartureAirportFkAssoc">
   <ViewLinkDefEnd
-    Name="Airports"
+    Name="Airports1"
     Cardinality="1"
     Source="true"
     Owner="com.skyjetairlines.model.view.AirportsVO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
-      <Attr Name="_finderName" Value="Airports"/>
+      <Attr Name="_finderName" Value="Airports1"/>
+      <Attr Name="_accessor" Value="true"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="com.skyjetairlines.model.view.AirportsVO.AirportCode"/>
