@@ -12,13 +12,24 @@
   BindingStyle="OracleName">
   <Attribute
     Name="BookingId"
-    IsNotNull="true"
     ColumnName="BOOKING_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="BOOKINGS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.BookingEO.BookingId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CustomerId"
     IsNotNull="true"
@@ -26,15 +37,34 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="BOOKINGS"/>
+    TableName="BOOKINGS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.BookingEO.CustomerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="BookingDate"
-    IsNotNull="true"
     ColumnName="BOOKING_DATE"
     SQLType="TIMESTAMP"
-    Type="java.sql.Timestamp"
-    ColumnType="TIMESTAMP"
-    TableName="BOOKINGS"/>
+    Type="oracle.jbo.domain.Date"
+    ColumnType="NUMBER"
+    TableName="BOOKINGS"
+    IsUpdateable="while_insert"
+    HistoryColumn="DateHistory">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.BookingEO.BookingDate_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.BookingEO.BookingDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.BookingEO.BookingDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TotalAmount"
     IsNotNull="true"
@@ -42,7 +72,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="BOOKINGS"/>
+    TableName="BOOKINGS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.BookingEO.TotalAmount_LABEL"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.BookingEO.TotalAmount_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Customer"
     Association="com.skyjetairlines.model.entity.association.BookingCustomerFkAssoc"
@@ -78,4 +117,8 @@
       <Item Value="com.skyjetairlines.model.entity.BookingEO.CustomerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

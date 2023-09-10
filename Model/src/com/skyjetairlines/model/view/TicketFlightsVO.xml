@@ -12,7 +12,50 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="TicketsVO1"
+    ViewObjectName="com.skyjetairlines.model.view.TicketsVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="FlightsVO1"
+    ViewObjectName="com.skyjetairlines.model.view.FlightsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TicketId"
+    ListVOName="TicketsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TicketId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="TicketId"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_FlightId"
+    ListVOName="FlightsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="FlightId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="FlightId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="DepartureAirport"/>
+      <Item Value="ArrivalAirport"/>
+      <Item Value="ScheduledDeparture"/>
+      <Item Value="ScheduledArrival"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TicketFlightEO"
     Entity="com.skyjetairlines.model.entity.TicketFlightEO"/>
@@ -22,14 +65,30 @@
     PrecisionRule="true"
     EntityAttrName="TicketId"
     EntityUsage="TicketFlightEO"
-    AliasName="TICKET_ID"/>
+    AliasName="TICKET_ID"
+    LOVName="LOV_TicketId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="FlightId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="FlightId"
     EntityUsage="TicketFlightEO"
-    AliasName="FLIGHT_ID"/>
+    AliasName="FLIGHT_ID"
+    LOVName="LOV_FlightId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Amount"
     IsNotNull="true"

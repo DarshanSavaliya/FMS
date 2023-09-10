@@ -12,13 +12,23 @@
   BindingStyle="OracleName">
   <Attribute
     Name="FlightId"
-    IsNotNull="true"
     ColumnName="FLIGHT_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="FLIGHTS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.FlightId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Flightno"
     IsNotNull="true"
@@ -31,6 +41,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="4"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.Flightno_LABEL"/>
+        <DISPLAYWIDTH
+          Value="4"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ScheduledDeparture"
@@ -39,7 +57,14 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledDeparture_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ScheduledArrival"
     IsNotNull="true"
@@ -47,21 +72,42 @@
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledArrival_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ActualDeparture"
     ColumnName="ACTUAL_DEPARTURE"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.ActualDeparture_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ActualArrival"
     ColumnName="ACTUAL_ARRIVAL"
     SQLType="TIMESTAMP"
     Type="java.sql.Timestamp"
     ColumnType="TIMESTAMP"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.ActualArrival_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="DepartureAirport"
     IsNotNull="true"
@@ -74,6 +120,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.DepartureAirport_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ArrivalAirport"
@@ -87,6 +139,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="3"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.ArrivalAirport_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TotalSeats"
@@ -95,7 +153,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.TotalSeats_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="AvailableSeats"
     IsNotNull="true"
@@ -103,7 +168,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.AvailableSeats_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Status"
     IsNotNull="true"
@@ -116,6 +188,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.Status_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="BaseFare"
@@ -124,7 +202,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.FlightEO.BaseFare_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Version"
     IsNotNull="true"
@@ -132,7 +217,9 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="FLIGHTS"/>
+    TableName="FLIGHTS"
+    HistoryColumn="VersionHistory"
+    RetrievedOnUpdate="true"/>
   <AccessorAttribute
     Name="Airport"
     Association="com.skyjetairlines.model.entity.association.FlightArrivalAirportFkAssoc"
@@ -186,4 +273,8 @@
       <Item Value="com.skyjetairlines.model.entity.FlightEO.DepartureAirport"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

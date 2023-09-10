@@ -12,7 +12,31 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="CustomersVO1"
+    ViewObjectName="com.skyjetairlines.model.view.CustomersVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CustomerId"
+    ListVOName="CustomersVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CustomerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CustomerId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Username"/>
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="NotificationEO"
     Entity="com.skyjetairlines.model.entity.NotificationEO"/>
@@ -22,21 +46,32 @@
     PrecisionRule="true"
     EntityAttrName="NotificationId"
     EntityUsage="NotificationEO"
-    AliasName="NOTIFICATION_ID"/>
+    AliasName="NOTIFICATION_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="CustomerId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="CustomerId"
     EntityUsage="NotificationEO"
-    AliasName="CUSTOMER_ID"/>
+    AliasName="CUSTOMER_ID"
+    IsUpdateable="false"
+    LOVName="LOV_CustomerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Message"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="Message"
     EntityUsage="NotificationEO"
-    AliasName="MESSAGE"/>
+    AliasName="MESSAGE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="Read"
     IsNotNull="true"

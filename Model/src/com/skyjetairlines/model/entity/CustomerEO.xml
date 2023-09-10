@@ -12,13 +12,24 @@
   BindingStyle="OracleName">
   <Attribute
     Name="CustomerId"
-    IsNotNull="true"
     ColumnName="CUSTOMER_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="CUSTOMERS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true"
+    RetrievedOnUpdate="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.CustomerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Username"
     IsNotNull="true"
@@ -27,10 +38,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CUSTOMERS">
+    TableName="CUSTOMERS"
+    IsUnique="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.Username_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="FirstName"
@@ -43,6 +61,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.FirstName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="LastName"
@@ -55,6 +81,14 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.LastName_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Email"
@@ -64,10 +98,19 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="CUSTOMERS">
+    TableName="CUSTOMERS"
+    IsUnique="true">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="30"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.Email_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Phone"
@@ -81,6 +124,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.Phone_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Address"
@@ -94,15 +143,32 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.Address_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="DateOfBirth"
     IsNotNull="true"
     ColumnName="DATE_OF_BIRTH"
     SQLType="DATE"
-    Type="java.sql.Timestamp"
+    Type="oracle.jbo.domain.Date"
     ColumnType="DATE"
-    TableName="CUSTOMERS"/>
+    TableName="CUSTOMERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.CustomerEO.DateOfBirth_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.CustomerEO.DateOfBirth_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.CustomerEO.DateOfBirth_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Booking"
     Association="com.skyjetairlines.model.entity.association.BookingCustomerFkAssoc"
@@ -141,4 +207,8 @@
       <Item Value="com.skyjetairlines.model.entity.CustomerEO.CustomerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

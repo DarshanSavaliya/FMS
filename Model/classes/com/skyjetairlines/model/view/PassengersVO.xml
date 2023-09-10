@@ -12,7 +12,31 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="CustomersVO1"
+    ViewObjectName="com.skyjetairlines.model.view.CustomersVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CustomerId"
+    ListVOName="CustomersVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CustomerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CustomerId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Username"/>
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="PassengerEO"
     Entity="com.skyjetairlines.model.entity.PassengerEO"/>
@@ -22,7 +46,8 @@
     PrecisionRule="true"
     EntityAttrName="PassengerId"
     EntityUsage="PassengerEO"
-    AliasName="PASSENGER_ID"/>
+    AliasName="PASSENGER_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="PassenegerName"
     IsNotNull="true"
@@ -43,7 +68,15 @@
     PrecisionRule="true"
     EntityAttrName="CustomerId"
     EntityUsage="PassengerEO"
-    AliasName="CUSTOMER_ID"/>
+    AliasName="CUSTOMER_ID"
+    LOVName="LOV_CustomerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewLinkAccessor
     Name="Tickets"
     ViewLink="com.skyjetairlines.model.view.link.TicketPassengerFkLink"

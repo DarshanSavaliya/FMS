@@ -12,13 +12,23 @@
   BindingStyle="OracleName">
   <Attribute
     Name="PaymentId"
-    IsNotNull="true"
     ColumnName="PAYMENT_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="PAYMENT_METHODS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.PaymentId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CustomerId"
     IsNotNull="true"
@@ -26,7 +36,14 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_METHODS"/>
+    TableName="PAYMENT_METHODS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.CustomerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="PaymentType"
     IsNotNull="true"
@@ -39,6 +56,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.PaymentType_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="CardNo"
@@ -52,6 +75,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="16"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.CardNo_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="ExpiryMonth"
@@ -60,7 +89,18 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_METHODS"/>
+    TableName="PAYMENT_METHODS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryMonth_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryMonth_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryMonth_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ExpiryYear"
     IsNotNull="true"
@@ -68,7 +108,18 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="PAYMENT_METHODS"/>
+    TableName="PAYMENT_METHODS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Customer"
     Association="com.skyjetairlines.model.entity.association.PayemntMethodCustomerFkAssoc"
@@ -97,4 +148,8 @@
       <Item Value="com.skyjetairlines.model.entity.PaymentMethodEO.CustomerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

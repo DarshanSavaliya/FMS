@@ -12,7 +12,32 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="CustomersVO1"
+    ViewObjectName="com.skyjetairlines.model.view.CustomersVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_CustomerId"
+    ListVOName="CustomersVO1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="CustomerId"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="CustomerId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Username"/>
+      <Item Value="FirstName"/>
+      <Item Value="LastName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="BookingEO"
     Entity="com.skyjetairlines.model.entity.BookingEO"/>
@@ -22,21 +47,31 @@
     PrecisionRule="true"
     EntityAttrName="BookingId"
     EntityUsage="BookingEO"
-    AliasName="BOOKING_ID"/>
+    AliasName="BOOKING_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="CustomerId"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="CustomerId"
     EntityUsage="BookingEO"
-    AliasName="CUSTOMER_ID"/>
+    AliasName="CUSTOMER_ID"
+    LOVName="LOV_CustomerId">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="BookingDate"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="BookingDate"
     EntityUsage="BookingEO"
-    AliasName="BOOKING_DATE"/>
+    AliasName="BOOKING_DATE"
+    IsUpdateable="false"/>
   <ViewAttribute
     Name="TotalAmount"
     IsNotNull="true"

@@ -12,13 +12,23 @@
   BindingStyle="OracleName">
   <Attribute
     Name="NotificationId"
-    IsNotNull="true"
     ColumnName="NOTIFICATION_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="NOTIFICATIONS"
-    PrimaryKey="true"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.NotificationEO.NotificationId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="CustomerId"
     IsNotNull="true"
@@ -26,7 +36,15 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="NOTIFICATIONS"/>
+    TableName="NOTIFICATIONS"
+    IsUpdateable="false">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.NotificationEO.CustomerId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Message"
     IsNotNull="true"
@@ -35,10 +53,17 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="NOTIFICATIONS">
+    TableName="NOTIFICATIONS"
+    IsUpdateable="false">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.NotificationEO.Message_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="Read"
@@ -47,7 +72,7 @@
     Scale="0"
     ColumnName='"read"'
     SQLType="NUMERIC"
-    Type="java.lang.Integer"
+    Type="java.lang.Boolean"
     ColumnType="NUMBER"
     TableName="NOTIFICATIONS"/>
   <AccessorAttribute
@@ -78,4 +103,8 @@
       <Item Value="com.skyjetairlines.model.entity.NotificationEO.CustomerId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

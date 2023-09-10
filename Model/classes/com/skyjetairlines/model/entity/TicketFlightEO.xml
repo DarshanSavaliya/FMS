@@ -18,7 +18,14 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TICKET_FLIGHTS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.TicketFlightEO.TicketId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="FlightId"
     IsNotNull="true"
@@ -27,7 +34,14 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TICKET_FLIGHTS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.TicketFlightEO.FlightId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="Amount"
     IsNotNull="true"
@@ -35,7 +49,16 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="TICKET_FLIGHTS"/>
+    TableName="TICKET_FLIGHTS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.entity.TicketFlightEO.Amount_LABEL"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.TicketFlightEO.Amount_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Flight"
     Association="com.skyjetairlines.model.entity.association.TicketFlightFlightFkAssoc"
@@ -83,4 +106,8 @@
       <Item Value="com.skyjetairlines.model.entity.TicketFlightEO.TicketId"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

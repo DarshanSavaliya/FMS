@@ -12,7 +12,52 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="AirportsVO1"
+    ViewObjectName="com.skyjetairlines.model.view.AirportsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DepartureAirport"
+    ListVOName="AirportsVO1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartureAirport"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AirportCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AirportCode"/>
+      <Item Value="AirportName"/>
+      <Item Value="City"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ArrivalAirport"
+    ListVOName="AirportsVO1"
+    NullValueFlag="start"
+    MRUCount="0"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}">
+    <AttrArray Name="AttrNames">
+      <Item Value="ArrivalAirport"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AirportCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AirportCode"/>
+      <Item Value="AirportName"/>
+      <Item Value="City"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="FlightEO"
     Entity="com.skyjetairlines.model.entity.FlightEO"/>
@@ -22,7 +67,8 @@
     PrecisionRule="true"
     EntityAttrName="FlightId"
     EntityUsage="FlightEO"
-    AliasName="FLIGHT_ID"/>
+    AliasName="FLIGHT_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="Flightno"
     IsNotNull="true"
@@ -62,14 +108,30 @@
     PrecisionRule="true"
     EntityAttrName="DepartureAirport"
     EntityUsage="FlightEO"
-    AliasName="DEPARTURE_AIRPORT"/>
+    AliasName="DEPARTURE_AIRPORT"
+    LOVName="LOV_DepartureAirport">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="ArrivalAirport"
     IsNotNull="true"
     PrecisionRule="true"
     EntityAttrName="ArrivalAirport"
     EntityUsage="FlightEO"
-    AliasName="ARRIVAL_AIRPORT"/>
+    AliasName="ARRIVAL_AIRPORT"
+    LOVName="LOV_ArrivalAirport">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TotalSeats"
     IsNotNull="true"
@@ -104,7 +166,8 @@
     PrecisionRule="true"
     EntityAttrName="Version"
     EntityUsage="FlightEO"
-    AliasName="VERSION"/>
+    AliasName="VERSION"
+    IsUpdateable="false"/>
   <ViewLinkAccessor
     Name="TicketFlights"
     ViewLink="com.skyjetairlines.model.view.link.TicketFlightFlightFkLink"
