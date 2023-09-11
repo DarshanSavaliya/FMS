@@ -6,8 +6,8 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:outputText value="outputText1" id="ot1"/>
-                    <af:panelTabbed position="left" id="pt2" verticalTabMode="iconAndText">
+                    <af:outputText value="Manage your Profile" id="ot1"/>
+                    <af:panelTabbed position="left" id="pt2" verticalTabMode="iconAndText" dimensionsFrom="auto">
                         <af:showDetailItem id="profile" text="Profile" disclosed="true">
                             <af:panelFormLayout id="pfl1">
                                 <af:inputText value="#{bindings.FirstName.inputValue}"
@@ -64,41 +64,72 @@
                             </af:panelFormLayout>
                         </af:showDetailItem>
                         <af:showDetailItem text="Bookings" id="sdi1">
-                            <af:table value="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel}" var="row"
-                                      rows="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}"
-                                      emptyText="#{bindings.BookingsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                      rowBandingInterval="0"
-                                      selectedRowKeys="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.selectedRow}"
-                                      selectionListener="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
-                                      rowSelection="single"
-                                      fetchSize="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}" id="t1">
-                                <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.label}"
-                                           id="c1">
-                                    <af:outputText value="#{row.BookingId}"
-                                                   shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.tooltip}"
-                                                   id="ot2">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.label}"
-                                           id="c2">
-                                    <af:outputText value="#{row.BookingDate}"
-                                                   shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.tooltip}"
-                                                   id="ot3">
-                                        <af:convertDateTime pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.label}"
-                                           id="c3">
-                                    <af:outputText value="#{row.TotalAmount}"
-                                                   shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.tooltip}"
-                                                   id="ot4">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                            </af:table>
+                            <af:panelGroupLayout id="pgl1" layout="vertical">
+                                <af:table value="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel}"
+                                          var="row" rows="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}"
+                                          emptyText="#{bindings.BookingsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}" id="t1">
+                                    <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.label}"
+                                               id="c1">
+                                        <af:outputText value="#{row.BookingId}"
+                                                       shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.tooltip}"
+                                                       id="ot2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.label}"
+                                               id="c2">
+                                        <af:outputText value="#{row.BookingDate}"
+                                                       shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.tooltip}"
+                                                       id="ot3">
+                                            <af:convertDateTime pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.label}"
+                                               id="c3">
+                                        <af:outputText value="#{row.TotalAmount}"
+                                                       shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.tooltip}"
+                                                       id="ot4">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:table>
+                                <af:table value="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel}"
+                                          var="row" rows="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}"
+                                          emptyText="#{bindings.TicketsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}" id="t4">
+                                    <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.label}"
+                                               id="c12">
+                                        <af:outputText value="#{row.TicketId}"
+                                                       shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.tooltip}"
+                                                       id="ot13">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.label}"
+                                               id="c13">
+                                        <af:selectOneChoice value="#{row.bindings.PassengerId.inputValue}"
+                                                            label="#{row.bindings.PassengerId.label}"
+                                                            required="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.mandatory}"
+                                                            shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.tooltip}"
+                                                            readOnly="true" id="soc1">
+                                            <f:selectItems value="#{row.bindings.PassengerId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.PassengerId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                            </af:panelGroupLayout>
                         </af:showDetailItem>
                         <af:showDetailItem text="Passengers" id="sdi2">
                             <af:table value="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel}" var="row"

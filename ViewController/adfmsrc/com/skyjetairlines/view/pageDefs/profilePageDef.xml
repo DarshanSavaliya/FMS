@@ -12,6 +12,8 @@
               DataControl="FlightManagementSystemAMDataControl" id="PassengersInstanceForCurrentCustomerIterator"/>
     <iterator Binds="PaymentMethodsInstanceForCurrentCustomer" RangeSize="25"
               DataControl="FlightManagementSystemAMDataControl" id="PaymentMethodsInstanceForCurrentCustomerIterator"/>
+    <iterator Binds="TicketsInstanceForCurrentCustomer" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="TicketsInstanceForCurrentCustomerIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CurrentCustomerInstanceIterator" id="FirstName">
@@ -76,5 +78,13 @@
     </tree>
     <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
             DataControl="FlightManagementSystemAMDataControl"/>
+    <tree IterBinding="TicketsInstanceForCurrentCustomerIterator" id="TicketsInstanceForCurrentCustomer">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.TicketsVO" Name="TicketsInstanceForCurrentCustomer0">
+        <AttrNames>
+          <Item Value="TicketId"/>
+          <Item Value="PassengerId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

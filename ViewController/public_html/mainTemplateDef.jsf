@@ -15,16 +15,16 @@
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="pt_gc1">
                 <!-- Header -->
                 <af:panelGridLayout id="pt_pgl2">
-                    <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr3">
+                    <af:gridRow marginTop="10px" height="auto" marginBottom="10px" id="pt_gr3">
                         <af:gridCell marginStart="5px" width="34%" id="pt_gc3">
                             <af:outputText value="SkyJet Airlines" id="pt_ot1" inlineStyle="font-size:x-large;"/>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="33%" id="pt_gc4">
+                        <af:gridCell marginStart="5px" width="33%" id="pt_gc4" halign="center">
                             <af:panelGroupLayout id="pt_pgl3" halign="center" layout="horizontal">
                                 <af:link text="About" id="pt_l1" action="about"/>
                             </af:panelGroupLayout>
                         </af:gridCell>
-                        <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc5">
+                        <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc5" halign="end">
                             <af:button text="Login" id="pt_b1"/>
                         </af:gridCell>
                     </af:gridRow>

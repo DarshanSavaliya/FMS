@@ -47,6 +47,9 @@
   <ViewUsage
     Name="PaymentMethodsInstanceForCurrentCustomer"
     ViewObjectName="com.skyjetairlines.model.view.PaymentMethodsVO"/>
+  <ViewUsage
+    Name="TicketsInstanceForCurrentCustomer"
+    ViewObjectName="com.skyjetairlines.model.view.TicketsVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
@@ -94,5 +97,11 @@
     ViewLinkObjectName="com.skyjetairlines.model.view.link.PayemntMethodCustomerFkLink"
     SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CurrentCustomerInstance"
     DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.PaymentMethodsInstanceForCurrentCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="BookingFkLink2"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.BookingsInstanceForCurrentCustomer"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketsInstanceForCurrentCustomer"
     Reversed="false"/>
 </AppModule>
