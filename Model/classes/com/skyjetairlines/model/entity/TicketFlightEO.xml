@@ -59,20 +59,6 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
-  <AccessorAttribute
-    Name="Flight"
-    Association="com.skyjetairlines.model.entity.association.TicketFlightFlightFkAssoc"
-    AssociationEnd="com.skyjetairlines.model.entity.association.TicketFlightFlightFkAssoc.Flight"
-    AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketFlightFlightFkAssoc.TicketFlight"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
-  <AccessorAttribute
-    Name="Ticket"
-    Association="com.skyjetairlines.model.entity.association.TicketFlightTicketFkAssoc"
-    AssociationEnd="com.skyjetairlines.model.entity.association.TicketFlightTicketFkAssoc.Ticket"
-    AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketFlightTicketFkAssoc.TicketFlight"
-    Type="oracle.jbo.server.EntityImpl"
-    IsUpdateable="true"/>
   <Key
     Name="TicketFlightPk"
     PrimaryKey="true">

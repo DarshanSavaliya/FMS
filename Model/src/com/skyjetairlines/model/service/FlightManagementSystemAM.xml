@@ -8,9 +8,6 @@
   InheritPersonalization="merge"
   ClearCacheOnRollback="true">
   <ViewUsage
-    Name="AirportsInstance"
-    ViewObjectName="com.skyjetairlines.model.view.AirportsVO"/>
-  <ViewUsage
     Name="BookingsInstance"
     ViewObjectName="com.skyjetairlines.model.view.BookingsVO"/>
   <ViewUsage
@@ -22,12 +19,6 @@
   <ViewUsage
     Name="BookingsInstanceForCustomers"
     ViewObjectName="com.skyjetairlines.model.view.BookingsVO"/>
-  <ViewUsage
-    Name="FlightsArrivalInstanceForAirports"
-    ViewObjectName="com.skyjetairlines.model.view.FlightsVO"/>
-  <ViewUsage
-    Name="FlightsDepartureInstanceForAirports"
-    ViewObjectName="com.skyjetairlines.model.view.FlightsVO"/>
   <ViewUsage
     Name="NotificationsInstanceForCustomers"
     ViewObjectName="com.skyjetairlines.model.view.NotificationsVO"/>
@@ -54,18 +45,6 @@
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingCustomerFkLink"
     SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CustomersInstance"
     DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.BookingsInstanceForCustomers"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="FlightArrivalAirportFkLink1"
-    ViewLinkObjectName="com.skyjetairlines.model.view.link.FlightArrivalAirportFkLink"
-    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.AirportsInstance"
-    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.FlightsArrivalInstanceForAirports"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="FlightDepartureAirportFkLink1"
-    ViewLinkObjectName="com.skyjetairlines.model.view.link.FlightDepartureAirportFkLink"
-    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.AirportsInstance"
-    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.FlightsDepartureInstanceForAirports"
     Reversed="false"/>
   <ViewLinkUsage
     Name="NotificationCustomerFkLink1"

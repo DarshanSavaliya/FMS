@@ -169,8 +169,21 @@
     AliasName="VERSION"
     IsUpdateable="false"/>
   <ViewLinkAccessor
-    Name="TicketFlights"
-    ViewLink="com.skyjetairlines.model.view.link.TicketFlightFlightFkLink"
+    Name="Airports"
+    ViewLink="com.skyjetairlines.model.view.link.FlightArrivalAirportFkLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Airports1"
+    ViewLink="com.skyjetairlines.model.view.link.FlightDepartureAirportFkLink"
+    Type="oracle.jbo.Row"
+    Reversed="true"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Tickets"
+    ViewLink="com.skyjetairlines.model.view.link.TicketsFlightsLink"
     Type="oracle.jbo.RowIterator"
+    Reversed="true"
     IsUpdateable="false"/>
 </ViewObject>
