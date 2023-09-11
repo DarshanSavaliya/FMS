@@ -17,18 +17,6 @@
     Name="FlightsInstance"
     ViewObjectName="com.skyjetairlines.model.view.FlightsVO"/>
   <ViewUsage
-    Name="BookingsInstanceForCustomers"
-    ViewObjectName="com.skyjetairlines.model.view.BookingsVO"/>
-  <ViewUsage
-    Name="NotificationsInstanceForCustomers"
-    ViewObjectName="com.skyjetairlines.model.view.NotificationsVO"/>
-  <ViewUsage
-    Name="PassengersInstanceForCustomers"
-    ViewObjectName="com.skyjetairlines.model.view.PassengersVO"/>
-  <ViewUsage
-    Name="PaymentMethodsInstanceForCustomers"
-    ViewObjectName="com.skyjetairlines.model.view.PaymentMethodsVO"/>
-  <ViewUsage
     Name="TicketsInstanceForBookings"
     ViewObjectName="com.skyjetairlines.model.view.TicketsVO"/>
   <ViewUsage
@@ -40,30 +28,25 @@
   <ViewUsage
     Name="TicketsInstanceForFlights"
     ViewObjectName="com.skyjetairlines.model.view.TicketsVO"/>
-  <ViewLinkUsage
-    Name="BookingCustomerFkLink1"
-    ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingCustomerFkLink"
-    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CustomersInstance"
-    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.BookingsInstanceForCustomers"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="NotificationCustomerFkLink1"
-    ViewLinkObjectName="com.skyjetairlines.model.view.link.NotificationCustomerFkLink"
-    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CustomersInstance"
-    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.NotificationsInstanceForCustomers"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="PassengerCustomerFkLink1"
-    ViewLinkObjectName="com.skyjetairlines.model.view.link.PassengerCustomerFkLink"
-    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CustomersInstance"
-    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.PassengersInstanceForCustomers"
-    Reversed="false"/>
-  <ViewLinkUsage
-    Name="PayemntMethodCustomerFkLink1"
-    ViewLinkObjectName="com.skyjetairlines.model.view.link.PayemntMethodCustomerFkLink"
-    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CustomersInstance"
-    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.PaymentMethodsInstanceForCustomers"
-    Reversed="false"/>
+  <ViewUsage
+    Name="CurrentCustomerInstance"
+    ViewObjectName="com.skyjetairlines.model.view.CustomersVO">
+    <ViewCriteriaUsage
+      Name="CurrentCustomerViewCriteria"
+      FullName="com.skyjetairlines.model.view.CustomersVO.CurrentCustomerViewCriteria"/>
+  </ViewUsage>
+  <ViewUsage
+    Name="BookingsInstanceForCurrentCustomer"
+    ViewObjectName="com.skyjetairlines.model.view.BookingsVO"/>
+  <ViewUsage
+    Name="NotificationsInstanceForCurrentCustomer"
+    ViewObjectName="com.skyjetairlines.model.view.NotificationsVO"/>
+  <ViewUsage
+    Name="PassengersInstanceForCurrentCustomer"
+    ViewObjectName="com.skyjetairlines.model.view.PassengersVO"/>
+  <ViewUsage
+    Name="PaymentMethodsInstanceForCurrentCustomer"
+    ViewObjectName="com.skyjetairlines.model.view.PaymentMethodsVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
@@ -88,4 +71,28 @@
     SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.FlightsInstance"
     DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketsInstanceForFlights"
     Reversed="true"/>
+  <ViewLinkUsage
+    Name="BookingCustomerFkLink2"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingCustomerFkLink"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CurrentCustomerInstance"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.BookingsInstanceForCurrentCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="NotificationCustomerFkLink2"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.NotificationCustomerFkLink"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CurrentCustomerInstance"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.NotificationsInstanceForCurrentCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="PassengerCustomerFkLink3"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.PassengerCustomerFkLink"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CurrentCustomerInstance"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.PassengersInstanceForCurrentCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="PayemntMethodCustomerFkLink2"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.PayemntMethodCustomerFkLink"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CurrentCustomerInstance"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.PaymentMethodsInstanceForCurrentCustomer"
+    Reversed="false"/>
 </AppModule>

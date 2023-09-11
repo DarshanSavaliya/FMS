@@ -1,3 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
-             SeparateXMLFiles="false" Package="com.skyjetairlines.view" ClientType="Generic"></Application>
+             SeparateXMLFiles="false" Package="com.skyjetairlines.view" ClientType="Generic">
+  <pageMap>
+    <page path="/profile.jsf" usageId="com_skyjetairlines_view_profilePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
