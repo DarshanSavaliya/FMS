@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="Skyjet Airlines" id="d1">
+    <af:document title="Flight Details" id="d1">
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:outputText value="Home Page" id="ot1"/>
+                    <af:outputText value="Flight Details Page" id="ot1"/>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

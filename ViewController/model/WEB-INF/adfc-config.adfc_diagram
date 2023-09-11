@@ -5,13 +5,15 @@
    <View
       id="View3">
       <property
-         name="activityId">adminDashBoard</property>
+         name="activityId">adminDashboard</property>
       <property
-         name="x">463.4209</property>
+         name="x">-710.5791</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>adminDashBoard&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>adminDashboard&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">902.83594</property>
+         name="y">188.4375</property>
+      <property
+         name="page">/adminDashboard.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -20,11 +22,11 @@
       <property
          name="activityId">viewPaymentMethods</property>
       <property
-         name="x">106.481445</property>
+         name="x">-1067.5186</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>viewPaymentMethods&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1421.8359</property>
+         name="y">707.5703</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -33,11 +35,13 @@
       <property
          name="activityId">manageFlights</property>
       <property
-         name="x">462.48926</property>
+         name="x">-711.51074</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>manageFlights&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">667.7031</property>
+         name="y">-46.5625</property>
+      <property
+         name="page">/manageFlights.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -46,11 +50,11 @@
       <property
          name="activityId">viewPassenger</property>
       <property
-         name="x">326.1582</property>
+         name="x">-847.8418</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>viewPassenger&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1417.7031</property>
+         name="y">703.4375</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -59,11 +63,11 @@
       <property
          name="activityId">manageBookingForFlight</property>
       <property
-         name="x">714.3164</property>
+         name="x">-459.6836</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>manageBookingForFlight&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">642.5703</property>
+         name="y">-71.69531</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -72,11 +76,13 @@
       <property
          name="activityId">profile</property>
       <property
-         name="x">126.5</property>
+         name="x">-1047.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>profile&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1269.9688</property>
+         name="y">555.7031</property>
+      <property
+         name="page">/profile.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -85,11 +91,11 @@
       <property
          name="activityId">managePaymentMathods</property>
       <property
-         name="x">106.68262</property>
+         name="x">-1067.3174</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>managePaymentMathods&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1586.8359</property>
+         name="y">872.5703</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -98,11 +104,13 @@
       <property
          name="activityId">bookingsManagement</property>
       <property
-         name="x">782.42676</property>
+         name="x">-391.57324</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>bookingsManagement&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">767.7031</property>
+         name="y">53.4375</property>
+      <property
+         name="page">/bookingsManagement.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -111,24 +119,28 @@
       <property
          name="activityId">viewBookings</property>
       <property
-         name="x">-40.60742</property>
+         name="x">-1214.6074</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>viewBookings&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1420.7031</property>
+         name="y">706.4375</property>
+      <property
+         name="page">/viewBookings.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
    <View
       id="View12">
       <property
-         name="activityId">flight</property>
+         name="activityId">flightDeatils</property>
       <property
-         name="x">722.5</property>
+         name="x">-451.5</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>flight&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>flightDeatils&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1107.7031</property>
+         name="y">393.3047</property>
+      <property
+         name="page">/flightDeatils.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -137,11 +149,13 @@
       <property
          name="activityId">search</property>
       <property
-         name="x">573.5</property>
+         name="x">-600.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>search&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1107.8359</property>
+         name="y">393.5703</property>
+      <property
+         name="page">/search.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -152,9 +166,9 @@
       <property
          name="activityId">booking</property>
       <property
-         name="x">885.5</property>
+         name="x">-288.5</property>
       <property
-         name="y">1107.7031</property>
+         name="y">393.4375</property>
       <property
          name="exceptionHandler">false</property>
    </TaskFlowCall>
@@ -163,11 +177,11 @@
       <property
          name="activityId">managePassenger</property>
       <property
-         name="x">329.38867</property>
+         name="x">-844.6113</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>managePassenger&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1588.5703</property>
+         name="y">874.3047</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -176,11 +190,11 @@
       <property
          name="activityId">home</property>
       <property
-         name="x">371.5</property>
+         name="x">-802.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>home&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1111.1016</property>
+         name="y">396.83594</property>
       <property
          name="page">/home.jsf</property>
       <property
@@ -193,20 +207,20 @@
       <property
          name="srcid">__17</property>
       <property
-         name="x">410.0</property>
+         name="x">-764.0</property>
       <property
-         name="y">1249.7695</property>
+         name="y">537.5039</property>
    </WildcardControlFlowRule>
    <View
       id="View18">
       <property
          name="activityId">analytics</property>
       <property
-         name="x">289.5</property>
+         name="x">-884.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>analytics&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">901.5703</property>
+         name="y">187.30469</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -215,11 +229,11 @@
       <property
          name="activityId">updateProfile</property>
       <property
-         name="x">220.65137</property>
+         name="x">-953.34863</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>updateProfile&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1419.8359</property>
+         name="y">705.5703</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -228,11 +242,13 @@
       <property
          name="activityId">about</property>
       <property
-         name="x">700.5</property>
+         name="x">-473.5</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>about&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1255.8359</property>
+         name="y">541.5703</property>
+      <property
+         name="page">/about.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -241,11 +257,13 @@
       <property
          name="activityId">createFlights</property>
       <property
-         name="x">737.2246</property>
+         name="x">-436.7754</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>createFlights&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">906.4375</property>
+         name="y">192.17188</property>
+      <property
+         name="page">/createFlights.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -254,11 +272,13 @@
       <property
          name="activityId">customerDetailManagement</property>
       <property
-         name="x">313.5625</property>
+         name="x">-860.4375</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>customerDetailManagement&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">780.4375</property>
+         name="y">66.171875</property>
+      <property
+         name="page">/customerDetailManagement.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -267,11 +287,11 @@
       <property
          name="activityId">manageBooking</property>
       <property
-         name="x">-39.435547</property>
+         name="x">-1213.4355</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>manageBooking&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">1581.5703</property>
+         name="y">867.3047</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -287,7 +307,7 @@
       <property
          name="fromsrcid">__17</property>
       <property
-         name="sdm:polyPoints">L50,374.0,1250.2031,167.5,1266.4023,R46</property>
+         name="sdm:polyPoints">L50,-800.0,537.9375,-1006.5,552.1367,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -301,7 +321,7 @@
       <property
          name="fromsrcid">__17</property>
       <property
-         name="sdm:polyPoints">R50,446.0,1250.2031,659.5,1255.7695,L50</property>
+         name="sdm:polyPoints">R50,-728.0,537.9375,-514.5,541.5039,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -315,7 +335,7 @@
       <property
          name="fromsrcid">__17</property>
       <property
-         name="sdm:polyPoints">T50,410.0,1207.7031,368.0,1169.9922,B44</property>
+         name="sdm:polyPoints">T50,-764.0,495.4375,-806.0,455.67996,B44</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -329,7 +349,7 @@
       <property
          name="fromsrcid">__34</property>
       <property
-         name="sdm:polyPoints">R50,503.48926,667.6367,673.3164,642.5039,L50</property>
+         name="sdm:polyPoints">R50,-670.51074,-46.628906,-500.6836,-71.76172,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -343,7 +363,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">R46,504.4209,899.26953,741.42676,767.6367,L50</property>
+         name="sdm:polyPoints">R46,-669.5791,184.8711,-432.57324,53.371094,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -357,7 +377,7 @@
       <property
          name="fromsrcid">__10</property>
       <property
-         name="sdm:polyPoints">B50,326.1582,1471.6367,329.38867,1534.5039,T50</property>
+         name="sdm:polyPoints">B50,-847.8418,757.3711,-844.6113,820.2383,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -371,7 +391,7 @@
       <property
          name="fromsrcid">__12</property>
       <property
-         name="sdm:polyPoints">B50,106.481445,1475.7695,106.68262,1532.7695,T50</property>
+         name="sdm:polyPoints">B50,-1067.5186,761.5039,-1067.3174,818.5039,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -385,7 +405,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">L54,421.3661,906.26953,330.5,901.5039,R50</property>
+         name="sdm:polyPoints">L54,-752.6297,191.8711,-843.5,187.23828,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -399,7 +419,7 @@
       <property
          name="fromsrcid">__6</property>
       <property
-         name="sdm:polyPoints">B56,130.0,1323.9023,220.65137,1365.7695,T50</property>
+         name="sdm:polyPoints">B56,-1044.0,609.6367,-953.34863,651.5039,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -413,7 +433,7 @@
       <property
          name="fromsrcid">__4</property>
       <property
-         name="sdm:polyPoints">B50,-40.60742,1474.6367,-39.435547,1527.5039,T50</property>
+         name="sdm:polyPoints">B50,-1214.6074,760.3711,-1213.4355,813.2383,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -427,7 +447,7 @@
       <property
          name="fromsrcid">__25</property>
       <property
-         name="sdm:polyPoints">B50,885.5,1161.6367,375.0,1165.0352,B56</property>
+         name="sdm:polyPoints">B50,-288.5,447.3711,-799.0,450.76953,B56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -441,7 +461,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">R50,412.5,1111.0352,532.5,1107.7695,L50</property>
+         name="sdm:polyPoints">R50,-761.5,396.76953,-641.5,393.5039,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -455,7 +475,7 @@
       <property
          name="fromsrcid">__19</property>
       <property
-         name="sdm:polyPoints">R50,614.5,1107.7695,681.5,1107.6367,L50</property>
+         name="sdm:polyPoints">R50,-559.5,393.5039,-492.5,393.23828,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -469,7 +489,7 @@
       <property
          name="fromsrcid">__23</property>
       <property
-         name="sdm:polyPoints">R54,763.5,1111.1367,844.5,1111.1367,L54</property>
+         name="sdm:polyPoints">R54,-410.5,396.73828,-329.50574,396.8711,L54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -483,7 +503,7 @@
       <property
          name="fromsrcid">__6</property>
       <property
-         name="sdm:polyPoints">L50,85.5,1269.9023,-40.60742,1366.6367,T50</property>
+         name="sdm:polyPoints">L50,-1088.5,555.6367,-1214.6074,652.3711,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -497,7 +517,7 @@
       <property
          name="fromsrcid">__25</property>
       <property
-         name="sdm:polyPoints">L46,844.5,1104.1367,763.5,1104.1367,R46</property>
+         name="sdm:polyPoints">L46,-329.5,389.8711,-410.49426,389.73828,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -511,7 +531,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">R54,504.4209,906.26953,696.2246,906.3711,L50</property>
+         name="sdm:polyPoints">R54,-669.5791,191.8711,-477.7754,192.10547,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -525,7 +545,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">T50,371.5,1057.0352,463.4209,956.76953,B50</property>
+         name="sdm:polyPoints">T50,-802.5,342.76953,-710.5791,242.3711,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -539,7 +559,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">T50,463.4209,848.76953,462.48926,721.6367,B50</property>
+         name="sdm:polyPoints">T50,-710.5791,134.3711,-711.51074,7.3710938,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -553,7 +573,7 @@
       <property
          name="fromsrcid">__6</property>
       <property
-         name="sdm:polyPoints">R54,167.5,1273.4023,326.1582,1363.6367,T50</property>
+         name="sdm:polyPoints">R54,-1006.5,559.1367,-847.8418,649.3711,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -567,7 +587,7 @@
       <property
          name="fromsrcid">__6</property>
       <property
-         name="sdm:polyPoints">B44,123.0,1323.9023,106.481445,1367.7695,T50</property>
+         name="sdm:polyPoints">B44,-1051.0,609.6367,-1067.5186,653.5039,T50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -581,6 +601,6 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">L46,422.4209,899.26953,313.5625,834.3711,B50</property>
+         name="sdm:polyPoints">L46,-751.5791,184.8711,-860.4375,120.10547,B50</property>
    </ControlFlowCase>
 </SDM>

@@ -3,25 +3,45 @@
   <view id="home">
     <page>/home.jsf</page>
   </view>
-  <view id="search"></view>
-  <view id="flight"></view>
-  <view id="profile"></view>
+  <view id="search">
+    <page>/search.jsf</page>
+  </view>
+  <view id="flightDeatils">
+    <page>/flightDeatils.jsf</page>
+  </view>
+  <view id="profile">
+    <page>/profile.jsf</page>
+  </view>
   <view id="updateProfile"></view>
-  <view id="viewBookings"></view>
+  <view id="viewBookings">
+    <page>/viewBookings.jsf</page>
+  </view>
   <view id="manageBooking"></view>
   <view id="viewPassenger"></view>
   <view id="managePassenger"></view>
   <view id="viewPaymentMethods"></view>
   <view id="managePaymentMathods"></view>
-  <view id="about"></view>
+  <view id="about">
+    <page>/about.jsf</page>
+  </view>
   <task-flow-call id="booking"></task-flow-call>
-  <view id="adminDashBoard"></view>
-  <view id="createFlights"></view>
+  <view id="adminDashboard">
+    <page>/adminDashboard.jsf</page>
+  </view>
+  <view id="createFlights">
+    <page>/createFlights.jsf</page>
+  </view>
   <view id="analytics"></view>
-  <view id="manageFlights"></view>
+  <view id="manageFlights">
+    <page>/manageFlights.jsf</page>
+  </view>
   <view id="manageBookingForFlight"></view>
-  <view id="bookingsManagement"></view>
-  <view id="customerDetailManagement"></view>
+  <view id="bookingsManagement">
+    <page>/bookingsManagement.jsf</page>
+  </view>
+  <view id="customerDetailManagement">
+    <page>/customerDetailManagement.jsf</page>
+  </view>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
     <control-flow-case id="__2">
@@ -30,7 +50,7 @@
     </control-flow-case>
     <control-flow-case id="__29">
       <from-outcome>isAdmin</from-outcome>
-      <to-activity-id>adminDashBoard</to-activity-id>
+      <to-activity-id>adminDashboard</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__4">
@@ -92,11 +112,11 @@
     <from-activity-id>search</from-activity-id>
     <control-flow-case id="__20">
       <from-outcome>view</from-outcome>
-      <to-activity-id>flight</to-activity-id>
+      <to-activity-id>flightDeatils</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__23">
-    <from-activity-id>flight</from-activity-id>
+    <from-activity-id>flightDeatils</from-activity-id>
     <control-flow-case id="__24">
       <from-outcome>book</from-outcome>
       <to-activity-id>booking</to-activity-id>
@@ -110,11 +130,11 @@
     </control-flow-case>
     <control-flow-case id="__27">
       <from-outcome>failed</from-outcome>
-      <to-activity-id>flight</to-activity-id>
+      <to-activity-id>flightDeatils</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__30">
-    <from-activity-id>adminDashBoard</from-activity-id>
+    <from-activity-id>adminDashboard</from-activity-id>
     <control-flow-case id="__31">
       <from-outcome>createFlights</from-outcome>
       <to-activity-id>createFlights</to-activity-id>
