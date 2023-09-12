@@ -62,6 +62,10 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledDeparture_LABEL"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledDeparture_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledDeparture_FMT_FORMAT"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -77,6 +81,10 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledArrival_LABEL"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledArrival_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledArrival_FMT_FORMAT"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -91,6 +99,10 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.skyjetairlines.model.entity.FlightEO.ActualDeparture_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.FlightEO.ActualDeparture_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.FlightEO.ActualDeparture_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>

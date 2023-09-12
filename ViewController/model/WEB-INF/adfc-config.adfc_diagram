@@ -132,15 +132,15 @@
    <View
       id="View12">
       <property
-         name="activityId">flightDeatils</property>
+         name="activityId">flightDetails</property>
       <property
-         name="x">-451.5</property>
+         name="x">-391.5</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>flightDeatils&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>flightDetails&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">393.3047</property>
+         name="y">395.10547</property>
       <property
-         name="page">/flightDeatils.jsf</property>
+         name="page">/flightDetails.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -159,19 +159,6 @@
       <property
          name="exceptionHandler">false</property>
    </View>
-   <TaskFlowCall
-      id="TaskFlowCall14">
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>booking&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
-      <property
-         name="activityId">booking</property>
-      <property
-         name="x">-288.5</property>
-      <property
-         name="y">393.4375</property>
-      <property
-         name="exceptionHandler">false</property>
-   </TaskFlowCall>
    <View
       id="View15">
       <property
@@ -335,7 +322,7 @@
       <property
          name="fromsrcid">__17</property>
       <property
-         name="sdm:polyPoints">T50,-764.0,495.4375,-806.0,455.67996,B44</property>
+         name="sdm:polyPoints">T50,-764.0,495.4375,-802.5,450.76953,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -437,20 +424,6 @@
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase34"
-      from="TaskFlowCall14"
-      to="View16">
-      <property
-         name="tosrcid">__26</property>
-      <property
-         name="fromOutcome">success</property>
-      <property
-         name="fromsrcid">__25</property>
-      <property
-         name="sdm:polyPoints">B50,-288.5,447.3711,-799.0,450.76953,B56</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
       id="ControlFlowCase35"
       from="View16"
       to="View13">
@@ -471,25 +444,11 @@
       <property
          name="tosrcid">__20</property>
       <property
-         name="fromOutcome">view</property>
+         name="fromOutcome">viewFlightDetails</property>
       <property
          name="fromsrcid">__19</property>
       <property
-         name="sdm:polyPoints">R50,-559.5,393.5039,-492.5,393.23828,L50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase37"
-      from="View12"
-      to="TaskFlowCall14">
-      <property
-         name="tosrcid">__24</property>
-      <property
-         name="fromOutcome">book</property>
-      <property
-         name="fromsrcid">__23</property>
-      <property
-         name="sdm:polyPoints">R54,-410.5,396.73828,-329.50574,396.8711,L54</property>
+         name="sdm:polyPoints">R50,-559.5,393.5039,-432.5,395.03906,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -504,20 +463,6 @@
          name="fromsrcid">__6</property>
       <property
          name="sdm:polyPoints">L50,-1088.5,555.6367,-1214.6074,652.3711,T50</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase39"
-      from="TaskFlowCall14"
-      to="View12">
-      <property
-         name="tosrcid">__27</property>
-      <property
-         name="fromOutcome">failed</property>
-      <property
-         name="fromsrcid">__25</property>
-      <property
-         name="sdm:polyPoints">L46,-329.5,389.8711,-410.49426,389.73828,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -545,7 +490,7 @@
       <property
          name="fromsrcid">__1</property>
       <property
-         name="sdm:polyPoints">T50,-802.5,342.76953,-710.5791,242.3711,B50</property>
+         name="sdm:polyPoints">T44,-806.0,337.98596,-710.5791,242.3711,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -602,5 +547,50 @@
          name="fromsrcid">__30</property>
       <property
          name="sdm:polyPoints">L46,-751.5791,184.8711,-860.4375,120.10547,B50</property>
+   </ControlFlowCase>
+   <View
+      id="View46">
+      <property
+         name="activityId">booking</property>
+      <property
+         name="x">-224.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>booking&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">377.73438</property>
+      <property
+         name="page">/booking.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase51"
+      from="View12"
+      to="View46">
+      <property
+         name="fromOutcome">book</property>
+      <property
+         name="sdm:polyPoints">R46,-350.5,391.53906,-265.70676,374.16797,L46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase52"
+      from="View46"
+      to="View12">
+      <property
+         name="fromOutcome">failed</property>
+      <property
+         name="sdm:polyPoints">L54,-265.0,381.16797,-349.79608,398.53906,R54</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase53"
+      from="View46"
+      to="View16">
+      <property
+         name="fromOutcome">success</property>
+      <property
+         name="sdm:polyPoints">T50,-224.0,323.66797,-799.0,342.76953,T56</property>
    </ControlFlowCase>
 </SDM>

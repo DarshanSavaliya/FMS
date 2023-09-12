@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"
+                Package="com.skyjetairlines.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="BookingsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="BookingsInstanceIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="BookingsInstanceIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

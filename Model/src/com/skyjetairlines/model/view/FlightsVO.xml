@@ -145,7 +145,14 @@
     PrecisionRule="true"
     EntityAttrName="AvailableSeats"
     EntityUsage="FlightEO"
-    AliasName="AVAILABLE_SEATS"/>
+    AliasName="AVAILABLE_SEATS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.view.FlightsVO.AvailableSeats_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="Status"
     IsNotNull="true"
@@ -168,6 +175,119 @@
     EntityUsage="FlightEO"
     AliasName="VERSION"
     IsUpdateable="false"/>
+  <ViewAttribute
+    Name="Duration"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Long"
+    ColumnType="FLOAT"
+    AliasName="VIEW_ATTR"
+    SQLType="FLOAT">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="FlightsVORow"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.view.FlightsVO.Duration_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="ScheduledArrival"/>
+      <Item
+        Value="ScheduledDeparture"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ScheduledDate"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    AliasName="VIEW_ATTR"
+    SQLType="DATE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="FlightsVORow"/>
+    <Dependencies>
+      <Item
+        Value="ScheduledDeparture"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.view.FlightsVO.ScheduledDate_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewCriteria
+    Name="SerachFlightsViewCriteria"
+    ViewObjectName="com.skyjetairlines.model.view.FlightsVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="Never"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="FlightsVOCriteria_row_0"
+      UpperColumns="1"
+      Conjunction="AND">
+      <ViewCriteriaItem
+        Name="DepartureAirport"
+        ViewAttribute="DepartureAirport"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ArrivalAirport"
+        ViewAttribute="ArrivalAirport"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="AvailableSeats"
+        ViewAttribute="AvailableSeats"
+        Operator=">="
+        Conjunction="AND"
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="ScheduledDate"
+        ViewAttribute="ScheduledDate"
+        Operator="="
+        Conjunction="AND"
+        Required="Optional">
+        <CompOper
+          Name="ScheduledDeparture_Oper"
+          ToDo="1"
+          OperDescStrCode="ScheduledDeparture_Oper_CompOper_0"
+          Oper="CustomOperator"
+          MinCardinality="0"
+          MaxCardinality="0"/>
+      </ViewCriteriaItem>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="Airports"
     ViewLink="com.skyjetairlines.model.view.link.FlightArrivalAirportFkLink"
@@ -186,4 +306,8 @@
     Type="oracle.jbo.RowIterator"
     Reversed="true"
     IsUpdateable="false"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
 </ViewObject>
