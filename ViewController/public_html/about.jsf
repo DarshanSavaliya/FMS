@@ -6,6 +6,24 @@
       <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
         <f:facet name="body">
           <af:outputText value="About Page" id="ot1"/>
+          <af:panelGridLayout id="pgl2">
+            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr1">
+              <af:gridCell marginStart="5px" width="25%" id="gc1" inlineStyle="text-align:center;" halign="center"/>
+              <af:gridCell marginStart="5px" width="25%" id="gc6" halign="center"/>
+              <af:gridCell marginStart="5px" width="25%" id="gc7"/>
+              <af:gridCell marginStart="5px" width="25%" marginEnd="5px" id="gc8" halign="center"/>
+            </af:gridRow>
+          </af:panelGridLayout>
+          <af:panelGridLayout id="pgl1">
+            <af:gridRow marginTop="5px" height="auto" id="gr2">
+              <af:gridCell marginStart="5px" width="50%" id="gc2"/>
+              <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc3"/>
+            </af:gridRow>
+            <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr3">
+              <af:gridCell marginStart="5px" width="50%" id="gc4"/>
+              <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc5"/>
+            </af:gridRow>
+          </af:panelGridLayout>
         </f:facet>
       </af:pageTemplate>
     </af:form>

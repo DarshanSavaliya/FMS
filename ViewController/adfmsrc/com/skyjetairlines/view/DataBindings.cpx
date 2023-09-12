@@ -2,6 +2,7 @@
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
              SeparateXMLFiles="false" Package="com.skyjetairlines.view" ClientType="Generic">
   <pageMap>
+    <page path="/profile.jsf" usageId="com_skyjetairlines_view_profilePageDef"/>
     <page path="/home.jsf" usageId="com_skyjetairlines_view_homePageDef"/>
     <page path="/search.jsf" usageId="com_skyjetairlines_view_searchPageDef"/>
     <page path="/flightDetails.jsf" usageId="com_skyjetairlines_view_flightDetailsPageDef"/>
@@ -10,6 +11,7 @@
     <page path="/booking.jsf" usageId="com_skyjetairlines_view_bookingPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
+    <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
     <page id="com_skyjetairlines_view_homePageDef" path="com.skyjetairlines.view.pageDefs.homePageDef"/>
     <page id="com_skyjetairlines_view_searchPageDef" path="com.skyjetairlines.view.pageDefs.searchPageDef"/>
     <page id="com_skyjetairlines_view_flightDetailsPageDef"

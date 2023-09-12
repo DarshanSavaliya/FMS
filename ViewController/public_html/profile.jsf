@@ -2,10 +2,219 @@
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
     <af:document title="Skyjet Airlines || Profile" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:outputText value="outputText1" id="ot1"/>
+                    <af:outputText value="Manage your Profile" id="ot1"/>
+                    <af:panelTabbed position="left" id="pt2" verticalTabMode="iconAndText" dimensionsFrom="auto">
+                        <af:showDetailItem id="profile" text="Profile" disclosed="true">
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.FirstName.inputValue}"
+                                              label="#{bindings.FirstName.hints.label}"
+                                              required="#{bindings.FirstName.hints.mandatory}"
+                                              columns="#{bindings.FirstName.hints.displayWidth}"
+                                              maximumLength="#{bindings.FirstName.hints.precision}"
+                                              shortDesc="#{bindings.FirstName.hints.tooltip}" id="it1"
+                                              autoSubmit="true">
+                                    <f:validator binding="#{bindings.FirstName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.LastName.inputValue}"
+                                              label="#{bindings.LastName.hints.label}"
+                                              required="#{bindings.LastName.hints.mandatory}"
+                                              columns="#{bindings.LastName.hints.displayWidth}"
+                                              maximumLength="#{bindings.LastName.hints.precision}"
+                                              shortDesc="#{bindings.LastName.hints.tooltip}" id="it2" autoSubmit="true">
+                                    <f:validator binding="#{bindings.LastName.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                                              required="#{bindings.Email.hints.mandatory}"
+                                              columns="#{bindings.Email.hints.displayWidth}"
+                                              maximumLength="#{bindings.Email.hints.precision}"
+                                              shortDesc="#{bindings.Email.hints.tooltip}" id="it3" autoSubmit="true">
+                                    <f:validator binding="#{bindings.Email.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Phone.inputValue}" label="#{bindings.Phone.hints.label}"
+                                              required="#{bindings.Phone.hints.mandatory}"
+                                              columns="#{bindings.Phone.hints.displayWidth}"
+                                              maximumLength="#{bindings.Phone.hints.precision}"
+                                              shortDesc="#{bindings.Phone.hints.tooltip}" id="it4" autoSubmit="true">
+                                    <f:validator binding="#{bindings.Phone.validator}"/>
+                                </af:inputText>
+                                <af:inputText value="#{bindings.Address.inputValue}"
+                                              label="#{bindings.Address.hints.label}"
+                                              required="#{bindings.Address.hints.mandatory}"
+                                              columns="#{bindings.Address.hints.displayWidth}"
+                                              maximumLength="#{bindings.Address.hints.precision}"
+                                              shortDesc="#{bindings.Address.hints.tooltip}" id="it5" autoSubmit="true">
+                                    <f:validator binding="#{bindings.Address.validator}"/>
+                                </af:inputText>
+                                <af:inputDate value="#{bindings.DateOfBirth.inputValue}"
+                                              label="#{bindings.DateOfBirth.hints.label}"
+                                              required="#{bindings.DateOfBirth.hints.mandatory}"
+                                              columns="#{bindings.DateOfBirth.hints.displayWidth}"
+                                              shortDesc="#{bindings.DateOfBirth.hints.tooltip}" id="id1"
+                                              autoSubmit="true">
+                                    <f:validator binding="#{bindings.DateOfBirth.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.DateOfBirth.format}"/>
+                                </af:inputDate>
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                                           disabled="#{!bindings.Commit.enabled}" id="b1"
+                                           partialTriggers="it1 it2 it3 it4 it5 id1"/>
+                            </af:panelFormLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Bookings" id="sdi1">
+                            <af:panelGroupLayout id="pgl1" layout="vertical">
+                                <af:table value="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel}"
+                                          var="row" rows="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}"
+                                          emptyText="#{bindings.BookingsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}" id="t1">
+                                    <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.label}"
+                                               id="c1">
+                                        <af:outputText value="#{row.BookingId}"
+                                                       shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.tooltip}"
+                                                       id="ot2">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.label}"
+                                               id="c2">
+                                        <af:outputText value="#{row.BookingDate}"
+                                                       shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.tooltip}"
+                                                       id="ot3">
+                                            <af:convertDateTime pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.label}"
+                                               id="c3">
+                                        <af:outputText value="#{row.TotalAmount}"
+                                                       shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.tooltip}"
+                                                       id="ot4">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:table>
+                                <af:table value="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel}"
+                                          var="row" rows="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}"
+                                          emptyText="#{bindings.TicketsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}" id="t4">
+                                    <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.label}"
+                                               id="c12">
+                                        <af:outputText value="#{row.TicketId}"
+                                                       shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.tooltip}"
+                                                       id="ot13">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.label}"
+                                               id="c13">
+                                        <af:selectOneChoice value="#{row.bindings.PassengerId.inputValue}"
+                                                            label="#{row.bindings.PassengerId.label}"
+                                                            required="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.mandatory}"
+                                                            shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.tooltip}"
+                                                            readOnly="true" id="soc1">
+                                            <f:selectItems value="#{row.bindings.PassengerId.items}" id="si1"/>
+                                            <f:validator binding="#{row.bindings.PassengerId.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                </af:table>
+                            </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Passengers" id="sdi2">
+                            <af:table value="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel}" var="row"
+                                      rows="#{bindings.PassengersInstanceForCurrentCustomer.rangeSize}"
+                                      emptyText="#{bindings.PassengersInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                      rowSelection="single"
+                                      fetchSize="#{bindings.PassengersInstanceForCurrentCustomer.rangeSize}" id="t2">
+                                <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassengerId.label}"
+                                           id="c4">
+                                    <af:outputText value="#{row.PassengerId}"
+                                                   shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassengerId.tooltip}"
+                                                   id="ot5">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassengerId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.label}"
+                                           id="c5">
+                                    <af:outputText value="#{row.PassenegerName}"
+                                                   shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.tooltip}"
+                                                   id="ot6"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.label}"
+                                           id="c6">
+                                    <af:outputText value="#{row.Phone}"
+                                                   shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.tooltip}"
+                                                   id="ot7"/>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Payment Methods" id="sdi3">
+                            <af:table value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel}"
+                                      var="row" rows="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
+                                      emptyText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                      rowSelection="single"
+                                      fetchSize="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
+                                      id="t3">
+                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.label}"
+                                           id="c7">
+                                    <af:outputText value="#{row.PaymentId}"
+                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.tooltip}"
+                                                   id="ot8">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.label}"
+                                           id="c8">
+                                    <af:outputText value="#{row.PaymentType}"
+                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.tooltip}"
+                                                   id="ot9"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.label}"
+                                           id="c9">
+                                    <af:outputText value="#{row.CardNo}"
+                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.tooltip}"
+                                                   id="ot10"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.label}"
+                                           id="c10">
+                                    <af:outputText value="#{row.ExpiryMonth}"
+                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.tooltip}"
+                                                   id="ot11">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.label}"
+                                           id="c11">
+                                    <af:outputText value="#{row.ExpiryYear}"
+                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.tooltip}"
+                                                   id="ot12">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                            </af:table>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

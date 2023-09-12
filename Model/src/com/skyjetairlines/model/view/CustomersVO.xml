@@ -22,7 +22,8 @@
     PrecisionRule="true"
     EntityAttrName="CustomerId"
     EntityUsage="CustomerEO"
-    AliasName="CUSTOMER_ID"/>
+    AliasName="CUSTOMER_ID"
+    IsUpdateable="while_insert"/>
   <ViewAttribute
     Name="Username"
     IsNotNull="true"
@@ -70,6 +71,41 @@
     EntityAttrName="DateOfBirth"
     EntityUsage="CustomerEO"
     AliasName="DATE_OF_BIRTH"/>
+  <ViewCriteria
+    Name="CurrentCustomerViewCriteria"
+    ViewObjectName="com.skyjetairlines.model.view.CustomersVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="CustomersVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="CustomerId"
+        ViewAttribute="CustomerId"
+        Operator="="
+        Conjunction="AND"
+        Value="1"
+        Required="Required"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="Bookings"
     ViewLink="com.skyjetairlines.model.view.link.BookingCustomerFkLink"
