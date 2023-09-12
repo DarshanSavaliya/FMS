@@ -1,0 +1,19 @@
+//Groovy Scripts for com.skyjetairlines.model.view.FlightsVO
+
+package com.skyjetairlines.model.view
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="Duration")
+def Duration_ExpressionScript_Expression()
+{
+(ScheduledArrival.getTime() - ScheduledDeparture.getTime())
+}
+
+
+@TransientValueExpression(attributeName="ScheduledDate")
+def ScheduledDate_ExpressionScript_Expression()
+{
+ScheduledDeparture.getDate()
+}
+

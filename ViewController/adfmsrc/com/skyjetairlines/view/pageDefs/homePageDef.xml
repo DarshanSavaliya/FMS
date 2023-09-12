@@ -4,6 +4,16 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
+    <iterator Binds="AirportsDepartureInstanceForFlights" RangeSize="25"
+              DataControl="FlightManagementSystemAMDataControl" id="AirportsDepartureInstanceForFlightsIterator"/>
   </executables>
-  <bindings/>
+  <bindings>
+    <list IterBinding="AirportsDepartureInstanceForFlightsIterator" ListOperMode="navigation"
+          ListIter="AirportsDepartureInstanceForFlightsIterator" id="AirportsDepartureInstanceForFlights"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="City"/>
+      </AttrNames>
+    </list>
+  </bindings>
 </pageDefinition>

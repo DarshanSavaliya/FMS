@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="bookingPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
+    <searchRegion Binds="FlightsInstanceIterator" Criteria="SerachFlightsViewCriteria"
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="FlightsInstanceQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="FlightsInstanceIterator" id="FlightsInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO" Name="FlightsInstance0">
+        <AttrNames>
+          <Item Value="FlightId"/>
+          <Item Value="Flightno"/>
+          <Item Value="ScheduledDeparture"/>
+          <Item Value="ScheduledArrival"/>
+          <Item Value="ActualDeparture"/>
+          <Item Value="ActualArrival"/>
+          <Item Value="DepartureAirport"/>
+          <Item Value="ArrivalAirport"/>
+          <Item Value="TotalSeats"/>
+          <Item Value="AvailableSeats"/>
+          <Item Value="Status"/>
+          <Item Value="BaseFare"/>
+          <Item Value="Version"/>
+          <Item Value="Duration"/>
+          <Item Value="ScheduledDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

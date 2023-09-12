@@ -6,8 +6,8 @@
   <view id="search">
     <page>/search.jsf</page>
   </view>
-  <view id="flightDeatils">
-    <page>/flightDeatils.jsf</page>
+  <view id="flightDetails">
+    <page>/flightDetails.jsf</page>
   </view>
   <view id="profile">
     <page>/profile.jsf</page>
@@ -24,7 +24,6 @@
   <view id="about">
     <page>/about.jsf</page>
   </view>
-  <task-flow-call id="booking"></task-flow-call>
   <view id="adminDashboard">
     <page>/adminDashboard.jsf</page>
   </view>
@@ -41,6 +40,9 @@
   </view>
   <view id="customerDetailManagement">
     <page>/customerDetailManagement.jsf</page>
+  </view>
+  <view id="booking">
+    <page>/booking.jsf</page>
   </view>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
@@ -111,26 +113,15 @@
   <control-flow-rule id="__19">
     <from-activity-id>search</from-activity-id>
     <control-flow-case id="__20">
-      <from-outcome>view</from-outcome>
-      <to-activity-id>flightDeatils</to-activity-id>
+      <from-outcome>viewFlightDetails</from-outcome>
+      <to-activity-id>flightDetails</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__23">
-    <from-activity-id>flightDeatils</from-activity-id>
-    <control-flow-case id="__24">
+    <from-activity-id>flightDetails</from-activity-id>
+    <control-flow-case id="__15">
       <from-outcome>book</from-outcome>
       <to-activity-id>booking</to-activity-id>
-    </control-flow-case>
-  </control-flow-rule>
-  <control-flow-rule id="__25">
-    <from-activity-id>booking</from-activity-id>
-    <control-flow-case id="__26">
-      <from-outcome>success</from-outcome>
-      <to-activity-id>home</to-activity-id>
-    </control-flow-case>
-    <control-flow-case id="__27">
-      <from-outcome>failed</from-outcome>
-      <to-activity-id>flightDeatils</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__30">
@@ -163,4 +154,20 @@
       <to-activity-id>manageBookingForFlight</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__16">
+    <from-activity-id>booking</from-activity-id>
+    <control-flow-case id="__28">
+      <from-outcome>failed</from-outcome>
+      <to-activity-id>flightDetails</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__38">
+      <from-outcome>success</from-outcome>
+      <to-activity-id>home</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean id="__3">
+    <managed-bean-name>FlightSearch</managed-bean-name>
+    <managed-bean-class>com.skyjetairlines.view.FlightSearchAction</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>

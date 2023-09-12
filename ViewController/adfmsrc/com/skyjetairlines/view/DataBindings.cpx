@@ -1,3 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
-             SeparateXMLFiles="false" Package="com.skyjetairlines.view" ClientType="Generic"></Application>
+             SeparateXMLFiles="false" Package="com.skyjetairlines.view" ClientType="Generic">
+  <pageMap>
+    <page path="/home.jsf" usageId="com_skyjetairlines_view_homePageDef"/>
+    <page path="/search.jsf" usageId="com_skyjetairlines_view_searchPageDef"/>
+    <page path="/flightDetails.jsf" usageId="com_skyjetairlines_view_flightDetailsPageDef"/>
+    <page path="/WEB-INF/task-flow-booking-definition.xml#task-flow-booking-definition@CreateInsert"
+          usageId="com_skyjetairlines_view_task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"/>
+    <page path="/booking.jsf" usageId="com_skyjetairlines_view_bookingPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_skyjetairlines_view_homePageDef" path="com.skyjetairlines.view.pageDefs.homePageDef"/>
+    <page id="com_skyjetairlines_view_searchPageDef" path="com.skyjetairlines.view.pageDefs.searchPageDef"/>
+    <page id="com_skyjetairlines_view_flightDetailsPageDef"
+          path="com.skyjetairlines.view.pageDefs.flightDetailsPageDef"/>
+    <page id="com_skyjetairlines_view_task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"
+          path="com.skyjetairlines.view.pageDefs.task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"/>
+    <page id="com_skyjetairlines_view_bookingPageDef" path="com.skyjetairlines.view.pageDefs.bookingPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
