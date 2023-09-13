@@ -132,87 +132,207 @@
                             </af:panelGroupLayout>
                         </af:showDetailItem>
                         <af:showDetailItem text="Passengers" id="sdi2">
-                            <af:table value="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel}" var="row"
-                                      rows="#{bindings.PassengersInstanceForCurrentCustomer.rangeSize}"
-                                      emptyText="#{bindings.PassengersInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                      rowBandingInterval="0"
-                                      selectedRowKeys="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel.selectedRow}"
-                                      selectionListener="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel.makeCurrent}"
-                                      rowSelection="single"
-                                      fetchSize="#{bindings.PassengersInstanceForCurrentCustomer.rangeSize}" id="t2">
-                                <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassengerId.label}"
-                                           id="c4">
-                                    <af:outputText value="#{row.PassengerId}"
-                                                   shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassengerId.tooltip}"
-                                                   id="ot5">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassengerId.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.label}"
-                                           id="c5">
-                                    <af:outputText value="#{row.PassenegerName}"
-                                                   shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.tooltip}"
-                                                   id="ot6"/>
-                                </af:column>
-                                <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.label}"
-                                           id="c6">
-                                    <af:outputText value="#{row.Phone}"
-                                                   shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.tooltip}"
-                                                   id="ot7"/>
-                                </af:column>
-                            </af:table>
+                            <af:panelCollection id="pc1">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar">
+                                    <af:toolbar id="t5">
+                                        <af:button actionListener="#{bindings.CreateInsert.execute}" text="Add"
+                                                   disabled="false" id="b6"/>
+                                        <af:button actionListener="#{bindings.Delete.execute}" text="Delete"
+                                                   disabled="#{!bindings.Delete.enabled}" id="b5"/>
+                                        <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                                                   disabled="false" id="b7"/>
+                                    </af:toolbar>
+                                </f:facet>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel}"
+                                          var="row" rows="#{bindings.PassengersInstanceForCurrentCustomer.rangeSize}"
+                                          emptyText="#{bindings.PassengersInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.PassengersInstanceForCurrentCustomer.rangeSize}"
+                                          id="t2" partialTriggers="::b5 ::b6">
+                                    <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.label}"
+                                               id="c5">
+                                        <af:outputText value="#{row.PassenegerName}"
+                                                       shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.tooltip}"
+                                                       id="ot6"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.label}"
+                                               id="c6">
+                                        <af:outputText value="#{row.Phone}"
+                                                       shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.tooltip}"
+                                                       id="ot7"/>
+                                    </af:column>
+                                    <af:column id="c14">
+                                        <af:button text="Edit" id="b2" icon="#{resource['images:icons8-edit-12.png']}">
+                                            <af:showPopupBehavior popupId="EditPassenger"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="EditPassenger">
+                                            <af:dialog id="d2" type="none">
+                                                <af:panelFormLayout id="pfl2">
+                                                    <af:inputText value="#{row.bindings.PassenegerName.inputValue}"
+                                                                  label="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.label}"
+                                                                  required="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.mandatory}"
+                                                                  columns="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.displayWidth}"
+                                                                  maximumLength="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.precision}"
+                                                                  shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.tooltip}"
+                                                                  id="it6">
+                                                        <f:validator binding="#{row.bindings.PassenegerName.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{row.bindings.Phone.inputValue}"
+                                                                  label="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.label}"
+                                                                  required="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.mandatory}"
+                                                                  columns="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.displayWidth}"
+                                                                  maximumLength="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.precision}"
+                                                                  shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.tooltip}"
+                                                                  id="it7">
+                                                        <f:validator binding="#{row.bindings.Phone.validator}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                                <f:facet name="buttonBar">
+                                                    <af:button actionListener="#{bindings.Rollback.execute}"
+                                                               text="Cancel" disabled="false" immediate="true" id="b4">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                    <af:button text="Save" disabled="false" id="b3"
+                                                               actionListener="#{bindings.Commit.execute}"/>
+                                                </f:facet>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
                         </af:showDetailItem>
                         <af:showDetailItem text="Payment Methods" id="sdi3">
-                            <af:table value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel}"
-                                      var="row" rows="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
-                                      emptyText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                      rowBandingInterval="0"
-                                      selectedRowKeys="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel.selectedRow}"
-                                      selectionListener="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
-                                      rowSelection="single"
-                                      fetchSize="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
-                                      id="t3">
-                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.label}"
-                                           id="c7">
-                                    <af:outputText value="#{row.PaymentId}"
-                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.tooltip}"
-                                                   id="ot8">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.label}"
-                                           id="c8">
-                                    <af:outputText value="#{row.PaymentType}"
-                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.tooltip}"
-                                                   id="ot9"/>
-                                </af:column>
-                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.label}"
-                                           id="c9">
-                                    <af:outputText value="#{row.CardNo}"
-                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.tooltip}"
-                                                   id="ot10"/>
-                                </af:column>
-                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.label}"
-                                           id="c10">
-                                    <af:outputText value="#{row.ExpiryMonth}"
-                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.tooltip}"
-                                                   id="ot11">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.label}"
-                                           id="c11">
-                                    <af:outputText value="#{row.ExpiryYear}"
-                                                   shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.tooltip}"
-                                                   id="ot12">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                            </af:table>
+                            <af:panelCollection id="pc2">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar">
+                                    <af:toolbar id="t6">
+                                        <af:button actionListener="#{bindings.CreateInsert1.execute}"
+                                                   text="Add" disabled="false"
+                                                   id="b11"/>
+                                        <af:button actionListener="#{bindings.Delete1.execute}" text="Delete"
+                                                   disabled="false" id="b12"/>
+                                        <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                                                   disabled="false" id="b13"/>
+                                    </af:toolbar>
+                                </f:facet>
+                                <f:facet name="statusbar"/>
+                                <af:table 
+                                columnStretching="last"
+                                value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel}"
+                                          var="row"
+                                          rows="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
+                                          emptyText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
+                                          id="t3" partialTriggers="::b11 ::b12" styleClass="AFStretchWidth">
+                                    <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.label}"
+                                               id="c7">
+                                        <af:outputText value="#{row.PaymentId}"
+                                                       shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.tooltip}"
+                                                       id="ot8">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.label}"
+                                               id="c8">
+                                        <af:outputText value="#{row.PaymentType}"
+                                                       shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.tooltip}"
+                                                       id="ot9"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.label}"
+                                               id="c9">
+                                        <af:outputText value="#{row.CardNo}"
+                                                       shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.tooltip}"
+                                                       id="ot10"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.label}"
+                                               id="c10">
+                                        <af:outputText value="#{row.ExpiryMonth}"
+                                                       shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.tooltip}"
+                                                       id="ot11">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.label}"
+                                               id="c11">
+                                        <af:outputText value="#{row.ExpiryYear}"
+                                                       shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.tooltip}"
+                                                       id="ot12">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column id="c15">
+                                        <af:button text="Edit1" id="b8" icon="#{resource['images:icons8-edit-12.png']}">
+                                            <af:showPopupBehavior popupId="p1"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="p1">
+                                            <af:dialog id="d3" type="none">
+                                                <af:panelFormLayout id="pfl3">
+                                                    <af:inputText value="#{row.bindings.PaymentType.inputValue}"
+                                                                  label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.label}"
+                                                                  required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.mandatory}"
+                                                                  columns="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.displayWidth}"
+                                                                  maximumLength="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.precision}"
+                                                                  shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.tooltip}"
+                                                                  id="it8">
+                                                        <f:validator binding="#{row.bindings.PaymentType.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{row.bindings.CardNo.inputValue}"
+                                                                  label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.label}"
+                                                                  required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.mandatory}"
+                                                                  columns="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.displayWidth}"
+                                                                  maximumLength="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.precision}"
+                                                                  shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.tooltip}"
+                                                                  id="it9">
+                                                        <f:validator binding="#{row.bindings.CardNo.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{row.bindings.ExpiryMonth.inputValue}"
+                                                                  label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.label}"
+                                                                  required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.mandatory}"
+                                                                  columns="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.displayWidth}"
+                                                                  maximumLength="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.precision}"
+                                                                  shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.tooltip}"
+                                                                  id="it10">
+                                                        <f:validator binding="#{row.bindings.ExpiryMonth.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.format}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{row.bindings.ExpiryYear.inputValue}"
+                                                                  label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.label}"
+                                                                  required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.mandatory}"
+                                                                  columns="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.displayWidth}"
+                                                                  maximumLength="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.precision}"
+                                                                  shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.tooltip}"
+                                                                  id="it11">
+                                                        <f:validator binding="#{row.bindings.ExpiryYear.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.format}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                                <f:facet name="buttonBar">
+                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                                                               disabled="false" id="b9"/>
+                                                    <af:button actionListener="#{bindings.Rollback.execute}"
+                                                               text="Cancel" disabled="false" immediate="true" id="b10">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </f:facet>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
                         </af:showDetailItem>
                     </af:panelTabbed>
                 </f:facet>
