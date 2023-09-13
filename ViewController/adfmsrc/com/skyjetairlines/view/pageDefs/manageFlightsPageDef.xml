@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="manageFlightsPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
+    <searchRegion Binds="FlightsInstanceIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="FlightsInstanceQuery"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+    <action IterBinding="FlightsInstanceIterator" id="DeleteFlight" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action IterBinding="FlightsInstanceIterator" id="CreateInsertFlight" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <tree IterBinding="FlightsInstanceIterator" id="FlightsInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO" Name="FlightsInstance10">
+        <AttrNames>
+          <Item Value="Flightno"/>
+          <Item Value="DepartureAirport"/>
+          <Item Value="ArrivalAirport"/>
+          <Item Value="ScheduledDeparture"/>
+          <Item Value="ScheduledArrival"/>
+          <Item Value="Duration"/>
+          <Item Value="ActualDeparture"/>
+          <Item Value="ActualArrival"/>
+          <Item Value="BaseFare"/>
+          <Item Value="TotalSeats"/>
+          <Item Value="AvailableSeats"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

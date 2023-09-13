@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="addFlightPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
+  </executables>
+  <bindings>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="Flightno">
+      <AttrNames>
+        <Item Value="Flightno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledDeparture">
+      <AttrNames>
+        <Item Value="ScheduledDeparture"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledArrival">
+      <AttrNames>
+        <Item Value="ScheduledArrival"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ActualDeparture">
+      <AttrNames>
+        <Item Value="ActualDeparture"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ActualArrival">
+      <AttrNames>
+        <Item Value="ActualArrival"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="BaseFare">
+      <AttrNames>
+        <Item Value="BaseFare"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="TotalSeats">
+      <AttrNames>
+        <Item Value="TotalSeats"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="AvailableSeats">
+      <AttrNames>
+        <Item Value="AvailableSeats"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_Status" id="Status" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+  </bindings>
+</pageDefinition>

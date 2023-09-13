@@ -9,6 +9,8 @@
     <page path="/WEB-INF/task-flow-booking-definition.xml#task-flow-booking-definition@CreateInsert"
           usageId="com_skyjetairlines_view_task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"/>
     <page path="/booking.jsf" usageId="com_skyjetairlines_view_bookingPageDef"/>
+    <page path="/manageFlights.jsf" usageId="com_skyjetairlines_view_finalPageDef"/>
+    <page path="/addFlight.jsf" usageId="com_skyjetairlines_view_addFlightPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -19,6 +21,8 @@
     <page id="com_skyjetairlines_view_task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"
           path="com.skyjetairlines.view.pageDefs.task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"/>
     <page id="com_skyjetairlines_view_bookingPageDef" path="com.skyjetairlines.view.pageDefs.bookingPageDef"/>
+    <page id="com_skyjetairlines_view_finalPageDef" path="com.skyjetairlines.view.pageDefs.manageFlightsPageDef"/>
+    <page id="com_skyjetairlines_view_addFlightPageDef" path="com.skyjetairlines.view.pageDefs.addFlightPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

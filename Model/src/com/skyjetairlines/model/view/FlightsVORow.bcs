@@ -17,3 +17,17 @@ def ScheduledDate_ExpressionScript_Expression()
 ScheduledDeparture.getDate()
 }
 
+
+@TransientValueExpression(attributeName="ActualArrival")
+def ActualArrival_ExpressionScript_Expression()
+{
+ScheduledArrival
+}
+
+
+@TransientValueExpression(attributeName="ActualDeparture")
+def ActualDeparture_ExpressionScript_Expression()
+{
+ScheduledDeparture
+}
+

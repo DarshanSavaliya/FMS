@@ -1,13 +1,275 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
-    <af:document title="Skyjet Airlines || Admin || Manage Flight" id="d1">
-        <af:form id="f1">
-            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
-                <f:facet name="body">
-                    <af:outputText value="Manage Flights Admin Page" id="ot1"/>
+  <af:document title="manageFlights.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+        <f:facet name="body">
+          <af:panelCollection id="pc1">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.FlightsInstance.collectionModel}" var="row"
+                      rows="#{bindings.FlightsInstance.rangeSize}"
+                      emptyText="#{bindings.FlightsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" selectedRowKeys="#{bindings.FlightsInstance.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.FlightsInstance.collectionModel.makeCurrent}" rowSelection="single"
+                      fetchSize="#{bindings.FlightsInstance.rangeSize}"
+                      filterModel="#{bindings.FlightsInstanceQuery.queryDescriptor}" filterVisible="true"
+                      queryListener="#{bindings.FlightsInstanceQuery.processQuery}" varStatus="vs" id="t1"
+                      partialTriggers="::b5">
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.Flightno.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.Flightno.label}" id="c13">
+                <af:outputText value="#{row.Flightno}" shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}"
+                               id="ot10"/>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.DepartureAirport.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.DepartureAirport.label}"
+                         id="c15">
+                <af:selectOneChoice value="#{row.bindings.DepartureAirport.inputValue}"
+                                    label="#{row.bindings.DepartureAirport.label}"
+                                    required="#{bindings.FlightsInstance.hints.DepartureAirport.mandatory}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.DepartureAirport.tooltip}"
+                                    readOnly="true" id="soc6">
+                  <f:selectItems value="#{row.bindings.DepartureAirport.items}" id="si6"/>
+                  <f:validator binding="#{row.bindings.DepartureAirport.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.ArrivalAirport.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.ArrivalAirport.label}" id="c16">
+                <af:selectOneChoice value="#{row.bindings.ArrivalAirport.inputValue}"
+                                    label="#{row.bindings.ArrivalAirport.label}"
+                                    required="#{bindings.FlightsInstance.hints.ArrivalAirport.mandatory}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.ArrivalAirport.tooltip}"
+                                    readOnly="true" id="soc7">
+                  <f:selectItems value="#{row.bindings.ArrivalAirport.items}" id="si7"/>
+                  <f:validator binding="#{row.bindings.ArrivalAirport.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.ScheduledDeparture.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.ScheduledDeparture.label}"
+                         id="c17">
+                <f:facet name="filter">
+                  <af:inputDate value="#{bindings.FlightsInstanceQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.ScheduledDeparture.value}"
+                                id="id9">
+                    <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledDeparture.format}"/>
+                  </af:inputDate>
                 </f:facet>
-            </af:pageTemplate>
-        </af:form>
-    </af:document>
+                <af:outputText value="#{row.ScheduledDeparture}"
+                               shortDesc="#{bindings.FlightsInstance.hints.ScheduledDeparture.tooltip}" id="ot11">
+                  <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledDeparture.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.ScheduledArrival.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.ScheduledArrival.label}"
+                         id="c18">
+                <f:facet name="filter">
+                  <af:inputDate value="#{bindings.FlightsInstanceQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.ScheduledArrival.value}"
+                                id="id10">
+                    <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledArrival.format}"/>
+                  </af:inputDate>
+                </f:facet>
+                <af:outputText value="#{row.ScheduledArrival}"
+                               shortDesc="#{bindings.FlightsInstance.hints.ScheduledArrival.tooltip}" id="ot12">
+                  <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledArrival.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.Duration.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.Duration.label}" id="c19">
+                <af:outputText value="#{row.Duration}" shortDesc="#{bindings.FlightsInstance.hints.Duration.tooltip}"
+                               id="ot13">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.FlightsInstance.hints.Duration.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.ActualDeparture.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.ActualDeparture.label}" id="c20">
+                <f:facet name="filter">
+                  <af:inputDate value="#{bindings.FlightsInstanceQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.ActualDeparture.value}"
+                                id="id11">
+                    <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualDeparture.format}"/>
+                  </af:inputDate>
+                </f:facet>
+                <af:outputText value="#{row.ActualDeparture}"
+                               shortDesc="#{bindings.FlightsInstance.hints.ActualDeparture.tooltip}" id="ot14">
+                  <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualDeparture.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.ActualArrival.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.ActualArrival.label}" id="c21">
+                <f:facet name="filter">
+                  <af:inputDate value="#{bindings.FlightsInstanceQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.ActualArrival.value}"
+                                id="id12">
+                    <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualArrival.format}"/>
+                  </af:inputDate>
+                </f:facet>
+                <af:outputText value="#{row.ActualArrival}"
+                               shortDesc="#{bindings.FlightsInstance.hints.ActualArrival.tooltip}" id="ot15">
+                  <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualArrival.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.BaseFare.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.BaseFare.label}" id="c22">
+                <af:outputText value="#{row.BaseFare}" shortDesc="#{bindings.FlightsInstance.hints.BaseFare.tooltip}"
+                               id="ot16">
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.FlightsInstance.hints.BaseFare.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.TotalSeats.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.TotalSeats.label}" id="c23">
+                <af:outputText value="#{row.TotalSeats}"
+                               shortDesc="#{bindings.FlightsInstance.hints.TotalSeats.tooltip}" id="ot17">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.FlightsInstance.hints.TotalSeats.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.AvailableSeats.name}" filterable="true"
+                         sortable="true" headerText="#{bindings.FlightsInstance.hints.AvailableSeats.label}" id="c24">
+                <af:outputText value="#{row.AvailableSeats}"
+                               shortDesc="#{bindings.FlightsInstance.hints.AvailableSeats.tooltip}" id="ot18">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.FlightsInstance.hints.AvailableSeats.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="#{bindings.FlightsInstance.hints.Status.name}" filterable="true" sortable="true"
+                         headerText="#{bindings.FlightsInstance.hints.Status.label}" id="c25">
+                <af:selectOneChoice value="#{row.bindings.Status.inputValue}" label="#{row.bindings.Status.label}"
+                                    required="#{bindings.FlightsInstance.hints.Status.mandatory}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.Status.tooltip}" readOnly="true"
+                                    id="soc8">
+                  <f:selectItems value="#{row.bindings.Status.items}" id="si8"/>
+                  <f:validator binding="#{row.bindings.Status.validator}"/>
+                </af:selectOneChoice>
+              </af:column>
+              <af:column id="c14">
+                <af:button text="Edit" id="b1">
+                  <af:showPopupBehavior popupId="editpopup" triggerType="action"/>
+                </af:button>
+                <af:popup childCreation="deferred" autoCancel="enabled" id="editpopup" animate="true"
+                          partialTriggers="b1">
+                  <af:dialog id="d2" type="none" dialogListener="#{FlightManagement.deleteAndCommit}">
+                    <f:facet name="buttonBar">
+                      <af:button actionListener="#{bindings.Commit.execute}" text="Save" id="b2"/>
+                      <af:button actionListener="#{bindings.Rollback.execute}" text="Discard" immediate="true" id="b3">
+                        <af:resetActionListener/>
+                      </af:button>
+                    </f:facet>
+                    <af:panelFormLayout id="pfl1">
+                      <af:inputText value="#{row.bindings.Flightno.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.Flightno.label}"
+                                    required="#{bindings.FlightsInstance.hints.Flightno.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.Flightno.displayWidth}"
+                                    maximumLength="#{bindings.FlightsInstance.hints.Flightno.precision}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}" id="it1">
+                        <f:validator binding="#{row.bindings.Flightno.validator}"/>
+                      </af:inputText>
+                      <af:selectOneChoice value="#{row.bindings.DepartureAirport.inputValue}"
+                                          label="#{row.bindings.DepartureAirport.label}"
+                                          required="#{bindings.FlightsInstance.hints.DepartureAirport.mandatory}"
+                                          shortDesc="#{bindings.FlightsInstance.hints.DepartureAirport.tooltip}"
+                                          id="soc1">
+                        <f:selectItems value="#{row.bindings.DepartureAirport.items}" id="si1"/>
+                        <f:validator binding="#{row.bindings.DepartureAirport.validator}"/>
+                      </af:selectOneChoice>
+                      <af:selectOneChoice value="#{row.bindings.ArrivalAirport.inputValue}"
+                                          label="#{row.bindings.ArrivalAirport.label}"
+                                          required="#{bindings.FlightsInstance.hints.ArrivalAirport.mandatory}"
+                                          shortDesc="#{bindings.FlightsInstance.hints.ArrivalAirport.tooltip}"
+                                          id="soc2">
+                        <f:selectItems value="#{row.bindings.ArrivalAirport.items}" id="si2"/>
+                        <f:validator binding="#{row.bindings.ArrivalAirport.validator}"/>
+                      </af:selectOneChoice>
+                      <af:inputDate value="#{row.bindings.ScheduledDeparture.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.ScheduledDeparture.label}"
+                                    required="#{bindings.FlightsInstance.hints.ScheduledDeparture.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.ScheduledDeparture.displayWidth}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.ScheduledDeparture.tooltip}" id="id1">
+                        <f:validator binding="#{row.bindings.ScheduledDeparture.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledDeparture.format}"/>
+                      </af:inputDate>
+                      <af:inputDate value="#{row.bindings.ScheduledArrival.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.ScheduledArrival.label}"
+                                    required="#{bindings.FlightsInstance.hints.ScheduledArrival.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.ScheduledArrival.displayWidth}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.ScheduledArrival.tooltip}" id="id2">
+                        <f:validator binding="#{row.bindings.ScheduledArrival.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledArrival.format}"/>
+                      </af:inputDate>
+                      <af:inputDate value="#{row.bindings.ActualDeparture.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.ActualDeparture.label}"
+                                    required="#{bindings.FlightsInstance.hints.ActualDeparture.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.ActualDeparture.displayWidth}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.ActualDeparture.tooltip}" id="id3">
+                        <f:validator binding="#{row.bindings.ActualDeparture.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualDeparture.format}"/>
+                      </af:inputDate>
+                      <af:inputDate value="#{row.bindings.ActualArrival.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.ActualArrival.label}"
+                                    required="#{bindings.FlightsInstance.hints.ActualArrival.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.ActualArrival.displayWidth}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.ActualArrival.tooltip}" id="id4">
+                        <f:validator binding="#{row.bindings.ActualArrival.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualArrival.format}"/>
+                      </af:inputDate>
+                      <af:inputText value="#{row.bindings.BaseFare.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.BaseFare.label}"
+                                    required="#{bindings.FlightsInstance.hints.BaseFare.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.BaseFare.displayWidth}"
+                                    maximumLength="#{bindings.FlightsInstance.hints.BaseFare.precision}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.BaseFare.tooltip}" id="it2">
+                        <f:validator binding="#{row.bindings.BaseFare.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsInstance.hints.BaseFare.format}"/>
+                      </af:inputText>
+                      <af:inputText value="#{row.bindings.TotalSeats.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.TotalSeats.label}"
+                                    required="#{bindings.FlightsInstance.hints.TotalSeats.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.TotalSeats.displayWidth}"
+                                    maximumLength="#{bindings.FlightsInstance.hints.TotalSeats.precision}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.TotalSeats.tooltip}" id="it3">
+                        <f:validator binding="#{row.bindings.TotalSeats.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsInstance.hints.TotalSeats.format}"/>
+                      </af:inputText>
+                      <af:inputText value="#{row.bindings.AvailableSeats.inputValue}"
+                                    label="#{bindings.FlightsInstance.hints.AvailableSeats.label}"
+                                    required="#{bindings.FlightsInstance.hints.AvailableSeats.mandatory}"
+                                    columns="#{bindings.FlightsInstance.hints.AvailableSeats.displayWidth}"
+                                    maximumLength="#{bindings.FlightsInstance.hints.AvailableSeats.precision}"
+                                    shortDesc="#{bindings.FlightsInstance.hints.AvailableSeats.tooltip}" id="it4">
+                        <f:validator binding="#{row.bindings.AvailableSeats.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FlightsInstance.hints.AvailableSeats.format}"/>
+                      </af:inputText>
+                      <af:selectOneChoice value="#{row.bindings.Status.inputValue}" label="#{row.bindings.Status.label}"
+                                          required="#{bindings.FlightsInstance.hints.Status.mandatory}"
+                                          shortDesc="#{bindings.FlightsInstance.hints.Status.tooltip}" id="soc3">
+                        <f:selectItems value="#{row.bindings.Status.items}" id="si3"/>
+                        <f:validator binding="#{row.bindings.Status.validator}"/>
+                      </af:selectOneChoice>
+                    </af:panelFormLayout>
+                  </af:dialog>
+                </af:popup>
+              </af:column>
+            </af:table>
+            <f:facet name="secondaryToolbar">
+              <af:toolbar id="t2">
+                <af:button actfionListener="#{bindings.Delete.execute}" text="Delete" id="b4">
+                  <af:showPopupBehavior popupId="deletepopup" triggerType="action"/>
+                </af:button>
+                <af:popup childCreation="deferred" autoCancel="disabled" id="deletepopup">
+                  <af:dialog id="d3" dialogListener="#{FlightManagement.deleteAndCommit}">
+                    <f:facet name="buttonBar"/>
+                    <af:activeOutputText value="Confirm to delete the Fligth?" id="aot1"/>
+                  </af:dialog>
+                </af:popup>
+                <af:button actionListener="#{bindings.CreateInsertFlight.execute}" text="Add New Flight"
+                           disabled="#{!bindings.CreateInsertFlight.enabled}" id="b5" action="addFlight"/>
+              </af:toolbar>
+            </f:facet>
+          </af:panelCollection>
+        </f:facet>
+      </af:pageTemplate>
+    </af:form>
+  </af:document>
 </f:view>

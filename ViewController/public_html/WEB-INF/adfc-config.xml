@@ -27,9 +27,6 @@
   <view id="adminDashboard">
     <page>/adminDashboard.jsf</page>
   </view>
-  <view id="createFlights">
-    <page>/createFlights.jsf</page>
-  </view>
   <view id="analytics"></view>
   <view id="manageFlights">
     <page>/manageFlights.jsf</page>
@@ -43,6 +40,9 @@
   </view>
   <view id="booking">
     <page>/booking.jsf</page>
+  </view>
+  <view id="addFlight">
+    <page>/addFlight.jsf</page>
   </view>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
@@ -126,10 +126,6 @@
   </control-flow-rule>
   <control-flow-rule id="__30">
     <from-activity-id>adminDashboard</from-activity-id>
-    <control-flow-case id="__31">
-      <from-outcome>createFlights</from-outcome>
-      <to-activity-id>createFlights</to-activity-id>
-    </control-flow-case>
     <control-flow-case id="__32">
       <from-outcome>analytics</from-outcome>
       <to-activity-id>analytics</to-activity-id>
@@ -153,6 +149,10 @@
       <from-outcome>toManageBookings</from-outcome>
       <to-activity-id>manageBookingForFlight</to-activity-id>
     </control-flow-case>
+    <control-flow-case id="__25">
+      <from-outcome>addFlight</from-outcome>
+      <to-activity-id>addFlight</to-activity-id>
+    </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__16">
     <from-activity-id>booking</from-activity-id>
@@ -165,9 +165,21 @@
       <to-activity-id>home</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__26">
+    <from-activity-id>addFlight</from-activity-id>
+    <control-flow-case id="__27">
+      <from-outcome>manageFlights</from-outcome>
+      <to-activity-id>manageFlights</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__3">
     <managed-bean-name>FlightSearch</managed-bean-name>
     <managed-bean-class>com.skyjetairlines.view.FlightSearchAction</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__24">
+    <managed-bean-name>FlightManagement</managed-bean-name>
+    <managed-bean-class>com.skyjetairlines.view.common.ManageFlightBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>

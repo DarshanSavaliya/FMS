@@ -18,6 +18,10 @@
     Name="AirportsVO1"
     ViewObjectName="com.skyjetairlines.model.view.AirportsVO"
     RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="FlightStatusVO1"
+    ViewObjectName="com.skyjetairlines.model.view.FlightStatusVO"
+    RowLevelBinds="true"/>
   <ListBinding
     Name="LOV_DepartureAirport"
     ListVOName="AirportsVO1"
@@ -58,6 +62,23 @@
     </AttrArray>
     <DisplayCriteria/>
   </ListBinding>
+  <ListBinding
+    Name="LOV_Status"
+    ListVOName="FlightStatusVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Status"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="FlightEO"
     Entity="com.skyjetairlines.model.entity.FlightEO"/>
@@ -76,32 +97,6 @@
     EntityAttrName="Flightno"
     EntityUsage="FlightEO"
     AliasName="FLIGHTNO"/>
-  <ViewAttribute
-    Name="ScheduledDeparture"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="ScheduledDeparture"
-    EntityUsage="FlightEO"
-    AliasName="SCHEDULED_DEPARTURE"/>
-  <ViewAttribute
-    Name="ScheduledArrival"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="ScheduledArrival"
-    EntityUsage="FlightEO"
-    AliasName="SCHEDULED_ARRIVAL"/>
-  <ViewAttribute
-    Name="ActualDeparture"
-    PrecisionRule="true"
-    EntityAttrName="ActualDeparture"
-    EntityUsage="FlightEO"
-    AliasName="ACTUAL_DEPARTURE"/>
-  <ViewAttribute
-    Name="ActualArrival"
-    PrecisionRule="true"
-    EntityAttrName="ActualArrival"
-    EntityUsage="FlightEO"
-    AliasName="ACTUAL_ARRIVAL"/>
   <ViewAttribute
     Name="DepartureAirport"
     IsNotNull="true"
@@ -133,6 +128,112 @@
     </Properties>
   </ViewAttribute>
   <ViewAttribute
+    Name="ScheduledDeparture"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ScheduledDeparture"
+    EntityUsage="FlightEO"
+    AliasName="SCHEDULED_DEPARTURE">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.view.FlightsVO.ScheduledDeparture_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ScheduledArrival"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ScheduledArrival"
+    EntityUsage="FlightEO"
+    AliasName="SCHEDULED_ARRIVAL">
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.view.FlightsVO.ScheduledArrival_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Duration"
+    IsUpdateable="false"
+    IsSelected="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.lang.Long"
+    ColumnType="FLOAT"
+    AliasName="VIEW_ATTR"
+    SQLType="NUMERIC">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="FlightsVORow"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.skyjetairlines.model.view.FlightsVO.Duration_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="ScheduledArrival"/>
+      <Item
+        Value="ScheduledDeparture"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ActualDeparture"
+    PrecisionRule="true"
+    EntityAttrName="ActualDeparture"
+    EntityUsage="FlightEO"
+    AliasName="ACTUAL_DEPARTURE">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="FlightsVORow"/>
+    <Dependencies>
+      <Item
+        Value="ScheduledDeparture"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.view.FlightsVO.ActualDeparture_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ActualArrival"
+    PrecisionRule="true"
+    EntityAttrName="ActualArrival"
+    EntityUsage="FlightEO"
+    AliasName="ACTUAL_ARRIVAL">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="FlightsVORow"/>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.view.FlightsVO.ActualArrival_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.view.FlightsVO.ActualArrival_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+    <Dependencies>
+      <Item
+        Value="ScheduledArrival"/>
+    </Dependencies>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="BaseFare"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="BaseFare"
+    EntityUsage="FlightEO"
+    AliasName="BASE_FARE"/>
+  <ViewAttribute
     Name="TotalSeats"
     IsNotNull="true"
     PrecisionRule="true"
@@ -159,48 +260,15 @@
     PrecisionRule="true"
     EntityAttrName="Status"
     EntityUsage="FlightEO"
-    AliasName="STATUS"/>
-  <ViewAttribute
-    Name="BaseFare"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="BaseFare"
-    EntityUsage="FlightEO"
-    AliasName="BASE_FARE"/>
-  <ViewAttribute
-    Name="Version"
-    IsNotNull="true"
-    PrecisionRule="true"
-    EntityAttrName="Version"
-    EntityUsage="FlightEO"
-    AliasName="VERSION"
-    IsUpdateable="false"/>
-  <ViewAttribute
-    Name="Duration"
-    IsUpdateable="false"
-    IsSelected="false"
-    IsPersistent="false"
-    PrecisionRule="true"
-    Type="java.lang.Long"
-    ColumnType="FLOAT"
-    AliasName="VIEW_ATTR"
-    SQLType="FLOAT">
-    <TransientExpression
-      Name="ExpressionScript"
-      trustMode="untrusted"
-      CodeSourceName="FlightsVORow"/>
+    AliasName="STATUS"
+    LOVName="LOV_Status"
+    DefaultValue="SCHEDULED">
     <Properties>
       <SchemaBasedProperties>
-        <LABEL
-          ResId="com.skyjetairlines.model.view.FlightsVO.Duration_LABEL"/>
+        <CONTROLTYPE
+          Value="combo"/>
       </SchemaBasedProperties>
     </Properties>
-    <Dependencies>
-      <Item
-        Value="ScheduledArrival"/>
-      <Item
-        Value="ScheduledDeparture"/>
-    </Dependencies>
   </ViewAttribute>
   <ViewAttribute
     Name="ScheduledDate"
@@ -227,6 +295,14 @@
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewAttribute
+    Name="Version"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Version"
+    EntityUsage="FlightEO"
+    AliasName="VERSION"
+    IsUpdateable="false"/>
   <ViewCriteria
     Name="SerachFlightsViewCriteria"
     ViewObjectName="com.skyjetairlines.model.view.FlightsVO"
