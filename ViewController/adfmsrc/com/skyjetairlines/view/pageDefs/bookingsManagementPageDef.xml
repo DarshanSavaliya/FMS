@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="bookingsManagementPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BookingsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="BookingsInstanceIterator"/>
+    <searchRegion Criteria="BookingsVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="BookingsInstanceIterator" id="BookingsVOCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="BookingsInstanceIterator" id="BookingsInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.BookingsVO" Name="BookingsInstance0">
+        <AttrNames>
+          <Item Value="BookingId"/>
+          <Item Value="CustomerId"/>
+          <Item Value="BookingDate"/>
+          <Item Value="TotalAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>
