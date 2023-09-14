@@ -44,15 +44,35 @@
   <view id="addFlight">
     <page>/addFlight.jsf</page>
   </view>
+  <task-flow-call id="searchTF">
+    <task-flow-reference>
+      <document>/WEB-INF/searchTF.xml</document>
+      <id>searchTF</id>
+    </task-flow-reference>
+    <input-parameter id="__42">
+      <name>numberOfSeats</name>
+      <value>#{flightSearchQueryBean.numberOfSeats}</value>
+      <pass-by-value/>
+    </input-parameter>
+    <input-parameter id="__43">
+      <name>bookingDate</name>
+      <value>#{flightSearchQueryBean.bookingDate}</value>
+      <pass-by-value/>
+    </input-parameter>
+  </task-flow-call>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
     <control-flow-case id="__2">
-      <from-outcome>search</from-outcome>
+      <from-outcome>searchNew</from-outcome>
       <to-activity-id>search</to-activity-id>
     </control-flow-case>
     <control-flow-case id="__29">
       <from-outcome>isAdmin</from-outcome>
       <to-activity-id>adminDashboard</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__31">
+      <from-outcome>search</from-outcome>
+      <to-activity-id>searchTF</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__4">
@@ -172,14 +192,14 @@
       <to-activity-id>manageFlights</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
-  <managed-bean id="__3">
-    <managed-bean-name>FlightSearch</managed-bean-name>
-    <managed-bean-class>com.skyjetairlines.view.FlightSearchAction</managed-bean-class>
-    <managed-bean-scope>request</managed-bean-scope>
-  </managed-bean>
   <managed-bean id="__24">
     <managed-bean-name>FlightManagement</managed-bean-name>
-    <managed-bean-class>com.skyjetairlines.view.common.ManageFlightBean</managed-bean-class>
+    <managed-bean-class>com.skyjetairlines.view.bean.ManageFlightBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__39">
+    <managed-bean-name>flightSearchQueryBean</managed-bean-name>
+    <managed-bean-class>com.skyjetairlines.view.bean.FlightSearchQueryBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>

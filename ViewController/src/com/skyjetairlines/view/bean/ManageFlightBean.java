@@ -1,4 +1,6 @@
-package com.skyjetairlines.view.common;
+package com.skyjetairlines.view.bean;
+
+import com.skyjetairlines.view.common.CommonViewUtil;
 
 import oracle.adf.view.rich.event.DialogEvent;
 

@@ -18,6 +18,9 @@
     <page path="/addFlight.jsf" usageId="com_skyjetairlines_view_addFlightPageDef"/>
     <page path="/about.jsf" usageId="com_skyjetairlines_view_aboutPageDef"/>
     <page path="/aboutAirlines.jsff" usageId="com_skyjetairlines_view_aboutAirlinesPageDef"/>
+    <page path="/searchResult.jsf" usageId="com_skyjetairlines_view_searchResultPageDef"/>
+    <page path="/WEB-INF/searchTF.xml#searchTF@initialSearchFlights"
+          usageId="com_skyjetairlines_view_searchTF_searchTF_searchFlightsWithParamsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -33,6 +36,9 @@
     <page id="com_skyjetairlines_view_aboutPageDef" path="com.skyjetairlines.view.pageDefs.aboutPageDef"/>
     <page id="com_skyjetairlines_view_aboutAirlinesPageDef"
           path="com.skyjetairlines.view.pageDefs.aboutAirlinesPageDef"/>
+    <page id="com_skyjetairlines_view_searchResultPageDef" path="com.skyjetairlines.view.pageDefs.searchResultPageDef"/>
+    <page id="com_skyjetairlines_view_searchTF_searchTF_searchFlightsWithParamsPageDef"
+          path="com.skyjetairlines.view.pageDefs.searchTF_searchTF_searchFlightsWithParamsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

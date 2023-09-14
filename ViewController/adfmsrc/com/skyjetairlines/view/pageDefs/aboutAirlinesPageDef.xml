@@ -4,7 +4,7 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="AirportsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+    <iterator Binds="DepartureAirportsLOVInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
               id="AirportsInstanceIterator"/>
   </executables>
   <bindings>

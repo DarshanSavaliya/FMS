@@ -6,8 +6,27 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:outputText value="Home Page" id="ot1"/>
-                    
+                    <af:panelFormLayout id="pfl1">
+                        <f:facet name="footer">
+                            <af:button text="Search" id="executeSearch" action="search"/>
+                        </f:facet>
+                        <af:selectOneChoice value="#{bindings.DepartureAirportsInstance.inputValue}" label="From:"
+                                            required="true"
+                                            shortDesc="#{bindings.DepartureAirportsInstance.hints.tooltip}" id="soc1">
+                            <f:selectItems value="#{bindings.DepartureAirportsInstance.items}" id="si1"/>
+                            <f:validator binding="#{bindings.DepartureAirportsInstance.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.ArrivalAirportsLOVInstance.inputValue}" label="To:"
+                                            required="true"
+                                            shortDesc="#{bindings.ArrivalAirportsLOVInstance.hints.tooltip}" id="soc2">
+                            <f:selectItems value="#{bindings.ArrivalAirportsLOVInstance.items}" id="si2"/>
+                            <f:validator binding="#{bindings.ArrivalAirportsLOVInstance.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputNumberSpinbox label="Seats:" id="ins1" minimum="1" required="true"
+                                               value="#{flightSearchQueryBean.numberOfSeats}"/>
+                        <af:inputDate label="Date:" id="id1" required="true"
+                                      value="#{flightSearchQueryBean.bookingDate}"/>
+                    </af:panelFormLayout>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

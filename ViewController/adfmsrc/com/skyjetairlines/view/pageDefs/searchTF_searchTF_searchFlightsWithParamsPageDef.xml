@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="searchTF_searchTF_searchFlightsWithParamsPageDef" Package="com.skyjetairlines.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="DepartureAirportsLOVInstance" RangeSize="10" DataControl="FlightManagementSystemAMDataControl"
+              id="DepartureAirportsLOVInstanceIterator"/>
+    <iterator Binds="ArrivalAirportsLOVInstance" RangeSize="10" DataControl="FlightManagementSystemAMDataControl"
+              id="ArrivalAirportsLOVInstanceIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="searchFlightsWithParams" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="searchFlightsWithParams" IsViewObjectMethod="false"
+                  DataControl="FlightManagementSystemAMDataControl"
+                  InstanceName="bindings.searchFlightsWithParams.dataControl.dataProvider">
+      <NamedData NDName="fromAirport" NDValue="#{bindings.AirportCode.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="toAirport" NDValue="#{bindings.AirportCode1.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="numberOfSeats" NDValue="#{pageFlowScope.flightSearchQueryBean.numberOfSeats}" NDType="int"/>
+      <NamedData NDName="bookingDate" NDValue="#{pageFlowScope.flightSearchQueryBean.bookingDate}"
+                 NDType="java.util.Date"/>
+    </methodAction>
+    <attributeValues IterBinding="DepartureAirportsLOVInstanceIterator" id="AirportCode">
+      <AttrNames>
+        <Item Value="AirportCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ArrivalAirportsLOVInstanceIterator" id="AirportCode1">
+      <AttrNames>
+        <Item Value="AirportCode"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

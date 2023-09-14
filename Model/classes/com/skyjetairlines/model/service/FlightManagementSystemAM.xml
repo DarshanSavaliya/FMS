@@ -6,7 +6,12 @@
   Name="FlightManagementSystemAM"
   Version="12.2.1.22.48"
   InheritPersonalization="merge"
-  ClearCacheOnRollback="true">
+  ClearCacheOnRollback="true"
+  ComponentClass="com.skyjetairlines.model.service.FlightManagementSystemAMImpl"
+  ComponentInterface="com.skyjetairlines.model.service.common.FlightManagementSystemAM">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <ViewUsage
     Name="BookingsInstance"
     ViewObjectName="com.skyjetairlines.model.view.BookingsVO"/>
@@ -51,7 +56,13 @@
     Name="TicketsInstanceForCurrentCustomer"
     ViewObjectName="com.skyjetairlines.model.view.TicketsVO"/>
   <ViewUsage
-    Name="AirportsInstance"
+    Name="DepartureAirportsLOVInstance"
+    ViewObjectName="com.skyjetairlines.model.view.AirportsVO"/>
+  <ViewUsage
+    Name="ArrivalAirportsLOVInstance"
+    ViewObjectName="com.skyjetairlines.model.view.AirportsVO"/>
+  <ViewUsage
+    Name="DepartureAirportsInstance"
     ViewObjectName="com.skyjetairlines.model.view.AirportsVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
@@ -107,4 +118,26 @@
     SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.BookingsInstanceForCurrentCustomer"
     DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketsInstanceForCurrentCustomer"
     Reversed="false"/>
+  <ClientInterface
+    Name="__clientInterface">
+    <Method
+      Name="searchFlightsWithParams"
+      MethodName="searchFlightsWithParams">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="fromAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="toAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="numberOfSeats"
+        Type="int"/>
+      <Parameter
+        Name="bookingDate"
+        Type="java.util.Date"/>
+    </Method>
+  </ClientInterface>
 </AppModule>

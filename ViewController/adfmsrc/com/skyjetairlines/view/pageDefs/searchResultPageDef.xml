@@ -1,42 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="homePageDef"
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="searchResultPageDef"
                 Package="com.skyjetairlines.view.pageDefs">
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="AirportsDepartureInstanceForFlights" RangeSize="25"
-              DataControl="FlightManagementSystemAMDataControl" id="AirportsDepartureInstanceForFlightsIterator"/>
     <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
               id="FlightsInstanceIterator"/>
     <iterator Binds="DepartureAirportsLOVInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
-              id="AirportsInstanceIterator"/>
-    <iterator Binds="DepartureAirportsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
-              id="DepartureAirportsInstanceIterator"/>
+              id="DepartureAirportsLOVInstanceIterator"/>
     <iterator Binds="ArrivalAirportsLOVInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
               id="ArrivalAirportsLOVInstanceIterator"/>
   </executables>
   <bindings>
-    <list IterBinding="AirportsDepartureInstanceForFlightsIterator" ListOperMode="navigation"
-          ListIter="AirportsDepartureInstanceForFlightsIterator" id="AirportsDepartureInstanceForFlights"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject">
-      <AttrNames>
-        <Item Value="City"/>
-      </AttrNames>
-    </list>
     <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
     <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
           DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="AirportsInstanceIterator" ListOperMode="navigation" ListIter="AirportsInstanceIterator"
-          id="AirportsInstance" DTSupportsMRU="true" SelectItemValueMode="ListObject">
-      <AttrNames>
-        <Item Value="AirportCode"/>
-        <Item Value="AirportName"/>
-        <Item Value="City"/>
-      </AttrNames>
-    </list>
-    <list IterBinding="DepartureAirportsInstanceIterator" ListOperMode="navigation"
-          ListIter="DepartureAirportsInstanceIterator" id="DepartureAirportsInstance" DTSupportsMRU="true"
+    <tree IterBinding="FlightsInstanceIterator" id="FlightsInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO" Name="FlightsInstance0">
+        <AttrNames>
+          <Item Value="Flightno"/>
+          <Item Value="DepartureAirport"/>
+          <Item Value="ArrivalAirport"/>
+          <Item Value="ScheduledDeparture"/>
+          <Item Value="ScheduledArrival"/>
+          <Item Value="Duration"/>
+          <Item Value="BaseFare"/>
+          <Item Value="AvailableSeats"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="DepartureAirportsLOVInstanceIterator" ListOperMode="navigation"
+          ListIter="DepartureAirportsLOVInstanceIterator" id="DepartureAirportsLOVInstance" DTSupportsMRU="true"
           SelectItemValueMode="ListObject">
       <AttrNames>
         <Item Value="AirportCode"/>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="searchTF">
+    <default-activity>initialSearchFlights</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__4">
+      <name>numberOfSeats</name>
+      <value>#{pageFlowScope.flightSearchQueryBean.numberOfSeats}</value>
+      <class>java.lang.Integer</class>
+      <required/>
+    </input-parameter-definition>
+    <input-parameter-definition id="__5">
+      <name>bookingDate</name>
+      <value>#{pageFlowScope.flightSearchQueryBean.bookingDate}</value>
+      <class>java.util.Date</class>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__17">
+      <managed-bean-name>flightSearchQueryBean</managed-bean-name>
+      <managed-bean-class>com.skyjetairlines.view.bean.FlightSearchQueryBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <view id="searchResult">
+      <page>/searchResult.jsf</page>
+    </view>
+    <view id="flightDetails">
+      <page>/flightDetails.jsf</page>
+    </view>
+    <method-call id="initialSearchFlights">
+      <method>#{bindings.searchFlightsWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>viewResult</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-return id="home">
+      <outcome>
+        <name>home</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__8">
+      <from-activity-id>searchResult</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>showDetails</from-outcome>
+        <to-activity-id>flightDetails</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__1">
+        <from-outcome>search</from-outcome>
+        <to-activity-id>initialSearchFlights</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>initialSearchFlights</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>viewResult</from-outcome>
+        <to-activity-id>searchResult</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__2">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__3">
+        <from-outcome>home</from-outcome>
+        <to-activity-id>home</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>
