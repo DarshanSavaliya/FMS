@@ -6,74 +6,133 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelGroupLayout layout="vertical" id="pgl1">
-                        <af:panelHeader text="BookingEO" id="ph1">
-                            <af:query id="qryId1" headerText="Search" disclosed="true"
-                                      value="#{bindings.BookingsVOCriteriaQuery.queryDescriptor}"
-                                      model="#{bindings.BookingsVOCriteriaQuery.queryModel}"
-                                      queryListener="#{bindings.BookingsVOCriteriaQuery.processQuery}"
-                                      queryOperationListener="#{bindings.BookingsVOCriteriaQuery.processQueryOperation}"
-                                      resultComponentId="::resId1"/>
-                        </af:panelHeader>
-                        <af:table value="#{bindings.BookingsInstance.collectionModel}" var="row"
-                                  rows="#{bindings.BookingsInstance.rangeSize}"
-                                  emptyText="#{bindings.BookingsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                  rowBandingInterval="0"
-                                  selectedRowKeys="#{bindings.BookingsInstance.collectionModel.selectedRow}"
-                                  selectionListener="#{bindings.BookingsInstance.collectionModel.makeCurrent}"
-                                  rowSelection="single" fetchSize="#{bindings.BookingsInstance.rangeSize}"
-                                  filterModel="#{bindings.BookingsVOCriteriaQuery.queryDescriptor}"
-                                  filterVisible="false"
-                                  queryListener="#{bindings.BookingsVOCriteriaQuery.processQuery}" varStatus="vs"
-                                  id="resId1">
-                            <af:column sortProperty="#{bindings.BookingsInstance.hints.BookingId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.BookingsInstance.hints.BookingId.label}" id="resId1c1">
-                                <af:outputText value="#{row.BookingId}"
-                                               shortDesc="#{bindings.BookingsInstance.hints.BookingId.tooltip}"
-                                               id="ot1">
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.BookingsInstance.hints.BookingId.format}"/>
-                                </af:outputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.BookingsInstance.hints.CustomerId.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.BookingsInstance.hints.CustomerId.label}" id="resId1c2">
-                                <af:selectOneChoice value="#{row.bindings.CustomerId.inputValue}"
-                                                    label="#{row.bindings.CustomerId.label}"
-                                                    required="#{bindings.BookingsInstance.hints.CustomerId.mandatory}"
-                                                    shortDesc="#{bindings.BookingsInstance.hints.CustomerId.tooltip}"
-                                                    readOnly="true" id="soc1">
-                                    <f:selectItems value="#{row.bindings.CustomerId.items}" id="si1"/>
-                                    <f:validator binding="#{row.bindings.CustomerId.validator}"/>
-                                </af:selectOneChoice>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.BookingsInstance.hints.BookingDate.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.BookingsInstance.hints.BookingDate.label}" id="resId1c3">
-                                <f:facet name="filter">
-                                    <af:inputDate value="#{bindings.BookingsVOCriteriaQuery.queryDescriptor.filterConjunctionCriterion.criterionMap.BookingDate.value}"
-                                                  id="id1">
-                                        <af:convertDateTime pattern="#{bindings.BookingsInstance.hints.BookingDate.format}"/>
-                                    </af:inputDate>
-                                </f:facet>
-                                <af:outputText value="#{row.BookingDate}"
-                                               shortDesc="#{bindings.BookingsInstance.hints.BookingDate.tooltip}"
-                                               id="ot2">
-                                    <af:convertDateTime pattern="#{bindings.BookingsInstance.hints.BookingDate.format}"/>
-                                </af:outputText>
-                            </af:column>
-                            <af:column sortProperty="#{bindings.BookingsInstance.hints.TotalAmount.name}"
-                                       filterable="true" sortable="true"
-                                       headerText="#{bindings.BookingsInstance.hints.TotalAmount.label}" id="resId1c4">
-                                <af:outputText value="#{row.TotalAmount}"
-                                               shortDesc="#{bindings.BookingsInstance.hints.TotalAmount.tooltip}"
-                                               id="ot3">
-                                    <af:convertNumber groupingUsed="false"
-                                                      pattern="#{bindings.BookingsInstance.hints.TotalAmount.format}"/>
-                                </af:outputText>
-                            </af:column>
-                        </af:table>
+                    <af:panelGroupLayout id="pgl3">
+                        <af:panelGroupLayout id="pgl2">
+                            <af:spacer id="s2" width="20" height="20"/>
+                            <af:panelHeader text="BookingEO" id="ph1">
+                                <af:query id="qryId1" headerText="Search" disclosed="true"
+                                          value="#{bindings.BookingsVOCriteriaQuery.queryDescriptor}"
+                                          model="#{bindings.BookingsVOCriteriaQuery.queryModel}"
+                                          queryListener="#{bindings.BookingsVOCriteriaQuery.processQuery}"
+                                          queryOperationListener="#{bindings.BookingsVOCriteriaQuery.processQueryOperation}"
+                                          resultComponentId="::resId1" saveQueryMode="hidden"
+                                          modeButtonPosition="footer" maximized="true" showMaximize="always"
+                                          maxColumns="10" rows="1" modeChangeVisible="false"/>
+                            </af:panelHeader>
+                        </af:panelGroupLayout>
+                        <af:panelSplitter id="ps1" orientation="horizontal" splitterPosition="500">
+                            <f:facet name="first">
+                                <af:panelGroupLayout layout="vertical" id="pgl1">
+                                    <af:table value="#{bindings.BookingsInstance.collectionModel}" var="row"
+                                              rows="#{bindings.BookingsInstance.rangeSize}"
+                                              emptyText="#{bindings.BookingsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.BookingsInstance.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.BookingsInstance.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.BookingsInstance.rangeSize}"
+                                              id="resId1">
+                                        <af:column sortProperty="#{bindings.BookingsInstance.hints.BookingId.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.BookingsInstance.hints.BookingId.label}"
+                                                   id="resId1c1">
+                                            <af:outputText value="#{row.BookingId}"
+                                                           shortDesc="#{bindings.BookingsInstance.hints.BookingId.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.BookingsInstance.hints.BookingId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.BookingsInstance.hints.CustomerId.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.BookingsInstance.hints.CustomerId.label}"
+                                                   id="resId1c2">
+                                            <af:selectOneChoice value="#{row.bindings.CustomerId.inputValue}"
+                                                                label="#{row.bindings.CustomerId.label}"
+                                                                required="#{bindings.BookingsInstance.hints.CustomerId.mandatory}"
+                                                                shortDesc="#{bindings.BookingsInstance.hints.CustomerId.tooltip}"
+                                                                readOnly="true" id="soc1">
+                                                <f:selectItems value="#{row.bindings.CustomerId.items}" id="si1"/>
+                                                <f:validator binding="#{row.bindings.CustomerId.validator}"/>
+                                            </af:selectOneChoice>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.BookingsInstance.hints.BookingDate.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.BookingsInstance.hints.BookingDate.label}"
+                                                   id="resId1c3">
+                                            <af:outputText value="#{row.BookingDate}"
+                                                           shortDesc="#{bindings.BookingsInstance.hints.BookingDate.tooltip}"
+                                                           id="ot2">
+                                                <af:convertDateTime pattern="#{bindings.BookingsInstance.hints.BookingDate.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.BookingsInstance.hints.TotalAmount.name}"
+                                                   sortable="true"
+                                                   headerText="#{bindings.BookingsInstance.hints.TotalAmount.label}"
+                                                   id="resId1c4">
+                                            <af:outputText value="#{row.TotalAmount}"
+                                                           shortDesc="#{bindings.BookingsInstance.hints.TotalAmount.tooltip}"
+                                                           id="ot3">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.BookingsInstance.hints.TotalAmount.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                            <f:facet name="second">
+                                <af:panelGroupLayout id="pgl4">
+                                    <af:panelFormLayout id="pfl1">
+                                        <f:facet name="footer"/>
+                                        <af:table value="#{bindings.TicketsInstanceForBookings.collectionModel}"
+                                                  var="row" rows="#{bindings.TicketsInstanceForBookings.rangeSize}"
+                                                  emptyText="#{bindings.TicketsInstanceForBookings.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.TicketsInstanceForBookings.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.TicketsInstanceForBookings.collectionModel.makeCurrent}"
+                                                  rowSelection="single"
+                                                  fetchSize="#{bindings.TicketsInstanceForBookings.rangeSize}" id="t1">
+                                            <af:column sortProperty="#{bindings.TicketsInstanceForBookings.hints.TicketId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.TicketsInstanceForBookings.hints.TicketId.label}"
+                                                       id="c1">
+                                                <af:outputText value="#{row.TicketId}"
+                                                               shortDesc="#{bindings.TicketsInstanceForBookings.hints.TicketId.tooltip}"
+                                                               id="ot4">
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TicketsInstanceForBookings.hints.TicketId.format}"/>
+                                                </af:outputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TicketsInstanceForBookings.hints.BookingId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.TicketsInstanceForBookings.hints.BookingId.label}"
+                                                       id="c2">
+                                                <af:selectOneChoice value="#{row.bindings.BookingId.inputValue}"
+                                                                    label="#{row.bindings.BookingId.label}"
+                                                                    required="#{bindings.TicketsInstanceForBookings.hints.BookingId.mandatory}"
+                                                                    shortDesc="#{bindings.TicketsInstanceForBookings.hints.BookingId.tooltip}"
+                                                                    readOnly="true" id="soc2">
+                                                    <f:selectItems value="#{row.bindings.BookingId.items}" id="si2"/>
+                                                    <f:validator binding="#{row.bindings.BookingId.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TicketsInstanceForBookings.hints.PassengerId.name}"
+                                                       sortable="true"
+                                                       headerText="#{bindings.TicketsInstanceForBookings.hints.PassengerId.label}"
+                                                       id="c3">
+                                                <af:selectOneChoice value="#{row.bindings.PassengerId.inputValue}"
+                                                                    label="#{row.bindings.PassengerId.label}"
+                                                                    required="#{bindings.TicketsInstanceForBookings.hints.PassengerId.mandatory}"
+                                                                    shortDesc="#{bindings.TicketsInstanceForBookings.hints.PassengerId.tooltip}"
+                                                                    readOnly="true" id="soc3">
+                                                    <f:selectItems value="#{row.bindings.PassengerId.items}" id="si3"/>
+                                                    <f:validator binding="#{row.bindings.PassengerId.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:column>
+                                        </af:table>
+                                    </af:panelFormLayout>
+                                </af:panelGroupLayout>
+                            </f:facet>
+                        </af:panelSplitter>
                     </af:panelGroupLayout>
                 </f:facet>
                 

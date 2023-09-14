@@ -133,4 +133,8 @@
     ViewLink="com.skyjetairlines.model.view.link.BookingFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="BookingDate"/>
+  </SortCriteria>
 </ViewObject>

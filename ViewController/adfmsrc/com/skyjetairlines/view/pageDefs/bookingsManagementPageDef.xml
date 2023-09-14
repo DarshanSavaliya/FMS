@@ -8,6 +8,8 @@
               id="BookingsInstanceIterator"/>
     <searchRegion Criteria="BookingsVOCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="BookingsInstanceIterator" id="BookingsVOCriteriaQuery"/>
+    <iterator Binds="TicketsInstanceForBookings" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="TicketsInstanceForBookingsIterator"/>
   </executables>
   <bindings>
     <tree IterBinding="BookingsInstanceIterator" id="BookingsInstance">
@@ -17,6 +19,15 @@
           <Item Value="CustomerId"/>
           <Item Value="BookingDate"/>
           <Item Value="TotalAmount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TicketsInstanceForBookingsIterator" id="TicketsInstanceForBookings">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.TicketsVO" Name="TicketsInstanceForBookings0">
+        <AttrNames>
+          <Item Value="TicketId"/>
+          <Item Value="BookingId"/>
+          <Item Value="PassengerId"/>
         </AttrNames>
       </nodeDefinition>
     </tree>
