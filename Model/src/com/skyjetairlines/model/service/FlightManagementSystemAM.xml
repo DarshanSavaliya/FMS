@@ -50,6 +50,9 @@
   <ViewUsage
     Name="TicketsInstanceForCurrentCustomer"
     ViewObjectName="com.skyjetairlines.model.view.TicketsVO"/>
+  <ViewUsage
+    Name="AirportsInstance"
+    ViewObjectName="com.skyjetairlines.model.view.AirportsVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"

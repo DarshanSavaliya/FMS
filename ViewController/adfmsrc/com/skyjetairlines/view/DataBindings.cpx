@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
              SeparateXMLFiles="false" Package="com.skyjetairlines.view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/profile.jsf" usageId="com_skyjetairlines_view_profilePageDef"/>
     <page path="/home.jsf" usageId="com_skyjetairlines_view_homePageDef"/>
@@ -11,6 +16,8 @@
     <page path="/booking.jsf" usageId="com_skyjetairlines_view_bookingPageDef"/>
     <page path="/manageFlights.jsf" usageId="com_skyjetairlines_view_finalPageDef"/>
     <page path="/addFlight.jsf" usageId="com_skyjetairlines_view_addFlightPageDef"/>
+    <page path="/about.jsf" usageId="com_skyjetairlines_view_aboutPageDef"/>
+    <page path="/aboutAirlines.jsff" usageId="com_skyjetairlines_view_aboutAirlinesPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -23,6 +30,9 @@
     <page id="com_skyjetairlines_view_bookingPageDef" path="com.skyjetairlines.view.pageDefs.bookingPageDef"/>
     <page id="com_skyjetairlines_view_finalPageDef" path="com.skyjetairlines.view.pageDefs.manageFlightsPageDef"/>
     <page id="com_skyjetairlines_view_addFlightPageDef" path="com.skyjetairlines.view.pageDefs.addFlightPageDef"/>
+    <page id="com_skyjetairlines_view_aboutPageDef" path="com.skyjetairlines.view.pageDefs.aboutPageDef"/>
+    <page id="com_skyjetairlines_view_aboutAirlinesPageDef"
+          path="com.skyjetairlines.view.pageDefs.aboutAirlinesPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout id="pgl4" layout="scroll">
+    <af:panelGroupLayout id="pgl3" layout="scroll">
+      <af:panelBox text="Darshan" id="pb1" rendered="true" background="dark" type="flow">
+        <f:facet name="toolbar"/>
+        <af:panelGroupLayout id="pgl1">
+          <af:image source="#{resource['images:coding.png']}" id="i1" iconDelivery="auto" inlineStyle="width:100px"/>
+        </af:panelGroupLayout>
+      </af:panelBox>
+      <af:panelBox text="Bhavya" id="pb2">
+        <f:facet name="toolbar"/>
+        <af:panelGroupLayout id="pgl2">
+          <af:image source="#{resource['images:india-flag.png']}" id="i2" inlineStyle="width:100px"/>
+        </af:panelGroupLayout>
+      </af:panelBox>
+      <af:panelBox text="Shivani" id="pb3" background="dark">
+        <f:facet name="toolbar"/>
+        <af:image source="#{resource['images:identification-card.png']}" id="i3" inlineStyle="width:100px"/>
+      </af:panelBox>
+      <af:panelBox text="Neel" id="pb4">
+        <f:facet name="toolbar"/>
+        <af:image source="#{resource['images:guarantee.png']}" id="i4" inlineStyle="width:100px"/>
+      </af:panelBox>
+      <af:panelBox text="Nikhil" id="pb5" background="dark">
+        <f:facet name="toolbar"/>
+        <af:image id="i5" inlineStyle="width:100px" source="#{resource['images:search.png']}"/>
+      </af:panelBox>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</ui:composition>
+

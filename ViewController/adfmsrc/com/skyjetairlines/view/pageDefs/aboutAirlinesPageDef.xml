@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="aboutAirlinesPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="AirportsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="AirportsInstanceIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="AirportsInstanceIterator" id="AirportsInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.AirportsVO" Name="AirportsInstance0">
+        <AttrNames>
+          <Item Value="AirportCode"/>
+          <Item Value="AirportName"/>
+          <Item Value="City"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

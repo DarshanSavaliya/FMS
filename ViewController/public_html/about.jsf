@@ -3,11 +3,27 @@
 <f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
   <af:document title="About Skyjet Airlines" id="d1">
     <af:form id="f1">
-      <af:panelSpringboard id="ps1" displayMode="grid" rendered="true">
-        <af:showDetailItem text="showDetailItem 1" id="sdi1">
-          <af:icon name="required" id="i1"/>
-        </af:showDetailItem>
-      </af:panelSpringboard>
+
+      <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+        <f:facet name="body">
+          <af:panelSpringboard displayMode="grid" id="ps1">
+            <af:showDetailItem text="Our Airline" id="sdi1" icon="#{resource['images:identification-card.png']}">
+              <af:region value="#{bindings.aboutpage1.regionModel}" id="r1"/>
+            </af:showDetailItem>
+            <af:showDetailItem text="Customer Trust" id="sdi2" icon="#{resource['images:guarantee.png']}">
+              <af:region value="#{bindings.cusTrust1.regionModel}" id="r2"/>
+            </af:showDetailItem>
+            <af:showDetailItem text="Our Developers" id="sdi3" icon="#{resource['images:coding.png']}">
+              <af:region value="#{bindings.aboutDev1.regionModel}" id="r3"/>
+            </af:showDetailItem>
+            
+            
+          </af:panelSpringboard>
+        </f:facet>
+        
+        
+      </af:pageTemplate>
+
     </af:form>
   </af:document>
 </f:view>

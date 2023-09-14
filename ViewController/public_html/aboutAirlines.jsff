@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelWindow id="pw1" closeIconVisible="false">
+    <af:panelAccordion discloseMany="false" id="pa1">
+      <af:showDetailItem id="pane1" text="History">
+                       
+        
+       
+        <af:panelGroupLayout id="pgl1">
+          <af:panelList id="pl1">
+            <af:outputText value="SkyJet Airlines, founded in 1950, holds the distinction of being one of the pioneers of domestic aviation in India. With a commitment to safety, comfort, and innovation, we have played a significant role in shaping the Indian aviation landscape."
+                           id="ot1"/>
+            <af:outputText value="Our journey began with a single aircraft, a humble Douglas DC-3, which operated between Mumbai and Delhi. This marked the inception of air travel for countless Indians, revolutionizing the way people connected across the vast subcontinent." id="ot3"/>
+       
+        <af:outputText value="Over the years, SkyJet Airlines achieved several milestones. We were the first Indian airline to introduce in-flight entertainment systems and the first to operate non-stop international flights. Our dedication to excellence earned us numerous awards and accolades, solidifying our position as a leader in the Indian aviation industry." id="ot5"/>
+        
+        <af:outputText value="As we move forward, we continue to innovate and adapt to the changing needs of our passengers. We are committed to sustainability and are investing in modern, fuel-efficient aircraft to reduce our environmental footprint. Our aim is to provide you with exceptional service and an unforgettable travel experience." id="ot7"/>
+          </af:panelList>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+      <af:showDetailItem id="pane2" text="Airports in India">
+        <af:panelGroupLayout id="pgl2">
+          <af:table value="#{bindings.AirportsInstance.collectionModel}" var="row"
+                    rows="#{bindings.AirportsInstance.rangeSize}"
+                    emptyText="#{bindings.AirportsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    rowBandingInterval="0" fetchSize="#{bindings.AirportsInstance.rangeSize}" id="t1">
+            <af:column sortable="true"
+                       headerText="#{bindings.AirportsInstance.hints.AirportCode.label}" id="c1">
+              <af:outputFormatted value="#{row.bindings.AirportCode.inputValue}" id="of1"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.AirportsInstance.hints.AirportCode.name}" sortable="true"
+                       headerText="#{bindings.AirportsInstance.hints.AirportName.label}" id="c2">
+              <af:outputFormatted value="#{row.bindings.AirportName.inputValue}" id="of2"/>
+            </af:column>
+            <af:column sortProperty="#{bindings.AirportsInstance.hints.City.name}" sortable="true"
+                       headerText="#{bindings.AirportsInstance.hints.City.label}" id="c3">
+              <af:outputFormatted value="#{row.bindings.City.inputValue}" id="of3"/>
+            </af:column>
+          </af:table>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+    </af:panelAccordion>
+  </af:panelWindow>
+</ui:composition>

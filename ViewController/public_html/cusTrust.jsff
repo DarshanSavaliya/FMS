@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                xmlns:f="http://java.sun.com/jsf/core" xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  
+  <af:panelWindow id="pw1" closeIconVisible="false">
+    <af:panelAccordion discloseMany="false" id="pa1">
+      <af:showDetailItem id="pane1" text="Why SkyJet Airlines?" icon="file:/Users/nikhssin/Downloads/take-off.png"
+                         iconDelivery="inline" hoverIcon="#{resource['images:traveller Icon.png']}">
+        <f:facet name="toolbar"/>
+        <af:panelGroupLayout id="pgl1">
+          <af:panelList id="pl2">
+            <af:outputText value="When you book flight with SkyJet, you fly on-time, every time, daily, and non-stop. Get the lowest booking and cancellation fee, exclusive offers, add-ons and in-flight services that make your journey hassle-free. "
+                           id="ot2"/>
+          </af:panelList>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+      <af:showDetailItem id="pane2" text="Our Customer Base" icon="file:/Users/nikhssin/Downloads/search.png">
+        <f:facet name="toolbar">
+         
+        </f:facet>
+        <af:panelGroupLayout id="pgl2">
+          <af:panelList id="pl1">
+            <af:outputText value="Safety is our utmost priority. We invest heavily in the latest technologies, rigorous training programs, and strict maintenance protocols to ensure that every flight with SkyJet is as secure as it is comfortable." id="ot3"/>
+            <af:outputText value="We understand that our passengers depend on us for timely travel. That’s why we’ve built a reputation for reliability, ensuring that our flights depart and arrive on schedule." id="ot4"/>
+            <af:outputText value="From the moment you step onboard, our friendly and professional crew is dedicated to making your journey memorable. We believe in going the extra mile to exceed your expectations." id="ot5"/>
+            <af:outputText value="kyJet Airlines is committed to providing you with the utmost comfort and convenience during your travels. Our modern aircraft and spacious cabins ensure a comfortable flight experience." id="ot6"/>
+            <af:outputText value="We stay at the forefront of the aviation industry by embracing innovative solutions that enhance your travel experience. From online booking to in-flight entertainment, we’re always striving to make your journey better." id="ot7"/>
+            <af:outputText value="We believe in transparency and open communication with our passengers. From fare pricing to travel updates, you can trust us to keep you informed every step of the way." id="ot8"/>
+          </af:panelList>
+        </af:panelGroupLayout>
+      </af:showDetailItem>
+    </af:panelAccordion>
+  </af:panelWindow>
+</ui:composition>
