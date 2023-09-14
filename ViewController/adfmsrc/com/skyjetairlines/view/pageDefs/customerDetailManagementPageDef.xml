@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="customerDetailManagementPageDef" Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CustomersInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="CustomersInstanceIterator"/>
+    <searchRegion Criteria="CustomerSearchCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="CustomersInstanceIterator" id="CustomerSearchCriteriaQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CustomersInstanceIterator" id="CustomersInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.CustomersVO" Name="CustomersInstance0">
+        <AttrNames>
+          <Item Value="CustomerId"/>
+          <Item Value="Username"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="Phone"/>
+          <Item Value="Address"/>
+          <Item Value="DateOfBirth"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+  </bindings>
+</pageDefinition>

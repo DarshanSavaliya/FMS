@@ -12,6 +12,7 @@
     <page path="/manageFlights.jsf" usageId="com_skyjetairlines_view_finalPageDef"/>
     <page path="/addFlight.jsf" usageId="com_skyjetairlines_view_addFlightPageDef"/>
     <page path="/bookingsManagement.jsf" usageId="com_skyjetairlines_view_bookingsManagementPageDef"/>
+    <page path="/customerDetailManagement.jsf" usageId="com_skyjetairlines_view_customerDetailManagementPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -26,6 +27,8 @@
     <page id="com_skyjetairlines_view_addFlightPageDef" path="com.skyjetairlines.view.pageDefs.addFlightPageDef"/>
     <page id="com_skyjetairlines_view_bookingsManagementPageDef"
           path="com.skyjetairlines.view.pageDefs.bookingsManagementPageDef"/>
+    <page id="com_skyjetairlines_view_customerDetailManagementPageDef"
+          path="com.skyjetairlines.view.pageDefs.customerDetailManagementPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"
