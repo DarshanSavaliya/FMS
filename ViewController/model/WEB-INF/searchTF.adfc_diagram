@@ -76,7 +76,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>home&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  home&lt;/p></property>
       <property
-         name="y">26.074219</property>
+         name="y">25.609375</property>
       <property
          name="finish">true</property>
       <property
@@ -109,7 +109,7 @@
       <property
          name="fromOutcome">home</property>
       <property
-         name="sdm:polyPoints">T50,552.0,170.53516,551.0,80.00781,B50</property>
+         name="sdm:polyPoints">T50,552.0,170.53516,551.0,79.609375,B50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall14">

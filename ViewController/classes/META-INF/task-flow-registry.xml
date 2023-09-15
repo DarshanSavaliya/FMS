@@ -5,6 +5,7 @@
    <task-flow-descriptor path="WEB-INF/bookingTF.xml" id="bookingTF" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets">
       <input-parameter name="numberOfSeats"/>
    </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/createPaymentTF.xml" id="createPaymentTF" type="task-flow-definition" uses-page-fragments="true" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets"/>
    <task-flow-descriptor path="WEB-INF/searchTF.xml" id="searchTF" type="task-flow-definition" uses-page-fragments="false" library-internal="false" remote-invocable="false" train="false" critical="false" page-type="facelets">
       <input-parameter name="numberOfSeats"/>
       <input-parameter name="bookingDate"/>

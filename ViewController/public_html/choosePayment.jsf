@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="choosePayment.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:selectOneChoice value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.inputValue}"
+                                        label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.label}"
+                                        required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.mandatory}"
+                                        shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.tooltip}"
+                                        id="soc1">
+                        <f:selectItems value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.items}" id="si1"/>
+                        <f:validator binding="#{bindings.PaymentMethodsInstanceForCurrentCustomer.validator}"/>
+                    </af:selectOneChoice>
+                    <af:button text="submit" id="b2" action="viewSummary"/>
+                    <af:button text="Create Payment" id="b1">
+                        <af:showPopupBehavior popupId="createPaymentPopUp" triggerType="action"/>
+                    </af:button>
+                    <af:popup childCreation="deferred" autoCancel="disabled" id="createPaymentPopUp">
+                        <af:dialog id="d2">
+                            <f:facet name="buttonBar">
+                                <af:region value="#{bindings.createPaymentTF2.regionModel}" id="r1"/>
+                            </f:facet>
+                        </af:dialog>
+                    </af:popup>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

@@ -34,6 +34,18 @@
         <rollback/>
       </outcome>
     </task-flow-return>
+    <task-flow-return id="save">
+      <outcome>
+        <name>home</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <view id="choosePayment">
+      <page>/choosePayment.jsf</page>
+    </view>
+    <view id="summary">
+      <page>/summary.jsf</page>
+    </view>
     <control-flow-rule id="__3">
       <from-activity-id>createBooking</from-activity-id>
       <control-flow-case id="__4">
@@ -46,6 +58,27 @@
       <control-flow-case id="__6">
         <from-outcome>home</from-outcome>
         <to-activity-id>home</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id>bookingDetails</from-activity-id>
+      <control-flow-case id="__8">
+        <from-outcome>choosePaymentOption</from-outcome>
+        <to-activity-id>choosePayment</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__9">
+      <from-activity-id>choosePayment</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome>viewSummary</from-outcome>
+        <to-activity-id>summary</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>summary</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>returnToHome</from-outcome>
+        <to-activity-id>save</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>

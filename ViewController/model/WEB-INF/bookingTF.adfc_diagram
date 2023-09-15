@@ -76,4 +76,79 @@
       <property
          name="sdm:polyPoints">T50,653.0,324.66797,651.0,222.13672,B50</property>
    </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn8">
+      <property
+         name="activityId">save</property>
+      <property
+         name="x">-28.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>save&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  home&lt;/p></property>
+      <property
+         name="y">434.53906</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <View
+      id="View9">
+      <property
+         name="activityId">choosePayment</property>
+      <property
+         name="x">474.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>choosePayment&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">406.33594</property>
+      <property
+         name="page">/choosePayment.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase10"
+      from="View3"
+      to="View9">
+      <property
+         name="fromOutcome">choosePaymentOption</property>
+      <property
+         name="sdm:polyPoints">B50,474.0,272.26953,474.0,352.26953,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View11">
+      <property
+         name="activityId">summary</property>
+      <property
+         name="x">199.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>summary&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">407.26953</property>
+      <property
+         name="page">/summary.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase12"
+      from="View9"
+      to="View11">
+      <property
+         name="fromOutcome">viewSummary</property>
+      <property
+         name="sdm:polyPoints">L50,433.0,406.26953,240.0,407.20312,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase13"
+      from="View11"
+      to="TaskFlowReturn8">
+      <property
+         name="fromOutcome">returnToHome</property>
+      <property
+         name="sdm:polyPoints">L50,158.0,407.20312,13.0,434.47266,R50</property>
+   </ControlFlowCase>
 </SDM>
