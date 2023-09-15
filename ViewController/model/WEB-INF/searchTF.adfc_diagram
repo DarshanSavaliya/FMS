@@ -53,7 +53,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>searchFlightsViewCriteria&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">21.246094</property>
+         name="y">21.179688</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -65,7 +65,7 @@
       <property
          name="fromOutcome">viewResult</property>
       <property
-         name="sdm:polyPoints">R46,156.3206,17.679688,331.0,18.035156,L46</property>
+         name="sdm:polyPoints">R46,156.32193,17.613281,331.0,18.035156,L46</property>
    </ControlFlowCase>
    <TaskFlowReturn
       id="TaskFlowReturn13">
@@ -90,7 +90,7 @@
       <property
          name="fromOutcome">search</property>
       <property
-         name="sdm:polyPoints">L54,330.9929,25.035156,156.31348,24.679688,R54</property>
+         name="sdm:polyPoints">L54,330.99155,25.035156,156.31348,24.613281,R54</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule16">

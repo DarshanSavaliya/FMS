@@ -92,4 +92,17 @@
          <string v="FlightManagementSystem_Project1_FlightManagementSystem"/>
       </list>
    </hash>
+   <hash n="oracle.jdeveloper.deploy.SecurityDeploymentSettings">
+      <value n="Security-Deployment-Migrate-Users-And-Groups-Key" v="false"/>
+   </hash>
+   <hash n="oracle.jdeveloper.model.PathsConfiguration">
+      <hash n="ApplicationSrcContentSet">
+         <list n="pattern-filters">
+            <string v="+**"/>
+         </list>
+         <list n="url-path">
+            <url path="src/"/>
+         </list>
+      </hash>
+   </hash>
 </jws:workspace>
