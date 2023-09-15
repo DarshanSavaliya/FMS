@@ -66,8 +66,10 @@
                                 <f:validator binding="#{bindings.Duration.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.Duration.format}"/>
                             </af:inputText>
+                            <f:facet name="footer">
+                                <af:button text="Book" id="b1" action="bookTickets"/>
+                            </f:facet>
                         </af:panelFormLayout>
-                        <af:button text="Book" id="b1" destination="booking"/>
                     </af:panelGroupLayout>
                 </f:facet>
             </af:pageTemplate>

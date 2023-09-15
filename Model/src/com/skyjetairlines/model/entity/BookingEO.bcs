@@ -1,0 +1,12 @@
+//Groovy Scripts for com.skyjetairlines.model.entity.BookingEO
+
+package com.skyjetairlines.model.entity
+
+import oracle.jbo.script.annotation.TransientValueExpression;
+
+@TransientValueExpression(attributeName="BookingId")
+def BookingId_ExpressionScript_Expression()
+{
+(new oracle.jbo.server.SequenceImpl("BOOKING_ID_SEQ",adf.object.getDBTransaction())).getSequenceNumber()
+}
+

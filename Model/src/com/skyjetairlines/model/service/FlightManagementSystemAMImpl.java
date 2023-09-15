@@ -206,9 +206,6 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
     }
 
     public void searchFlightsWithParams(String fromAirport, String toAirport, int numberOfSeats, Date bookingDate) {
-        System.out.println("From: " + fromAirport + "\nTo: " + toAirport + "\nNumber of Seats: " + numberOfSeats +
-                           "\nBookingDate: " + bookingDate);
-
         ViewObjectImpl flightsVO = this.getFlightsInstance();
         ViewCriteria searchFlightsVC = flightsVO.getViewCriteria("SerachFlightsViewCriteria");
 
@@ -235,6 +232,23 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
      */
     public ViewObjectImpl getDepartureAirportsInstance() {
         return (ViewObjectImpl) findViewObject("DepartureAirportsInstance");
+    }
+
+
+    /**
+     * Container's getter for Flights1.
+     * @return Flights1
+     */
+    public ViewObjectImpl getFlightsInstanceForTicketsForCurrentCustomer() {
+        return (ViewObjectImpl) findViewObject("FlightsInstanceForTicketsForCurrentCustomer");
+    }
+
+    /**
+     * Container's getter for TicketsFlightsLink2.
+     * @return TicketsFlightsLink2
+     */
+    public ViewLinkImpl getTicketsFlightsLink2() {
+        return (ViewLinkImpl) findViewLink("TicketsFlightsLink2");
     }
 }
 

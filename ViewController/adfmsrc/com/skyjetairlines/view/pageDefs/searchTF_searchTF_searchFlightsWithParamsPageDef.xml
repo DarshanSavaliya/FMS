@@ -14,18 +14,18 @@
                   MethodName="searchFlightsWithParams" IsViewObjectMethod="false"
                   DataControl="FlightManagementSystemAMDataControl"
                   InstanceName="bindings.searchFlightsWithParams.dataControl.dataProvider">
-      <NamedData NDName="fromAirport" NDValue="#{bindings.AirportCode.inputValue}" NDType="java.lang.String"/>
-      <NamedData NDName="toAirport" NDValue="#{bindings.AirportCode1.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="fromAirport" NDValue="#{bindings.FromAirport.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="toAirport" NDValue="#{bindings.ToAirport.inputValue}" NDType="java.lang.String"/>
       <NamedData NDName="numberOfSeats" NDValue="#{pageFlowScope.flightSearchQueryBean.numberOfSeats}" NDType="int"/>
       <NamedData NDName="bookingDate" NDValue="#{pageFlowScope.flightSearchQueryBean.bookingDate}"
                  NDType="java.util.Date"/>
     </methodAction>
-    <attributeValues IterBinding="DepartureAirportsLOVInstanceIterator" id="AirportCode">
+    <attributeValues IterBinding="DepartureAirportsLOVInstanceIterator" id="FromAirport">
       <AttrNames>
         <Item Value="AirportCode"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="ArrivalAirportsLOVInstanceIterator" id="AirportCode1">
+    <attributeValues IterBinding="ArrivalAirportsLOVInstanceIterator" id="ToAirport">
       <AttrNames>
         <Item Value="AirportCode"/>
       </AttrNames>

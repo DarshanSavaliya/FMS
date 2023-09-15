@@ -19,8 +19,11 @@
     <page path="/about.jsf" usageId="com_skyjetairlines_view_aboutPageDef"/>
     <page path="/aboutAirlines.jsff" usageId="com_skyjetairlines_view_aboutAirlinesPageDef"/>
     <page path="/searchResult.jsf" usageId="com_skyjetairlines_view_searchResultPageDef"/>
-    <page path="/WEB-INF/searchTF.xml#searchTF@initialSearchFlights"
+    <page path="/WEB-INF/searchTF.xml#searchTF@searchFlightsViewCriteria"
           usageId="com_skyjetairlines_view_searchTF_searchTF_searchFlightsWithParamsPageDef"/>
+    <page path="/WEB-INF/bookingTF.xml#bookingTF@createBooking"
+          usageId="com_skyjetairlines_view_bookingTF_bookingTF_createBookingPageDef"/>
+    <page path="/bookingDetails.jsf" usageId="com_skyjetairlines_view_bookingDetailsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -39,6 +42,10 @@
     <page id="com_skyjetairlines_view_searchResultPageDef" path="com.skyjetairlines.view.pageDefs.searchResultPageDef"/>
     <page id="com_skyjetairlines_view_searchTF_searchTF_searchFlightsWithParamsPageDef"
           path="com.skyjetairlines.view.pageDefs.searchTF_searchTF_searchFlightsWithParamsPageDef"/>
+    <page id="com_skyjetairlines_view_bookingTF_bookingTF_createBookingPageDef"
+          path="com.skyjetairlines.view.pageDefs.bookingTF_bookingTF_createBookingPageDef"/>
+    <page id="com_skyjetairlines_view_bookingDetailsPageDef"
+          path="com.skyjetairlines.view.pageDefs.bookingDetailsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="bookingTF">
+    <default-activity>createBooking</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <input-parameter-definition id="__2">
+      <name>numberOfSeats</name>
+      <value>#{pageFlowScope.flightBookingBean.numberOfSeats}</value>
+      <class>java.lang.Integer</class>
+      <required/>
+    </input-parameter-definition>
+    <managed-bean id="__1">
+      <managed-bean-name>flightBookingBean</managed-bean-name>
+      <managed-bean-class>com.skyjetairlines.view.bean.FlightBookingBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <method-call id="createBooking">
+      <method>#{pageFlowScope.flightBookingBean.createBooking}</method>
+      <outcome>
+        <fixed-outcome>addBookingDetails</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="bookingDetails">
+      <page>/bookingDetails.jsf</page>
+    </view>
+    <task-flow-return id="home">
+      <outcome>
+        <name>home</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__3">
+      <from-activity-id>createBooking</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>addBookingDetails</from-outcome>
+        <to-activity-id>bookingDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__5">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome>home</from-outcome>
+        <to-activity-id>home</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

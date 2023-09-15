@@ -4,32 +4,14 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
-              id="FlightsInstanceIterator"/>
     <iterator Binds="DepartureAirportsLOVInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
               id="DepartureAirportsLOVInstanceIterator"/>
     <iterator Binds="ArrivalAirportsLOVInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
               id="ArrivalAirportsLOVInstanceIterator"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
   </executables>
   <bindings>
-    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject"/>
-    <tree IterBinding="FlightsInstanceIterator" id="FlightsInstance">
-      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO" Name="FlightsInstance0">
-        <AttrNames>
-          <Item Value="Flightno"/>
-          <Item Value="DepartureAirport"/>
-          <Item Value="ArrivalAirport"/>
-          <Item Value="ScheduledDeparture"/>
-          <Item Value="ScheduledArrival"/>
-          <Item Value="Duration"/>
-          <Item Value="BaseFare"/>
-          <Item Value="AvailableSeats"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
     <list IterBinding="DepartureAirportsLOVInstanceIterator" ListOperMode="navigation"
           ListIter="DepartureAirportsLOVInstanceIterator" id="DepartureAirportsLOVInstance" DTSupportsMRU="true"
           SelectItemValueMode="ListObject">
@@ -48,5 +30,19 @@
         <Item Value="City"/>
       </AttrNames>
     </list>
+    <tree IterBinding="FlightsInstanceIterator" id="FlightsInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO" Name="FlightsInstance0">
+        <AttrNames>
+          <Item Value="Flightno"/>
+          <Item Value="DepartureAirport"/>
+          <Item Value="ArrivalAirport"/>
+          <Item Value="ScheduledDeparture"/>
+          <Item Value="ScheduledArrival"/>
+          <Item Value="Duration"/>
+          <Item Value="BaseFare"/>
+          <Item Value="AvailableSeats"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

@@ -14,14 +14,14 @@
     Name="TicketId"
     ColumnName="TICKET_ID"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.DBSequence"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TICKETS"
-    PrimaryKey="true"
-    IsUpdateable="while_insert"
-    DefaultValue="@0"
-    Domain="oracle.jbo.domain.DBSequence"
-    RetrievedOnInsert="true">
+    PrimaryKey="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="TicketEORow"/>
     <Properties>
       <SchemaBasedProperties>
         <LABEL

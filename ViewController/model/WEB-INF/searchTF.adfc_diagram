@@ -45,15 +45,15 @@
    <MethodCall
       id="MethodCall8">
       <property
-         name="activityId">initialSearchFlights</property>
+         name="activityId">searchFlightsViewCriteria</property>
       <property
          name="x">115.31348</property>
       <property
          name="start">true</property>
       <property
-         name="description">&lt;html>&lt;p>&lt;b>initialSearchFlights&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+         name="description">&lt;html>&lt;p>&lt;b>searchFlightsViewCriteria&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">21.378906</property>
+         name="y">21.246094</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -65,7 +65,7 @@
       <property
          name="fromOutcome">viewResult</property>
       <property
-         name="sdm:polyPoints">R46,156.31793,17.8125,331.0,18.035156,L46</property>
+         name="sdm:polyPoints">R46,156.3206,17.679688,331.0,18.035156,L46</property>
    </ControlFlowCase>
    <TaskFlowReturn
       id="TaskFlowReturn13">
@@ -90,7 +90,7 @@
       <property
          name="fromOutcome">search</property>
       <property
-         name="sdm:polyPoints">L54,330.99554,25.035156,156.31348,24.8125,R54</property>
+         name="sdm:polyPoints">L54,330.9929,25.035156,156.31348,24.679688,R54</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule16">
@@ -110,5 +110,32 @@
          name="fromOutcome">home</property>
       <property
          name="sdm:polyPoints">T50,552.0,170.53516,551.0,80.00781,B50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall14">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>bookingTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">bookingTF</property>
+      <property
+         name="x">120.0</property>
+      <property
+         name="y">209.46875</property>
+      <property
+         name="documentReference">/WEB-INF/bookingTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">bookingTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase16"
+      from="View6"
+      to="TaskFlowCall14">
+      <property
+         name="fromOutcome">bookTickets</property>
+      <property
+         name="sdm:polyPoints">L50,332.0,210.26953,161.0,209.40234,R50</property>
    </ControlFlowCase>
 </SDM>

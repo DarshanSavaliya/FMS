@@ -40,8 +40,10 @@
                             <af:table value="#{bindings.FlightsInstance.collectionModel}" var="row"
                                       rows="#{bindings.FlightsInstance.rangeSize}"
                                       emptyText="#{bindings.FlightsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                      rowBandingInterval="0" fetchSize="#{bindings.FlightsInstance.rangeSize}"
-                                      id="t1">
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.FlightsInstance.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.FlightsInstance.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.FlightsInstance.rangeSize}" id="t1">
                                 <af:column headerText="#{bindings.FlightsInstance.hints.Flightno.label}" id="c1">
                                     <af:outputText value="#{row.Flightno}"
                                                    shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}"
@@ -107,6 +109,9 @@
                                         <af:convertNumber groupingUsed="false"
                                                           pattern="#{bindings.FlightsInstance.hints.AvailableSeats.format}"/>
                                     </af:outputText>
+                                </af:column>
+                                <af:column id="c9">
+                                    <af:button text="Details" id="b1" action="showDetails"/>
                                 </af:column>
                             </af:table>
                         </f:facet>

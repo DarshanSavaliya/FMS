@@ -14,15 +14,15 @@
     Name="BookingId"
     ColumnName="BOOKING_ID"
     SQLType="NUMERIC"
-    Type="oracle.jbo.domain.DBSequence"
+    Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="BOOKINGS"
     PrimaryKey="true"
-    IsUpdateable="while_insert"
-    DefaultValue="@0"
-    Domain="oracle.jbo.domain.DBSequence"
-    RetrievedOnInsert="true"
     RetrievedOnUpdate="true">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="trusted"
+      CodeSourceName="BookingEORow"/>
     <Properties>
       <SchemaBasedProperties>
         <LABEL
