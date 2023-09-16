@@ -81,11 +81,11 @@
       <property
          name="activityId">save</property>
       <property
-         name="x">-28.0</property>
+         name="x">-24.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>save&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  home&lt;/p></property>
       <property
-         name="y">434.47266</property>
+         name="y">222.14453</property>
       <property
          name="finish">true</property>
       <property
@@ -145,11 +145,11 @@
       islink="true"
       id="ControlFlowCase13"
       from="View11"
-      to="TaskFlowReturn8">
+      to="MethodCall19">
       <property
-         name="fromOutcome">returnToHome</property>
+         name="fromOutcome">confirmBooking</property>
       <property
-         name="sdm:polyPoints">L50,158.0,407.20312,13.0,434.40625,R50</property>
+         name="sdm:polyPoints">L50,158.0,407.20312,17.0,405.40234,R50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall16">
@@ -208,5 +208,28 @@
          name="fromOutcome">createPassenger</property>
       <property
          name="sdm:polyPoints">T50,474.0,164.26953,473.13477,101.96875,B50</property>
+   </ControlFlowCase>
+   <MethodCall
+      id="MethodCall19">
+      <property
+         name="activityId">confirmBooking</property>
+      <property
+         name="x">-24.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>confirmBooking&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">405.46875</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase20"
+      from="MethodCall19"
+      to="TaskFlowReturn8">
+      <property
+         name="fromOutcome">save</property>
+      <property
+         name="sdm:polyPoints">T50,-24.0,351.40234,-24.0,276.07812,B50</property>
    </ControlFlowCase>
 </SDM>

@@ -231,7 +231,7 @@
     ColumnType="NUMBER"
     TableName="FLIGHTS"
     HistoryColumn="VersionHistory"
-    RetrievedOnUpdate="true"/>
+    ChangeIndicator="true"/>
   <Attribute
     Name="Price"
     ColumnName="PRICE"

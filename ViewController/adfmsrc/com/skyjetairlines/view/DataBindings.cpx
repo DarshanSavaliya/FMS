@@ -33,6 +33,8 @@
     <page path="/WEB-INF/createPassengerTF.xml#createPassengerTF@CreateInsert"
           usageId="com_skyjetairlines_view_createPassengerTF_createPassengerTF_CreateInsertPageDef"/>
     <page path="/createPassenger.jsf" usageId="com_skyjetairlines_view_createPassengerPageDef"/>
+    <page path="/WEB-INF/bookingTF.xml#bookingTF@confirmBooking"
+          usageId="com_skyjetairlines_view_bookingTF_bookingTF_confirmBookingPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -67,6 +69,8 @@
           path="com.skyjetairlines.view.pageDefs.createPassengerTF_createPassengerTF_CreateInsertPageDef"/>
     <page id="com_skyjetairlines_view_createPassengerPageDef"
           path="com.skyjetairlines.view.pageDefs.createPassengerPageDef"/>
+    <page id="com_skyjetairlines_view_bookingTF_bookingTF_confirmBookingPageDef"
+          path="com.skyjetairlines.view.pageDefs.bookingTF_bookingTF_confirmBookingPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

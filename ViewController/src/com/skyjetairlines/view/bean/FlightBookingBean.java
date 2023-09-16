@@ -4,6 +4,8 @@ import com.skyjetairlines.view.common.CommonViewUtil;
 
 import java.math.BigDecimal;
 
+import javax.faces.event.ActionEvent;
+
 import oracle.jbo.Row;
 import oracle.jbo.domain.Number;
 
@@ -32,10 +34,6 @@ public class FlightBookingBean {
         CommonViewUtil.setAttributeInIterator("BookingsInstanceForCurrentCustomerIterator", "TotalAmount",
                                               price * numberOfSeats);
 
-        flightSelected.setAttribute("AvailableSeats",
-                                    ((BigDecimal) flightSelected.getAttribute("AvailableSeats")).intValue() -
-                                    numberOfSeats);
-
         for (int i = 0; i < numberOfSeats; i++) {
             CommonViewUtil.executeOperation("CreateTicket");
             CommonViewUtil.executeOperation("CreateFlightAssociation");
@@ -57,5 +55,12 @@ public class FlightBookingBean {
     public void PassengerCreatedListener(ReturnEvent returnEvent) {
         CommonViewUtil.getIterator("PassengersInstanceForCurrentCustomerIterator").executeQuery();
         CommonViewUtil.getIterator("TicketsInstanceForCurrentCustomerIterator").executeQuery();
+    }
+
+    public void confirmBooking() {
+        Row flightSelected = CommonViewUtil.getIterator("FlightsInstanceIterator").getCurrentRow();
+        flightSelected.setAttribute("AvailableSeats",
+                                    ((BigDecimal) flightSelected.getAttribute("AvailableSeats")).intValue() -
+                                    numberOfSeats);
     }
 }

@@ -65,6 +65,12 @@
         </display-type>
       </run-as-dialog>
     </task-flow-call>
+    <method-call id="confirmBooking">
+      <method>#{pageFlowScope.flightBookingBean.confirmBooking}</method>
+      <outcome>
+        <fixed-outcome>save</fixed-outcome>
+      </outcome>
+    </method-call>
     <control-flow-rule id="__3">
       <from-activity-id>createBooking</from-activity-id>
       <control-flow-case id="__4">
@@ -104,7 +110,14 @@
     <control-flow-rule id="__11">
       <from-activity-id>summary</from-activity-id>
       <control-flow-case id="__12">
-        <from-outcome>returnToHome</from-outcome>
+        <from-outcome>confirmBooking</from-outcome>
+        <to-activity-id>confirmBooking</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>confirmBooking</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>save</from-outcome>
         <to-activity-id>save</to-activity-id>
       </control-flow-case>
     </control-flow-rule>

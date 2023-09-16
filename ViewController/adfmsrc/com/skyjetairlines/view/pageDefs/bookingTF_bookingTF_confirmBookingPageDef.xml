@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="bookingTF_bookingTF_confirmBookingPageDef" Package="com.skyjetairlines.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator id="FlightsInstanceIterator" Binds="FlightsInstance" DataControl="FlightManagementSystemAMDataControl"
+              RangeSize="25"/>
+  </executables>
+  <bindings>
+    <action id="Commit" DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+  </bindings>
+</pageDefinition>
