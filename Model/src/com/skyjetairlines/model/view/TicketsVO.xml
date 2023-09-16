@@ -104,4 +104,9 @@
     ViewLink="com.skyjetairlines.model.view.link.TicketsFlightsLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="TicketFlights"
+    ViewLink="com.skyjetairlines.model.view.link.TicketFlightsticketFk"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

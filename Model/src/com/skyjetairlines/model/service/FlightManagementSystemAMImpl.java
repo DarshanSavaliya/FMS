@@ -250,5 +250,21 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
     public ViewLinkImpl getTicketsFlightsLink2() {
         return (ViewLinkImpl) findViewLink("TicketsFlightsLink2");
     }
+
+    /**
+     * Container's getter for TicketFlights1.
+     * @return TicketFlights1
+     */
+    public ViewObjectImpl getTicketFlightsInstanceForTicketsForBookingForCurrentCustomer() {
+        return (ViewObjectImpl) findViewObject("TicketFlightsInstanceForTicketsForBookingForCurrentCustomer");
+    }
+
+    /**
+     * Container's getter for TicketFlightsticketFk1.
+     * @return TicketFlightsticketFk1
+     */
+    public ViewLinkImpl getTicketFlightsticketFk1() {
+        return (ViewLinkImpl) findViewLink("TicketFlightsticketFk1");
+    }
 }
 

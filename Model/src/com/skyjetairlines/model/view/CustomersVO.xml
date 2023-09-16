@@ -12,7 +12,8 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
   <EntityUsage
     Name="CustomerEO"
     Entity="com.skyjetairlines.model.entity.CustomerEO"/>
@@ -102,7 +103,7 @@
         ViewAttribute="CustomerId"
         Operator="="
         Conjunction="AND"
-        Value="1"
+        Value="5"
         Required="Required"/>
     </ViewCriteriaRow>
   </ViewCriteria>

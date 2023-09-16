@@ -40,7 +40,9 @@
           <Item Value="ScheduledArrival"/>
           <Item Value="Duration"/>
           <Item Value="BaseFare"/>
+          <Item Value="TotalSeats"/>
           <Item Value="AvailableSeats"/>
+          <Item Value="Price"/>
         </AttrNames>
       </nodeDefinition>
     </tree>

@@ -9,6 +9,11 @@
               DataControl="FlightManagementSystemAMDataControl" id="BookingsInstanceForCurrentCustomerIterator"/>
     <iterator Binds="TicketsInstanceForCurrentCustomer" RangeSize="10" DataControl="FlightManagementSystemAMDataControl"
               id="TicketsInstanceForCurrentCustomerIterator"/>
+    <iterator id="FlightsInstanceIterator" Binds="FlightsInstance" DataControl="FlightManagementSystemAMDataControl"
+              RangeSize="25"/>
+    <iterator id="TicketFlightsInstanceForTicketsForBookingForCurrentCustomerIterator"
+              Binds="TicketFlightsInstanceForTicketsForBookingForCurrentCustomer"
+              DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
   </executables>
   <bindings>
     <action IterBinding="BookingsInstanceForCurrentCustomerIterator" id="CreateBooking"
@@ -16,6 +21,10 @@
             DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
     <action IterBinding="TicketsInstanceForCurrentCustomerIterator" id="CreateTicket"
             InstanceName="FlightManagementSystemAMDataControl.TicketsInstanceForCurrentCustomer"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TicketFlightsInstanceForTicketsForBookingForCurrentCustomerIterator"
+            id="CreateFlightAssociation"
+            InstanceName="FlightManagementSystemAMDataControl.TicketFlightsInstanceForTicketsForBookingForCurrentCustomer"
             DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
   </bindings>
 </pageDefinition>

@@ -4,14 +4,45 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
-              id="FlightsInstanceIterator"/>
     <iterator Binds="BookingsInstanceForCurrentCustomer" RangeSize="25"
               DataControl="FlightManagementSystemAMDataControl" id="BookingsInstanceForCurrentCustomerIterator"/>
     <iterator Binds="TicketsInstanceForCurrentCustomer" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
               id="TicketsInstanceForCurrentCustomerIterator"/>
+    <iterator id="PassengersInstanceForCurrentCustomerIterator" Binds="PassengersInstanceForCurrentCustomer"
+              DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
   </executables>
   <bindings>
+    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingId">
+      <AttrNames>
+        <Item Value="BookingId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="CustomerId">
+      <AttrNames>
+        <Item Value="CustomerId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingDate">
+      <AttrNames>
+        <Item Value="BookingDate"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="TicketsInstanceForCurrentCustomerIterator" id="TicketsInstanceForCurrentCustomer">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.TicketsVO" Name="TicketsInstanceForCurrentCustomer0">
+        <AttrNames>
+          <Item Value="TicketId"/>
+          <Item Value="BookingId"/>
+          <Item Value="PassengerId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
     <attributeValues IterBinding="FlightsInstanceIterator" id="Flightno">
       <AttrNames>
         <Item Value="Flightno"/>
@@ -36,46 +67,10 @@
         <Item Value="Duration"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="BaseFare">
+    <attributeValues IterBinding="FlightsInstanceIterator" id="Price">
       <AttrNames>
-        <Item Value="BaseFare"/>
+        <Item Value="Price"/>
       </AttrNames>
     </attributeValues>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="AvailableSeats">
-      <AttrNames>
-        <Item Value="AvailableSeats"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingId">
-      <AttrNames>
-        <Item Value="BookingId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="CustomerId">
-      <AttrNames>
-        <Item Value="CustomerId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingDate">
-      <AttrNames>
-        <Item Value="BookingDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="TotalAmount">
-      <AttrNames>
-        <Item Value="TotalAmount"/>
-      </AttrNames>
-    </attributeValues>
-    <tree IterBinding="TicketsInstanceForCurrentCustomerIterator" id="TicketsInstanceForCurrentCustomer">
-      <nodeDefinition DefName="com.skyjetairlines.model.view.TicketsVO" Name="TicketsInstanceForCurrentCustomer0">
-        <AttrNames>
-          <Item Value="TicketId"/>
-          <Item Value="BookingId"/>
-          <Item Value="PassengerId"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
-            DataControl="FlightManagementSystemAMDataControl"/>
   </bindings>
 </pageDefinition>

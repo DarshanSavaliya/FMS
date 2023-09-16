@@ -67,6 +67,9 @@
   <ViewUsage
     Name="FlightsInstanceForTicketsForCurrentCustomer"
     ViewObjectName="com.skyjetairlines.model.view.FlightsVO"/>
+  <ViewUsage
+    Name="TicketFlightsInstanceForTicketsForBookingForCurrentCustomer"
+    ViewObjectName="com.skyjetairlines.model.view.TicketFlightsVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
@@ -126,6 +129,12 @@
     ViewLinkObjectName="com.skyjetairlines.model.view.link.TicketsFlightsLink"
     SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketsInstanceForCurrentCustomer"
     DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.FlightsInstanceForTicketsForCurrentCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TicketFlightsticketFk1"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.TicketFlightsticketFk"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketsInstanceForCurrentCustomer"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketFlightsInstanceForTicketsForBookingForCurrentCustomer"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

@@ -21,7 +21,6 @@
     RetrievedOnUpdate="true">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="trusted"
       CodeSourceName="BookingEORow"/>
     <Properties>
       <SchemaBasedProperties>
@@ -72,7 +71,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="BOOKINGS">
+    TableName="BOOKINGS"
+    DefaultValue="10000">
     <Properties>
       <SchemaBasedProperties>
         <LABEL

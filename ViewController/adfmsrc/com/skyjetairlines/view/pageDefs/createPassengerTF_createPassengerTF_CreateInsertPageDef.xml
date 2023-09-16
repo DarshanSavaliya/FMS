@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="createPassengerTF_createPassengerTF_CreateInsertPageDef" Package="com.skyjetairlines.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="PassengersInstanceForCurrentCustomer" RangeSize="25"
+              DataControl="FlightManagementSystemAMDataControl" id="PassengersInstanceForCurrentCustomerIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="PassengersInstanceForCurrentCustomerIterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

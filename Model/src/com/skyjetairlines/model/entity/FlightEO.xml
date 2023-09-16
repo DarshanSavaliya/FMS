@@ -232,6 +232,36 @@
     TableName="FLIGHTS"
     HistoryColumn="VersionHistory"
     RetrievedOnUpdate="true"/>
+  <Attribute
+    Name="Price"
+    ColumnName="PRICE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    IsPersistent="false"
+    IsQueriable="false">
+    <TransientExpression
+      Name="ExpressionScript"
+      trustMode="untrusted"
+      CodeSourceName="FlightEORow"/>
+    <Dependencies>
+      <Item
+        Value="AvailableSeats"
+        Type="notify"/>
+      <Item
+        Value="BaseFare"
+        Type="notify"/>
+      <Item
+        Value="TotalSeats"
+        Type="notify"/>
+    </Dependencies>
+    <Properties>
+      <SchemaBasedProperties>
+        <FMT_FORMATTER
+          ResId="com.skyjetairlines.model.entity.FlightEO.Price_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <AccessorAttribute
     Name="Airport"
     Association="com.skyjetairlines.model.entity.association.FlightArrivalAirportFkAssoc"

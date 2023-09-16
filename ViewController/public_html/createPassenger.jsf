@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="createPassenger.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelFormLayout id="pfl1">
+                <af:inputText value="#{bindings.PassenegerName.inputValue}"
+                              label="#{bindings.PassenegerName.hints.label}"
+                              required="#{bindings.PassenegerName.hints.mandatory}"
+                              columns="#{bindings.PassenegerName.hints.displayWidth}"
+                              maximumLength="#{bindings.PassenegerName.hints.precision}"
+                              shortDesc="#{bindings.PassenegerName.hints.tooltip}" id="it1">
+                    <f:validator binding="#{bindings.PassenegerName.validator}"/>
+                </af:inputText>
+                <af:inputText value="#{bindings.Phone.inputValue}" label="#{bindings.Phone.hints.label}"
+                              required="#{bindings.Phone.hints.mandatory}"
+                              columns="#{bindings.Phone.hints.displayWidth}"
+                              maximumLength="#{bindings.Phone.hints.precision}"
+                              shortDesc="#{bindings.Phone.hints.tooltip}" id="it2">
+                    <f:validator binding="#{bindings.Phone.validator}"/>
+                </af:inputText>
+                <f:facet name="footer">
+                    <af:button text="Save" id="b1" action="save"/>
+                    <af:button text="Cancel" id="b2" action="cancel" immediate="true"/>
+                </f:facet>
+            </af:panelFormLayout>
+        </af:form>
+    </af:document>
+</f:view>

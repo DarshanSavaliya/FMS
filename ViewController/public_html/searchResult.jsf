@@ -6,7 +6,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelSplitter id="ps1">
+                    <af:panelSplitter id="ps1" splitterPosition="300">
                         <f:facet name="first">
                             <af:panelFormLayout id="pfl1">
                                 <f:facet name="footer">
@@ -102,15 +102,30 @@
                                                           pattern="#{bindings.FlightsInstance.hints.BaseFare.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.AvailableSeats.label}" id="c8">
+                                <af:column headerText="#{bindings.FlightsInstance.hints.TotalSeats.label}" id="c8">
+                                    <af:outputText value="#{row.TotalSeats}"
+                                                   shortDesc="#{bindings.FlightsInstance.hints.TotalSeats.tooltip}"
+                                                   id="ot6">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.FlightsInstance.hints.TotalSeats.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.FlightsInstance.hints.AvailableSeats.label}" id="c9">
                                     <af:outputText value="#{row.AvailableSeats}"
                                                    shortDesc="#{bindings.FlightsInstance.hints.AvailableSeats.tooltip}"
-                                                   id="ot6">
+                                                   id="ot7">
                                         <af:convertNumber groupingUsed="false"
                                                           pattern="#{bindings.FlightsInstance.hints.AvailableSeats.format}"/>
                                     </af:outputText>
                                 </af:column>
-                                <af:column id="c9">
+                                <af:column headerText="#{bindings.FlightsInstance.hints.Price.label}" id="c10">
+                                    <af:outputText value="#{row.Price}"
+                                                   shortDesc="#{bindings.FlightsInstance.hints.Price.tooltip}" id="ot8">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.FlightsInstance.hints.Price.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column id="c11">
                                     <af:button text="Details" id="b1" action="showDetails"/>
                                 </af:column>
                             </af:table>

@@ -13,25 +13,9 @@
                                           required="#{bindings.Flightno.hints.mandatory}" readOnly="true"
                                           columns="#{bindings.Flightno.hints.displayWidth}"
                                           maximumLength="#{bindings.Flightno.hints.precision}"
-                                          shortDesc="#{bindings.Flightno.hints.tooltip}" id="it2">
+                                          shortDesc="#{bindings.Flightno.hints.tooltip}" id="it1">
                                 <f:validator binding="#{bindings.Flightno.validator}"/>
                             </af:inputText>
-                            <af:inputDate value="#{bindings.ScheduledDeparture.inputValue}" readOnly="true"
-                                          label="#{bindings.ScheduledDeparture.hints.label}"
-                                          required="#{bindings.ScheduledDeparture.hints.mandatory}"
-                                          columns="#{bindings.ScheduledDeparture.hints.displayWidth}"
-                                          shortDesc="#{bindings.ScheduledDeparture.hints.tooltip}" id="id1">
-                                <f:validator binding="#{bindings.ScheduledDeparture.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.ScheduledDeparture.format}"/>
-                            </af:inputDate>
-                            <af:inputDate value="#{bindings.ScheduledArrival.inputValue}" readOnly="true"
-                                          label="#{bindings.ScheduledArrival.hints.label}"
-                                          required="#{bindings.ScheduledArrival.hints.mandatory}"
-                                          columns="#{bindings.ScheduledArrival.hints.displayWidth}"
-                                          shortDesc="#{bindings.ScheduledArrival.hints.tooltip}" id="id2">
-                                <f:validator binding="#{bindings.ScheduledArrival.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.ScheduledArrival.format}"/>
-                            </af:inputDate>
                             <af:selectOneChoice value="#{bindings.DepartureAirport.inputValue}"
                                                 label="#{bindings.DepartureAirport.label}"
                                                 required="#{bindings.DepartureAirport.hints.mandatory}"
@@ -48,23 +32,38 @@
                                 <f:selectItems value="#{bindings.ArrivalAirport.items}" id="si2"/>
                                 <f:validator binding="#{bindings.ArrivalAirport.validator}"/>
                             </af:selectOneChoice>
-                            <af:inputText value="#{bindings.AvailableSeats.inputValue}"
-                                          label="#{bindings.AvailableSeats.hints.label}"
-                                          required="#{bindings.AvailableSeats.hints.mandatory}" readOnly="true"
-                                          columns="#{bindings.AvailableSeats.hints.displayWidth}"
-                                          maximumLength="#{bindings.AvailableSeats.hints.precision}"
-                                          shortDesc="#{bindings.AvailableSeats.hints.tooltip}" id="it4">
-                                <f:validator binding="#{bindings.AvailableSeats.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.AvailableSeats.format}"/>
-                            </af:inputText>
+                            <af:inputDate value="#{bindings.ScheduledDeparture.inputValue}" readOnly="true"
+                                          label="#{bindings.ScheduledDeparture.hints.label}"
+                                          required="#{bindings.ScheduledDeparture.hints.mandatory}"
+                                          columns="#{bindings.ScheduledDeparture.hints.displayWidth}"
+                                          shortDesc="#{bindings.ScheduledDeparture.hints.tooltip}" id="id1">
+                                <f:validator binding="#{bindings.ScheduledDeparture.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ScheduledDeparture.format}"/>
+                            </af:inputDate>
+                            <af:inputDate value="#{bindings.ScheduledArrival.inputValue}" readOnly="true"
+                                          label="#{bindings.ScheduledArrival.hints.label}"
+                                          required="#{bindings.ScheduledArrival.hints.mandatory}"
+                                          columns="#{bindings.ScheduledArrival.hints.displayWidth}"
+                                          shortDesc="#{bindings.ScheduledArrival.hints.tooltip}" id="id2">
+                                <f:validator binding="#{bindings.ScheduledArrival.validator}"/>
+                                <af:convertDateTime pattern="#{bindings.ScheduledArrival.format}"/>
+                            </af:inputDate>
                             <af:inputText value="#{bindings.Duration.inputValue}"
                                           label="#{bindings.Duration.hints.label}"
                                           required="#{bindings.Duration.hints.mandatory}" readOnly="true"
                                           columns="#{bindings.Duration.hints.displayWidth}"
                                           maximumLength="#{bindings.Duration.hints.precision}"
-                                          shortDesc="#{bindings.Duration.hints.tooltip}" id="it8">
+                                          shortDesc="#{bindings.Duration.hints.tooltip}" id="it2">
                                 <f:validator binding="#{bindings.Duration.validator}"/>
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.Duration.format}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.Price.inputValue}" label="#{bindings.Price.hints.label}"
+                                          required="#{bindings.Price.hints.mandatory}" readOnly="true"
+                                          columns="#{bindings.Price.hints.displayWidth}"
+                                          maximumLength="#{bindings.Price.hints.precision}"
+                                          shortDesc="#{bindings.Price.hints.tooltip}" id="it3">
+                                <f:validator binding="#{bindings.Price.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Price.format}"/>
                             </af:inputText>
                             <f:facet name="footer">
                                 <af:button text="Book" id="b1" action="bookTickets"/>

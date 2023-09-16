@@ -3,40 +3,43 @@
 <!---->
 <Association
   xmlns="http://xmlns.oracle.com/bc4j"
-  Name="FlightDepartureAirportFkAssoc"
+  Name="TicketFlightsTicketsFkAssoc"
   Version="12.2.1.22.48"
   InheritPersonalization="merge">
   <DesignTime>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
   <AssociationEnd
-    Name="Airport1"
+    Name="Ticket"
     Cardinality="1"
     Source="true"
-    Owner="com.skyjetairlines.model.entity.AirportEO">
+    Owner="com.skyjetairlines.model.entity.TicketEO"
+    ViewObject="com.skyjetairlines.model.view.TicketsVO"
+    LockLevel="NONE">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_minCardinality" Value="1"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="Airport1"/>
-      <Attr Name="_foreignKey" Value="com.skyjetairlines.model.entity.AirportEO.AirportPk"/>
+      <Attr Name="_finderName" Value="Ticket"/>
+      <Attr Name="_foreignKey" Value="com.skyjetairlines.model.entity.TicketEO.TicketPk"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="com.skyjetairlines.model.entity.AirportEO.AirportCode"/>
+      <Item Value="com.skyjetairlines.model.entity.TicketEO.TicketId"/>
     </AttrArray>
   </AssociationEnd>
   <AssociationEnd
-    Name="Flight1"
+    Name="TicketFlight"
     Cardinality="-1"
-    Owner="com.skyjetairlines.model.entity.FlightEO">
+    Owner="com.skyjetairlines.model.entity.TicketFlightEO"
+    ExposedAccessor="false">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
-      <Attr Name="_finderName" Value="Flight1"/>
-      <Attr Name="_foreignKey" Value="com.skyjetairlines.model.entity.FlightEO.FlightDepartureAirportFk"/>
+      <Attr Name="_finderName" Value="TicketFlight"/>
+      <Attr Name="_foreignKey" Value="com.skyjetairlines.model.entity.TicketFlightEO.fk_TicketFlightEO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
-      <Item Value="com.skyjetairlines.model.entity.FlightEO.DepartureAirport"/>
+      <Item Value="com.skyjetairlines.model.entity.TicketFlightEO.TicketId"/>
     </AttrArray>
   </AssociationEnd>
 </Association>

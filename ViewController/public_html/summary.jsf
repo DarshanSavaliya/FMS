@@ -126,7 +126,7 @@
                             </af:column>
                         </af:table>
                         <af:spacer id="s3" height="20"/>
-                        <af:button text="Back to Home" id="b1" action="returnToHome"/>
+                        <af:button text="Confirm Booking" id="b1" action="returnToHome"/>
                     </af:panelGroupLayout>
                 </f:facet>
             </af:pageTemplate>

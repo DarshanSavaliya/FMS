@@ -9,7 +9,12 @@
   DBObjectType="table"
   DBObjectName="TICKET_FLIGHTS"
   AliasName="TicketFlightEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  RowClass="com.skyjetairlines.model.entity.TicketFlightEOImpl">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+  </DesignTime>
   <Attribute
     Name="TicketId"
     IsNotNull="true"
@@ -59,6 +64,13 @@
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
+  <AccessorAttribute
+    Name="Ticket"
+    Association="com.skyjetairlines.model.entity.association.TicketFlightsTicketsFkAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.TicketFlightsTicketsFkAssoc.Ticket"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketFlightsTicketsFkAssoc.TicketFlight"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
   <Key
     Name="TicketFlightPk"
     PrimaryKey="true">
@@ -87,6 +99,17 @@
       <Attr Name="_referencedKey" Value="TICKET_PK"/>
       <Attr Name="_isForeign" Value="true"/>
       <Attr Name="_DBObjectName" Value="TICKET_FLIGHT_TICKET_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.TicketFlightEO.TicketId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="fk_TicketFlightEO">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TICKET_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_TICKET_FLIGHT_EO"/>
     </DesignTime>
     <AttrArray Name="Attributes">
       <Item Value="com.skyjetairlines.model.entity.TicketFlightEO.TicketId"/>

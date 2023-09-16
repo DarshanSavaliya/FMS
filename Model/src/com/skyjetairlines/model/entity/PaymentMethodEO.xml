@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="PAYMENT_METHODS"
   AliasName="PaymentMethodEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="PaymentId"
     ColumnName="PAYMENT_ID"
@@ -100,6 +101,14 @@
           ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryMonth_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:RangeValidationBean
+      Name="ExpiryMonthRule0"
+      OnAttribute="ExpiryMonth"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="01"
+      MaxValue="12"
+      ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryMonth_Rule_0"/>
   </Attribute>
   <Attribute
     Name="ExpiryYear"
@@ -113,12 +122,20 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_LABEL"/>
-        <FMT_FORMAT
-          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_FMT_FORMAT"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:RangeValidationBean
+      Name="ExpiryYearRule0"
+      ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_Rule_0"
+      OnAttribute="ExpiryYear"
+      OperandType="LITERAL"
+      Inverse="false"
+      MinValue="1970"
+      MaxValue="2041"/>
   </Attribute>
   <AccessorAttribute
     Name="Customer"

@@ -6,18 +6,12 @@
     <variableIterator id="variables"/>
     <iterator Binds="PaymentMethodsInstanceForCurrentCustomer" RangeSize="25"
               DataControl="FlightManagementSystemAMDataControl" id="PaymentMethodsInstanceForCurrentCustomerIterator"/>
-    <taskFlow id="createPaymentTF1" taskFlowId="/WEB-INF/createPaymentTF.xml#createPaymentTF" activation="deferred"
-              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <taskFlow id="createPaymentTF2" taskFlowId="/WEB-INF/createPaymentTF.xml#createPaymentTF" activation="deferred"
-              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings>
     <list IterBinding="PaymentMethodsInstanceForCurrentCustomerIterator" ListOperMode="navigation"
           ListIter="PaymentMethodsInstanceForCurrentCustomerIterator" id="PaymentMethodsInstanceForCurrentCustomer"
           DTSupportsMRU="true" SelectItemValueMode="ListObject">
       <AttrNames>
-        <Item Value="PaymentId"/>
-        <Item Value="CustomerId"/>
         <Item Value="PaymentType"/>
         <Item Value="CardNo"/>
         <Item Value="ExpiryMonth"/>

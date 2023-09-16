@@ -7,13 +7,13 @@
       <property
          name="activityId">createBooking</property>
       <property
-         name="x">229.0</property>
+         name="x">201.0</property>
       <property
          name="start">true</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>createBooking&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">216.53906</property>
+         name="y">217.27344</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -40,7 +40,7 @@
       <property
          name="fromOutcome">addBookingDetails</property>
       <property
-         name="sdm:polyPoints">R50,270.0,216.47266,433.0,218.26953,L50</property>
+         name="sdm:polyPoints">R50,242.0,217.20703,433.0,218.26953,L50</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule5">
@@ -85,7 +85,7 @@
       <property
          name="description">&lt;html>&lt;p>&lt;b>save&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  home&lt;/p></property>
       <property
-         name="y">434.53906</property>
+         name="y">434.47266</property>
       <property
          name="finish">true</property>
       <property
@@ -149,6 +149,64 @@
       <property
          name="fromOutcome">returnToHome</property>
       <property
-         name="sdm:polyPoints">L50,158.0,407.20312,13.0,434.47266,R50</property>
+         name="sdm:polyPoints">L50,158.0,407.20312,13.0,434.40625,R50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall16">
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createPaymentTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">createPaymentTF</property>
+      <property
+         name="x">474.45898</property>
+      <property
+         name="y">581.6367</property>
+      <property
+         name="documentReference">/WEB-INF/createPaymentTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">createPaymentTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase17"
+      from="View9"
+      to="TaskFlowCall16">
+      <property
+         name="fromOutcome">createPayment</property>
+      <property
+         name="sdm:polyPoints">B50,474.0,460.26953,474.45898,527.5703,T50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall17">
+      <property
+         name="runAsDialog">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createPassengerTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">createPassengerTF</property>
+      <property
+         name="x">473.13477</property>
+      <property
+         name="y">48.035156</property>
+      <property
+         name="documentReference">/WEB-INF/createPassengerTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">createPassengerTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="View3"
+      to="TaskFlowCall17">
+      <property
+         name="fromOutcome">createPassenger</property>
+      <property
+         name="sdm:polyPoints">T50,474.0,164.26953,473.13477,101.96875,B50</property>
    </ControlFlowCase>
 </SDM>

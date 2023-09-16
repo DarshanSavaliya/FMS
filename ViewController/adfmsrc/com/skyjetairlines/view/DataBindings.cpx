@@ -27,9 +27,12 @@
     <page path="/choosePayment.jsf" usageId="com_skyjetairlines_view_choosePaymentPageDef"/>
     <page path="/WEB-INF/createPaymentTF.xml#createPaymentTF@CreateInsert"
           usageId="com_skyjetairlines_view_createPaymentTF_createPaymentTF_CreateInsertPageDef"/>
-    <page path="/createPayment.jsff" usageId="com_skyjetairlines_view_createPaymentPageDef"/>
     <page path="/testPage.jsf" usageId="com_skyjetairlines_view_testPagePageDef"/>
     <page path="/summary.jsf" usageId="com_skyjetairlines_view_summaryPageDef"/>
+    <page path="/createPayment.jsf" usageId="com_skyjetairlines_view_createPaymentPageDef"/>
+    <page path="/WEB-INF/createPassengerTF.xml#createPassengerTF@CreateInsert"
+          usageId="com_skyjetairlines_view_createPassengerTF_createPassengerTF_CreateInsertPageDef"/>
+    <page path="/createPassenger.jsf" usageId="com_skyjetairlines_view_createPassengerPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -60,6 +63,10 @@
           path="com.skyjetairlines.view.pageDefs.createPaymentPageDef"/>
     <page id="com_skyjetairlines_view_testPagePageDef" path="com.skyjetairlines.view.pageDefs.testPagePageDef"/>
     <page id="com_skyjetairlines_view_summaryPageDef" path="com.skyjetairlines.view.pageDefs.summaryPageDef"/>
+    <page id="com_skyjetairlines_view_createPassengerTF_createPassengerTF_CreateInsertPageDef"
+          path="com.skyjetairlines.view.pageDefs.createPassengerTF_createPassengerTF_CreateInsertPageDef"/>
+    <page id="com_skyjetairlines_view_createPassengerPageDef"
+          path="com.skyjetairlines.view.pageDefs.createPassengerPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

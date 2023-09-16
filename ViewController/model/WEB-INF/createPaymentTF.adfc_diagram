@@ -7,7 +7,7 @@
       <property
          name="activityId">createPayment</property>
       <property
-         name="pageFragment">true</property>
+         name="pageFragment">false</property>
       <property
          name="x">396.0</property>
       <property
@@ -17,7 +17,7 @@
       <property
          name="y">374.0703</property>
       <property
-         name="page">/createPayment.jsff</property>
+         name="page">/createPayment.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -51,11 +51,11 @@
       <property
          name="activityId">commit</property>
       <property
-         name="x">602.0</property>
+         name="x">580.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>commit&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  commit&lt;/p></property>
       <property
-         name="y">372.47266</property>
+         name="y">523.20703</property>
       <property
          name="finish">true</property>
       <property
@@ -69,6 +69,31 @@
       <property
          name="fromOutcome">save</property>
       <property
-         name="sdm:polyPoints">R50,437.0,374.0039,561.0,372.47266,L50</property>
+         name="sdm:polyPoints">B50,396.0,428.0039,539.0,523.1406,L50</property>
+   </ControlFlowCase>
+   <TaskFlowReturn
+      id="TaskFlowReturn7">
+      <property
+         name="activityId">cancel</property>
+      <property
+         name="x">572.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>cancel&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Return&lt;/p>&lt;p>Outcome:  cancel&lt;/p></property>
+      <property
+         name="y">230.33594</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="exceptionHandler">false</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase8"
+      from="View2"
+      to="TaskFlowReturn7">
+      <property
+         name="fromOutcome">cancel</property>
+      <property
+         name="sdm:polyPoints">T50,396.0,320.0039,531.0,230.26953,L50</property>
    </ControlFlowCase>
 </SDM>

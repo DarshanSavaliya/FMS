@@ -13,7 +13,8 @@
   CustomQuery="false"
   SelectAllAttributes="false"
   PageIterMode="Full"
-  AccessMode="DEFAULT">
+  AccessMode="DEFAULT"
+  AutoRefresh="true">
   <ViewAccessor
     Name="CustomersVO1"
     ViewObjectName="com.skyjetairlines.model.view.CustomersVO"

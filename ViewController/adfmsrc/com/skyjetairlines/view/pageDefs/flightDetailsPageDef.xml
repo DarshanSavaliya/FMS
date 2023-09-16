@@ -13,6 +13,10 @@
         <Item Value="Flightno"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledDeparture">
       <AttrNames>
         <Item Value="ScheduledDeparture"/>
@@ -23,18 +27,14 @@
         <Item Value="ScheduledArrival"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="AvailableSeats">
-      <AttrNames>
-        <Item Value="AvailableSeats"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="FlightsInstanceIterator" id="Duration">
       <AttrNames>
         <Item Value="Duration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="Price">
+      <AttrNames>
+        <Item Value="Price"/>
       </AttrNames>
     </attributeValues>
   </bindings>

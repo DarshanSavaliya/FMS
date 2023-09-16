@@ -5,9 +5,6 @@
     <transaction>
       <new-transaction/>
     </transaction>
-    <data-control-scope>
-      <shared/>
-    </data-control-scope>
     <input-parameter-definition id="__2">
       <name>numberOfSeats</name>
       <value>#{pageFlowScope.flightBookingBean.numberOfSeats}</value>
@@ -46,6 +43,28 @@
     <view id="summary">
       <page>/summary.jsf</page>
     </view>
+    <task-flow-call id="createPaymentTF">
+      <task-flow-reference>
+        <document>/WEB-INF/createPaymentTF.xml</document>
+        <id>createPaymentTF</id>
+      </task-flow-reference>
+      <run-as-dialog>
+        <display-type>
+          <inline-popup/>
+        </display-type>
+      </run-as-dialog>
+    </task-flow-call>
+    <task-flow-call id="createPassengerTF">
+      <task-flow-reference>
+        <document>/WEB-INF/createPassengerTF.xml</document>
+        <id>createPassengerTF</id>
+      </task-flow-reference>
+      <run-as-dialog>
+        <display-type>
+          <inline-popup/>
+        </display-type>
+      </run-as-dialog>
+    </task-flow-call>
     <control-flow-rule id="__3">
       <from-activity-id>createBooking</from-activity-id>
       <control-flow-case id="__4">
@@ -66,12 +85,20 @@
         <from-outcome>choosePaymentOption</from-outcome>
         <to-activity-id>choosePayment</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome>createPassenger</from-outcome>
+        <to-activity-id>createPassengerTF</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__9">
       <from-activity-id>choosePayment</from-activity-id>
       <control-flow-case id="__10">
         <from-outcome>viewSummary</from-outcome>
         <to-activity-id>summary</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>createPayment</from-outcome>
+        <to-activity-id>createPaymentTF</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__11">

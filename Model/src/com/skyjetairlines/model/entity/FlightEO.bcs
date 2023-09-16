@@ -10,3 +10,10 @@ def ActualDeparture_ExpressionScript_Expression()
 ScheduledDeparture
 }
 
+
+@TransientValueExpression(attributeName="Price")
+def Price_ExpressionScript_Expression()
+{
+(1+(TotalSeats/(AvailableSeats+1)))*BaseFare
+}
+

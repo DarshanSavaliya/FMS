@@ -58,23 +58,13 @@
                                     <f:validator binding="#{bindings.Duration.validator}"/>
                                     <af:convertNumber groupingUsed="false" pattern="#{bindings.Duration.format}"/>
                                 </af:inputText>
-                                <af:inputText value="#{bindings.BaseFare.inputValue}"
-                                              label="#{bindings.BaseFare.hints.label}"
-                                              required="#{bindings.BaseFare.hints.mandatory}" readOnly="true"
-                                              columns="#{bindings.BaseFare.hints.displayWidth}"
-                                              maximumLength="#{bindings.BaseFare.hints.precision}"
-                                              shortDesc="#{bindings.BaseFare.hints.tooltip}" id="it3">
-                                    <f:validator binding="#{bindings.BaseFare.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.BaseFare.format}"/>
-                                </af:inputText>
-                                <af:inputText value="#{bindings.AvailableSeats.inputValue}"
-                                              label="#{bindings.AvailableSeats.hints.label}"
-                                              required="#{bindings.AvailableSeats.hints.mandatory}" readOnly="true"
-                                              columns="#{bindings.AvailableSeats.hints.displayWidth}"
-                                              maximumLength="#{bindings.AvailableSeats.hints.precision}"
-                                              shortDesc="#{bindings.AvailableSeats.hints.tooltip}" id="it4">
-                                    <f:validator binding="#{bindings.AvailableSeats.validator}"/>
-                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.AvailableSeats.format}"/>
+                                <af:inputText value="#{bindings.Price.inputValue}" label="#{bindings.Price.hints.label}"
+                                              required="#{bindings.Price.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Price.hints.displayWidth}"
+                                              maximumLength="#{bindings.Price.hints.precision}"
+                                              shortDesc="#{bindings.Price.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.Price.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Price.format}"/>
                                 </af:inputText>
                             </af:panelFormLayout>
                         </f:facet>
@@ -102,20 +92,20 @@
                                                 <af:convertDateTime pattern="#{bindings.BookingDate.format}"/>
                                             </af:outputText>
                                         </af:panelLabelAndMessage>
-                                        <af:inputText value="#{bindings.TotalAmount.inputValue}"
-                                                      label="#{bindings.TotalAmount.hints.label}"
-                                                      required="#{bindings.TotalAmount.hints.mandatory}"
-                                                      columns="#{bindings.TotalAmount.hints.displayWidth}"
-                                                      maximumLength="#{bindings.TotalAmount.hints.precision}"
-                                                      shortDesc="#{bindings.TotalAmount.hints.tooltip}" id="it5">
-                                            <f:validator binding="#{bindings.TotalAmount.validator}"/>
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.TotalAmount.format}"/>
-                                        </af:inputText>
+                                        <af:panelLabelAndMessage label="#{bindings.TotalAmount.hints.label}" id="plam4">
+                                            <af:outputText value="#{bindings.TotalAmount.inputValue}"
+                                                           shortDesc="#{bindings.TotalAmount.hints.tooltip}" id="ot6">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.TotalAmount.format}"/>
+                                            </af:outputText>
+                                        </af:panelLabelAndMessage>
                                     </af:panelFormLayout>
                                 </f:facet>
                                 <f:facet name="second">
-                                    <af:panelGroupLayout id="pgl1">
+                                    <af:panelCollection id="pc1">
+                                        <f:facet name="menus"/>
+                                        <f:facet name="toolbar"/>
+                                        <f:facet name="statusbar"/>
                                         <af:table value="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel}"
                                                   var="row"
                                                   rows="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}"
@@ -123,7 +113,6 @@
                                                   rowBandingInterval="0"
                                                   selectedRowKeys="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.selectedRow}"
                                                   selectionListener="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
-                                                  rowSelection="single"
                                                   fetchSize="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}"
                                                   id="t1">
                                             <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.label}"
@@ -156,8 +145,19 @@
                                                 </af:selectOneChoice>
                                             </af:column>
                                         </af:table>
-                                        <af:button text="Pay" id="b1" action="choosePaymentOption"/>
-                                    </af:panelGroupLayout>
+                                        <f:facet name="secondaryToolbar">
+                                            <af:toolbar id="t2">
+                                                <af:button text="Create New Passenger" id="b2"
+                                                           action="createPassenger" useWindow="true"
+                                                           windowHeight="300" windowWidth="450"
+                                                           returnListener="#{pageFlowScope.flightBookingBean.PassengerCreatedListener}"
+                                                           immediate="true"/>
+                                                <af:spacer id="s1" height="10" width="10"/>
+                                                <af:button text="Select Payment Method" id="b1"
+                                                           action="choosePaymentOption"/>
+                                            </af:toolbar>
+                                        </f:facet>
+                                    </af:panelCollection>
                                 </f:facet>
                             </af:panelSplitter>
                         </f:facet>

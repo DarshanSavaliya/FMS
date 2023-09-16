@@ -319,6 +319,15 @@
     EntityUsage="FlightEO"
     AliasName="VERSION"
     IsUpdateable="false"/>
+  <ViewAttribute
+    Name="Price"
+    IsQueriable="false"
+    IsPersistent="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Price"
+    EntityUsage="FlightEO"
+    AliasName="PRICE"/>
   <ViewCriteria
     Name="SerachFlightsViewCriteria"
     ViewObjectName="com.skyjetairlines.model.view.FlightsVO"
