@@ -44,6 +44,7 @@ public class TicketFlightEOImpl extends EntityImpl {
         }
     }
 
+
     public static final int TICKETID = AttributesEnum.TicketId.index();
     public static final int FLIGHTID = AttributesEnum.FlightId.index();
     public static final int AMOUNT = AttributesEnum.Amount.index();
@@ -54,6 +55,14 @@ public class TicketFlightEOImpl extends EntityImpl {
      */
     public TicketFlightEOImpl() {
     }
+
+    /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.skyjetairlines.model.entity.TicketFlightEO");
+    }
+
 
     /**
      * Gets the attribute value for TicketId, using the alias name TicketId.
@@ -106,16 +115,17 @@ public class TicketFlightEOImpl extends EntityImpl {
     /**
      * @return the associated entity oracle.jbo.server.EntityImpl.
      */
-    public EntityImpl getTicket() {
-        return (EntityImpl) getAttributeInternal(TICKET);
+    public TicketEOImpl getTicket() {
+        return (TicketEOImpl) getAttributeInternal(TICKET);
     }
 
     /**
      * Sets <code>value</code> as the associated entity oracle.jbo.server.EntityImpl.
      */
-    public void setTicket(EntityImpl value) {
+    public void setTicket(TicketEOImpl value) {
         setAttributeInternal(TICKET, value);
     }
+
 
     /**
      * @param ticketId key constituent
@@ -126,14 +136,6 @@ public class TicketFlightEOImpl extends EntityImpl {
     public static Key createPrimaryKey(BigDecimal ticketId, BigDecimal flightId) {
         return new Key(new Object[] { ticketId, flightId });
     }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.skyjetairlines.model.entity.TicketFlightEO");
-    }
-
 
     public void postChanges(TransactionEvent transactionEvent) {
         if (getPostState() == STATUS_NEW || getPostState() == STATUS_MODIFIED) {

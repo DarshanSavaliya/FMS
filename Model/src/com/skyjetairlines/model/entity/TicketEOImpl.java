@@ -4,6 +4,9 @@ import java.math.BigDecimal;
 
 import oracle.jbo.Key;
 import oracle.jbo.RowIterator;
+import oracle.jbo.RowSet;
+import oracle.jbo.domain.DBSequence;
+import oracle.jbo.domain.Number;
 import oracle.jbo.server.EntityDefImpl;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.TransactionEvent;
@@ -23,7 +26,8 @@ public class TicketEOImpl extends EntityImpl {
         PassengerId,
         Booking,
         Passenger,
-        Flight;
+        Flight,
+        TicketFlight;
         private static AttributesEnum[] vals = null;
         private static final int firstIndex = 0;
 
@@ -46,12 +50,15 @@ public class TicketEOImpl extends EntityImpl {
             return vals;
         }
     }
+
+
     public static final int TICKETID = AttributesEnum.TicketId.index();
     public static final int BOOKINGID = AttributesEnum.BookingId.index();
     public static final int PASSENGERID = AttributesEnum.PassengerId.index();
     public static final int BOOKING = AttributesEnum.Booking.index();
     public static final int PASSENGER = AttributesEnum.Passenger.index();
     public static final int FLIGHT = AttributesEnum.Flight.index();
+    public static final int TICKETFLIGHT = AttributesEnum.TicketFlight.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -60,18 +67,26 @@ public class TicketEOImpl extends EntityImpl {
     }
 
     /**
+     * @return the definition object for this instance class.
+     */
+    public static synchronized EntityDefImpl getDefinitionObject() {
+        return EntityDefImpl.findDefObject("com.skyjetairlines.model.entity.TicketEO");
+    }
+
+
+    /**
      * Gets the attribute value for TicketId, using the alias name TicketId.
      * @return the value of TicketId
      */
-    public BigDecimal getTicketId() {
-        return (BigDecimal) getAttributeInternal(TICKETID);
+    public DBSequence getTicketId() {
+        return (DBSequence) getAttributeInternal(TICKETID);
     }
 
     /**
      * Sets <code>value</code> as the attribute value for TicketId.
      * @param value value to set the TicketId
      */
-    public void setTicketId(BigDecimal value) {
+    public void setTicketId(DBSequence value) {
         setAttributeInternal(TICKETID, value);
     }
 
@@ -142,23 +157,28 @@ public class TicketEOImpl extends EntityImpl {
         return (RowIterator) getAttributeInternal(FLIGHT);
     }
 
+
+    /**
+     * @return the associated entity oracle.jbo.RowIterator.
+     */
+    public RowIterator getTicketFlight() {
+        return (RowIterator) getAttributeInternal(TICKETFLIGHT);
+    }
+
     /**
      * @param ticketId key constituent
 
      * @return a Key object based on given key constituents.
      */
-    public static Key createPrimaryKey(BigDecimal ticketId) {
+    public static Key createPrimaryKey(DBSequence ticketId) {
         return new Key(new Object[] { ticketId });
     }
-
-    /**
-     * @return the definition object for this instance class.
-     */
-    public static synchronized EntityDefImpl getDefinitionObject() {
-        return EntityDefImpl.findDefObject("com.skyjetairlines.model.entity.TicketEO");
-    }
     
+    RowSet newTicketFlightsBeforePost = null;
     public void postChanges(TransactionEvent transactionEvent) {
+        if(getPostState() == STATUS_NEW) {
+            newTicketFlightsBeforePost = (RowSet)getTicketFlight();
+        }
         if (getPostState() == STATUS_NEW || getPostState() == STATUS_MODIFIED) {
             EntityImpl booking = getBooking();
             if (booking != null) {
@@ -168,6 +188,17 @@ public class TicketEOImpl extends EntityImpl {
             }
         }
         super.postChanges(transactionEvent);
+    }
+    
+    protected void refreshFKInNewContainees() {
+       if (newTicketFlightsBeforePost != null) {
+          Number newTicketId = getTicketId().getSequenceNumber();
+          while (newTicketFlightsBeforePost.hasNext()){
+             TicketFlightEOImpl ticketFlight =
+                (TicketFlightEOImpl)newTicketFlightsBeforePost.next();
+              ticketFlight.setTicketId(newTicketId.bigDecimalValue());
+          }
+       }  
     }
 }
 

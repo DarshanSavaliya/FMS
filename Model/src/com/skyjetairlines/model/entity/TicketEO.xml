@@ -19,13 +19,14 @@
     Name="TicketId"
     ColumnName="TICKET_ID"
     SQLType="NUMERIC"
-    Type="java.math.BigDecimal"
+    Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
     TableName="TICKETS"
-    PrimaryKey="true">
-    <TransientExpression
-      Name="ExpressionScript"
-      CodeSourceName="TicketEORow"/>
+    PrimaryKey="true"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Domain="oracle.jbo.domain.DBSequence"
+    RetrievedOnInsert="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -82,6 +83,13 @@
     Association="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc"
     AssociationEnd="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc.Flight"
     AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc.Ticket"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TicketFlight"
+    Association="com.skyjetairlines.model.entity.association.TicketFlightsTicketsFkAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.TicketFlightsTicketsFkAssoc.TicketFlight"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketFlightsTicketsFkAssoc.Ticket"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
   <Key

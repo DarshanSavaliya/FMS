@@ -30,8 +30,7 @@
   <AssociationEnd
     Name="TicketFlight"
     Cardinality="-1"
-    Owner="com.skyjetairlines.model.entity.TicketFlightEO"
-    ExposedAccessor="false">
+    Owner="com.skyjetairlines.model.entity.TicketFlightEO">
     <DesignTime>
       <Attr Name="_isUpdateable" Value="true"/>
       <Attr Name="_aggregation" Value="0"/>
