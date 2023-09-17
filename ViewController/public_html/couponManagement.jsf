@@ -1,0 +1,567 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="couponManagement.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:panelTabbed position="left" id="pt2"
+                                    maxTabSize="infinity" dimensionsFrom="disclosedChild" verticalTabMode="iconAndText">
+                        <af:showDetailItem id="tab1" text="RouteCoupons"
+                                           inflexibleHeight="100" inlineStyle="text-align:center;" flex="0">
+                            <af:panelCollection id="pc1">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.CouponsPlaceInstance.collectionModel}" var="row"
+                                          rows="#{bindings.CouponsPlaceInstance.rangeSize}"
+                                          emptyText="#{bindings.CouponsPlaceInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.CouponsPlaceInstance.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.CouponsPlaceInstance.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.CouponsPlaceInstance.rangeSize}"
+                                          filterModel="#{bindings.CouponsPlaceInstanceQuery.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.CouponsPlaceInstanceQuery.processQuery}"
+                                          varStatus="vs" id="t1" >
+                                    <af:column sortProperty="#{bindings.CouponsPlaceInstance.hints.CouponCode.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsPlaceInstance.hints.CouponCode.label}"
+                                               id="c1">
+                                        <af:outputText value="#{row.CouponCode}"
+                                                       shortDesc="#{bindings.CouponsPlaceInstance.hints.CouponCode.tooltip}"
+                                                       id="ot1"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsPlaceInstance.hints.Dpt.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsPlaceInstance.hints.Dpt.label}" id="c2">
+                                        <af:outputText value="#{row.Dpt}"
+                                                       shortDesc="#{bindings.CouponsPlaceInstance.hints.Dpt.tooltip}"
+                                                       id="ot2"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsPlaceInstance.hints.Arv.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsPlaceInstance.hints.Arv.label}" id="c3">
+                                        <af:outputText value="#{row.Arv}"
+                                                       shortDesc="#{bindings.CouponsPlaceInstance.hints.Arv.tooltip}"
+                                                       id="ot3"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsPlaceInstance.hints.Discount.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsPlaceInstance.hints.Discount.label}"
+                                               id="c4">
+                                        <af:outputText value="#{row.Discount}"
+                                                       shortDesc="#{bindings.CouponsPlaceInstance.hints.Discount.tooltip}"
+                                                       id="ot4">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CouponsPlaceInstance.hints.Discount.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column id="c5">
+                                        <af:button text="Edit" id="b1">
+                                            <af:showPopupBehavior popupId="edit"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="edit"
+                                                  partialTriggers="b1" animate="true">
+                                            <af:dialog id="d2" type="none">
+                                                <f:facet name="buttonBar">
+                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Ok" id="b2"/>
+                                                    <af:button actionListener="#{bindings.Rollback.execute}"
+                                                               text="Cancel"
+                                                               immediate="true" id="b3">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </f:facet>
+                                                <af:panelFormLayout id="pfl1">
+                                                    <af:inputText value="#{row.bindings.CouponCode.inputValue}"
+                                                                  label="#{bindings.CouponsPlaceInstance.hints.CouponCode.label}"
+                                                                  required="#{bindings.CouponsPlaceInstance.hints.CouponCode.mandatory}"
+                                                                  columns="#{bindings.CouponsPlaceInstance.hints.CouponCode.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsPlaceInstance.hints.CouponCode.precision}"
+                                                                  shortDesc="#{bindings.CouponsPlaceInstance.hints.CouponCode.tooltip}"
+                                                                  id="it1">
+                                                        <f:validator binding="#{row.bindings.CouponCode.validator}"/>
+                                                    </af:inputText>
+                                                    <af:selectOneChoice value="#{row.bindings.Dpt.inputValue}"
+                                                                        label="#{row.bindings.Dpt.label}"
+                                                                        required="#{bindings.CouponsPlaceInstance.hints.Dpt.mandatory}"
+                                                                        shortDesc="#{bindings.CouponsPlaceInstance.hints.Dpt.tooltip}"
+                                                                        id="soc1">
+                                                        <f:selectItems value="#{row.bindings.Dpt.items}" id="si1"/>
+                                                        <f:validator binding="#{row.bindings.Dpt.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:selectOneChoice value="#{row.bindings.Arv.inputValue}"
+                                                                         label="#{row.bindings.Arv.label}"
+                                                                        required="#{bindings.CouponsPlaceInstance.hints.Arv.mandatory}"
+                                                                        shortDesc="#{bindings.CouponsPlaceInstance.hints.Arv.tooltip}"
+                                                                        id="soc2"
+                                                                        inlineStyle="baseline-shift:baseline;">
+                                                        <f:selectItems value="#{row.bindings.Arv.items}" id="si2"/>
+                                                        <f:validator binding="#{row.bindings.Arv.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:panelLabelAndMessage label="#{bindings.CouponsPlaceInstance.hints.Type.label}"
+                                                                             id="plam1">
+                                                        <af:outputFormatted value="#{row.bindings.Type.inputValue}"
+                                                                            id="of1"/>
+                                                    </af:panelLabelAndMessage>
+                                                    <af:inputText value="#{row.bindings.Discount.inputValue}"
+                                                                  label="#{bindings.CouponsPlaceInstance.hints.Discount.label}"
+                                                                  required="#{bindings.CouponsPlaceInstance.hints.Discount.mandatory}"
+                                                                  columns="#{bindings.CouponsPlaceInstance.hints.Discount.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsPlaceInstance.hints.Discount.precision}"
+                                                                  shortDesc="#{bindings.CouponsPlaceInstance.hints.Discount.tooltip}"
+                                                                  id="it2">
+                                                        <f:validator binding="#{row.bindings.Discount.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.CouponsPlaceInstance.hints.Discount.format}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:column>
+                                </af:table>
+                                <f:facet name="secondaryToolbar">
+                                    <af:toolbar id="t2">
+                                        <af:button text="Create Coupon" id="b4">
+                                            <af:showPopupBehavior popupId="createcoup" triggerType="action"/>
+                                        </af:button>
+                                        <af:button text="Delete Coupon" id="b5">
+                                            <af:showPopupBehavior popupId="deletecoup" triggerType="action"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="createcoup"
+                                                  partialTriggers="b4"
+                                                  popupFetchListener="#{CouponManageBean.createAndInsertCouponPlace}"
+                                                  animate="true" contentDelivery="lazyUncached"
+                                                  resetEditableValues="whenCanceled"
+                                                  popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}">
+                                            <af:dialog id="d4" type="okCancel" affirmativeTextAndAccessKey="Save"
+                                                       cancelTextAndAccessKey="Discard"
+                                                       dialogListener="#{CouponManageBean.commitCouponPlace}">
+                                                <af:panelFormLayout id="pfl2">
+                                                    <af:inputText value="#{bindings.CouponCode.inputValue}"
+                                                                  label="#{bindings.CouponCode.hints.label}"
+                                                                  required="#{bindings.CouponCode.hints.mandatory}"
+                                                                  columns="#{bindings.CouponCode.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponCode.hints.precision}"
+                                                                  shortDesc="#{bindings.CouponCode.hints.tooltip}"
+                                                                  id="it3">
+                                                        <f:validator binding="#{bindings.CouponCode.validator}"/>
+                                                    </af:inputText>
+                                                    <af:selectOneChoice value="#{bindings.Dpt.inputValue}"
+                                                                        label="#{bindings.Dpt.label}"
+                                                                        required="#{bindings.Dpt.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Dpt.hints.tooltip}"
+                                                                        id="soc3">
+                                                        <f:selectItems value="#{bindings.Dpt.items}" id="si3"/>
+                                                        <f:validator binding="#{bindings.Dpt.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:selectOneChoice value="#{bindings.Arv.inputValue}"
+                                                                        label="#{bindings.Arv.label}"
+                                                                        required="#{bindings.Arv.hints.mandatory}"
+                                                                        shortDesc="#{bindings.Arv.hints.tooltip}"
+                                                                        id="soc4">
+                                                        <f:selectItems value="#{bindings.Arv.items}" id="si4"/>
+                                                        <f:validator binding="#{bindings.Arv.validator}"/>
+                                                    </af:selectOneChoice>
+                                                    <af:inputText value="#{bindings.Discount.inputValue}"
+                                                                  label="#{bindings.Discount.hints.label}"
+                                                                  required="#{bindings.Discount.hints.mandatory}"
+                                                                  columns="#{bindings.Discount.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Discount.hints.precision}"
+                                                                  shortDesc="#{bindings.Discount.hints.tooltip}"
+                                                                  id="it4">
+                                                        <f:validator binding="#{bindings.Discount.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Discount.format}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                            </af:dialog>
+                                        </af:popup>
+                                        <af:popup childCreation="deferred" autoCancel="disabled" id="deletecoup"
+                                                  partialTriggers="b5">
+                                            <af:dialog id="d3"
+                                                       dialogListener="#{CouponManageBean.deleteCommitCouponPlace}">
+                                                <f:facet name="buttonBar"/>
+                                                <af:outputFormatted value="Confirm to delete the selected coupon!"
+                                                                    id="of2"/>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:toolbar>
+                                </f:facet>
+                            </af:panelCollection>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Amount Coupons">
+                            <af:panelCollection id="pc2">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.CouponsTimeInstance.collectionModel}" var="row"
+                                          rows="#{bindings.CouponsTimeInstance.rangeSize}"
+                                          emptyText="#{bindings.CouponsTimeInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.CouponsTimeInstance.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.CouponsTimeInstance.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.CouponsTimeInstance.rangeSize}"
+                                          filterModel="#{bindings.CouponsTimeInstanceQuery.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.CouponsTimeInstanceQuery.processQuery}"
+                                          varStatus="vs" id="t3">
+                                    <af:column sortProperty="#{bindings.CouponsTimeInstance.hints.CouponCode.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsTimeInstance.hints.CouponCode.label}"
+                                               id="c6">
+                                        <af:outputText value="#{row.CouponCode}"
+                                                       shortDesc="#{bindings.CouponsTimeInstance.hints.CouponCode.tooltip}"
+                                                       id="ot5"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsTimeInstance.hints.Dpt.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsTimeInstance.hints.Dpt.label}" id="c7">
+                                        <af:outputText value="#{row.Dpt}"
+                                                       shortDesc="#{bindings.CouponsTimeInstance.hints.Dpt.tooltip}"
+                                                       id="ot6"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsTimeInstance.hints.Arv.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsTimeInstance.hints.Arv.label}" id="c8">
+                                        <af:outputText value="#{row.Arv}"
+                                                       shortDesc="#{bindings.CouponsTimeInstance.hints.Arv.tooltip}"
+                                                       id="ot7"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsTimeInstance.hints.Discount.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsTimeInstance.hints.Discount.label}"
+                                               id="c9">
+                                        <af:outputText value="#{row.Discount}"
+                                                       shortDesc="#{bindings.CouponsTimeInstance.hints.Discount.tooltip}"
+                                                       id="ot8">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CouponsTimeInstance.hints.Discount.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column id="c10">
+                                        <af:button text="Edit" id="b6">
+                                            <af:showPopupBehavior popupId="edittime" triggerType="action"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="edittime"
+                                                  animate="true" partialTriggers="b6">
+                                            <af:dialog id="d5" type="none">
+                                                <f:facet name="buttonBar">
+                                                    <af:button text="Ok" id="b7"
+                                                               actionListener="#{CouponManageBean.testMethod}"/>
+                                                    <af:button actionListener="#{bindings.Rollback.execute}"
+                                                               text="Cancel"
+                                                               immediate="true" id="b8">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </f:facet>
+                                                <af:panelFormLayout id="pfl3">
+                                                    <af:inputText value="#{row.bindings.CouponCode.inputValue}"
+                                                                  label="#{bindings.CouponsTimeInstance.hints.CouponCode.label}"
+                                                                  required="#{bindings.CouponsTimeInstance.hints.CouponCode.mandatory}"
+                                                                  columns="#{bindings.CouponsTimeInstance.hints.CouponCode.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsTimeInstance.hints.CouponCode.precision}"
+                                                                  shortDesc="#{bindings.CouponsTimeInstance.hints.CouponCode.tooltip}"
+                                                                  id="it5">
+                                                        <f:validator binding="#{row.bindings.CouponCode.validator}"/>
+                                                    </af:inputText>
+                                                    <af:panelLabelAndMessage label="#{bindings.CouponsTimeInstance.hints.Dpt.label}"
+                                                                             id="plam2">
+                                                        <af:outputText value="#{row.Dpt}"
+                                                                       shortDesc="#{bindings.CouponsTimeInstance.hints.Dpt.tooltip}"
+                                                                       id="ot9"/>
+                                                    </af:panelLabelAndMessage>
+                                                    <af:inputDate value="#{row.bindings.StartDate.inputValue}"
+                                                                  label="#{bindings.CouponsTimeInstance.hints.StartDate.label}"
+                                                                  required="#{bindings.CouponsTimeInstance.hints.StartDate.mandatory}"
+                                                                  columns="#{bindings.CouponsTimeInstance.hints.StartDate.displayWidth}"
+                                                                  shortDesc="#{bindings.CouponsTimeInstance.hints.StartDate.tooltip}"
+                                                                  id="id1">
+                                                        <f:validator binding="#{row.bindings.StartDate.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.CouponsTimeInstance.hints.StartDate.format}"/>
+                                                    </af:inputDate>
+                                                    <af:panelLabelAndMessage label="#{bindings.CouponsTimeInstance.hints.Arv.label}"
+                                                                             id="plam3">
+                                                        <af:outputText value="#{row.Arv}"
+                                                                       shortDesc="#{bindings.CouponsTimeInstance.hints.Arv.tooltip}"
+                                                                       id="ot10"/>
+                                                    </af:panelLabelAndMessage>
+                                                    <af:inputDate value="#{row.bindings.EndDate.inputValue}"
+                                                                  label="#{bindings.CouponsTimeInstance.hints.EndDate.label}"
+                                                                  required="#{bindings.CouponsTimeInstance.hints.EndDate.mandatory}"
+                                                                  columns="#{bindings.CouponsTimeInstance.hints.EndDate.displayWidth}"
+                                                                  shortDesc="#{bindings.CouponsTimeInstance.hints.EndDate.tooltip}"
+                                                                  id="id2">
+                                                        <f:validator binding="#{row.bindings.EndDate.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.CouponsTimeInstance.hints.EndDate.format}"/>
+                                                    </af:inputDate>
+                                                    <af:inputText value="#{row.bindings.Discount.inputValue}"
+                                                                  label="#{bindings.CouponsTimeInstance.hints.Discount.label}"
+                                                                  required="#{bindings.CouponsTimeInstance.hints.Discount.mandatory}"
+                                                                  columns="#{bindings.CouponsTimeInstance.hints.Discount.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsTimeInstance.hints.Discount.precision}"
+                                                                  shortDesc="#{bindings.CouponsTimeInstance.hints.Discount.tooltip}"
+                                                                  id="it6">
+                                                        <f:validator binding="#{row.bindings.Discount.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.CouponsTimeInstance.hints.Discount.format}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:column>
+                                </af:table>
+                                <f:facet name="secondaryToolbar">
+                                    <af:toolbar id="t4">
+                                        <af:button text="Create Coupon" id="b9">
+                                            <af:showPopupBehavior popupId="createTime" triggerType="action"/>
+                                        </af:button>
+                                        <af:button text="Delete Coupon" id="b10">
+                                            <af:showPopupBehavior popupId="deleteTime" triggerType="action"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="createTime"
+                                                  popupFetchListener="#{CouponManageBean.createAndInsertCouponTime}"
+                                                  animate="true" contentDelivery="lazyUncached"
+                                                  popupCanceledListener="#{CouponManageBean.commitTime}">
+                                            <af:dialog id="d6" dialogListener="#{CouponManageBean.commitCouponTime}"
+                                                       affirmativeTextAndAccessKey="Save"
+                                                       cancelTextAndAccessKey="Discard" type="okCancel">
+                                                <f:facet name="buttonBar"/>
+                                                <af:panelFormLayout id="pfl4">
+                                                    <af:inputText value="#{bindings.CouponCode1.inputValue}"
+                                                                  label="#{bindings.CouponCode1.hints.label}"
+                                                                  required="#{bindings.CouponCode1.hints.mandatory}"
+                                                                  columns="#{bindings.CouponCode1.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponCode1.hints.precision}"
+                                                                  shortDesc="#{bindings.CouponCode1.hints.tooltip}"
+                                                                  id="it7">
+                                                        <f:validator binding="#{bindings.CouponCode1.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputDate value="#{bindings.StartDate.inputValue}"
+                                                                  label="#{bindings.StartDate.hints.label}"
+                                                                  required="#{bindings.StartDate.hints.mandatory}"
+                                                                  columns="#{bindings.StartDate.hints.displayWidth}"
+                                                                  shortDesc="#{bindings.StartDate.hints.tooltip}"
+                                                                  id="id3">
+                                                        <f:validator binding="#{bindings.StartDate.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.StartDate.format}"/>
+                                                    </af:inputDate>
+                                                    <af:inputDate value="#{bindings.EndDate.inputValue}"
+                                                                  label="#{bindings.EndDate.hints.label}"
+                                                                  required="#{bindings.EndDate.hints.mandatory}"
+                                                                  columns="#{bindings.EndDate.hints.displayWidth}"
+                                                                  shortDesc="#{bindings.EndDate.hints.tooltip}"
+                                                                  id="id4">
+                                                        <f:validator binding="#{bindings.EndDate.validator}"/>
+                                                        <af:convertDateTime pattern="#{bindings.EndDate.format}"/>
+                                                    </af:inputDate>
+                                                    <af:inputText value="#{bindings.Discount1.inputValue}"
+                                                                  label="#{bindings.Discount1.hints.label}"
+                                                                  required="#{bindings.Discount1.hints.mandatory}"
+                                                                  columns="#{bindings.Discount1.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Discount1.hints.precision}"
+                                                                  shortDesc="#{bindings.Discount1.hints.tooltip}"
+                                                                  id="it8">
+                                                        <f:validator binding="#{bindings.Discount1.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Discount1.format}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                            </af:dialog>
+                                        </af:popup>
+                                        <af:popup childCreation="deferred" autoCancel="disabled" id="deleteTime">
+                                            <af:dialog id="d7"
+                                                       dialogListener="#{CouponManageBean.deleteCommitCouponTime}">
+                                                <f:facet name="buttonBar"/>
+                                                <af:outputFormatted value="Confirm to delete the selected coupon!" id="of3"/>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:toolbar>
+                                </f:facet>
+                            </af:panelCollection>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab3" text="Date Coupons">
+                            <af:panelCollection id="pc3">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.CouponsRangeInstance.collectionModel}" var="row"
+                                          rows="#{bindings.CouponsRangeInstance.rangeSize}"
+                                          emptyText="#{bindings.CouponsRangeInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.CouponsRangeInstance.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.CouponsRangeInstance.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.CouponsRangeInstance.rangeSize}"
+                                          filterModel="#{bindings.CouponsRangeInstanceQuery.queryDescriptor}"
+                                          filterVisible="true"
+                                          queryListener="#{bindings.CouponsRangeInstanceQuery.processQuery}"
+                                          varStatus="vs" id="t5">
+                                    <af:column sortProperty="#{bindings.CouponsRangeInstance.hints.CouponCode.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsRangeInstance.hints.CouponCode.label}"
+                                               id="c11">
+                                        <af:outputText value="#{row.CouponCode}"
+                                                       shortDesc="#{bindings.CouponsRangeInstance.hints.CouponCode.tooltip}"
+                                                       id="ot11"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsRangeInstance.hints.Dpt.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsRangeInstance.hints.Dpt.label}" id="c12">
+                                        <af:outputText value="#{row.Dpt}"
+                                                       shortDesc="#{bindings.CouponsRangeInstance.hints.Dpt.tooltip}"
+                                                       id="ot12"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsRangeInstance.hints.Arv.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsRangeInstance.hints.Arv.label}" id="c13">
+                                        <af:outputText value="#{row.Arv}"
+                                                       shortDesc="#{bindings.CouponsRangeInstance.hints.Arv.tooltip}"
+                                                       id="ot13"/>
+                                    </af:column>
+                                    <af:column sortProperty="#{bindings.CouponsRangeInstance.hints.Discount.name}"
+                                               filterable="true" sortable="true"
+                                               headerText="#{bindings.CouponsRangeInstance.hints.Discount.label}"
+                                               id="c14">
+                                        <af:outputText value="#{row.Discount}"
+                                                       shortDesc="#{bindings.CouponsRangeInstance.hints.Discount.tooltip}"
+                                                       id="ot14">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.CouponsRangeInstance.hints.Discount.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column id="c15">
+                                        <af:button text="Edit" id="b11">
+                                            <af:showPopupBehavior popupId="editRange" triggerType="action"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="editRange"
+                                                  partialTriggers="b11" contentDelivery="lazyUncached">
+                                            <af:dialog id="d8" type="none">
+                                                <f:facet name="buttonBar">
+                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Ok" id="b12"/>
+                                                    <af:button actionListener="#{bindings.Rollback.execute}"
+                                                               text="Cancel"
+                                                               immediate="true" id="b13">
+                                                        <af:resetActionListener/>
+                                                    </af:button>
+                                                </f:facet>
+                                                <af:panelFormLayout id="pfl5">
+                                                    <af:inputText value="#{row.bindings.CouponCode.inputValue}"
+                                                                  label="#{bindings.CouponsRangeInstance.hints.CouponCode.label}"
+                                                                  required="#{bindings.CouponsRangeInstance.hints.CouponCode.mandatory}"
+                                                                  columns="#{bindings.CouponsRangeInstance.hints.CouponCode.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsRangeInstance.hints.CouponCode.precision}"
+                                                                  shortDesc="#{bindings.CouponsRangeInstance.hints.CouponCode.tooltip}"
+                                                                  id="it9">
+                                                        <f:validator binding="#{row.bindings.CouponCode.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{row.bindings.Dpt.inputValue}"
+                                                                  label="#{bindings.CouponsRangeInstance.hints.Dpt.label}"
+                                                                  required="#{bindings.CouponsRangeInstance.hints.Dpt.mandatory}"
+                                                                  columns="#{bindings.CouponsRangeInstance.hints.Dpt.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsRangeInstance.hints.Dpt.precision}"
+                                                                  shortDesc="#{bindings.CouponsRangeInstance.hints.Dpt.tooltip}"
+                                                                  id="it10">
+                                                        <f:validator binding="#{row.bindings.Dpt.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{row.bindings.Arv.inputValue}"
+                                                                  label="#{bindings.CouponsRangeInstance.hints.Arv.label}"
+                                                                  required="#{bindings.CouponsRangeInstance.hints.Arv.mandatory}"
+                                                                  columns="#{bindings.CouponsRangeInstance.hints.Arv.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsRangeInstance.hints.Arv.precision}"
+                                                                  shortDesc="#{bindings.CouponsRangeInstance.hints.Arv.tooltip}"
+                                                                  id="it11">
+                                                        <f:validator binding="#{row.bindings.Arv.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{row.bindings.Discount.inputValue}"
+                                                                  label="#{bindings.CouponsRangeInstance.hints.Discount.label}"
+                                                                  required="#{bindings.CouponsRangeInstance.hints.Discount.mandatory}"
+                                                                  columns="#{bindings.CouponsRangeInstance.hints.Discount.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponsRangeInstance.hints.Discount.precision}"
+                                                                  shortDesc="#{bindings.CouponsRangeInstance.hints.Discount.tooltip}"
+                                                                  id="it12">
+                                                        <f:validator binding="#{row.bindings.Discount.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.CouponsRangeInstance.hints.Discount.format}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:column>
+                                </af:table>
+                                <f:facet name="secondaryToolbar">
+                                    <af:toolbar id="t6">
+                                        <af:button text="Create Coupon" id="b14">
+                                            <af:showPopupBehavior popupId="createInsertRange" triggerType="action"/>
+                                        </af:button>
+                                        <af:button text="Delete Coupon" id="b15">
+                                            <af:showPopupBehavior popupId="deleteCommitRange" triggerType="action"/>
+                                        </af:button>
+                                        <af:popup childCreation="deferred" autoCancel="enabled"
+                                                  id="createInsertRange" partialTriggers="b14"
+                                                  popupFetchListener="#{CouponManageBean.createInsertCouponRange}"
+                                                  popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}"
+                                                  contentDelivery="lazyUncached">
+                                            <af:dialog id="d9" type="okCancel" affirmativeTextAndAccessKey="Save"
+                                                       cancelTextAndAccessKey="Discard"
+                                                       dialogListener="#{CouponManageBean.commitCouponRange}">
+                                                <f:facet name="buttonBar"/>
+                                                <af:panelFormLayout id="pfl6">
+                                                    <af:inputText value="#{bindings.CouponCode2.inputValue}"
+                                                                  label="#{bindings.CouponCode2.hints.label}"
+                                                                  required="#{bindings.CouponCode2.hints.mandatory}"
+                                                                  columns="#{bindings.CouponCode2.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.CouponCode2.hints.precision}"
+                                                                  shortDesc="#{bindings.CouponCode2.hints.tooltip}"
+                                                                  id="it13">
+                                                        <f:validator binding="#{bindings.CouponCode2.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Dpt1.inputValue}"
+                                                                  label="#{bindings.Dpt1.hints.label}"
+                                                                  required="#{bindings.Dpt1.hints.mandatory}"
+                                                                  columns="#{bindings.Dpt1.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Dpt1.hints.precision}"
+                                                                  shortDesc="#{bindings.Dpt1.hints.tooltip}" id="it14">
+                                                        <f:validator binding="#{bindings.Dpt1.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Arv1.inputValue}"
+                                                                  label="#{bindings.Arv1.hints.label}"
+                                                                  required="#{bindings.Arv1.hints.mandatory}"
+                                                                  columns="#{bindings.Arv1.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Arv1.hints.precision}"
+                                                                  shortDesc="#{bindings.Arv1.hints.tooltip}" id="it15">
+                                                        <f:validator binding="#{bindings.Arv1.validator}"/>
+                                                    </af:inputText>
+                                                    <af:inputText value="#{bindings.Discount2.inputValue}"
+                                                                  label="#{bindings.Discount2.hints.label}"
+                                                                  required="#{bindings.Discount2.hints.mandatory}"
+                                                                  columns="#{bindings.Discount2.hints.displayWidth}"
+                                                                  maximumLength="#{bindings.Discount2.hints.precision}"
+                                                                  shortDesc="#{bindings.Discount2.hints.tooltip}"
+                                                                  id="it16">
+                                                        <f:validator binding="#{bindings.Discount2.validator}"/>
+                                                        <af:convertNumber groupingUsed="false"
+                                                                          pattern="#{bindings.Discount2.format}"/>
+                                                    </af:inputText>
+                                                </af:panelFormLayout>
+                                            </af:dialog>
+                                        </af:popup>
+                                        <af:popup childCreation="deferred" autoCancel="enabled"
+                                                  id="deleteCommitRange" contentDelivery="lazyUncached"
+                                                  popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}">
+                                            <af:dialog id="d10"
+                                                       dialogListener="#{CouponManageBean.deleteCommitCouponRange}">
+                                                <f:facet name="buttonBar"/>
+                                                <af:outputFormatted value="Confirm to delete the selected coupon!" id="of4"/>
+                                            </af:dialog>
+                                        </af:popup>
+                                    </af:toolbar>
+                                </f:facet>
+                            </af:panelCollection>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

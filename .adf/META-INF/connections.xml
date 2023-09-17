@@ -7,7 +7,7 @@
         <Contents>thin</Contents>
       </StringRefAddr>
       <StringRefAddr addrType="hostname">
-        <Contents>172.20.10.8</Contents>
+        <Contents>localhost</Contents>
       </StringRefAddr>
       <SecureRefAddr addrType="password"/>
       <StringRefAddr addrType="subtype">
@@ -16,11 +16,11 @@
       <StringRefAddr addrType="port">
         <Contents>1521</Contents>
       </StringRefAddr>
-      <StringRefAddr addrType="serviceName">
-        <Contents>XEPDB1</Contents>
-      </StringRefAddr>
       <StringRefAddr addrType="user">
-        <Contents>testuser</Contents>
+        <Contents>developer</Contents>
+      </StringRefAddr>
+      <StringRefAddr addrType="sid">
+        <Contents>xe</Contents>
       </StringRefAddr>
     </RefAddresses>
   </Reference>

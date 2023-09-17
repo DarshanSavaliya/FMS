@@ -226,4 +226,9 @@
     <managed-bean-class>com.skyjetairlines.view.bean.FlightSearchQueryBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
+  <managed-bean id="__3">
+    <managed-bean-name>CouponManageBean</managed-bean-name>
+    <managed-bean-class>com.skyjetairlines.view.bean.CouponManageBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
 </adfc-config>
