@@ -40,7 +40,7 @@
       <property
          name="fromOutcome">showDetails</property>
       <property
-         name="sdm:polyPoints">B50,372.0,75.53516,373.0,156.26953,T50</property>
+         name="sdm:polyPoints">B44,368.5,75.57851,369.5,156.26953,T44</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall8">
@@ -137,5 +137,15 @@
          name="fromOutcome">bookTickets</property>
       <property
          name="sdm:polyPoints">L50,332.0,210.26953,161.0,209.40234,R50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase18"
+      from="View6"
+      to="View3">
+      <property
+         name="fromOutcome">backToResults</property>
+      <property
+         name="sdm:polyPoints">T56,376.5,156.22617,375.5,75.53516,B56</property>
    </ControlFlowCase>
 </SDM>

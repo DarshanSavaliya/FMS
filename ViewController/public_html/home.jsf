@@ -25,7 +25,8 @@
                         <af:inputNumberSpinbox label="Seats:" id="ins1" minimum="1" required="true"
                                                value="#{flightSearchQueryBean.numberOfSeats}"/>
                         <af:inputDate label="Date:" id="id1" required="true"
-                                      value="#{flightSearchQueryBean.bookingDate}"/>
+                                      value="#{flightSearchQueryBean.bookingDate}"
+                                      minValue="#{flightSearchQueryBean.minDate}"/>
                     </af:panelFormLayout>
                 </f:facet>
             </af:pageTemplate>

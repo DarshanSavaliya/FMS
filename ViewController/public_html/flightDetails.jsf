@@ -67,6 +67,7 @@
                             </af:inputText>
                             <f:facet name="footer">
                                 <af:button text="Book" id="b1" action="bookTickets"/>
+                                <af:button text="Back" id="b2" action="backToResults"/>
                             </f:facet>
                         </af:panelFormLayout>
                     </af:panelGroupLayout>

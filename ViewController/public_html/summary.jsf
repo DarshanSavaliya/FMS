@@ -127,6 +127,8 @@
                         </af:table>
                         <af:spacer id="s3" height="20"/>
                         <af:button text="Confirm Booking" id="b1" action="confirmBooking"/>
+                        <af:spacer id="s5" height="20"/>
+                        <af:button text="Change Payment Method" id="b2" action="changePaymentMethod"/>
                     </af:panelGroupLayout>
                 </f:facet>
             </af:pageTemplate>

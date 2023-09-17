@@ -81,6 +81,10 @@
         <from-outcome>bookTickets</from-outcome>
         <to-activity-id>bookingTF</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__13">
+        <from-outcome>backToResults</from-outcome>
+        <to-activity-id>searchResult</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
   </task-flow-definition>
 </adfc-config>

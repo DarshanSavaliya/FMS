@@ -114,7 +114,7 @@
       <property
          name="fromOutcome">choosePaymentOption</property>
       <property
-         name="sdm:polyPoints">B50,474.0,272.26953,474.0,352.26953,T50</property>
+         name="sdm:polyPoints">B44,470.5,272.26953,470.5,352.26953,T44</property>
    </ControlFlowCase>
    <View
       id="View11">
@@ -139,7 +139,7 @@
       <property
          name="fromOutcome">viewSummary</property>
       <property
-         name="sdm:polyPoints">L50,433.0,406.26953,240.0,407.20312,R50</property>
+         name="sdm:polyPoints">L46,432.98306,402.76953,240.0,403.70312,R46</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -149,7 +149,7 @@
       <property
          name="fromOutcome">confirmBooking</property>
       <property
-         name="sdm:polyPoints">L50,158.0,407.20312,17.0,405.40234,R50</property>
+         name="sdm:polyPoints">L50,158.0,407.20312,16.0,407.26953,R50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall16">
@@ -214,11 +214,11 @@
       <property
          name="activityId">confirmBooking</property>
       <property
-         name="x">-24.0</property>
+         name="x">-25.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>confirmBooking&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">405.46875</property>
+         name="y">407.33594</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -230,6 +230,26 @@
       <property
          name="fromOutcome">save</property>
       <property
-         name="sdm:polyPoints">T50,-24.0,351.40234,-24.0,276.07812,B50</property>
+         name="sdm:polyPoints">T50,-25.0,353.26953,-24.0,276.07812,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase21"
+      from="View9"
+      to="View3">
+      <property
+         name="fromOutcome">changeBookingDetails</property>
+      <property
+         name="sdm:polyPoints">T56,477.5,352.26953,477.5,272.26953,B56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="View11"
+      to="View9">
+      <property
+         name="fromOutcome">changePaymentMethod</property>
+      <property
+         name="sdm:polyPoints">R54,240.01694,410.70312,433.0,409.76953,L54</property>
    </ControlFlowCase>
 </SDM>

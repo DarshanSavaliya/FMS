@@ -19,6 +19,7 @@
                         <af:button text="Create Payment" id="b1" useWindow="true" action="createPayment"
                                    returnListener="#{pageFlowScope.flightBookingBean.PaymentCreatedListener}"
                                    windowHeight="300" windowWidth="450" immediate="true"/>
+                        <af:button text="Change Booking Details" id="b3" action="changeBookingDetails"/>
                     </af:panelGroupLayout>
                 </f:facet>
             </af:pageTemplate>

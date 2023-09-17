@@ -33,7 +33,8 @@
                                                        value="#{pageFlowScope.flightSearchQueryBean.numberOfSeats}"/>
                                 <af:inputDate label="Date:" id="id1"
                                               required="true"
-                                              value="#{pageFlowScope.flightSearchQueryBean.bookingDate}"/>
+                                              value="#{pageFlowScope.flightSearchQueryBean.bookingDate}"
+                                              minValue="#{pageFlowScope.flightSearchQueryBean.minDate}"/>
                             </af:panelFormLayout>
                         </f:facet>
                         <f:facet name="second">

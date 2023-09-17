@@ -106,12 +106,20 @@
         <from-outcome>createPayment</from-outcome>
         <to-activity-id>createPaymentTF</to-activity-id>
       </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome>changeBookingDetails</from-outcome>
+        <to-activity-id>bookingDetails</to-activity-id>
+      </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__11">
       <from-activity-id>summary</from-activity-id>
       <control-flow-case id="__12">
         <from-outcome>confirmBooking</from-outcome>
         <to-activity-id>confirmBooking</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__18">
+        <from-outcome>changePaymentMethod</from-outcome>
+        <to-activity-id>choosePayment</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
     <control-flow-rule id="__15">

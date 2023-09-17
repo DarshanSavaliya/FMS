@@ -1,15 +1,16 @@
 package com.skyjetairlines.view.bean;
 
-import com.skyjetairlines.view.common.CommonViewUtil;
-
 import java.util.Date;
 
 public class FlightSearchQueryBean {
     private int numberOfSeats;
     private Date bookingDate;
+    private final Date minDate;
 
     public FlightSearchQueryBean() {
         this.numberOfSeats = 1;
+        this.minDate = new Date();
+        this.bookingDate = this.minDate;
     }
 
     public void setNumberOfSeats(int numberOfSeats) {
@@ -26,5 +27,9 @@ public class FlightSearchQueryBean {
 
     public Date getBookingDate() {
         return bookingDate;
+    }
+
+    public Date getMinDate() {
+        return minDate;
     }
 }
