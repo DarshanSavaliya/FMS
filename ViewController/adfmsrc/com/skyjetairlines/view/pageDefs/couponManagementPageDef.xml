@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="couponManagementPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="CouponsPlaceInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="CouponsPlaceInstanceIterator"/>
+    <searchRegion Binds="CouponsPlaceInstanceIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CouponsPlaceInstanceQuery"/>
+    <iterator Binds="CouponsTimeInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="CouponsTimeInstanceIterator"/>
+    <searchRegion Binds="CouponsTimeInstanceIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CouponsTimeInstanceQuery"/>
+    <iterator Binds="CouponsRangeInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="CouponsRangeInstanceIterator"/>
+    <searchRegion Binds="CouponsRangeInstanceIterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="CouponsRangeInstanceQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="CouponsPlaceInstanceIterator" id="CouponsPlaceInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.CouponsPlaceVO" Name="CouponsPlaceInstance0">
+        <AttrNames>
+          <Item Value="CouponCode"/>
+          <Item Value="Dpt"/>
+          <Item Value="Arv"/>
+          <Item Value="Discount"/>
+          <Item Value="Type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
+            DataControl="FlightManagementSystemAMDataControl"/>
+    <attributeValues IterBinding="CouponsPlaceInstanceIterator" id="CouponCode">
+      <AttrNames>
+        <Item Value="CouponCode"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="CouponsPlaceInstanceIterator" StaticList="false" Uses="DPT_LOV" id="Dpt" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <list IterBinding="CouponsPlaceInstanceIterator" StaticList="false" Uses="ARV_LOV" id="Arv" DTSupportsMRU="false"
+          SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="CouponsPlaceInstanceIterator" id="Type">
+      <AttrNames>
+        <Item Value="Type"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CouponsPlaceInstanceIterator" id="Discount">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CouponsPlaceInstanceIterator" id="CreateInsertPlace"
+            InstanceName="FlightManagementSystemAMDataControl.CouponsPlaceInstance"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CouponsPlaceInstanceIterator" id="DeletePlace"
+            InstanceName="FlightManagementSystemAMDataControl.CouponsPlaceInstance"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="CouponsTimeInstanceIterator" id="CouponsTimeInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.CouponsTimeVO" Name="CouponsTimeInstance0">
+        <AttrNames>
+          <Item Value="CouponCode"/>
+          <Item Value="Dpt"/>
+          <Item Value="Arv"/>
+          <Item Value="Discount"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="CouponsTimeInstanceIterator" id="CreateInsertTime"
+            InstanceName="FlightManagementSystemAMDataControl.CouponsTimeInstance"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="CouponsTimeInstanceIterator" id="StartDate">
+      <AttrNames>
+        <Item Value="StartDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CouponsTimeInstanceIterator" id="EndDate">
+      <AttrNames>
+        <Item Value="EndDate"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CouponsTimeInstanceIterator" id="DeleteTime"
+            InstanceName="FlightManagementSystemAMDataControl.CouponsTimeInstance"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="CouponsTimeInstanceIterator" id="CouponCode1">
+      <AttrNames>
+        <Item Value="CouponCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CouponsTimeInstanceIterator" id="Discount1">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="CouponsRangeInstanceIterator" id="CouponsRangeInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.CouponsRangeVO" Name="CouponsRangeInstance0">
+        <AttrNames>
+          <Item Value="CouponCode"/>
+          <Item Value="Dpt"/>
+          <Item Value="Arv"/>
+          <Item Value="Discount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="CouponsRangeInstanceIterator" id="CreateInsertRange"
+            InstanceName="FlightManagementSystemAMDataControl.CouponsRangeInstance"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <attributeValues IterBinding="CouponsRangeInstanceIterator" id="CouponCode2">
+      <AttrNames>
+        <Item Value="CouponCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CouponsRangeInstanceIterator" id="Dpt1">
+      <AttrNames>
+        <Item Value="Dpt"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CouponsRangeInstanceIterator" id="Arv1">
+      <AttrNames>
+        <Item Value="Arv"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="CouponsRangeInstanceIterator" id="Discount2">
+      <AttrNames>
+        <Item Value="Discount"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="CouponsRangeInstanceIterator" id="DeleteRange"
+            InstanceName="FlightManagementSystemAMDataControl.CouponsRangeInstance"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+  </bindings>
+</pageDefinition>

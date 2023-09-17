@@ -70,6 +70,15 @@
   <ViewUsage
     Name="TicketFlightsInstanceForTicketsForBookingForCurrentCustomer"
     ViewObjectName="com.skyjetairlines.model.view.TicketFlightsVO"/>
+  <ViewUsage
+    Name="CouponsPlaceInstance"
+    ViewObjectName="com.skyjetairlines.model.view.CouponsPlaceVO"/>
+  <ViewUsage
+    Name="CouponsTimeInstance"
+    ViewObjectName="com.skyjetairlines.model.view.CouponsTimeVO"/>
+  <ViewUsage
+    Name="CouponsRangeInstance"
+    ViewObjectName="com.skyjetairlines.model.view.CouponsRangeVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
