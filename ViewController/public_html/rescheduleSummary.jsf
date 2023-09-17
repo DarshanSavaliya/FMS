@@ -42,7 +42,7 @@
                                     </af:outputText>
                                 </af:panelLabelAndMessage>
                                 <f:facet name="footer">
-                                    <af:button text="Confirm Reschedule" id="b1"/>
+                                    <af:button text="Confirm Reschedule" id="b1" action="confirmReschedule"/>
                                     <af:button text="Cancel" id="b2" action="home"/>
                                 </f:facet>
                             </af:panelFormLayout>

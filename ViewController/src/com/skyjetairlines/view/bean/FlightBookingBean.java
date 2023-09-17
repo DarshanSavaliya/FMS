@@ -58,9 +58,9 @@ public class FlightBookingBean {
     }
 
     public void confirmBooking() {
-        CommonViewUtil.getIterator("FlightsInstanceIterator").executeQuery();
-        
         Row flightSelected = CommonViewUtil.getIterator("FlightsInstanceIterator").getCurrentRow();
+        flightSelected.refresh(Row.REFRESH_WITH_DB_FORGET_CHANGES);
+        
         flightSelected.setAttribute("AvailableSeats",
                                     ((BigDecimal) flightSelected.getAttribute("AvailableSeats")).intValue() -
                                     numberOfSeats);

@@ -24,7 +24,7 @@ public class BookingRescheduleBean {
 
     public BookingRescheduleBean() {
         this.minDate = new Date();
-        
+
         try {
             DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             String currentDate = formatter.format(minDate);
@@ -32,7 +32,7 @@ public class BookingRescheduleBean {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        
+
         this.rescheduleDate = minDate;
     }
 
@@ -51,7 +51,7 @@ public class BookingRescheduleBean {
     public double getPayableAmount() {
         return payableAmount;
     }
-    
+
     public Date getMinDate() {
         return minDate;
     }
@@ -67,22 +67,25 @@ public class BookingRescheduleBean {
 
         payableAmount = (price * numberOfSeats) - amountPaid;
         payableAmount = payableAmount > 0 ? payableAmount : 0;
+
+        CommonViewUtil.setAttributeInIterator("BookingsInstanceForCurrentCustomerIterator", "TotalAmount",
+                                              price * numberOfSeats);
     }
 
     public void confirmReschedule() {
         int numberOfSeats =
             (int) CommonViewUtil.getIterator("TicketsInstanceForCurrentCustomerIterator").getEstimatedRowCount();
 
-        CommonViewUtil.getIterator("FlightsInstanceIterator").executeQuery();
-        CommonViewUtil.getIterator("FlightsInstanceForTicketsForCurrentCustomerIterator").executeQuery();
-
         Row flightSelected = CommonViewUtil.getIterator("FlightsInstanceIterator").getCurrentRow();
+        Row bookedFlight =
+            CommonViewUtil.getIterator("FlightsInstanceForTicketsForCurrentCustomerIterator").getCurrentRow();
+
+        flightSelected.refresh(Row.REFRESH_WITH_DB_FORGET_CHANGES);
+        bookedFlight.refresh(Row.REFRESH_WITH_DB_FORGET_CHANGES);
+
         flightSelected.setAttribute("AvailableSeats",
                                     ((BigDecimal) flightSelected.getAttribute("AvailableSeats")).intValue() -
                                     numberOfSeats);
-
-        Row bookedFlight =
-            CommonViewUtil.getIterator("FlightsInstanceForTicketsForCurrentCustomerIterator").getCurrentRow();
         bookedFlight.setAttribute("AvailableSeats",
                                   ((BigDecimal) bookedFlight.getAttribute("AvailableSeats")).intValue() +
                                   numberOfSeats);
@@ -91,10 +94,6 @@ public class BookingRescheduleBean {
                                               "FlightId", flightSelected.getAttribute("FlightId"));
         CommonViewUtil.setAttributeInIterator("TicketFlightsInstanceForTicketsForBookingForCurrentCustomerIterator",
                                               "Amount", flightSelected.getAttribute("Price"));
-
-        CommonViewUtil.setAttributeInIterator("BookingsInstanceForCurrentCustomerIterator", "TotalAmount",
-                                              ((Number) flightSelected.getAttribute("Price")).doubleValue() *
-                                              numberOfSeats);
     }
 
     public void paymentCreatedListener(ReturnEvent returnEvent) {
