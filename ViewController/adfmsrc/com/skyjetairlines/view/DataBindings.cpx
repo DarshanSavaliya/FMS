@@ -35,6 +35,15 @@
     <page path="/createPassenger.jsf" usageId="com_skyjetairlines_view_createPassengerPageDef"/>
     <page path="/WEB-INF/bookingTF.xml#bookingTF@confirmBooking"
           usageId="com_skyjetairlines_view_bookingTF_bookingTF_confirmBookingPageDef"/>
+    <page path="/showBooking.jsf" usageId="com_skyjetairlines_view_showBookingPageDef"/>
+    <page path="/WEB-INF/rescheduleTF.xml#rescheduleTF@searchFlightsWithParams"
+          usageId="com_skyjetairlines_view_rescheduleTF_rescheduleTF_searchFlightsWithParamsPageDef"/>
+    <page path="/rescheduleResult.jsf" usageId="com_skyjetairlines_view_rescheduleResultPageDef"/>
+    <page path="/rescheduleFlightDetails.jsf" usageId="com_skyjetairlines_view_rescheduleFlightDetailsPageDef"/>
+    <page path="/WEB-INF/rescheduleTF.xml#rescheduleTF@confirmReschedule"
+          usageId="com_skyjetairlines_view_rescheduleTF_rescheduleTF_confirmReschedulePageDef"/>
+    <page path="/reschedulePaymentOption.jsf" usageId="com_skyjetairlines_view_reschedulePaymentOptionPageDef"/>
+    <page path="/rescheduleSummary.jsf" usageId="com_skyjetairlines_view_rescheduleSummaryPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -71,6 +80,19 @@
           path="com.skyjetairlines.view.pageDefs.createPassengerPageDef"/>
     <page id="com_skyjetairlines_view_bookingTF_bookingTF_confirmBookingPageDef"
           path="com.skyjetairlines.view.pageDefs.bookingTF_bookingTF_confirmBookingPageDef"/>
+    <page id="com_skyjetairlines_view_showBookingPageDef" path="com.skyjetairlines.view.pageDefs.showBookingPageDef"/>
+    <page id="com_skyjetairlines_view_rescheduleTF_rescheduleTF_searchFlightsWithParamsPageDef"
+          path="com.skyjetairlines.view.pageDefs.rescheduleTF_rescheduleTF_searchFlightsWithParamsPageDef"/>
+    <page id="com_skyjetairlines_view_rescheduleResultPageDef"
+          path="com.skyjetairlines.view.pageDefs.rescheduleResultPageDef"/>
+    <page id="com_skyjetairlines_view_rescheduleFlightDetailsPageDef"
+          path="com.skyjetairlines.view.pageDefs.rescheduleFlightDetailsPageDef"/>
+    <page id="com_skyjetairlines_view_rescheduleTF_rescheduleTF_confirmReschedulePageDef"
+          path="com.skyjetairlines.view.pageDefs.rescheduleTF_rescheduleTF_confirmReschedulePageDef"/>
+    <page id="com_skyjetairlines_view_reschedulePaymentOptionPageDef"
+          path="com.skyjetairlines.view.pageDefs.reschedulePaymentOptionPageDef"/>
+    <page id="com_skyjetairlines_view_rescheduleSummaryPageDef"
+          path="com.skyjetairlines.view.pageDefs.rescheduleSummaryPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

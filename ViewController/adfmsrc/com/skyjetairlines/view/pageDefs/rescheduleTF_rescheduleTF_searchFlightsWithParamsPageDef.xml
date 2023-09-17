@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="rescheduleTF_rescheduleTF_searchFlightsWithParamsPageDef"
+                Package="com.skyjetairlines.view.pageDefs" SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="FlightsInstanceForTicketsForCurrentCustomer" RangeSize="10"
+              DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceForTicketsForCurrentCustomerIterator"/>
+    <iterator id="TicketsInstanceForBookingsIterator" Binds="TicketsInstanceForBookings"
+              DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <methodAction id="searchFlightsWithParams" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="searchFlightsWithParams" IsViewObjectMethod="false"
+                  DataControl="FlightManagementSystemAMDataControl"
+                  InstanceName="bindings.searchFlightsWithParams.dataControl.dataProvider">
+      <NamedData NDName="fromAirport" NDValue="#{bindings.DepartureAirport.attributeValue}" NDType="java.lang.String"/>
+      <NamedData NDName="toAirport" NDValue="#{bindings.ArrivalAirport.attributeValue}" NDType="java.lang.String"/>
+      <NamedData NDName="numberOfSeats" NDValue="#{bindings.TicketsInstanceForBookingsIterator.estimatedRowCount}"
+                 NDType="int"/>
+      <NamedData NDName="bookingDate" NDValue="#{pageFlowScope.bookingRescheduleBean.rescheduleDate}"
+                 NDType="java.util.Date"/>
+      <NamedData NDName="bookedFlightId" NDValue="#{bindings.FlightId.inputValue}" NDType="java.lang.Integer"/>
+    </methodAction>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="DepartureAirport">
+      <AttrNames>
+        <Item Value="DepartureAirport"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ArrivalAirport">
+      <AttrNames>
+        <Item Value="ArrivalAirport"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="FlightId">
+      <AttrNames>
+        <Item Value="FlightId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

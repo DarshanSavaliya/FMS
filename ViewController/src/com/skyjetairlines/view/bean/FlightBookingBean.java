@@ -58,6 +58,8 @@ public class FlightBookingBean {
     }
 
     public void confirmBooking() {
+        CommonViewUtil.getIterator("FlightsInstanceIterator").executeQuery();
+        
         Row flightSelected = CommonViewUtil.getIterator("FlightsInstanceIterator").getCurrentRow();
         flightSelected.setAttribute("AvailableSeats",
                                     ((BigDecimal) flightSelected.getAttribute("AvailableSeats")).intValue() -

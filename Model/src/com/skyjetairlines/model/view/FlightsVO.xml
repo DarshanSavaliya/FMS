@@ -30,6 +30,10 @@
     Name="b_bookingDate"
     Kind="viewcriteria"
     Type="oracle.jbo.domain.Date"/>
+  <Variable
+    Name="b_bookedFlight"
+    Kind="viewcriteria"
+    Type="java.lang.Integer"/>
   <ViewAccessor
     Name="AirportsVO1"
     ViewObjectName="com.skyjetairlines.model.view.AirportsVO"
@@ -399,6 +403,19 @@
         Required="Optional"
         Value=":b_numberOfSeats"
         IsBindVarValue="true"/>
+    </ViewCriteriaRow>
+    <ViewCriteriaRow
+      Name="SerachFlightsViewCriteria_row_1"
+      Conjunction="AND"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="FlightId"
+        ViewAttribute="FlightId"
+        Operator="&lt;>"
+        Conjunction="AND"
+        Value=":b_bookedFlight"
+        IsBindVarValue="true"
+        Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor

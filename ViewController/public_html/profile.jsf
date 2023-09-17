@@ -8,7 +8,7 @@
                 <f:facet name="body">
                     <af:outputText value="Manage your Profile" id="ot1"/>
                     <af:panelTabbed position="left" id="pt2" verticalTabMode="iconAndText" dimensionsFrom="auto">
-                        <af:showDetailItem id="profile" text="Profile" disclosed="true">
+                        <af:showDetailItem id="profile" text="Profile" disclosed="true" immediate="true">
                             <af:panelFormLayout id="pfl1">
                                 <af:inputText value="#{bindings.FirstName.inputValue}"
                                               label="#{bindings.FirstName.hints.label}"
@@ -63,7 +63,7 @@
                                            partialTriggers="it1 it2 it3 it4 it5 id1"/>
                             </af:panelFormLayout>
                         </af:showDetailItem>
-                        <af:showDetailItem text="Bookings" id="sdi1">
+                        <af:showDetailItem text="Bookings" id="sdi1" immediate="true">
                             <af:panelGroupLayout id="pgl1" layout="vertical">
                                 <af:table value="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel}"
                                           var="row" rows="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}"
@@ -99,6 +99,9 @@
                                                               pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.format}"/>
                                         </af:outputText>
                                     </af:column>
+                                    <af:column id="c4" headerText="Show booking">
+                                        <af:button text="Details" id="b14" action="showBooking"/>
+                                    </af:column>
                                 </af:table>
                                 <af:table value="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel}"
                                           var="row" rows="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}"
@@ -131,7 +134,7 @@
                                 </af:table>
                             </af:panelGroupLayout>
                         </af:showDetailItem>
-                        <af:showDetailItem text="Passengers" id="sdi2">
+                        <af:showDetailItem text="Passengers" id="sdi2" immediate="true">
                             <af:panelCollection id="pc1">
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar">
@@ -206,7 +209,7 @@
                                 </af:table>
                             </af:panelCollection>
                         </af:showDetailItem>
-                        <af:showDetailItem text="Payment Methods" id="sdi3">
+                        <af:showDetailItem text="Payment Methods" id="sdi3" immediate="true">
                             <af:panelCollection id="pc2">
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar">

@@ -60,6 +60,15 @@
       <pass-by-value/>
     </input-parameter>
   </task-flow-call>
+  <view id="showBooking">
+    <page>/showBooking.jsf</page>
+  </view>
+  <task-flow-call id="rescheduleTF">
+    <task-flow-reference>
+      <document>/WEB-INF/rescheduleTF.xml</document>
+      <id>rescheduleTF</id>
+    </task-flow-reference>
+  </task-flow-call>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
     <control-flow-case id="__2">
@@ -99,6 +108,10 @@
     <control-flow-case id="__14">
       <from-outcome>viewPaymentMethods</from-outcome>
       <to-activity-id>viewPaymentMethods</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__40">
+      <from-outcome>showBooking</from-outcome>
+      <to-activity-id>showBooking</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__10">
@@ -190,6 +203,17 @@
     <control-flow-case id="__27">
       <from-outcome>manageFlights</from-outcome>
       <to-activity-id>manageFlights</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__3">
+    <from-activity-id>showBooking</from-activity-id>
+    <control-flow-case id="__41">
+      <from-outcome>reschedule</from-outcome>
+      <to-activity-id>rescheduleTF</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__44">
+      <from-outcome>back</from-outcome>
+      <to-activity-id>profile</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__24">

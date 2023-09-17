@@ -626,4 +626,66 @@
       <property
          name="sdm:polyPoints">L50,-843.5,396.76953,-945.0,395.33594,R50</property>
    </ControlFlowCase>
+   <View
+      id="View61">
+      <property
+         name="activityId">showBooking</property>
+      <property
+         name="x">-1235.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>showBooking&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">557.33594</property>
+      <property
+         name="page">/showBooking.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase62"
+      from="View8"
+      to="View61">
+      <property
+         name="fromOutcome">showBooking</property>
+      <property
+         name="sdm:polyPoints">L50,-1088.5,555.6367,-1194.0,557.26953,R50</property>
+   </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall61">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>rescheduleTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">rescheduleTF</property>
+      <property
+         name="x">-1233.416</property>
+      <property
+         name="y">404.16797</property>
+      <property
+         name="documentReference">/WEB-INF/rescheduleTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">rescheduleTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase63"
+      from="View61"
+      to="TaskFlowCall61">
+      <property
+         name="fromOutcome">reschedule</property>
+      <property
+         name="sdm:polyPoints">T50,-1235.0,503.26953,-1233.416,458.10156,B50</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase64"
+      from="View61"
+      to="View8">
+      <property
+         name="fromOutcome">back</property>
+      <property
+         name="sdm:polyPoints">R54,-1193.9458,560.76953,-1088.5,559.1367,L54</property>
+   </ControlFlowCase>
 </SDM>

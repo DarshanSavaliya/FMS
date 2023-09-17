@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="rescheduleTF">
+    <default-activity>searchFlightsWithParams</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean id="__3">
+      <managed-bean-name>bookingRescheduleBean</managed-bean-name>
+      <managed-bean-class>com.skyjetairlines.view.bean.BookingRescheduleBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <method-call id="searchFlightsWithParams">
+      <method>#{bindings.searchFlightsWithParams.execute}</method>
+      <outcome>
+        <fixed-outcome>viewResult</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="rescheduleResult">
+      <page>/rescheduleResult.jsf</page>
+    </view>
+    <view id="rescheduleFlightDetails">
+      <page>/rescheduleFlightDetails.jsf</page>
+    </view>
+    <method-call id="confirmReschedule">
+      <method>#{pageFlowScope.bookingRescheduleBean.confirmReschedule}</method>
+      <outcome>
+        <fixed-outcome>save</fixed-outcome>
+      </outcome>
+    </method-call>
+    <task-flow-return id="save">
+      <outcome>
+        <name>home</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="cancel">
+      <outcome>
+        <name>home</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <view id="rescheduleSummary">
+      <page>/rescheduleSummary.jsf</page>
+    </view>
+    <view id="reschedulePaymentOption">
+      <page>/reschedulePaymentOption.jsf</page>
+    </view>
+    <task-flow-call id="createPaymentTF">
+      <task-flow-reference>
+        <document>/WEB-INF/createPaymentTF.xml</document>
+        <id>createPaymentTF</id>
+      </task-flow-reference>
+      <run-as-dialog>
+        <display-type>
+          <inline-popup/>
+        </display-type>
+      </run-as-dialog>
+    </task-flow-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>searchFlightsWithParams</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>viewResult</from-outcome>
+        <to-activity-id>rescheduleResult</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__4">
+      <from-activity-id>rescheduleResult</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>search</from-outcome>
+        <to-activity-id>searchFlightsWithParams</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome>showDetails</from-outcome>
+        <to-activity-id>rescheduleFlightDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__11">
+      <from-activity-id>rescheduleFlightDetails</from-activity-id>
+      <control-flow-case id="__12">
+        <from-outcome>backToResults</from-outcome>
+        <to-activity-id>rescheduleResult</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__14">
+        <from-outcome>choosePaymentOption</from-outcome>
+        <to-activity-id>reschedulePaymentOption</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__24">
+        <from-outcome>viewSummary</from-outcome>
+        <to-activity-id>rescheduleSummary</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id>confirmReschedule</from-activity-id>
+      <control-flow-case id="__19">
+        <from-outcome>save</from-outcome>
+        <to-activity-id>save</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__20">
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case id="__21">
+        <to-activity-id>cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id>reschedulePaymentOption</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome>viewSummary</from-outcome>
+        <to-activity-id>rescheduleSummary</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__25">
+        <from-outcome>createPayment</from-outcome>
+        <to-activity-id>createPaymentTF</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__26">
+        <from-outcome>changeBookingDetails</from-outcome>
+        <to-activity-id>rescheduleFlightDetails</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__22">
+      <from-activity-id>rescheduleSummary</from-activity-id>
+      <control-flow-case id="__23">
+        <from-outcome>confirmReschedule</from-outcome>
+        <to-activity-id>confirmReschedule</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

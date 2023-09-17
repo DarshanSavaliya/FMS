@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="reschedulePaymentOption.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:panelGroupLayout id="pgl1">
+                        <af:selectOneChoice value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.inputValue}"
+                                            label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.label}"
+                                            required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.mandatory}"
+                                            shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.tooltip}"
+                                            id="soc1">
+                            <f:selectItems value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.items}" id="si1"/>
+                            <f:validator binding="#{bindings.PaymentMethodsInstanceForCurrentCustomer.validator}"/>
+                        </af:selectOneChoice>
+                        <af:button text="Submit" id="b2" action="viewSummary"/>
+                        <af:button text="Create Payment" id="b1" useWindow="true" action="createPayment"
+                                   returnListener="#{pageFlowScope.bookingRescheduleBean.paymentCreatedListener}"
+                                   windowHeight="300" windowWidth="450" immediate="true"/>
+                        <af:button text="Change Booking Details" id="b3" action="changeBookingDetails"/>
+                    </af:panelGroupLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>
