@@ -131,7 +131,8 @@
                                     </af:outputText>
                                 </af:column>
                                 <af:column id="c9">
-                                    <af:button text="Details" id="b1" destination="flightDetails"/>
+                                    <af:button text="Details" id="b1"
+                                               action="viewFlightDetails"/>
                                 </af:column>
                             </af:table>
                         </f:facet>

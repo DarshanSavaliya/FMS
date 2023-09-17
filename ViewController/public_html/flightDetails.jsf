@@ -66,8 +66,11 @@
                                 <af:convertNumber groupingUsed="false" pattern="#{bindings.Price.format}"/>
                             </af:inputText>
                             <f:facet name="footer">
-                                <af:button text="Book" id="b1" action="bookTickets"/>
-                                <af:button text="Back" id="b2" action="backToResults"/>
+                                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                    <af:button text="Book" id="b1" action="bookTickets"/>
+                                    <af:spacer id="s1" width="10"/>
+                                    <af:button text="Back" id="b2" action="backToResults"/>
+                                </af:panelGroupLayout>
                             </f:facet>
                         </af:panelFormLayout>
                     </af:panelGroupLayout>

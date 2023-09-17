@@ -6,7 +6,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelSplitter id="ps1" splitterPosition="300">
+                    <af:panelSplitter id="ps1" splitterPosition="250" disabled="true">
                         <f:facet name="first">
                             <af:panelFormLayout id="pfl1">
                                 <f:facet name="footer">
@@ -88,7 +88,7 @@
                                     </af:outputText>
                                 </af:column>
                                 <af:column headerText="#{bindings.FlightsInstance.hints.Duration.label}" id="c6">
-                                    <af:outputText value="#{row.Duration}"
+                                    <af:outputText value="#{row.Duration} "
                                                    shortDesc="#{bindings.FlightsInstance.hints.Duration.tooltip}"
                                                    id="ot4">
                                         <af:convertNumber groupingUsed="false"

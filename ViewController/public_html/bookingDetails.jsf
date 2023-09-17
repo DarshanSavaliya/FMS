@@ -6,7 +6,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="300">
+                    <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="300" disabled="true">
                         <f:facet name="first">
                             <af:panelFormLayout id="pfl1">
                                 <af:inputText value="#{bindings.Flightno.inputValue}"
@@ -69,7 +69,7 @@
                             </af:panelFormLayout>
                         </f:facet>
                         <f:facet name="second">
-                            <af:panelSplitter id="ps2" splitterPosition="400">
+                            <af:panelSplitter id="ps2" splitterPosition="250" disabled="true">
                                 <f:facet name="first">
                                     <af:panelFormLayout id="pfl2">
                                         <af:panelLabelAndMessage label="#{bindings.BookingId.hints.label}" id="plam1">
@@ -102,7 +102,7 @@
                                     </af:panelFormLayout>
                                 </f:facet>
                                 <f:facet name="second">
-                                    <af:panelCollection id="pc1">
+                                    <af:panelCollection id="pc1" defaultToolbarItemDisplay="icon">
                                         <f:facet name="menus"/>
                                         <f:facet name="toolbar"/>
                                         <f:facet name="statusbar"/>

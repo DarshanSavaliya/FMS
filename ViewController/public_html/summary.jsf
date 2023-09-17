@@ -13,7 +13,7 @@
                                   rows="#{bindings.FlightsInstance.rangeSize}"
                                   emptyText="#{bindings.FlightsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
                                   rowBandingInterval="0" fetchSize="#{bindings.FlightsInstance.rangeSize}" id="t1"
-                                  columnStretching="last">
+                                  columnStretching="last" inlineStyle="text-wrap:normal;">
                             <af:column headerText="#{bindings.FlightsInstance.hints.Flightno.label}" id="c2">
                                 <af:outputText value="#{row.Flightno}"
                                                shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}" id="ot3"/>
@@ -126,9 +126,11 @@
                             </af:column>
                         </af:table>
                         <af:spacer id="s3" height="20"/>
-                        <af:button text="Confirm Booking" id="b1" action="confirmBooking"/>
-                        <af:spacer id="s5" height="20"/>
-                        <af:button text="Change Payment Method" id="b2" action="changePaymentMethod"/>
+                        <af:panelGroupLayout id="pgl2">
+                            <af:button text="Confirm Booking" id="b1" action="confirmBooking"/>
+                            <af:spacer id="s5" width="10"/>
+                            <af:button text="Change Payment Method" id="b2" action="changePaymentMethod"/>
+                        </af:panelGroupLayout>
                     </af:panelGroupLayout>
                 </f:facet>
             </af:pageTemplate>

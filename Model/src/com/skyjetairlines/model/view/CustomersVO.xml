@@ -103,7 +103,7 @@
         ViewAttribute="CustomerId"
         Operator="="
         Conjunction="AND"
-        Value="5"
+        Value="1"
         Required="Required"/>
     </ViewCriteriaRow>
   </ViewCriteria>

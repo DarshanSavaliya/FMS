@@ -17,7 +17,8 @@
                 <af:panelGridLayout id="pt_pgl2">
                     <af:gridRow marginTop="10px" height="auto" marginBottom="10px" id="pt_gr3">
                         <af:gridCell marginStart="5px" width="34%" id="pt_gc3">
-                            <af:outputText value="SkyJet Airlines" id="pt_ot1" inlineStyle="font-size:x-large;"/>
+                            <af:link text="SkyJet Airlines" id="pt_l2" action="/home.jsf"
+                                     inlineStyle="font-size:x-large;"/>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="33%" id="pt_gc4" halign="center">
                             <af:panelGroupLayout id="pt_pgl3" halign="center" layout="horizontal">
