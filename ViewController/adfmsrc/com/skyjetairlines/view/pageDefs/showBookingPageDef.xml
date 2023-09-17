@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="showBookingPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="BookingsInstanceForCurrentCustomer" RangeSize="25"
+              DataControl="FlightManagementSystemAMDataControl" id="BookingsInstanceForCurrentCustomerIterator"/>
+    <iterator Binds="TicketsInstanceForCurrentCustomer" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="TicketsInstanceForCurrentCustomerIterator"/>
+    <iterator Binds="FlightsInstanceForTicketsForCurrentCustomer" RangeSize="25"
+              DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceForTicketsForCurrentCustomerIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingId">
+      <AttrNames>
+        <Item Value="BookingId"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="BookingsInstanceForCurrentCustomerIterator" StaticList="false" Uses="LOV_CustomerId"
+          id="CustomerId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingDate">
+      <AttrNames>
+        <Item Value="BookingDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="TotalAmount">
+      <AttrNames>
+        <Item Value="TotalAmount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="TicketsInstanceForCurrentCustomerIterator" id="TicketsInstanceForCurrentCustomer">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.TicketsVO" Name="TicketsInstanceForCurrentCustomer0">
+        <AttrNames>
+          <Item Value="TicketId"/>
+          <Item Value="BookingId"/>
+          <Item Value="PassengerId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator"
+          id="FlightsInstanceForTicketsForCurrentCustomer">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO"
+                      Name="FlightsInstanceForTicketsForCurrentCustomer0">
+        <AttrNames>
+          <Item Value="Flightno"/>
+          <Item Value="DepartureAirport"/>
+          <Item Value="ArrivalAirport"/>
+          <Item Value="ScheduledDeparture"/>
+          <Item Value="ScheduledArrival"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

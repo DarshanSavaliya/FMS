@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="rescheduleResult.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:panelSplitter id="ps1" splitterPosition="300">
+                        <f:facet name="first">
+                            <af:panelFormLayout id="pfl1">
+                                <f:facet name="footer">
+                                    <af:button text="Search" id="b1" action="search"/>
+                                </f:facet>
+                                <af:panelLabelAndMessage label="#{bindings.DepartureAirport.hints.label}:" id="plam1">
+                                    <af:outputText value="#{bindings.DepartureAirport.inputValue}"
+                                                   shortDesc="#{bindings.DepartureAirport.hints.tooltip}" id="ot1"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.ArrivalAirport.hints.label}:" id="plam2">
+                                    <af:outputText value="#{bindings.ArrivalAirport.inputValue}"
+                                                   shortDesc="#{bindings.ArrivalAirport.hints.tooltip}" id="ot2"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="Seats:" id="plam3">
+                                    <af:outputText value="#{bindings.TicketsInstanceForCurrentCustomerIterator.estimatedRowCount}" id="ot3"/>
+                                </af:panelLabelAndMessage>
+                                <af:inputDate label="Date:" id="id1"
+                                              value="#{pageFlowScope.bookingRescheduleBean.rescheduleDate}"
+                                              minValue="#{pageFlowScope.bookingRescheduleBean.minDate}"/>
+                            </af:panelFormLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:table value="#{bindings.FlightsInstance.collectionModel}" var="row"
+                                      rows="#{bindings.FlightsInstance.rangeSize}"
+                                      emptyText="#{bindings.FlightsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      selectedRowKeys="#{bindings.FlightsInstance.collectionModel.selectedRow}"
+                                      selectionListener="#{bindings.FlightsInstance.collectionModel.makeCurrent}"
+                                      rowSelection="single" fetchSize="#{bindings.FlightsInstance.rangeSize}" id="t1">
+                                <af:column headerText="#{bindings.FlightsInstance.hints.Flightno.label}" id="c1">
+                                    <af:outputText value="#{row.Flightno}"
+                                                   shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}"
+                                                   id="ot4"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.FlightsInstance.hints.DepartureAirport.label}"
+                                           id="c2">
+                                    <af:selectOneChoice value="#{row.bindings.DepartureAirport.inputValue}"
+                                                        label="#{row.bindings.DepartureAirport.label}"
+                                                        required="#{bindings.FlightsInstance.hints.DepartureAirport.mandatory}"
+                                                        shortDesc="#{bindings.FlightsInstance.hints.DepartureAirport.tooltip}"
+                                                        readOnly="true" id="soc1">
+                                        <f:selectItems value="#{row.bindings.DepartureAirport.items}" id="si1"/>
+                                        <f:validator binding="#{row.bindings.DepartureAirport.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column headerText="#{bindings.FlightsInstance.hints.ArrivalAirport.label}" id="c3">
+                                    <af:selectOneChoice value="#{row.bindings.ArrivalAirport.inputValue}"
+                                                        label="#{row.bindings.ArrivalAirport.label}"
+                                                        required="#{bindings.FlightsInstance.hints.ArrivalAirport.mandatory}"
+                                                        shortDesc="#{bindings.FlightsInstance.hints.ArrivalAirport.tooltip}"
+                                                        readOnly="true" id="soc2">
+                                        <f:selectItems value="#{row.bindings.ArrivalAirport.items}" id="si2"/>
+                                        <f:validator binding="#{row.bindings.ArrivalAirport.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:column>
+                                <af:column headerText="#{bindings.FlightsInstance.hints.ScheduledDeparture.label}"
+                                           id="c4">
+                                    <af:outputText value="#{row.ScheduledDeparture}"
+                                                   shortDesc="#{bindings.FlightsInstance.hints.ScheduledDeparture.tooltip}"
+                                                   id="ot5">
+                                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledDeparture.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.FlightsInstance.hints.ScheduledArrival.label}"
+                                           id="c5">
+                                    <af:outputText value="#{row.ScheduledArrival}"
+                                                   shortDesc="#{bindings.FlightsInstance.hints.ScheduledArrival.tooltip}"
+                                                   id="ot6">
+                                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledArrival.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.FlightsInstance.hints.Duration.label}" id="c6">
+                                    <af:outputText value="#{row.Duration}"
+                                                   shortDesc="#{bindings.FlightsInstance.hints.Duration.tooltip}"
+                                                   id="ot7">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.FlightsInstance.hints.Duration.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column headerText="#{bindings.FlightsInstance.hints.Price.label}" id="c7">
+                                    <af:outputText value="#{row.Price}"
+                                                   shortDesc="#{bindings.FlightsInstance.hints.Price.tooltip}" id="ot8">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.FlightsInstance.hints.Price.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column id="c11">
+                                    <af:button text="Details" id="b2" action="showDetails"
+                                               actionListener="#{pageFlowScope.bookingRescheduleBean.calculatePayableAmount}"/>
+                                </af:column>
+                            </af:table>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

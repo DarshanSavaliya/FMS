@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="rescheduleResultPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FlightsInstanceForTicketsForCurrentCustomer" RangeSize="25"
+              DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceForTicketsForCurrentCustomerIterator"/>
+    <iterator id="TicketsInstanceForCurrentCustomerIterator" Binds="TicketsInstanceForCurrentCustomer"
+              DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
+    <iterator id="BookingsInstanceForCurrentCustomerIterator" Binds="BookingsInstanceForCurrentCustomer"
+              DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="DepartureAirport">
+      <AttrNames>
+        <Item Value="DepartureAirport"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ArrivalAirport">
+      <AttrNames>
+        <Item Value="ArrivalAirport"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="FlightsInstanceIterator" id="FlightsInstance">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO" Name="FlightsInstance0">
+        <AttrNames>
+          <Item Value="Flightno"/>
+          <Item Value="DepartureAirport"/>
+          <Item Value="ArrivalAirport"/>
+          <Item Value="ScheduledDeparture"/>
+          <Item Value="ScheduledArrival"/>
+          <Item Value="Duration"/>
+          <Item Value="Price"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

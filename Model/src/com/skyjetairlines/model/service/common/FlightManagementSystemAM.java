@@ -8,6 +8,7 @@ import oracle.jbo.ApplicationModule;
 // ---    Thu Sep 14 17:18:43 IST 2023
 // ---------------------------------------------------------------------
 public interface FlightManagementSystemAM extends ApplicationModule {
-    void searchFlightsWithParams(String fromAirport, String toAirport, int numberOfSeats, Date bookingDate);
+    void searchFlightsWithParams(String fromAirport, String toAirport, int numberOfSeats, Date bookingDate,
+                                 Integer bookedFlightId);
 }
 

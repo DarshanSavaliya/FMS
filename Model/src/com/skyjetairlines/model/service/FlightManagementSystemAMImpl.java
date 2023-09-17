@@ -205,7 +205,8 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
         return (ViewLinkImpl) findViewLink("BookingFkLink2");
     }
 
-    public void searchFlightsWithParams(String fromAirport, String toAirport, int numberOfSeats, Date bookingDate) {
+    public void searchFlightsWithParams(String fromAirport, String toAirport, int numberOfSeats, Date bookingDate,
+                                        Integer bookedFlightId) {
         ViewObjectImpl flightsVO = this.getFlightsInstance();
         ViewCriteria searchFlightsVC = flightsVO.getViewCriteria("SerachFlightsViewCriteria");
 
@@ -213,6 +214,8 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
         flightsVO.setNamedWhereClauseParam("b_toAirport", toAirport);
         flightsVO.setNamedWhereClauseParam("b_numberOfSeats", numberOfSeats);
         flightsVO.setNamedWhereClauseParam("b_bookingDate", bookingDate);
+
+        flightsVO.setNamedWhereClauseParam("b_bookedFlight", bookedFlightId);
 
         flightsVO.applyViewCriteria(searchFlightsVC);
         flightsVO.executeQuery();

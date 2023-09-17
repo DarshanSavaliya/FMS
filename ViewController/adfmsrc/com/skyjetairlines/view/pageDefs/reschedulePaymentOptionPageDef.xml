@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="reschedulePaymentOptionPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="PaymentMethodsInstanceForCurrentCustomer" RangeSize="25"
+              DataControl="FlightManagementSystemAMDataControl" id="PaymentMethodsInstanceForCurrentCustomerIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="PaymentMethodsInstanceForCurrentCustomerIterator" ListOperMode="navigation"
+          ListIter="PaymentMethodsInstanceForCurrentCustomerIterator" id="PaymentMethodsInstanceForCurrentCustomer"
+          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="PaymentType"/>
+        <Item Value="CardNo"/>
+        <Item Value="ExpiryMonth"/>
+        <Item Value="ExpiryYear"/>
+      </AttrNames>
+    </list>
+  </bindings>
+</pageDefinition>
