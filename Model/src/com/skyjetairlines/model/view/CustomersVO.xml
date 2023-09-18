@@ -103,7 +103,7 @@
         ViewAttribute="CustomerId"
         Operator="="
         Conjunction="AND"
-        Value="1"
+        Value="5"
         Required="Required"/>
     </ViewCriteriaRow>
   </ViewCriteria>
@@ -138,28 +138,24 @@
         ViewAttribute="CustomerId"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="FirstName"
         ViewAttribute="FirstName"
         Operator="STARTSWITH"
         Conjunction="OR"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Email"
         ViewAttribute="Email"
         Operator="STARTSWITH"
         Conjunction="OR"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="Phone"
         ViewAttribute="Phone"
         Operator="CONTAINS"
         Conjunction="OR"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>

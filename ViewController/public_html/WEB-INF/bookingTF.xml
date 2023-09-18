@@ -41,7 +41,7 @@
       <page>/choosePayment.jsf</page>
     </view>
     <view id="summary">
-      <page>/summary.jsf</page>
+      <page>/viewSummary.jsf</page>
     </view>
     <task-flow-call id="createPaymentTF">
       <task-flow-reference>

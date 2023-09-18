@@ -28,7 +28,7 @@
     <page path="/WEB-INF/createPaymentTF.xml#createPaymentTF@CreateInsert"
           usageId="com_skyjetairlines_view_createPaymentTF_createPaymentTF_CreateInsertPageDef"/>
     <page path="/testPage.jsf" usageId="com_skyjetairlines_view_testPagePageDef"/>
-    <page path="/summary.jsf" usageId="com_skyjetairlines_view_summaryPageDef"/>
+    <page path="/viewSummary.jsf" usageId="com_skyjetairlines_view_summaryPageDef"/>
     <page path="/createPayment.jsf" usageId="com_skyjetairlines_view_createPaymentPageDef"/>
     <page path="/WEB-INF/createPassengerTF.xml#createPassengerTF@CreateInsert"
           usageId="com_skyjetairlines_view_createPassengerTF_createPassengerTF_CreateInsertPageDef"/>

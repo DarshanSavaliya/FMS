@@ -6,9 +6,9 @@
     <variableIterator id="variables"/>
     <taskFlow id="aboutpage1" taskFlowId="/WEB-INF/aboutpage.xml#aboutpage" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <taskFlow id="cusTrust1" taskFlowId="/cusTrust.xml#cusTrust" activation="deferred"
+    <taskFlow id="cusTrust1" taskFlowId="/WEB-INF/cusTrust.xml#cusTrust" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
-    <taskFlow id="aboutDev1" taskFlowId="/aboutDev.xml#aboutDev" activation="deferred"
+    <taskFlow id="aboutDev1" taskFlowId="/WEB-INF/aboutDev.xml#aboutDev" activation="deferred"
               xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
   </executables>
   <bindings/>
