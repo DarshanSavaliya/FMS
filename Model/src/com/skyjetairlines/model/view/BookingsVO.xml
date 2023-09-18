@@ -79,9 +79,62 @@
     EntityAttrName="TotalAmount"
     EntityUsage="BookingEO"
     AliasName="TOTAL_AMOUNT"/>
+  <ViewCriteria
+    Name="BookingsVOCriteria"
+    ViewObjectName="com.skyjetairlines.model.view.BookingsVO"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="BookingsVOCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="BookingsVOCriteria_BookingsVOCriteria_row_0_BookingId"
+        ViewAttribute="BookingId"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="BookingsVOCriteria_BookingsVOCriteria_row_0_CustomerId"
+        ViewAttribute="CustomerId"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="BookingsVOCriteria_BookingsVOCriteria_row_0_BookingDate"
+        ViewAttribute="BookingDate"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="Tickets"
     ViewLink="com.skyjetairlines.model.view.link.BookingFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="BookingDate"/>
+  </SortCriteria>
 </ViewObject>
