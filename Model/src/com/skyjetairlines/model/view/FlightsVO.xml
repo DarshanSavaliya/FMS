@@ -436,6 +436,11 @@
     Type="oracle.jbo.RowIterator"
     Reversed="true"
     IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="Coupons"
+    ViewLink="com.skyjetairlines.model.view.link.FlightsCouponsLink"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="com.skyjetairlines.model.ModelBundle"/>

@@ -79,6 +79,9 @@
   <ViewUsage
     Name="CouponsRangeInstance"
     ViewObjectName="com.skyjetairlines.model.view.CouponsRangeVO"/>
+  <ViewUsage
+    Name="CouponsInstanceForFlights"
+    ViewObjectName="com.skyjetairlines.model.view.CouponsVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
@@ -144,6 +147,12 @@
     ViewLinkObjectName="com.skyjetairlines.model.view.link.TicketFlightsticketFk"
     SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketsInstanceForCurrentCustomer"
     DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.TicketFlightsInstanceForTicketsForBookingForCurrentCustomer"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="FlightsCouponsLink1"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.FlightsCouponsLink"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.FlightsInstance"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CouponsInstanceForFlights"
     Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">

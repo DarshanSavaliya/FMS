@@ -293,5 +293,21 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
     public ViewObjectImpl getCouponsRangeInstance() {
         return (ViewObjectImpl) findViewObject("CouponsRangeInstance");
     }
+
+    /**
+     * Container's getter for Coupons1.
+     * @return Coupons1
+     */
+    public ViewObjectImpl getCouponsInstanceForFlights() {
+        return (ViewObjectImpl) findViewObject("CouponsInstanceForFlights");
+    }
+
+    /**
+     * Container's getter for FlightsCouponsLink1.
+     * @return FlightsCouponsLink1
+     */
+    public ViewLinkImpl getFlightsCouponsLink1() {
+        return (ViewLinkImpl) findViewLink("FlightsCouponsLink1");
+    }
 }
 

@@ -64,7 +64,7 @@
                             </af:panelFormLayout>
                         </af:showDetailItem>
                         <af:showDetailItem text="Bookings" id="sdi1" immediate="true">
-                            <af:panelGroupLayout id="pgl1" layout="vertical">
+                            <af:panelGroupLayout id="pgl1" layout="horizontal">
                                 <af:table value="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel}"
                                           var="row" rows="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}"
                                           emptyText="#{bindings.BookingsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -101,35 +101,6 @@
                                     </af:column>
                                     <af:column id="c4" headerText="Show booking">
                                         <af:button text="Details" id="b14" action="showBooking"/>
-                                    </af:column>
-                                </af:table>
-                                <af:table value="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel}"
-                                          var="row" rows="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}"
-                                          emptyText="#{bindings.TicketsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                          rowBandingInterval="0"
-                                          selectedRowKeys="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.selectedRow}"
-                                          selectionListener="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
-                                          rowSelection="single"
-                                          fetchSize="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}" id="t4">
-                                    <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.label}"
-                                               id="c12">
-                                        <af:outputText value="#{row.TicketId}"
-                                                       shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.tooltip}"
-                                                       id="ot13">
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.format}"/>
-                                        </af:outputText>
-                                    </af:column>
-                                    <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.label}"
-                                               id="c13">
-                                        <af:selectOneChoice value="#{row.bindings.PassengerId.inputValue}"
-                                                            label="#{row.bindings.PassengerId.label}"
-                                                            required="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.mandatory}"
-                                                            shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.tooltip}"
-                                                            readOnly="true" id="soc1">
-                                            <f:selectItems value="#{row.bindings.PassengerId.items}" id="si1"/>
-                                            <f:validator binding="#{row.bindings.PassengerId.validator}"/>
-                                        </af:selectOneChoice>
                                     </af:column>
                                 </af:table>
                             </af:panelGroupLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FligthsCouponsAssoc"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Flight"
+    Cardinality="-1"
+    Source="true"
+    Owner="com.skyjetairlines.model.entity.FlightEO"
+    LockLevel="NONE"
+    ExposedAccessor="false"
+    IntersectEntity="com.skyjetairlines.model.entity.CouponFlightEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Flight"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.FlightEO.FlightId"/>
+    </AttrArray>
+    <AttrArray Name="IntersectAttributes">
+      <Item Value="com.skyjetairlines.model.entity.CouponFlightEO.FlightId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Coupon"
+    Cardinality="-1"
+    Owner="com.skyjetairlines.model.entity.CouponEO"
+    IntersectEntity="com.skyjetairlines.model.entity.CouponFlightEO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Coupon"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.CouponEO.CouponId"/>
+    </AttrArray>
+    <AttrArray Name="IntersectAttributes">
+      <Item Value="com.skyjetairlines.model.entity.CouponFlightEO.CouponId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

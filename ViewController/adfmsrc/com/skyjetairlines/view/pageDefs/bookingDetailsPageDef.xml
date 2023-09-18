@@ -12,6 +12,8 @@
               DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
     <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
               id="FlightsInstanceIterator"/>
+    <iterator Binds="CouponsInstanceForFlights" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="CouponsInstanceForFlightsIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingId">
@@ -70,6 +72,19 @@
     <attributeValues IterBinding="FlightsInstanceIterator" id="Price">
       <AttrNames>
         <Item Value="Price"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="CouponsInstanceForFlightsIterator" id="CouponsInstanceForFlights">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.CouponsVO" Name="CouponsInstanceForFlights0">
+        <AttrNames>
+          <Item Value="CouponCode"/>
+          <Item Value="Discount"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="CouponsInstanceForFlightsIterator" id="CouponCode">
+      <AttrNames>
+        <Item Value="CouponCode"/>
       </AttrNames>
     </attributeValues>
   </bindings>

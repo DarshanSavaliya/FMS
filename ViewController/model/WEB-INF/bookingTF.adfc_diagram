@@ -40,7 +40,7 @@
       <property
          name="fromOutcome">addBookingDetails</property>
       <property
-         name="sdm:polyPoints">R50,242.0,217.20703,433.0,218.26953,L50</property>
+         name="sdm:polyPoints">R50,242.61363,217.20703,432.38632,218.26953,L50</property>
    </ControlFlowCase>
    <WildcardControlFlowRule
       id="WildcardControlFlowRule5">
@@ -74,7 +74,7 @@
       <property
          name="fromOutcome">home</property>
       <property
-         name="sdm:polyPoints">T50,653.0,324.66797,651.0,222.13672,B50</property>
+         name="sdm:polyPoints">T50,653.0,324.05432,651.0,222.75035,B50</property>
    </ControlFlowCase>
    <TaskFlowReturn
       id="TaskFlowReturn8">
@@ -114,7 +114,7 @@
       <property
          name="fromOutcome">choosePaymentOption</property>
       <property
-         name="sdm:polyPoints">B44,470.5,272.26953,470.5,352.26953,T44</property>
+         name="sdm:polyPoints">B43,469.88632,272.88318,469.88632,351.65585,T43</property>
    </ControlFlowCase>
    <View
       id="View11">
@@ -127,7 +127,7 @@
       <property
          name="y">407.26953</property>
       <property
-         name="page">/summary.jsf</property>
+         name="page">/viewSummary.jsf</property>
       <property
          name="exceptionHandler">false</property>
    </View>
@@ -139,7 +139,7 @@
       <property
          name="fromOutcome">viewSummary</property>
       <property
-         name="sdm:polyPoints">L46,432.98306,402.76953,240.0,403.70312,R46</property>
+         name="sdm:polyPoints">L45,432.3663,402.15585,240.61363,403.08948,R45</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -149,7 +149,7 @@
       <property
          name="fromOutcome">confirmBooking</property>
       <property
-         name="sdm:polyPoints">L50,158.0,407.20312,16.0,407.26953,R50</property>
+         name="sdm:polyPoints">L50,157.38637,407.20312,16.613636,407.26953,R50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall16">
@@ -178,7 +178,7 @@
       <property
          name="fromOutcome">createPayment</property>
       <property
-         name="sdm:polyPoints">B50,474.0,460.26953,474.45898,527.5703,T50</property>
+         name="sdm:polyPoints">B50,473.99997,460.88315,474.45898,526.95667,T50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall17">
@@ -207,7 +207,7 @@
       <property
          name="fromOutcome">createPassenger</property>
       <property
-         name="sdm:polyPoints">T50,474.0,164.26953,473.13477,101.96875,B50</property>
+         name="sdm:polyPoints">T50,473.99997,163.6559,473.1348,102.58238,B50</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall19">
@@ -230,7 +230,7 @@
       <property
          name="fromOutcome">save</property>
       <property
-         name="sdm:polyPoints">T50,-25.0,353.26953,-24.0,276.07812,B50</property>
+         name="sdm:polyPoints">T50,-25.0,352.65588,-24.0,276.69177,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -240,7 +240,7 @@
       <property
          name="fromOutcome">changeBookingDetails</property>
       <property
-         name="sdm:polyPoints">T56,477.5,352.26953,477.5,272.26953,B56</property>
+         name="sdm:polyPoints">T57,478.11362,351.65585,478.11362,272.88318,B57</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -250,6 +250,6 @@
       <property
          name="fromOutcome">changePaymentMethod</property>
       <property
-         name="sdm:polyPoints">R54,240.01694,410.70312,433.0,409.76953,L54</property>
+         name="sdm:polyPoints">R55,240.63367,411.31677,432.38632,410.38315,L55</property>
    </ControlFlowCase>
 </SDM>

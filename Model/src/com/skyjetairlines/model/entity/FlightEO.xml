@@ -283,6 +283,13 @@
     AssociationOtherEnd="com.skyjetairlines.model.entity.association.TicketsFlightsAssoc.Flight"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Coupon"
+    Association="com.skyjetairlines.model.entity.association.FligthsCouponsAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.FligthsCouponsAssoc.Coupon"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.FligthsCouponsAssoc.Flight"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
   <Key
     Name="FlightPk"
     PrimaryKey="true">
