@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="checkFlightStatus.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:panelSplitter id="ps1">
+                        <f:facet name="first">
+                            <af:panelBox text="Enter Your Flight No." id="pb2" styleClass="width=200px">
+                                <f:facet name="toolbar"/>
+                                <af:panelCollection id="pc1">
+                                    <f:facet name="menus"/>
+                                    <f:facet name="toolbar"/>
+                                    <f:facet name="statusbar"/>
+                                    <af:table value="#{bindings.FlightsInstance.collectionModel}" var="row"
+                                              rows="#{bindings.FlightsInstance.rangeSize}"
+                                              emptyText="#{bindings.FlightsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.FlightsInstance.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.FlightsInstance.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.FlightsInstance.rangeSize}"
+                                              filterModel="#{bindings.FlightsInstanceQuery.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.FlightsInstanceQuery.processQuery}"
+                                              varStatus="vs" id="t1" inlineStyle="width:260px">
+                                        <af:column sortProperty="#{bindings.FlightsInstance.hints.Flightno.name}"
+                                                   filterable="true"
+                                                   headerText="#{bindings.FlightsInstance.hints.Flightno.label}"
+                                                   id="c1">
+                                            <af:outputText value="#{row.Flightno}"
+                                                           shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}"
+                                                           id="ot1"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:panelCollection>
+                            </af:panelBox>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelBox text="Your Flight's Status" id="pb1">
+                                <f:facet name="toolbar"/>
+                                <af:panelGroupLayout id="pgl1">
+                                    <af:panelFormLayout id="pfl1">
+                                        <af:inputText value="#{bindings.Flightno.inputValue}"
+                                                      label="#{bindings.Flightno.hints.label}"
+                                                      required="#{bindings.Flightno.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Flightno.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Flightno.hints.precision}"
+                                                      shortDesc="#{bindings.Flightno.hints.tooltip}" id="it2">
+                                            <f:validator binding="#{bindings.Flightno.validator}"/>
+                                        </af:inputText>
+                                        <af:selectOneChoice value="#{bindings.DepartureAirport.inputValue}"
+                                                            label="#{bindings.DepartureAirport.label}"
+                                                            required="#{bindings.DepartureAirport.hints.mandatory}"
+                                                            shortDesc="#{bindings.DepartureAirport.hints.tooltip}"
+                                                            readOnly="true" id="soc1">
+                                            <f:selectItems value="#{bindings.DepartureAirport.items}" id="si1"/>
+                                            <f:validator binding="#{bindings.DepartureAirport.validator}"/>
+                                        </af:selectOneChoice>
+                                        <af:selectOneChoice value="#{bindings.ArrivalAirport.inputValue}"
+                                                            label="#{bindings.ArrivalAirport.label}"
+                                                            required="#{bindings.ArrivalAirport.hints.mandatory}"
+                                                            shortDesc="#{bindings.ArrivalAirport.hints.tooltip}"
+                                                            readOnly="true" id="soc2">
+                                            <f:selectItems value="#{bindings.ArrivalAirport.items}" id="si2"/>
+                                            <f:validator binding="#{bindings.ArrivalAirport.validator}"/>
+                                        </af:selectOneChoice>
+                                        <af:inputDate value="#{bindings.ScheduledDeparture.inputValue}" readOnly="true"
+                                                      label="#{bindings.ScheduledDeparture.hints.label}"
+                                                      required="#{bindings.ScheduledDeparture.hints.mandatory}"
+                                                      columns="#{bindings.ScheduledDeparture.hints.displayWidth}"
+                                                      shortDesc="#{bindings.ScheduledDeparture.hints.tooltip}" id="id1">
+                                            <f:validator binding="#{bindings.ScheduledDeparture.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.ScheduledDeparture.format}"/>
+                                        </af:inputDate>
+                                        <af:inputDate value="#{bindings.ScheduledArrival.inputValue}" readOnly="true"
+                                                      label="#{bindings.ScheduledArrival.hints.label}"
+                                                      required="#{bindings.ScheduledArrival.hints.mandatory}"
+                                                      columns="#{bindings.ScheduledArrival.hints.displayWidth}"
+                                                      shortDesc="#{bindings.ScheduledArrival.hints.tooltip}" id="id2">
+                                            <f:validator binding="#{bindings.ScheduledArrival.validator}"/>
+                                            <af:convertDateTime pattern="#{bindings.ScheduledArrival.format}"/>
+                                        </af:inputDate>
+                                        <af:inputText value="#{bindings.Duration.inputValue}"
+                                                      label="#{bindings.Duration.hints.label}"
+                                                      required="#{bindings.Duration.hints.mandatory}" readOnly="true"
+                                                      columns="#{bindings.Duration.hints.displayWidth}"
+                                                      maximumLength="#{bindings.Duration.hints.precision}"
+                                                      shortDesc="#{bindings.Duration.hints.tooltip}" id="it3">
+                                            <f:validator binding="#{bindings.Duration.validator}"/>
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.Duration.format}"/>
+                                        </af:inputText>
+                                        <af:selectOneChoice value="#{bindings.Status.inputValue}"
+                                                            label="#{bindings.Status.label}"
+                                                            required="#{bindings.Status.hints.mandatory}"
+                                                            shortDesc="#{bindings.Status.hints.tooltip}" readOnly="true"
+                                                            id="soc3">
+                                            <f:selectItems value="#{bindings.Status.items}" id="si3"/>
+                                            <f:validator binding="#{bindings.Status.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:panelFormLayout>
+                                </af:panelGroupLayout>
+                            </af:panelBox>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

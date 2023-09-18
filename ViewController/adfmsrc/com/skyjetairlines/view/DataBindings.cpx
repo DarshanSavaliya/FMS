@@ -45,6 +45,7 @@
     <page path="/reschedulePaymentOption.jsf" usageId="com_skyjetairlines_view_reschedulePaymentOptionPageDef"/>
     <page path="/rescheduleSummary.jsf" usageId="com_skyjetairlines_view_rescheduleSummaryPageDef"/>
     <page path="/couponManagement.jsf" usageId="com_skyjetairlines_view_couponManagementPageDef"/>
+    <page path="/checkFlightStatus.jsf" usageId="com_skyjetairlines_view_checkFlightStatusPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -96,6 +97,8 @@
           path="com.skyjetairlines.view.pageDefs.rescheduleSummaryPageDef"/>
     <page id="com_skyjetairlines_view_couponManagementPageDef"
           path="com.skyjetairlines.view.pageDefs.couponManagementPageDef"/>
+    <page id="com_skyjetairlines_view_checkFlightStatusPageDef"
+          path="com.skyjetairlines.view.pageDefs.checkFlightStatusPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"
