@@ -12,6 +12,8 @@
               DataControl="FlightManagementSystemAMDataControl" id="PassengersInstanceForCurrentCustomerIterator"/>
     <iterator Binds="PaymentMethodsInstanceForCurrentCustomer" RangeSize="25"
               DataControl="FlightManagementSystemAMDataControl" id="PaymentMethodsInstanceForCurrentCustomerIterator"/>
+    <iterator Binds="NotificationsInstanceForCurrentCustomer" RangeSize="25"
+              DataControl="FlightManagementSystemAMDataControl" id="NotificationsInstanceForCurrentCustomerIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="CurrentCustomerInstanceIterator" id="FirstName">
@@ -82,5 +84,16 @@
             Action="removeCurrentRow"/>
     <action IterBinding="PassengersInstanceForCurrentCustomerIterator" id="CreateInsert" RequiresUpdateModel="true"
             Action="createInsertRow"/>
+    <tree IterBinding="NotificationsInstanceForCurrentCustomerIterator" id="NotificationsInstanceForCurrentCustomer">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.NotificationsVO"
+                      Name="NotificationsInstanceForCurrentCustomer0">
+        <AttrNames>
+          <Item Value="Message"/>
+          <Item Value="Read"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="NotificationsInstanceForCurrentCustomerIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
   </bindings>
 </pageDefinition>

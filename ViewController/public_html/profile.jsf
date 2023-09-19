@@ -7,6 +7,40 @@
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
                     <af:outputText value="Manage your Profile" id="ot1"/>
+                    <af:button text="Notification" id="b15">
+                        <af:showPopupBehavior popupId="notification"/>
+                    </af:button>
+                    <af:popup childCreation="deferred" autoCancel="enabled" id="notification">
+                        <af:dialog id="d4" type="none">
+                            <f:facet name="buttonBar">
+                                <af:button actionListener="#{bindings.Commit.execute}" text="Save"
+                                           disabled="false" id="b16"/>
+                            </f:facet>
+                            <af:table value="#{bindings.NotificationsInstanceForCurrentCustomer.collectionModel}"
+                                      var="row" rows="#{bindings.NotificationsInstanceForCurrentCustomer.rangeSize}"
+                                      emptyText="#{bindings.NotificationsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0"
+                                      fetchSize="#{bindings.NotificationsInstanceForCurrentCustomer.rangeSize}" id="t4"
+                                      partialTriggers="b17">
+                                <af:column headerText="#{bindings.NotificationsInstanceForCurrentCustomer.hints.Message.label}"
+                                           id="c12" width="500">
+                                    <af:inputText value="#{row.bindings.Message.inputValue}"
+                                                  label="#{bindings.NotificationsInstanceForCurrentCustomer.hints.Message.label}"
+                                                  required="#{bindings.NotificationsInstanceForCurrentCustomer.hints.Message.mandatory}"
+                                                  columns="#{bindings.NotificationsInstanceForCurrentCustomer.hints.Message.displayWidth}"
+                                                  maximumLength="#{bindings.NotificationsInstanceForCurrentCustomer.hints.Message.precision}"
+                                                  shortDesc="#{bindings.NotificationsInstanceForCurrentCustomer.hints.Message.tooltip}"
+                                                  id="it12">
+                                        <f:validator binding="#{row.bindings.Message.validator}"/>
+                                    </af:inputText>
+                                </af:column>
+                                <af:column id="c13">
+                                    <af:button actionListener="#{bindings.Delete1.execute}" text="Mark as read"
+                                               disabled="#{!bindings.Delete1.enabled}" id="b17"/>
+                                </af:column>
+                            </af:table>
+                        </af:dialog>
+                    </af:popup>
                     <af:panelTabbed position="left" id="pt2" verticalTabMode="iconAndText" dimensionsFrom="auto">
                         <af:showDetailItem id="profile" text="Profile" disclosed="true" immediate="true">
                             <af:panelFormLayout id="pfl1">
