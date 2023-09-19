@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="createManyFlights.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:panelFormLayout id="pfl1">
+                        <f:facet name="footer">
+                            <af:panelGroupLayout id="pgl1">
+                                <af:button text="Create" id="b1" actionListener="#{createFlightBean.createFlight}"
+                                           action="backToManageFlights"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <af:selectOneChoice value="#{bindings.DepartureAirportsLOVInstance.inputValue}" label="From:"
+                                            required="#{bindings.DepartureAirportsLOVInstance.hints.mandatory}"
+                                            shortDesc="#{bindings.DepartureAirportsLOVInstance.hints.tooltip}"
+                                            id="soc1">
+                            <f:selectItems value="#{bindings.DepartureAirportsLOVInstance.items}" id="si1"/>
+                            <f:validator binding="#{bindings.DepartureAirportsLOVInstance.validator}"/>
+                        </af:selectOneChoice>
+                        <af:selectOneChoice value="#{bindings.ArrivalAirportsLOVInstance.inputValue}" label="To:"
+                                            required="#{bindings.ArrivalAirportsLOVInstance.hints.mandatory}"
+                                            shortDesc="#{bindings.ArrivalAirportsLOVInstance.hints.tooltip}" id="soc2">
+                            <f:selectItems value="#{bindings.ArrivalAirportsLOVInstance.items}" id="si2"/>
+                            <f:validator binding="#{bindings.ArrivalAirportsLOVInstance.validator}"/>
+                        </af:selectOneChoice>
+                        <af:inputDate label="From Date:" id="id1" required="true" value="#{createFlightBean.fromDate}"/>
+                        <af:inputDate label="To Date:" id="id2" required="true" value="#{createFlightBean.toDate}"/>
+                        <af:inputDate label="Departure Time:" id="id3" required="true"
+                                      value="#{createFlightBean.departureTime}">
+                            <af:convertDateTime pattern="H:mm"/>
+                        </af:inputDate>
+                        <af:inputDate label="Arrival Time:" id="id4" required="true"
+                                      value="#{createFlightBean.arrivalTime}">
+                            <af:convertDateTime pattern="H:mm"/>
+                        </af:inputDate>
+                        <af:inputNumberSpinbox label="Total Seats:" id="ins1" required="true"
+                                               value="#{createFlightBean.totalSeats}"/>
+                        <af:inputNumberSpinbox label="Base Fare:" id="ins2" required="true"
+                                               value="#{createFlightBean.baseFare}"/>
+                        <af:inputText label="Flight No:" id="it1" required="true" value="#{createFlightBean.flightNo}"/>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

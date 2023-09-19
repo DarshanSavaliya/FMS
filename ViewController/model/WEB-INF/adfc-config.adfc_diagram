@@ -366,5 +366,39 @@
          name="fromOutcome">registerUser</property>
       <property
          name="sdm:polyPoints">R45,-728.0,534.4375,-592.60156,439.23438,B50</property>
+   <View
+      id="View65">
+      <property
+         name="activityId">createManyFlights</property>
+      <property
+         name="x">-851.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createManyFlights&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">-208.79688</property>
+      <property
+         name="page">/createManyFlights.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase67"
+      from="View5"
+      to="View65">
+      <property
+         name="fromOutcome">createFlights</property>
+      <property
+         name="sdm:polyPoints">L46,-752.51074,-50.128906,-847.5,-154.86328,B56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase70"
+      from="View65"
+      to="View5">
+      <property
+         name="fromOutcome">backToManageFlights</property>
+      <property
+         name="sdm:polyPoints">B44,-854.5,-152.18608,-755.6056,-43.128906,L54</property>
    </ControlFlowCase>
 </SDM>

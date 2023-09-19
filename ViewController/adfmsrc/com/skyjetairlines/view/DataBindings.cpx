@@ -48,6 +48,7 @@
     <page path="/register.jsf" usageId="com_skyjetairlines_view_registerPageDef"/>
     <page path="/WEB-INF/registerUserTF.xml#registerUserTF@assignUserToGroup"
           usageId="com_skyjetairlines_view_registerUserTF_registerUserTF_assignUserToGroupPageDef"/>
+    <page path="/createManyFlights.jsf" usageId="com_skyjetairlines_view_createManyFlightsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -105,6 +106,8 @@
     <page id="com_skyjetairlines_view_registerPageDef" path="com.skyjetairlines.view.pageDefs.registerPageDef"/>
     <page id="com_skyjetairlines_view_registerUserTF_registerUserTF_assignUserToGroupPageDef"
           path="com.skyjetairlines.view.pageDefs.registerUserTF_registerUserTF_assignUserToGroupPageDef"/>
+    <page id="com_skyjetairlines_view_createManyFlightsPageDef"
+          path="com.skyjetairlines.view.pageDefs.createManyFlightsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"
