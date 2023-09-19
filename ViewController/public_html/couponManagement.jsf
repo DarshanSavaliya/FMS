@@ -63,16 +63,11 @@
                                             <af:showPopupBehavior popupId="edit"/>
                                         </af:button>
                                         <af:popup childCreation="deferred" autoCancel="enabled" id="edit"
-                                                  partialTriggers="b1" animate="true">
-                                            <af:dialog id="d2" type="none">
-                                                <f:facet name="buttonBar">
-                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Ok" id="b2"/>
-                                                    <af:button actionListener="#{bindings.Rollback.execute}"
-                                                               text="Cancel"
-                                                               immediate="true" id="b3">
-                                                        <af:resetActionListener/>
-                                                    </af:button>
-                                                </f:facet>
+                                                  partialTriggers="b1" animate="true"
+                                                  popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}">
+                                            <af:dialog id="d2" type="okCancel"
+                                                       dialogListener="#{CouponManageBean.commitCouponPlace}">
+                                                <f:facet name="buttonBar"/>
                                                 <af:panelFormLayout id="pfl1">
                                                     <af:inputText value="#{row.bindings.CouponCode.inputValue}"
                                                                   label="#{bindings.CouponsPlaceInstance.hints.CouponCode.label}"
@@ -176,6 +171,7 @@
                                                                           pattern="#{bindings.Discount.format}"/>
                                                     </af:inputText>
                                                 </af:panelFormLayout>
+                                                <f:facet name="buttonBar"/>
                                             </af:dialog>
                                         </af:popup>
                                         <af:popup childCreation="deferred" autoCancel="disabled" id="deletecoup"
@@ -191,7 +187,7 @@
                                 </f:facet>
                             </af:panelCollection>
                         </af:showDetailItem>
-                        <af:showDetailItem id="tab2" text="Amount Coupons">
+                        <af:showDetailItem id="tab2" text="Date Coupons">
                             <af:panelCollection id="pc2">
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar"/>
@@ -245,17 +241,11 @@
                                             <af:showPopupBehavior popupId="edittime" triggerType="action"/>
                                         </af:button>
                                         <af:popup childCreation="deferred" autoCancel="enabled" id="edittime"
-                                                  animate="true" partialTriggers="b6">
-                                            <af:dialog id="d5" type="none">
-                                                <f:facet name="buttonBar">
-                                                    <af:button text="Ok" id="b7"
-                                                               actionListener="#{CouponManageBean.testMethod}"/>
-                                                    <af:button actionListener="#{bindings.Rollback.execute}"
-                                                               text="Cancel"
-                                                               immediate="true" id="b8">
-                                                        <af:resetActionListener/>
-                                                    </af:button>
-                                                </f:facet>
+                                                  animate="true" partialTriggers="b6"
+                                                  popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}">
+                                            <af:dialog id="d5" type="okCancel"
+                                                       dialogListener="#{CouponManageBean.commitCouponTime}">
+                                                <f:facet name="buttonBar"/>
                                                 <af:panelFormLayout id="pfl3">
                                                     <af:inputText value="#{row.bindings.CouponCode.inputValue}"
                                                                   label="#{bindings.CouponsTimeInstance.hints.CouponCode.label}"
@@ -323,7 +313,7 @@
                                         <af:popup childCreation="deferred" autoCancel="enabled" id="createTime"
                                                   popupFetchListener="#{CouponManageBean.createAndInsertCouponTime}"
                                                   animate="true" contentDelivery="lazyUncached"
-                                                  popupCanceledListener="#{CouponManageBean.commitTime}">
+                                                  popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}">
                                             <af:dialog id="d6" dialogListener="#{CouponManageBean.commitCouponTime}"
                                                        affirmativeTextAndAccessKey="Save"
                                                        cancelTextAndAccessKey="Discard" type="okCancel">
@@ -381,7 +371,7 @@
                                 </f:facet>
                             </af:panelCollection>
                         </af:showDetailItem>
-                        <af:showDetailItem id="tab3" text="Date Coupons">
+                        <af:showDetailItem id="tab3" text="Amount Coupons">
                             <af:panelCollection id="pc3">
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar"/>
@@ -435,16 +425,11 @@
                                             <af:showPopupBehavior popupId="editRange" triggerType="action"/>
                                         </af:button>
                                         <af:popup childCreation="deferred" autoCancel="enabled" id="editRange"
-                                                  partialTriggers="b11" contentDelivery="lazyUncached">
-                                            <af:dialog id="d8" type="none">
-                                                <f:facet name="buttonBar">
-                                                    <af:button actionListener="#{bindings.Commit.execute}" text="Ok" id="b12"/>
-                                                    <af:button actionListener="#{bindings.Rollback.execute}"
-                                                               text="Cancel"
-                                                               immediate="true" id="b13">
-                                                        <af:resetActionListener/>
-                                                    </af:button>
-                                                </f:facet>
+                                                  partialTriggers="b11" contentDelivery="lazyUncached"
+                                                  popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}">
+                                            <af:dialog id="d8" type="okCancel"
+                                                       dialogListener="#{CouponManageBean.commitCouponRange}">
+                                                <f:facet name="buttonBar"/>
                                                 <af:panelFormLayout id="pfl5">
                                                     <af:inputText value="#{row.bindings.CouponCode.inputValue}"
                                                                   label="#{bindings.CouponsRangeInstance.hints.CouponCode.label}"
