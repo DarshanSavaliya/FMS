@@ -105,6 +105,16 @@
                                 <name>com.skyjetairlines.view.pageDefs.profilePageDef</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.homePageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/searchTF.xml#searchTF</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -120,28 +130,6 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/WEB-INF/bookingTF.xml#bookingTF</name>
-                                <actions>view</actions>
-                            </permission>
-                        </permissions>
-                    </grant>
-                    <grant>
-                        <grantee>
-                            <principals>
-                                <principal>
-                                    <class>oracle.security.jps.internal.core.principals.JpsAuthenticatedRoleImpl</class>
-                                    <name>authenticated-role</name>
-                                </principal>
-                            </principals>
-                        </grantee>
-                        <permissions>
-                            <permission>
-                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
-                                <name>/WEB-INF/searchTF.xml#searchTF</name>
-                                <actions>view</actions>
-                            </permission>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>com.skyjetairlines.view.pageDefs.homePageDef</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>
