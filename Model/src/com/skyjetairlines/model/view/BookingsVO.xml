@@ -110,21 +110,18 @@
         ViewAttribute="BookingId"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="BookingsVOCriteria_BookingsVOCriteria_row_0_CustomerId"
         ViewAttribute="CustomerId"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="BookingsVOCriteria_BookingsVOCriteria_row_0_BookingDate"
         ViewAttribute="BookingDate"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
@@ -135,6 +132,7 @@
     IsUpdateable="false"/>
   <SortCriteria>
     <Sort
-      Attribute="BookingDate"/>
+      Attribute="BookingDate"
+      Ascending="false"/>
   </SortCriteria>
 </ViewObject>

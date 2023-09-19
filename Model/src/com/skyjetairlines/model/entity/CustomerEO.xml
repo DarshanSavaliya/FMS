@@ -126,6 +126,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.skyjetairlines.model.entity.CustomerEO.Phone_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -144,6 +146,8 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="com.skyjetairlines.model.entity.CustomerEO.Address_LABEL"/>
+        <DISPLAYWIDTH
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
@@ -162,6 +166,8 @@
           ResId="com.skyjetairlines.model.entity.CustomerEO.DateOfBirth_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="com.skyjetairlines.model.entity.CustomerEO.DateOfBirth_FMT_FORMATTER"/>
+        <DISPLAYWIDTH
+          Value="20"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>

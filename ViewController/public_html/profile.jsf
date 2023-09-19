@@ -6,7 +6,8 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:outputText value="Manage your Profile" id="ot1"/>
+                    <af:outputText value="Manage your Profile" id="ot1"
+                                   inlineStyle="font-size:large; font-weight:bold;"/>
                     <af:button text="Notification" id="b15">
                         <af:showPopupBehavior popupId="notification"/>
                     </af:button>
@@ -41,7 +42,8 @@
                             </af:table>
                         </af:dialog>
                     </af:popup>
-                    <af:panelTabbed position="left" id="pt2" verticalTabMode="iconAndText" dimensionsFrom="auto">
+                    <af:panelTabbed position="left" id="pt2" verticalTabMode="iconAndText"
+                                    minTabSize="200px">
                         <af:showDetailItem id="profile" text="Profile" disclosed="true" immediate="true">
                             <af:panelFormLayout id="pfl1">
                                 <af:inputText value="#{bindings.FirstName.inputValue}"
@@ -98,7 +100,10 @@
                             </af:panelFormLayout>
                         </af:showDetailItem>
                         <af:showDetailItem text="Bookings" id="sdi1" immediate="true">
-                            <af:panelGroupLayout id="pgl1" layout="horizontal">
+                            <af:panelCollection id="pc3">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
                                 <af:table value="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel}"
                                           var="row" rows="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}"
                                           emptyText="#{bindings.BookingsInstanceForCurrentCustomer.viewable ? 'No data to display.' : 'Access Denied.'}"
@@ -106,18 +111,16 @@
                                           selectedRowKeys="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.selectedRow}"
                                           selectionListener="#{bindings.BookingsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
                                           rowSelection="single"
-                                          fetchSize="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}" id="t1">
-                                    <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.label}"
-                                               id="c1">
-                                        <af:outputText value="#{row.BookingId}"
+                                          fetchSize="#{bindings.BookingsInstanceForCurrentCustomer.rangeSize}" id="t1"
+                                          maxClientRows="10" autoHeightRows="10" scrollPolicy="page"
+                                          varStatus="rowStat" columnStretching="column:c4" styleClass="AFStretchWidth">
+                                    <af:column id="c16" width="75" align="center">
+                                        <af:outputText value="#{rowStat.index+1}"
                                                        shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.tooltip}"
-                                                       id="ot2">
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingId.format}"/>
-                                        </af:outputText>
+                                                       id="ot5"/>
                                     </af:column>
                                     <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.label}"
-                                               id="c2">
+                                               id="c2" width="150" align="center">
                                         <af:outputText value="#{row.BookingDate}"
                                                        shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.BookingDate.tooltip}"
                                                        id="ot3">
@@ -125,7 +128,7 @@
                                         </af:outputText>
                                     </af:column>
                                     <af:column headerText="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.label}"
-                                               id="c3">
+                                               id="c3" width="150" align="left">
                                         <af:outputText value="#{row.TotalAmount}"
                                                        shortDesc="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.tooltip}"
                                                        id="ot4">
@@ -133,11 +136,11 @@
                                                               pattern="#{bindings.BookingsInstanceForCurrentCustomer.hints.TotalAmount.format}"/>
                                         </af:outputText>
                                     </af:column>
-                                    <af:column id="c4" headerText="Show booking">
+                                    <af:column id="c4" headerText="Show booking" align="center">
                                         <af:button text="Details" id="b14" action="showBooking"/>
                                     </af:column>
                                 </af:table>
-                            </af:panelGroupLayout>
+                            </af:panelCollection>
                         </af:showDetailItem>
                         <af:showDetailItem text="Passengers" id="sdi2" immediate="true">
                             <af:panelCollection id="pc1">
@@ -161,7 +164,12 @@
                                           selectionListener="#{bindings.PassengersInstanceForCurrentCustomer.collectionModel.makeCurrent}"
                                           rowSelection="single"
                                           fetchSize="#{bindings.PassengersInstanceForCurrentCustomer.rangeSize}"
-                                          id="t2" partialTriggers="::b5 ::b6">
+                                          id="t2" partialTriggers="::b5 ::b6" styleClass="AFStretchWidth"
+                                          varStatus="rowStat" autoHeightRows="5" scrollPolicy="page"
+                                          columnStretching="column:c5">
+                                    <af:column id="c1" align="center" width="75">
+                                        <af:outputText value="#{rowStat.index+1}" id="ot2"/>
+                                    </af:column>
                                     <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.PassenegerName.label}"
                                                id="c5">
                                         <af:outputText value="#{row.PassenegerName}"
@@ -169,12 +177,12 @@
                                                        id="ot6"/>
                                     </af:column>
                                     <af:column headerText="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.label}"
-                                               id="c6">
+                                               id="c6" width="150" align="center">
                                         <af:outputText value="#{row.Phone}"
                                                        shortDesc="#{bindings.PassengersInstanceForCurrentCustomer.hints.Phone.tooltip}"
                                                        id="ot7"/>
                                     </af:column>
-                                    <af:column id="c14">
+                                    <af:column id="c14" align="center">
                                         <af:button text="Edit" id="b2" icon="#{resource['images:icons8-edit-12.png']}">
                                             <af:showPopupBehavior popupId="EditPassenger"/>
                                         </af:button>
@@ -230,7 +238,7 @@
                                 </f:facet>
                                 <f:facet name="statusbar"/>
                                 <af:table 
-                                columnStretching="last"
+                                columnStretching="column:c9"
                                 value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel}"
                                           var="row"
                                           rows="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
@@ -240,30 +248,25 @@
                                           selectionListener="#{bindings.PaymentMethodsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
                                           rowSelection="single"
                                           fetchSize="#{bindings.PaymentMethodsInstanceForCurrentCustomer.rangeSize}"
-                                          id="t3" partialTriggers="::b11 ::b12" styleClass="AFStretchWidth">
-                                    <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.label}"
-                                               id="c7">
-                                        <af:outputText value="#{row.PaymentId}"
-                                                       shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.tooltip}"
-                                                       id="ot8">
-                                            <af:convertNumber groupingUsed="false"
-                                                              pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentId.format}"/>
-                                        </af:outputText>
+                                          id="t3" partialTriggers="::b11 ::b12" styleClass="AFStretchWidth"
+                                          varStatus="rowStat" scrollPolicy="page" autoHeightRows="5">
+                                    <af:column id="c17" align="center" width="75">
+                                        <af:outputText value="#{rowStat.index+1}" id="ot13"/>
                                     </af:column>
                                     <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.label}"
-                                               id="c8">
+                                               id="c8" align="center" width="75">
                                         <af:outputText value="#{row.PaymentType}"
                                                        shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.PaymentType.tooltip}"
                                                        id="ot9"/>
                                     </af:column>
                                     <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.label}"
-                                               id="c9">
+                                               id="c9" align="center">
                                         <af:outputText value="#{row.CardNo}"
                                                        shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.CardNo.tooltip}"
                                                        id="ot10"/>
                                     </af:column>
                                     <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.label}"
-                                               id="c10">
+                                               id="c10" align="center" width="50">
                                         <af:outputText value="#{row.ExpiryMonth}"
                                                        shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryMonth.tooltip}"
                                                        id="ot11">
@@ -272,7 +275,7 @@
                                         </af:outputText>
                                     </af:column>
                                     <af:column headerText="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.label}"
-                                               id="c11">
+                                               id="c11" align="center" width="50">
                                         <af:outputText value="#{row.ExpiryYear}"
                                                        shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.tooltip}"
                                                        id="ot12">
@@ -280,8 +283,8 @@
                                                               pattern="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.ExpiryYear.format}"/>
                                         </af:outputText>
                                     </af:column>
-                                    <af:column id="c15">
-                                        <af:button text="Edit1" id="b8" icon="#{resource['images:icons8-edit-12.png']}">
+                                    <af:column id="c15" align="center" width="75">
+                                        <af:button text="Edit" id="b8" icon="#{resource['images:icons8-edit-12.png']}">
                                             <af:showPopupBehavior popupId="p1"/>
                                         </af:button>
                                         <af:popup childCreation="deferred" autoCancel="enabled" id="p1">

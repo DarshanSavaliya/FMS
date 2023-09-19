@@ -91,4 +91,10 @@
     EntityAttrName="ExpiryYear"
     EntityUsage="PaymentMethodEO"
     AliasName="EXPIRY_YEAR"/>
+  <SortCriteria>
+    <Sort
+      Attribute="ExpiryYear"/>
+    <Sort
+      Attribute="ExpiryMonth"/>
+  </SortCriteria>
 </ViewObject>

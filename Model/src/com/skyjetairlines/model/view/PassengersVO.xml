@@ -83,4 +83,8 @@
     ViewLink="com.skyjetairlines.model.view.link.TicketPassengerFkLink"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <SortCriteria>
+    <Sort
+      Attribute="PassenegerName"/>
+  </SortCriteria>
 </ViewObject>

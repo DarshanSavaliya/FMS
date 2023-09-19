@@ -1,0 +1,1332 @@
+<?xml version='1.0' encoding='UTF-8' standalone='yes'?>
+<xmi:XMI xmlns:xmi='http://www.omg.org/spec/XMI/20131001' xmlns:DI='http://xmlns.omg.org/DI/2.0'>
+  <documentation exporter='Oracle JDeveloper' exporterVersion='12.2.1.4.0'/>
+  <DI:Diagram xmi:type='DI:Diagram' xmi:id='id1e9c4c36-aedf-41e2-9402-547e016b6343' zoom='0.0'>
+    <contained xmi:type='DI:GraphNode' xmi:id='idc680b804-50c5-4e71-b897-1c69f99dd284'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='idd5aa2873-52a3-4e91-8a7a-2d0e8abb73cc' graphEdge='id4fac8e89-f514-4379-94bd-550745877a0b'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id6fc7b705-1190-4cdc-8e80-61491cfd0404'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idef2df9b6-f0bd-4a29-8b42-a66c45b45dac'>
+        <contained xmi:type='DI:GraphNode' xmi:id='idb6b4ef29-a5ae-49b9-a28b-8d4f35184f63'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9331331253051758' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id1bafe4ab-3a18-4bfd-bb1d-7d1de1e388ac'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.0668669193983078' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id51a315cf-292a-4c61-aebd-3fbdf4f49c30'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id0feb2328-16c4-49bd-8464-1b5e3e914505'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id24e884e1-6df0-48e8-9db0-f1c022ceaa03'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id8bb558ad-2fa0-469f-a73e-62698bf303a9'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id299a2f07-200c-4650-a4ef-e550385b670d'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='765.0' y='343.3333435058594'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.TicketFlightEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='ide9c8a9df-9845-4cd5-bbc0-be23ad1d7a78'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id9f2fc234-f7b8-467d-8992-3df4a44e2b85' graphEdge='id451d9bc2-3430-42c7-a54f-00d9fa5051b5 id4fac8e89-f514-4379-94bd-550745877a0b id5d538811-44b2-4fce-8c6a-683ccbd9ea92 idf9372db6-3a71-40e6-a942-82c252b0d6e6'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id799f449c-e699-47c9-b605-c2f3f46431b4'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idd144ee95-2acf-4a86-9ec1-e06691e1121a'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id0c0b040a-b383-4043-bbee-ce7f00fe671e'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9331331253051758' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='idee0b3d61-e6bd-45a2-9acf-a56061992d87'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.0668669193983078' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id793c3f97-31ec-4e5f-ab32-434ae7c3947a'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id90d41971-3e73-46e3-abfe-c0ea5819a528'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id0c91bed9-a5d9-4b4c-8490-f1372823fbd0'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id2bf27734-ceb8-4a69-b754-c864d2f3cbbf'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id164aea2e-96c9-4005-b1e1-17e7b1227a12'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='705.0' y='525.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.TicketEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id0ffb359b-8d97-4a43-9fc4-6f8a8857971b'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id9cac783a-86c4-4c7a-b9b7-f130d6f4bb8b' graphEdge='id0f6ca525-8893-40a4-8cbf-f8336c029ac7'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='idc31ce145-780c-42fe-9e3c-60877d3bb784'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id04c09118-4c04-42f4-b433-a84339062777'>
+        <contained xmi:type='DI:GraphNode' xmi:id='idef6c73f7-1d25-45ea-b150-01d294436de5'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.960663080215454' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id963c54d4-92f5-4c42-a1fa-4fb4b513863e'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.03933695703744888' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='133.595703125' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id52e671ff-934a-4f37-9499-16b42037354b'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id1230bfa3-8171-47cf-a0f4-ab4447f1c265'>
+          <contained xmi:type='DI:GraphNode' xmi:id='idbb09fa4a-d29e-4e3b-a1d9-c84c9083dbdc'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id15384b2f-8972-4ce9-b167-8db66194edc3'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id3d6c15ee-cb22-4ea4-afe9-ad44f9627f05'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='133.595703125' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='165.0' y='885.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.PaymentMethodEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='133.595703125' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id937049c4-5a81-4a4e-b729-7aac093aade6'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id00dbc858-8966-4dec-96a6-95f63de861af' graphEdge='id08445e10-17cb-4a77-b033-ac9eb1da1649 idf9372db6-3a71-40e6-a942-82c252b0d6e6'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='idff0ba2e2-fa11-4a96-97af-adc3be30e8f4'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id8f0e866f-e7ac-4557-964e-d47203460dda'>
+        <contained xmi:type='DI:GraphNode' xmi:id='idfc94020b-75c5-4662-b43e-073136093d29'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9457813501358032' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id5f96873a-5b82-4075-9e6f-e2bd71b18db4'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.05421862006187439' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id0bab4d84-857e-403e-b42d-d630c4b017dd'>
+        <contained xmi:type='DI:GraphNode' xmi:id='ide9a46082-0a59-451f-b552-8782a0a74ed9'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id264fb619-172c-48ee-8ca4-ec47d0db7b4c'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='ide08c1fe9-3530-4ba0-a585-19c600f48d50'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id7b59dba8-eb63-40e5-b0c9-08d1d4ce8403'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='795.0' y='720.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.PassengerEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id5824a311-56b0-42b7-822f-f2626532e7e8'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id5e54efc1-5585-4c6e-9fa7-7be3863e9324' graphEdge='id0b69018d-2f69-4b19-8869-9c9935a5fbf0'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id21fb4c23-f898-4f85-9b68-4f9037bf402d'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id68ece65d-a0c5-464c-982a-cfe705945519'>
+        <contained xmi:type='DI:GraphNode' xmi:id='ide3ed9a82-0a78-4541-9f9b-50a98717c26b'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9457813501358032' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id4d75733d-5161-47ab-9212-99b2b5d8857f'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.05421862006187439' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ida92059b4-9f6d-43c9-aaee-5eb0f8a7c216'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id28e92847-4098-482d-b732-f971106450c2'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id3b909fac-8020-4813-931e-78550ca6c7f0'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id56354ddb-88f4-4448-bb38-21ac8034e3ce'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='ide3b1a4f1-01b8-41e1-99e4-7a5bad8bf067'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='315.0' y='690.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.NotificationEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id82099b72-534d-4abf-8054-d8edee313fcb'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='idcaa5bb31-ec97-4a1d-a6b9-490dffdec19f' graphEdge='id4e254788-7754-453b-92e1-2825c14ece21 id55edd864-2a4a-43ed-91ba-4b54023e6499 id5d538811-44b2-4fce-8c6a-683ccbd9ea92 idc606473b-b783-46ac-b924-78f94a95fd1c'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id6720ea7a-1ead-4682-837e-85b3a81914a2'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idcc9495d8-f7db-47e4-85be-d027e4a730cf'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id23f1930d-3241-441c-8244-22281701a39d'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.972135305404663' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id69443d8d-5db5-41a9-809f-7605956d70e4'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.02786470390856266' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='175.4609375' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idb81c788d-33a7-4d3e-9f79-7d50fe47348e'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id0ff01d32-5600-420d-bdd7-27a24a8fea6b'>
+          <contained xmi:type='DI:GraphNode' xmi:id='idafbb2389-ef36-4582-b392-790ba70e884d'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='idb91be8ac-ff52-4e6e-a485-acdbce8d2bef'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id77cbc92e-8de0-4d45-b04e-496cf55611a6'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='175.4609375' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='508.2003173828125' y='261.9290466308594'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.FlightEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='175.4609375' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id57d1a81c-120e-47ba-b3fe-ab6863aec5dc'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id0da7cb44-0435-42d9-b537-3f55f3697574' graphEdge='id08445e10-17cb-4a77-b033-ac9eb1da1649 id0b69018d-2f69-4b19-8869-9c9935a5fbf0 id0f6ca525-8893-40a4-8cbf-f8336c029ac7 id39e040a4-8d9c-49d4-9ed4-09c8b7a42a75'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id238aa156-f39d-4a4a-9f7f-358b3625c352'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idb09874c1-795f-409e-9d4c-e8b6e686a943'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id9dc90cd5-ef8a-405d-818c-771b1300c47b'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.96913480758667' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id708eb44d-21eb-4b50-af53-98bec41b73ac'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.030865220353007317' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='161.505859375' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id714f57d1-d61d-443e-95bf-35ff89f72c0d'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id8a76b29a-baab-4070-a70e-60912b1dfe3e'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id7050b9a6-2f1d-4550-a052-7d468c924b53'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id68bbfcc5-e852-4f39-8893-458c52845d63'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id3c0e5032-bfd3-4b65-a43d-261b2e906769'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='161.505859375' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='420.0' y='885.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.CustomerEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='161.505859375' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id29e2c9ad-30f1-491f-b05d-66636f7bf5a6'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id9e7f1408-2517-4866-9f30-8f0016e214e5' graphEdge='id4e254788-7754-453b-92e1-2825c14ece21'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id25d9bbb7-2f7b-4417-829e-3f15600c7169'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id7c893fbe-5665-4ad1-914f-ea88e144584b'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id93f3fbb0-933b-4304-b72b-fddfb0bf98d0'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.960663080215454' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id2495bd83-f317-4272-8f68-58e8a94502d5'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.03933695703744888' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='133.595703125' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ida4d65cdc-24ec-45c8-889b-1bb099b2fe87'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id3875bb9e-f00a-40da-bab5-7b038bca64c1'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id8fd0f82d-ac18-4886-888a-38fe89b82280'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id9a773260-97ac-4ab8-9595-50dfe0e7b11a'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id02e93265-d356-457c-b638-798a3c00e4b6'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='133.595703125' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='435.0' y='523.3333129882812'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.CouponEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='133.595703125' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='idafabf61f-d0d2-4436-89ad-96cb5bffe38b'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id4d96bb73-6ec0-4b4f-bf55-d5130b8a30a4' graphEdge='id39e040a4-8d9c-49d4-9ed4-09c8b7a42a75 id451d9bc2-3430-42c7-a54f-00d9fa5051b5'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id75c4c92d-0115-496b-91c4-94bc74ac5223'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id5e811c0e-abf9-44e6-a886-4751e83cd3b2'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id32d281dd-7f76-4bb4-856c-be8656e71ed0'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9457813501358032' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id2c72d61d-6073-4435-9982-603f94c36858'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.05421862006187439' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ide53dc4c6-3861-465b-ad5b-c03b0dc97379'>
+        <contained xmi:type='DI:GraphNode' xmi:id='idc58c2eba-cd54-4692-8b35-5ec77323c427'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id80510867-874b-4020-8576-a8bf2a7aed62'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='idd966a657-6c2d-4401-b688-b7f7a354653d'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='idf7cacce2-97e0-4965-935f-56a0e10c2606'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='540.0' y='690.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.BookingEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id1b2cc096-9ab1-4892-b48c-7e285efcf5c0'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id81981e63-045a-43a1-b2b9-55f6e72ffb13' graphEdge='id55edd864-2a4a-43ed-91ba-4b54023e6499 idc606473b-b783-46ac-b924-78f94a95fd1c'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='idc448749f-7276-482c-9f98-984911c9e162'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id1283e55c-3e74-464e-a58f-2068b7951d99'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id524c101d-dd71-4f3a-97a8-32cf20c6b512'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9331331253051758' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='idfc5dd450-1cdb-4cda-9679-1c6fa092be42'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.0668669193983078' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id71a9280c-f4c0-43c0-9ca5-1d5d65337aaa'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id50d42732-98b3-43d8-adab-6a742b00dc7d'>
+          <contained xmi:type='DI:GraphNode' xmi:id='idf5d60260-25a6-4c19-bdb7-1cb1286fc64b'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id0740a3a6-2056-4d09-86dd-c44085729b2b'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='ide3a57328-b3c0-4702-b9fe-7617be0f1e57'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='525.0' y='88.33332824707031'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.AirportEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id0f6ca525-8893-40a4-8cbf-f8336c029ac7' anchor='id0da7cb44-0435-42d9-b537-3f55f3697574 id9cac783a-86c4-4c7a-b9b7-f130d6f4bb8b'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id95792034-af03-4fea-b35e-628d9b1ee8e1'>
+        <position xmi:type='DI:Point' x='-141.97286987304688' y='3.864990234375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idff7d037b-54d3-4480-94bc-9bd8dce75184'>
+        <position xmi:type='DI:Point' x='-22.8575439453125' y='-30.78765869140625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id090f4dda-fcac-4693-8637-8523fd182dc2'>
+        <position xmi:type='DI:Point' x='-52.0' y='21.90960693359375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idda5de025-57eb-4009-9483-01de7491d93c'>
+        <position xmi:type='DI:Point' x='-95.5' y='-24.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id8f27572b-3c30-44be-8a6e-42959900e4c9'>
+        <position xmi:type='DI:Point' x='2.5' y='-22.5533447265625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf0294b98-82d6-4a38-b9f1-03702cdc484b'>
+        <position xmi:type='DI:Point' x='2.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.PayemntMethodCustomerFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='420.0' y='949.964599609375'/>
+      <waypoint xmi:type='DI:Point' x='365.0' y='949.964599609375'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id08445e10-17cb-4a77-b033-ac9eb1da1649' anchor='id0da7cb44-0435-42d9-b537-3f55f3697574 id00dbc858-8966-4dec-96a6-95f63de861af'>
+      <contained xmi:type='DI:GraphNode' xmi:id='ide02a8490-f6f9-47fc-ac14-5904524f8647'>
+        <position xmi:type='DI:Point' x='20.09112548828125' y='-43.0177001953125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id2bb70dd5-e45c-4fb0-8e5d-318631ace3de'>
+        <position xmi:type='DI:Point' x='35.8333740234375' y='7.86968994140625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf7c00feb-27f0-4c0c-a812-75ae13cc401c'>
+        <position xmi:type='DI:Point' x='-52.0' y='-44.41015625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id84b0926d-8933-43de-b595-bb90644e4b1b'>
+        <position xmi:type='DI:Point' x='-80.5' y='4.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id317509bc-b65a-490d-b1b4-ca959b4b561f'>
+        <position xmi:type='DI:Point' x='2.5' y='6.7735595703125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id110a2034-2c03-4d72-a08d-0878926f0fa3'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.PassengerCustomerFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='620.0' y='988.4195556640625'/>
+      <waypoint xmi:type='DI:Point' x='866.6666870117188' y='988.4195556640625'/>
+      <waypoint xmi:type='DI:Point' x='866.6666870117188' y='840.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id39e040a4-8d9c-49d4-9ed4-09c8b7a42a75' anchor='id0da7cb44-0435-42d9-b537-3f55f3697574 id4d96bb73-6ec0-4b4f-bf55-d5130b8a30a4'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id5e027bca-d19d-43b9-94eb-03b49b707b95'>
+        <position xmi:type='DI:Point' x='-63.613525390625' y='-53.6231689453125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idd1e7a88a-696c-45d7-b66f-09bc6795ef10'>
+        <position xmi:type='DI:Point' x='2.5' y='-20.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id21b08f80-c8d1-4363-bdce-ca0819a9f218'>
+        <position xmi:type='DI:Point' x='-108.0' y='-47.75091552734375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id9111503c-d775-4b58-ae8f-49e14747d232'>
+        <position xmi:type='DI:Point' x='4.0' y='4.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='iddd560517-80cb-4ec5-9861-9e8f43404354'>
+        <position xmi:type='DI:Point' x='2.5' y='6.19622802734375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id5e0e80d9-6d8b-470d-b05b-07c49183f87f'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.BookingCustomerFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='609.3333129882812' y='885.0'/>
+      <waypoint xmi:type='DI:Point' x='609.3333129882812' y='810.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id0b69018d-2f69-4b19-8869-9c9935a5fbf0' anchor='id0da7cb44-0435-42d9-b537-3f55f3697574 id5e54efc1-5585-4c6e-9fa7-7be3863e9324'>
+      <contained xmi:type='DI:GraphNode' xmi:id='ida3ebb837-b9b6-4ee7-be61-d7b82cb554a5'>
+        <position xmi:type='DI:Point' x='19.6177978515625' y='-32.0511474609375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ide74f0b89-ffc9-4134-89ab-4f28dedd3df7'>
+        <position xmi:type='DI:Point' x='-21.09490966796875' y='-31.9884033203125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ide8e2cf74-aff7-4c08-adb9-1e38c8fb711a'>
+        <position xmi:type='DI:Point' x='-108.0' y='23.455078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id92f0818a-99b5-425d-84e4-f0aa60f1dc21'>
+        <position xmi:type='DI:Point' x='4.0' y='-27.9744873046875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id587a6723-e715-45fb-b526-324bb584d3d2'>
+        <position xmi:type='DI:Point' x='2.5' y='1.1611328125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id664fb73c-b8ef-49ac-bef5-cee33fd09b12'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.NotificationCustomerFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='472.0' y='885.0'/>
+      <waypoint xmi:type='DI:Point' x='472.0' y='840.0'/>
+      <waypoint xmi:type='DI:Point' x='472.3333435058594' y='840.0'/>
+      <waypoint xmi:type='DI:Point' x='472.3333435058594' y='810.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id451d9bc2-3430-42c7-a54f-00d9fa5051b5' anchor='id4d96bb73-6ec0-4b4f-bf55-d5130b8a30a4 id9f2fc234-f7b8-467d-8992-3df4a44e2b85'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id3ab80002-6c84-46f5-8f3f-a31462b8cd43'>
+        <position xmi:type='DI:Point' x='-53.41455078125' y='-23.88922119140625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id598ff14e-a7df-4d82-ab7c-62e419420c49'>
+        <position xmi:type='DI:Point' x='2.5' y='-21.122314453125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf441682e-1929-468e-8284-fdd6d37c7be6'>
+        <position xmi:type='DI:Point' x='-107.93038940429688' y='-46.3693962097168'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id67bd52eb-b85a-4a94-ba1f-d37ee9ed5ba9'>
+        <position xmi:type='DI:Point' x='3.94970703125' y='4.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf6796f2b-32f7-461f-ad3c-b81ede09576d'>
+        <position xmi:type='DI:Point' x='2.5' y='3.04022216796875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id7a3b0959-0f91-4472-92e4-21d71b185de6'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.BookingFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='724.4009399414062' y='690.0'/>
+      <waypoint xmi:type='DI:Point' x='724.4009399414062' y='667.5'/>
+      <waypoint xmi:type='DI:Point' x='726.3815307617188' y='667.5'/>
+      <waypoint xmi:type='DI:Point' x='726.3815307617188' y='645.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id4fac8e89-f514-4379-94bd-550745877a0b' anchor='id9f2fc234-f7b8-467d-8992-3df4a44e2b85 idd5aa2873-52a3-4e91-8a7a-2d0e8abb73cc'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id6df57f9d-417b-40ae-89f6-62b6eedbd05a'>
+        <position xmi:type='DI:Point' x='-40.6287841796875' y='-43.65509033203125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ideeb1c980-416c-4ccb-822c-3034d731d72b'>
+        <position xmi:type='DI:Point' x='19.42779541015625' y='-22.28875732421875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id92bd2779-b9f4-4037-a719-46ba02bd5c2e'>
+        <position xmi:type='DI:Point' x='-108.0' y='-27.6524658203125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ida17bef48-f317-4f6a-a4d4-87baee1ac24a'>
+        <position xmi:type='DI:Point' x='4.0' y='-48.6075439453125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf4f53243-e688-42ef-940a-c6e982e2fe56'>
+        <position xmi:type='DI:Point' x='2.5' y='5.72882080078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idabc2bacc-e1dc-40a4-a20c-08585680657a'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.TicketFlightsTicketsFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='842.5' y='525.0'/>
+      <waypoint xmi:type='DI:Point' x='842.5' y='463.3333435058594'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='idf9372db6-3a71-40e6-a942-82c252b0d6e6' anchor='id00dbc858-8966-4dec-96a6-95f63de861af id9f2fc234-f7b8-467d-8992-3df4a44e2b85'>
+      <contained xmi:type='DI:GraphNode' xmi:id='idb614c93c-133e-45c5-8d98-0e1a1abb76f2'>
+        <position xmi:type='DI:Point' x='1.8992919921875' y='-22.67584228515625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id88eec441-8e31-42cb-8903-a4aa743a43c5'>
+        <position xmi:type='DI:Point' x='1.14630126953125' y='-26.0479736328125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id16bd0759-4858-47e3-80e9-8bd587324d98'>
+        <position xmi:type='DI:Point' x='-108.0' y='22.33843994140625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id72fe9371-f01f-4662-8cc4-c829634ecd41'>
+        <position xmi:type='DI:Point' x='4.0' y='-24.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id4c218ac9-4662-4c8e-8ec7-bba629a6db07'>
+        <position xmi:type='DI:Point' x='2.5' y='2.35498046875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id5c7aedb7-c377-4f0d-8298-646944b03d4e'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.TicketPassengerFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='883.3333740234375' y='720.0'/>
+      <waypoint xmi:type='DI:Point' x='883.3333740234375' y='645.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='idc606473b-b783-46ac-b924-78f94a95fd1c' anchor='id81981e63-045a-43a1-b2b9-55f6e72ffb13 idcaa5bb31-ec97-4a1d-a6b9-490dffdec19f'>
+      <contained xmi:type='DI:GraphNode' xmi:id='ida7e89651-69b1-4f63-acbb-9ead497d4b9e'>
+        <position xmi:type='DI:Point' x='3.568603515625' y='20.623626708984375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id6f01c23e-dc3c-4af7-90f9-0661feb4a218'>
+        <position xmi:type='DI:Point' x='-21.8294677734375' y='-1.24127197265625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id21319203-95f5-4f21-a044-91f63a976e90'>
+        <position xmi:type='DI:Point' x='5.642242431640625' y='32.101165771484375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id6525c102-284c-4778-a2ae-9cdc0bce27c5'>
+        <position xmi:type='DI:Point' x='-162.72491455078125' y='32.931976318359375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idad7710b6-ea82-4579-9394-fb74e6f4d287'>
+        <position xmi:type='DI:Point' x='-40.5' y='-20.971160888671875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id32acf539-14b7-42f4-bb16-5cadf4a2c6f7'>
+        <position xmi:type='DI:Point' x='2.5' y='-20.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.FlightArrivalAirportFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='600.3333129882812' y='208.3333282470703'/>
+      <waypoint xmi:type='DI:Point' x='600.3333129882812' y='261.9290466308594'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id55edd864-2a4a-43ed-91ba-4b54023e6499' anchor='id81981e63-045a-43a1-b2b9-55f6e72ffb13 idcaa5bb31-ec97-4a1d-a6b9-490dffdec19f'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id74ba468f-6854-4bbe-83a6-05e25ba1e91d'>
+        <position xmi:type='DI:Point' x='3.63873291015625' y='18.616668701171875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ide1663450-cf6d-4f59-973b-d1303ec05f53'>
+        <position xmi:type='DI:Point' x='-20.59942626953125' y='5.096710205078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id007d9bf1-8588-44a5-92b8-5e0a0df30f2e'>
+        <position xmi:type='DI:Point' x='4.0' y='4.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id957cb57a-28f7-47df-8e09-aca01f42777e'>
+        <position xmi:type='DI:Point' x='-180.0' y='-24.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idb76b4eaa-15e5-40df-98dc-7b30a0d36f32'>
+        <position xmi:type='DI:Point' x='-47.5' y='-21.15753173828125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id31127538-86c2-4020-9cd6-1cce9495a5c2'>
+        <position xmi:type='DI:Point' x='2.5' y='-19.641998291015625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.FlightDepartureAirportFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='655.3333129882812' y='208.3333282470703'/>
+      <waypoint xmi:type='DI:Point' x='655.3333129882812' y='261.9290466308594'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id4e254788-7754-453b-92e1-2825c14ece21' anchor='idcaa5bb31-ec97-4a1d-a6b9-490dffdec19f id9e7f1408-2517-4866-9f30-8f0016e214e5'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id0709cf0d-9eca-4b98-a347-040d2df80404'>
+        <position xmi:type='DI:Point' x='2.5' y='0.2449188232421875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id615d422e-59a8-4d09-a08a-ae00f36b566d'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id5f1177cf-0745-4188-8881-8c3af768c452'>
+        <position xmi:type='DI:Point' x='4.0' y='4.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idd447f8a9-9c89-471a-b82d-0b57fd2dc712'>
+        <position xmi:type='DI:Point' x='-130.0' y='6.281890869140625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id60f8f50e-1daa-4561-8c2c-eb04a0177bb5'>
+        <position xmi:type='DI:Point' x='-53.5' y='-22.666671752929688'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ide28f7bba-256a-492f-9342-c895c9a84ec4'>
+        <position xmi:type='DI:Point' x='2.5' y='-20.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.FligthsCouponsAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='608.2003173828125' y='437.3899841308594'/>
+      <waypoint xmi:type='DI:Point' x='608.2003173828125' y='523.3333129882812'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id5d538811-44b2-4fce-8c6a-683ccbd9ea92' anchor='id9f2fc234-f7b8-467d-8992-3df4a44e2b85 idcaa5bb31-ec97-4a1d-a6b9-490dffdec19f'>
+      <contained xmi:type='DI:GraphNode' xmi:id='idac29a76f-294e-447b-b3a7-80bfa3c5bd84'>
+        <position xmi:type='DI:Point' x='-0.1224365234375' y='-18.04888916015625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id5f7d9c5d-4d81-4eb0-aff4-0356d8665a29'>
+        <position xmi:type='DI:Point' x='6.9310302734375' y='-24.160247802734375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='ided5fa5c2-68c5-4333-a3af-281fd563534b'>
+        <position xmi:type='DI:Point' x='5.8099365234375' y='1.32916259765625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id022a2c0d-31af-4872-958f-472603d00c06'>
+        <position xmi:type='DI:Point' x='-69.5224609375' y='-23.400115966796875'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idd3037b46-0d39-4552-a8cd-18db20dda9ea'>
+        <position xmi:type='DI:Point' x='2.5' y='6.021087646484375'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id374a705a-5f99-47a3-b545-1f5954e5a042'>
+        <position xmi:type='DI:Point' x='-16.48065185546875' y='17.637603759765625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.TicketsFlightsAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='771.6666259765625' y='525.0'/>
+      <waypoint xmi:type='DI:Point' x='771.6666259765625' y='495.8566589355469'/>
+      <waypoint xmi:type='DI:Point' x='658.2003173828125' y='495.8566589355469'/>
+      <waypoint xmi:type='DI:Point' x='658.2003173828125' y='437.3899841308594'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id2adda928-c738-4057-b06d-cb40ebe2f99d'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id9d76ac25-6af3-459f-839c-811e9be341d1' graphEdge='id184bbe9c-5973-47ce-afa2-8107723fdc38 id53f7b884-2ec7-4395-8ed7-a4690d88cf26'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf9ffd182-9d02-4f01-aa54-928f35f55e8a'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id222b509a-fc29-42a0-89be-905c8b3a2556'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id684a44a6-5978-4485-9b6f-d41c313b8ab7'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9127880334854126' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id655bbd84-4d63-45b2-81ed-958edb5a5369'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.08721202611923218' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id60615517-a147-41f5-a917-7141049c77c7'>
+        <contained xmi:type='DI:GraphNode' xmi:id='ide4ad8473-8b25-4ced-ac52-94f90471c51b'>
+          <contained xmi:type='DI:GraphNode' xmi:id='id4a582aca-2a0c-4b6f-8248-e42ee623b97c'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='id7a52c445-ef44-4bb2-b959-f3f658db8b2f'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='idf5f0772e-87e1-429e-b6ef-330ec703de47'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='165.0' y='300.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.GroupMemberEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='id6ce570e2-d86f-4a03-b8a5-2b4fd232bace'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='id1db0f7e0-0540-41db-adc0-5f779ef775f9' graphEdge='id184bbe9c-5973-47ce-afa2-8107723fdc38'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id4cdb86cb-06b4-4eb6-8fe5-6f351f1cb76e'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id45c7f04c-6420-4cb2-adc2-d183220e3777'>
+        <contained xmi:type='DI:GraphNode' xmi:id='idce157746-c3ab-4ab4-a001-66b45f97b768'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9127880334854126' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id7dbb2a5d-1fba-4a10-9046-6e27a7a5ee33'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.08721202611923218' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id7cc29277-7de8-43ee-83aa-6b3c68bf0b07'>
+        <contained xmi:type='DI:GraphNode' xmi:id='id8e6292b8-43b0-4867-ad88-dfd755d19209'>
+          <contained xmi:type='DI:GraphNode' xmi:id='idf440a578-3e80-49e8-b979-f84140ebc76a'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='ide083741a-1a4c-49ba-b7c5-f94a9c165b32'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id7415565c-a0b5-4a5f-bc6a-11274bcdc194'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='180.0' y='465.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.GroupEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphNode' xmi:id='idfa7be517-3187-472a-8396-782dc80fa898'>
+      <anchorage xmi:type='DI:GraphConnector' xmi:id='idcf62a744-c1a6-46dd-a3de-9e77f3d16373' graphEdge='id53f7b884-2ec7-4395-8ed7-a4690d88cf26'/>
+      <contained xmi:type='DI:GraphNode' xmi:id='id35e281d7-d462-4fee-9510-57593734ddd7'>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='COMPACT'/>
+        <size xmi:type='DI:Dimension' height='100.0' width='100.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id3929e2f5-dbac-483f-b96d-301929a6bc8f'>
+        <contained xmi:type='DI:GraphNode' xmi:id='ida3a384ba-02a4-4b4f-b126-178f31b3617f'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+          <size xmi:type='DI:Dimension' height='1.9331331253051758' width='0.0'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id45e76235-2ab5-43fa-aa8f-4f12ba09befe'>
+          <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+          <size xmi:type='DI:Dimension' height='0.0668669193983078' width='0.0'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='SYMBOLIC'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id70b3277f-ca1c-4f4d-bed8-79ab16577e7e'>
+        <contained xmi:type='DI:GraphNode' xmi:id='idd7177346-7b69-4679-80f4-1a4cbf0eb309'>
+          <contained xmi:type='DI:GraphNode' xmi:id='idb6fac483-7297-4c25-ba44-44699027d7a5'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='AttributeCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <contained xmi:type='DI:GraphNode' xmi:id='iddf604049-87b1-4767-9d87-91b01ecdfdf0'>
+            <property xmi:type='DI:Property' key='FirstVisibleIndex' value='0'/>
+            <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='OperationCompartment'/>
+            <size xmi:type='DI:Dimension' height='1.0' width='0.0'/>
+          </contained>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='Component'/>
+          <size xmi:type='DI:Dimension' height='80.0' width='33.33333206176758'/>
+        </contained>
+        <contained xmi:type='DI:GraphNode' xmi:id='id8e1f445f-b8aa-4321-9422-597d1a14d844'>
+          <position xmi:type='DI:Point' x='0.0' y='0.0'/>
+          <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='BodyCompartment'/>
+        </contained>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='EXPANDED'/>
+        <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+      </contained>
+      <position xmi:type='DI:Point' x='165.0' y='135.0'/>
+      <property xmi:type='DI:Property' key='excludeMethodFilter' value=''/>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='showPackage' value='true'/>
+      <property xmi:type='DI:Property' key='showMethodType' value='true'/>
+      <property xmi:type='DI:Property' key='filterMethodViz' value='PUBLIC PROTECTED PACKAGE PRIVATE'/>
+      <property xmi:type='DI:Property' key='showMethodVisibility' value='true'/>
+      <property xmi:type='DI:Property' key='showAttributeType' value='true'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#a5a5a5'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showOperations' value='false'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='showAttributes' value='true'/>
+      <property xmi:type='DI:Property' key='excludeAttrFilter' value=''/>
+      <property xmi:type='DI:Property' key='operationShowParameters' value='0'/>
+      <property xmi:type='DI:Property' key='showMethodStatic' value='true'/>
+      <property xmi:type='DI:Property' key='fillColor' value='#a5e7ff'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.UserEO::EntityObject' presentation='SYMBOLIC'/>
+      <size xmi:type='DI:Dimension' height='120.0' width='200.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id53f7b884-2ec7-4395-8ed7-a4690d88cf26' anchor='idcf62a744-c1a6-46dd-a3de-9e77f3d16373 id9d76ac25-6af3-459f-839c-811e9be341d1'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id2986df1f-0d51-4e08-b5e6-87bbf563f9d8'>
+        <position xmi:type='DI:Point' x='0.5237655639648438' y='1.244781494140625'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idd14b8a2a-93eb-4ef7-b605-960377c36b12'>
+        <position xmi:type='DI:Point' x='-17.5' y='0.6341094970703125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf37015f5-f070-44c7-85ed-92b10a91d5d6'>
+        <position xmi:type='DI:Point' x='4.0' y='-46.98127746582031'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id5e708f66-b79c-4301-9936-0913f6fd6754'>
+        <position xmi:type='DI:Point' x='-160.0' y='4.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id8a517764-e7dd-4eb2-9dfe-a869433d313f'>
+        <position xmi:type='DI:Point' x='-87.5' y='-53.91758728027344'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idd6663503-0353-4972-989d-49c89ce7fcb6'>
+        <position xmi:type='DI:Point' x='2.5' y='-21.90674591064453'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.GroupmemberUserFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='259.66668701171875' y='255.0'/>
+      <waypoint xmi:type='DI:Point' x='259.66668701171875' y='300.0'/>
+    </contained>
+    <contained xmi:type='DI:GraphEdge' xmi:id='id184bbe9c-5973-47ce-afa2-8107723fdc38' anchor='id1db0f7e0-0540-41db-adc0-5f779ef775f9 id9d76ac25-6af3-459f-839c-811e9be341d1'>
+      <contained xmi:type='DI:GraphNode' xmi:id='id8f2ebbb8-c816-4cc0-8a7a-085d8697060c'>
+        <position xmi:type='DI:Point' x='-0.006561279296875' y='-17.699996948242188'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcename'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id03520d1b-6def-462d-b308-950e42c724e4'>
+        <position xmi:type='DI:Point' x='6.5' y='-25.816696166992188'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='sourcemultiplicity'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idf2aec9db-0b65-4782-aa3a-ac234655c77e'>
+        <position xmi:type='DI:Point' x='-108.0' y='23.193344116210938'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='stereotype'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idcde6fe81-0477-47f6-b82c-d083b82ff7cb'>
+        <position xmi:type='DI:Point' x='4.0' y='-24.955078125'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='name'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='id45cdb4d3-cbd0-4991-84c7-76c83ec45e55'>
+        <position xmi:type='DI:Point' x='2.5' y='0.0'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationname'/>
+      </contained>
+      <contained xmi:type='DI:GraphNode' xmi:id='idc474395f-9a7e-423b-a05e-712f8b062984'>
+        <position xmi:type='DI:Point' x='-15.5' y='0.9516677856445312'/>
+        <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='destinationmultiplicity'/>
+      </contained>
+      <property xmi:type='DI:Property' key='showStereotype' value='false'/>
+      <property xmi:type='DI:Property' key='lineColor' value='#646464'/>
+      <property xmi:type='DI:Property' key='fontColor' value='#0'/>
+      <property xmi:type='DI:Property' key='showAssocName' value='false'/>
+      <property xmi:type='DI:Property' key='lineWidth' value='1.0'/>
+      <property xmi:type='DI:Property' key='font' value='SansSerif,plain,11'/>
+      <property xmi:type='DI:Property' key='EdgeType' value='1'/>
+      <property xmi:type='DI:Property' key='showCardinality' value='true'/>
+      <property xmi:type='DI:Property' key='showRoleNames' value='false'/>
+      <semanticModel xmi:type='DI:CoreSemanticModelBridge' element='BM:::com.skyjetairlines.model.entity.association.GroupmemberGroupFkAssoc::BC4JAssociation'/>
+      <waypoint xmi:type='DI:Point' x='271.8333740234375' y='465.0'/>
+      <waypoint xmi:type='DI:Point' x='271.8333740234375' y='420.0'/>
+    </contained>
+    <property xmi:type='DI:Property' key='alignmentRulersColor' value='#99d9ea'/>
+    <property xmi:type='DI:Property' key='maxEntriesInShape' value='10'/>
+    <property xmi:type='DI:Property' key='minLayoutDistance' value='100'/>
+    <property xmi:type='DI:Property' key='snapToGrid' value='true'/>
+    <property xmi:type='DI:Property' key='PageOrientation' value='1'/>
+    <property xmi:type='DI:Property' key='logicalModel' value='false'/>
+    <property xmi:type='DI:Property' key='showAlignmentRulers' value='false'/>
+    <property xmi:type='DI:Property' key='gridSize' value='15'/>
+    <property xmi:type='DI:Property' key='maxShapeWidth' value='200'/>
+    <property xmi:type='DI:Property' key='showGrid' value='true'/>
+    <property xmi:type='DI:Property' key='DiagramLayoutStyle' value='1'/>
+    <property xmi:type='DI:Property' key='EdgeCrossingType' value='0'/>
+    <property xmi:type='DI:Property' key='ContainerLayoutStyle' value='1'/>
+    <property xmi:type='DI:Property' key='PaperOrientation' value='Portrait'/>
+    <property xmi:type='DI:Property' key='PrintAreaX' value='0.0'/>
+    <property xmi:type='DI:Property' key='PrintAreaY' value='0.0'/>
+    <property xmi:type='DI:Property' key='PrintAreaWidth' value='0.0'/>
+    <property xmi:type='DI:Property' key='PrintAreaHeight' value='0.0'/>
+    <semanticModel xmi:type='DI:SimpleSemanticModelBridge' typeInfo='adfbc_diagram'/>
+  </DI:Diagram>
+</xmi:XMI>
