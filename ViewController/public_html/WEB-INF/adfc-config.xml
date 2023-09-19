@@ -139,13 +139,6 @@
       <to-activity-id>profile</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
-  <control-flow-rule id="__50">
-    <from-activity-id>createManyFlights</from-activity-id>
-    <control-flow-case id="__51">
-      <from-outcome>backToManageFlights</from-outcome>
-      <to-activity-id>manageFlights</to-activity-id>
-    </control-flow-case>
-  </control-flow-rule>
   <managed-bean id="__24">
     <managed-bean-name>FlightManagement</managed-bean-name>
     <managed-bean-class>com.skyjetairlines.view.bean.ManageFlightBean</managed-bean-class>

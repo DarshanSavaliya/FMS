@@ -12,6 +12,9 @@ import java.time.format.DateTimeFormatter;
 
 import java.util.Date;
 import java.sql.Timestamp;
+
+import java.text.DateFormat;
+
 import java.time.temporal.ChronoUnit;
 import javax.faces.event.ActionEvent;
 import java.time.Duration;
@@ -191,5 +194,18 @@ public class CreateFlightBean {
 
     public String getFlightNo() {
         return flightNo;
+    }
+    
+    public Date getMinDate() {
+        Date current = new Date();
+        try {
+            DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+            String currentDate = formatter.format(current);
+            current = formatter.parse(currentDate);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        return current;
     }
 }

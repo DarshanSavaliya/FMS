@@ -24,10 +24,11 @@
                                             required="#{bindings.ArrivalAirportsLOVInstance.hints.mandatory}"
                                             shortDesc="#{bindings.ArrivalAirportsLOVInstance.hints.tooltip}" id="soc2">
                             <f:selectItems value="#{bindings.ArrivalAirportsLOVInstance.items}" id="si2"/>
-                            <f:validator binding="#{bindings.ArrivalAirportsLOVInstance.validator}"/>
                         </af:selectOneChoice>
-                        <af:inputDate label="From Date:" id="id1" required="true" value="#{createFlightBean.fromDate}"/>
-                        <af:inputDate label="To Date:" id="id2" required="true" value="#{createFlightBean.toDate}"/>
+                        <af:inputDate label="From Date:" id="id1" required="true" value="#{createFlightBean.fromDate}"
+                                      minValue="#{createFlightBean.minDate}"/>
+                        <af:inputDate label="To Date:" id="id2" required="true" value="#{createFlightBean.toDate}"
+                                      minValue="#{createFlightBean.minDate + 1}"/>
                         <af:inputDate label="Departure Time:" id="id3" required="true"
                                       value="#{createFlightBean.departureTime}">
                             <af:convertDateTime pattern="H:mm"/>
@@ -37,10 +38,11 @@
                             <af:convertDateTime pattern="H:mm"/>
                         </af:inputDate>
                         <af:inputNumberSpinbox label="Total Seats:" id="ins1" required="true"
-                                               value="#{createFlightBean.totalSeats}"/>
+                                               value="#{createFlightBean.totalSeats}" minimum="1"/>
                         <af:inputNumberSpinbox label="Base Fare:" id="ins2" required="true"
-                                               value="#{createFlightBean.baseFare}"/>
-                        <af:inputText label="Flight No:" id="it1" required="true" value="#{createFlightBean.flightNo}"/>
+                                               value="#{createFlightBean.baseFare}" minimum="1"/>
+                        <af:inputText label="Flight No:" id="it1" required="true" value="#{createFlightBean.flightNo}"
+                                      maximumLength="4"/>
                     </af:panelFormLayout>
                 </f:facet>
             </af:pageTemplate>
