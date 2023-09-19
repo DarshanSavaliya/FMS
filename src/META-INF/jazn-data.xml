@@ -7,18 +7,36 @@
             <users>
                 <user>
                     <name>testuser</name>
-                    <credentials>{903}ZLGtbBFEu9dlz6no+rUMS8Tm96GPVAqVRqJb5g6/yhM=</credentials>
+                    <credentials>{903}GFsa3PuGHSRp1+37ppIN98gWvd4pCzb1pZeP+5DIG1I=</credentials>
                     <display-name>Test User</display-name>
+                    <description></description>
+                </user>
+                <user>
+                    <name>testcust</name>
+                    <credentials>{903}1hk+zARMkFAD7nY8mbjjVfV55S6mTNIa1AwykqT6yAc=</credentials>
+                    <display-name>Test Customer</display-name>
                 </user>
             </users>
             <roles>
                 <role>
                     <name>customer</name>
-                    <display-name></display-name>
+                    <display-name>Customer</display-name>
+                    <members>
+                        <member>
+                            <type>user</type>
+                            <name>testcust</name>
+                        </member>
+                    </members>
                 </role>
                 <role>
                     <name>admin</name>
-                    <display-name></display-name>
+                    <display-name>Admin</display-name>
+                    <members>
+                        <member>
+                            <type>user</type>
+                            <name>testuser</name>
+                        </member>
+                    </members>
                 </role>
             </roles>
         </realm>
@@ -43,6 +61,12 @@
                         <name>admin</name>
                         <class>oracle.security.jps.service.policystore.ApplicationRole</class>
                         <display-name>Admin</display-name>
+                        <members>
+                            <member>
+                                <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                <name>admin</name>
+                            </member>
+                        </members>
                     </app-role>
                 </app-roles>
                 <jazn-policy>
@@ -56,11 +80,6 @@
                             </principals>
                         </grantee>
                         <permissions>
-                            <permission>
-                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
-                                <name>com.skyjetairlines.view.pageDefs.homePageDef</name>
-                                <actions>view</actions>
-                            </permission>
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/aboutDev.xml#aboutDev</name>
@@ -86,11 +105,6 @@
                                 <name>com.skyjetairlines.view.pageDefs.profilePageDef</name>
                                 <actions>view</actions>
                             </permission>
-                            <permission>
-                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
-                                <name>/WEB-INF/searchTF.xml#searchTF</name>
-                                <actions>view</actions>
-                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -106,6 +120,28 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/WEB-INF/bookingTF.xml#bookingTF</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.internal.core.principals.JpsAuthenticatedRoleImpl</class>
+                                    <name>authenticated-role</name>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/searchTF.xml#searchTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.homePageDef</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>
