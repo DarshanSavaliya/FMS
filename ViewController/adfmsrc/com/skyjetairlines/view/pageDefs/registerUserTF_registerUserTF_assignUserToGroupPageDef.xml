@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="registerUserTF_registerUserTF_assignUserToGroupPageDef" Package="com.skyjetairlines.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="GroupMembersInstanceForUsers" RangeSize="10" DataControl="FlightManagementSystemAMDataControl"
+              id="GroupMembersInstanceForUsersIterator"/>
+    <iterator Binds="CustomersInstance" RangeSize="10" DataControl="FlightManagementSystemAMDataControl"
+              id="CustomersInstanceIterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="GroupMembersInstanceForUsersIterator" id="CreateGroupMembership"
+            InstanceName="FlightManagementSystemAMDataControl.GroupMembersInstanceForUsers"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="CustomersInstanceIterator" id="CreateCustomer"
+            InstanceName="FlightManagementSystemAMDataControl.CustomersInstance"
+            DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

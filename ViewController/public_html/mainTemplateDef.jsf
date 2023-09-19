@@ -26,7 +26,8 @@
                             </af:panelGroupLayout>
                         </af:gridCell>
                         <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc5" halign="end">
-                            <af:button text="Login" id="pt_b1"/>
+                            <af:button text="Login" id="pt_b1"
+                                       destination="/adfAuthentication?success_url=/faces/home"/>
                         </af:gridCell>
                     </af:gridRow>
                 </af:panelGridLayout>

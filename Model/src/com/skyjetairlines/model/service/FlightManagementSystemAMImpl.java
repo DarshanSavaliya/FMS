@@ -309,5 +309,30 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
     public ViewLinkImpl getFlightsCouponsLink1() {
         return (ViewLinkImpl) findViewLink("FlightsCouponsLink1");
     }
+
+    /**
+     * Container's getter for User1.
+     * @return User1
+     */
+    public ViewObjectImpl getUsersInstance() {
+        return (ViewObjectImpl) findViewObject("UsersInstance");
+    }
+
+    /**
+     * Container's getter for GroupMembers1.
+     * @return GroupMembers1
+     */
+    public ViewObjectImpl getGroupMembersInstanceForUsers() {
+        return (ViewObjectImpl) findViewObject("GroupMembersInstanceForUsers");
+    }
+
+    /**
+     * Container's getter for GroupmemberUserFkLink1.
+     * @return GroupmemberUserFkLink1
+     */
+    public ViewLinkImpl getGroupmemberUserFkLink1() {
+        return (ViewLinkImpl) findViewLink("GroupmemberUserFkLink1");
+    }
+
 }
 

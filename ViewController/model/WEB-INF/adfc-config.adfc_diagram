@@ -340,4 +340,31 @@
       <property
          name="sdm:polyPoints">R54,-1193.9458,560.76953,-1088.5,559.1367,L54</property>
    </ControlFlowCase>
+   <TaskFlowCall
+      id="TaskFlowCall33">
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>registerUserTF&lt;/b>&lt;/p>&lt;p>Activity Type:  Task Flow Call&lt;/p></property>
+      <property
+         name="activityId">registerUserTF</property>
+      <property
+         name="x">-592.60156</property>
+      <property
+         name="y">385.30078</property>
+      <property
+         name="documentReference">/WEB-INF/registerUserTF.xml</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="taskFlowId">registerUserTF</property>
+   </TaskFlowCall>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase34"
+      from="WildcardControlFlowRule17"
+      to="TaskFlowCall33">
+      <property
+         name="fromOutcome">registerUser</property>
+      <property
+         name="sdm:polyPoints">R45,-728.0,534.4375,-592.60156,439.23438,B50</property>
+   </ControlFlowCase>
 </SDM>

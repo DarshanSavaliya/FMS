@@ -82,6 +82,12 @@
   <ViewUsage
     Name="CouponsInstanceForFlights"
     ViewObjectName="com.skyjetairlines.model.view.CouponsVO"/>
+  <ViewUsage
+    Name="UsersInstance"
+    ViewObjectName="com.skyjetairlines.model.view.UsersVO"/>
+  <ViewUsage
+    Name="GroupMembersInstanceForUsers"
+    ViewObjectName="com.skyjetairlines.model.view.GroupMembersVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
@@ -154,8 +160,36 @@
     SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.FlightsInstance"
     DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.CouponsInstanceForFlights"
     Reversed="false"/>
+  <ViewLinkUsage
+    Name="GroupmemberUserFkLink1"
+    ViewLinkObjectName="com.skyjetairlines.model.view.link.GroupmemberUserFkLink"
+    SrcViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.UsersInstance"
+    DstViewUsageName="com.skyjetairlines.model.service.FlightManagementSystemAM.GroupMembersInstanceForUsers"
+    Reversed="false"/>
   <ClientInterface
     Name="__clientInterface">
+    <Method
+      Name="searchFlightsWithParams"
+      MethodName="searchFlightsWithParams">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="fromAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="toAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="numberOfSeats"
+        Type="int"/>
+      <Parameter
+        Name="bookingDate"
+        Type="java.util.Date"/>
+      <Parameter
+        Name="bookedFlightId"
+        Type="java.lang.Integer"/>
+    </Method>
     <Method
       Name="searchFlightsWithParams"
       MethodName="searchFlightsWithParams">

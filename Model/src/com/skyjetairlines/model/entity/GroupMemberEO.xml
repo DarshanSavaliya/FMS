@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="GroupMemberEO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="GROUPMEMBERS"
+  AliasName="GroupMemberEO"
+  BindingStyle="OracleName"
+  RowClass="com.skyjetairlines.model.entity.GroupMemberEOImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName='"g_name"'
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUPMEMBERS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Member"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName='"g_member"'
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="GROUPMEMBERS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="User"
+    Association="com.skyjetairlines.model.entity.association.GroupmemberUserFkAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.GroupmemberUserFkAssoc.User"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.GroupmemberUserFkAssoc.GroupMember"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Group"
+    Association="com.skyjetairlines.model.entity.association.GroupmemberGroupFkAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.GroupmemberGroupFkAssoc.Group"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.GroupmemberGroupFkAssoc.GroupMember"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="GroupmembereoPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="GROUPMEMBEREO_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.GroupMemberEO.Name"/>
+      <Item Value="com.skyjetairlines.model.entity.GroupMemberEO.Member"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="GroupmemberGroupFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="GROUP_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="GROUPMEMBER_GROUP_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.GroupMemberEO.Name"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="GroupmemberUserFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="USER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="GROUPMEMBER_USER_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.GroupMemberEO.Member"/>
+    </AttrArray>
+  </Key>
+</Entity>

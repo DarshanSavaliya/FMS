@@ -14,6 +14,15 @@
   SelectAllAttributes="false"
   PageIterMode="Full"
   AccessMode="DEFAULT">
+  <Variable
+    Name="currentUsername"
+    Kind="viewcriteria"
+    Type="java.lang.String">
+    <TransientExpression
+      Name="VariableScript"
+      trustMode="trusted"
+      CodeSourceName="CustomersVO"/>
+  </Variable>
   <EntityUsage
     Name="CustomerEO"
     Entity="com.skyjetairlines.model.entity.CustomerEO"/>
@@ -99,12 +108,14 @@
       Name="CustomersVOCriteria_row_0"
       UpperColumns="1">
       <ViewCriteriaItem
-        Name="CustomerId"
-        ViewAttribute="CustomerId"
+        Name="Username"
+        ViewAttribute="Username"
         Operator="="
         Conjunction="AND"
-        Value="5"
-        Required="Required"/>
+        Value=":currentUsername"
+        Required="Required"
+        ValidateBindVars="true"
+        IsBindVarValue="true"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewCriteria

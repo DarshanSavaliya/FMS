@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="UserEO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="USERS"
+  AliasName="UserEO"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="Username"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName='"u_name"'
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USERS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName='"u_password"'
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    Precision="1000"
+    ColumnName='"u_description"'
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="GroupMember"
+    Association="com.skyjetairlines.model.entity.association.GroupmemberUserFkAssoc"
+    AssociationEnd="com.skyjetairlines.model.entity.association.GroupmemberUserFkAssoc.GroupMember"
+    AssociationOtherEnd="com.skyjetairlines.model.entity.association.GroupmemberUserFkAssoc.User"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="UserPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="USER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.skyjetairlines.model.entity.UserEO.Username"/>
+    </AttrArray>
+  </Key>
+</Entity>

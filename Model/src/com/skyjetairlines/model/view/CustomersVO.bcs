@@ -1,0 +1,12 @@
+//Groovy Scripts for com.skyjetairlines.model.view.CustomersVO
+
+package com.skyjetairlines.model.view
+
+import oracle.jbo.script.annotation.VariableExpression;
+
+@VariableExpression(path="currentUsername")
+def currentUsername_VariableScript_Variable()
+{
+adf.context.securityContext.userName
+}
+

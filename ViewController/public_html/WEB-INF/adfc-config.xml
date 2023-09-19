@@ -49,6 +49,12 @@
       <id>rescheduleTF</id>
     </task-flow-reference>
   </task-flow-call>
+  <task-flow-call id="registerUserTF">
+    <task-flow-reference>
+      <document>/WEB-INF/registerUserTF.xml</document>
+      <id>registerUserTF</id>
+    </task-flow-reference>
+  </task-flow-call>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
     <control-flow-case id="__29">
@@ -80,6 +86,10 @@
     <control-flow-case id="__22">
       <from-outcome>home</from-outcome>
       <to-activity-id>home</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>registerUser</from-outcome>
+      <to-activity-id>registerUserTF</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__30">

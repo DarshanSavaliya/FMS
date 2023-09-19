@@ -9,6 +9,7 @@
                     <af:panelFormLayout id="pfl1">
                         <f:facet name="footer">
                             <af:button text="Search" id="executeSearch" action="search"/>
+                            <af:button text="Register new user" id="b1" action="registerUser"/>
                         </f:facet>
                         <af:selectOneChoice value="#{bindings.DepartureAirportsInstance.inputValue}" label="From:"
                                             required="true"

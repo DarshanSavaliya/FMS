@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="register.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
+                <f:facet name="body">
+                    <af:panelFormLayout id="pfl1">
+                        <af:inputText value="#{bindings.Username.inputValue}" label="#{bindings.Username.hints.label}"
+                                      required="#{bindings.Username.hints.mandatory}"
+                                      columns="#{bindings.Username.hints.displayWidth}"
+                                      maximumLength="#{bindings.Username.hints.precision}"
+                                      shortDesc="#{bindings.Username.hints.tooltip}" id="it1">
+                            <f:validator binding="#{bindings.Username.validator}"/>
+                        </af:inputText>
+                        <af:inputText value="#{bindings.Password.inputValue}" label="#{bindings.Password.hints.label}"
+                                      required="#{bindings.Password.hints.mandatory}"
+                                      columns="#{bindings.Password.hints.displayWidth}"
+                                      maximumLength="#{bindings.Password.hints.precision}"
+                                      shortDesc="#{bindings.Password.hints.tooltip}" id="it2" secret="true">
+                            <f:validator binding="#{bindings.Password.validator}"/>
+                        </af:inputText>
+                        <af:button text="Cancel" id="b2" action="cancel"/>
+                        <af:button text="Submit" id="b1" action="submit"/>
+                    </af:panelFormLayout>
+                </f:facet>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

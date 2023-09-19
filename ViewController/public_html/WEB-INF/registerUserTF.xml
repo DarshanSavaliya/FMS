@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="registerUserTF">
+    <default-activity>CreateUser</default-activity>
+    <transaction>
+      <new-transaction/>
+    </transaction>
+    <data-control-scope>
+      <isolated/>
+    </data-control-scope>
+    <managed-bean id="__18">
+      <managed-bean-name>userRegisterationBean</managed-bean-name>
+      <managed-bean-class>com.skyjetairlines.view.bean.UserRegisterationBean</managed-bean-class>
+      <managed-bean-scope>pageFlow</managed-bean-scope>
+    </managed-bean>
+    <method-call id="CreateUser">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome>
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <view id="register">
+      <page>/register.jsf</page>
+    </view>
+    <task-flow-return id="save">
+      <outcome>
+        <name>home</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="cancel">
+      <outcome>
+        <name>home</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <method-call id="assignUserToGroup">
+      <method>#{pageFlowScope.userRegisterationBean.assignUserToGroup}</method>
+      <outcome>
+        <fixed-outcome>commit</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__1">
+      <from-activity-id>CreateUser</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>CreateInsert</from-outcome>
+        <to-activity-id>register</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>register</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>cancel</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__19">
+        <from-outcome>submit</from-outcome>
+        <to-activity-id>assignUserToGroup</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__24">
+      <from-activity-id>assignUserToGroup</from-activity-id>
+      <control-flow-case id="__25">
+        <from-outcome>commit</from-outcome>
+        <to-activity-id>save</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

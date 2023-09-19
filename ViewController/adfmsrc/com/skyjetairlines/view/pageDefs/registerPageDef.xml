@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="registerPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="UsersInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="UsersInstanceIterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="UsersInstanceIterator" id="Username">
+      <AttrNames>
+        <Item Value="Username"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsersInstanceIterator" id="Password">
+      <AttrNames>
+        <Item Value="Password"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

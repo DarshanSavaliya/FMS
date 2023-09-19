@@ -43,6 +43,11 @@
     <page path="/checkFlightStatus.jsf" usageId="com_skyjetairlines_view_checkFlightStatusPageDef"/>
     <page path="/bookingsManagement.jsf" usageId="com_skyjetairlines_view_bookingsManagementPageDef"/>
     <page path="/customerDetailManagement.jsf" usageId="com_skyjetairlines_view_customerDetailManagementPageDef"/>
+    <page path="/WEB-INF/registerUserTF.xml#registerUserTF@CreateUser"
+          usageId="com_skyjetairlines_view_registerUserTF_registerUserTF_CreateInsertPageDef"/>
+    <page path="/register.jsf" usageId="com_skyjetairlines_view_registerPageDef"/>
+    <page path="/WEB-INF/registerUserTF.xml#registerUserTF@assignUserToGroup"
+          usageId="com_skyjetairlines_view_registerUserTF_registerUserTF_assignUserToGroupPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -95,6 +100,11 @@
           path="com.skyjetairlines.view.pageDefs.bookingsManagementPageDef"/>
     <page id="com_skyjetairlines_view_customerDetailManagementPageDef"
           path="com.skyjetairlines.view.pageDefs.customerDetailManagementPageDef"/>
+    <page id="com_skyjetairlines_view_registerUserTF_registerUserTF_CreateInsertPageDef"
+          path="com.skyjetairlines.view.pageDefs.registerUserTF_registerUserTF_CreateInsertPageDef"/>
+    <page id="com_skyjetairlines_view_registerPageDef" path="com.skyjetairlines.view.pageDefs.registerPageDef"/>
+    <page id="com_skyjetairlines_view_registerUserTF_registerUserTF_assignUserToGroupPageDef"
+          path="com.skyjetairlines.view.pageDefs.registerUserTF_registerUserTF_assignUserToGroupPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

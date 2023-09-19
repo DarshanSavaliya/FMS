@@ -92,7 +92,6 @@
   </Attribute>
   <Attribute
     Name="Email"
-    IsNotNull="true"
     Precision="30"
     ColumnName="EMAIL"
     SQLType="VARCHAR"
@@ -114,7 +113,6 @@
   </Attribute>
   <Attribute
     Name="Phone"
-    IsNotNull="true"
     Precision="10"
     ColumnName="PHONE"
     SQLType="VARCHAR"
@@ -133,7 +131,6 @@
   </Attribute>
   <Attribute
     Name="Address"
-    IsNotNull="true"
     Precision="50"
     ColumnName="ADDRESS"
     SQLType="VARCHAR"
@@ -152,7 +149,6 @@
   </Attribute>
   <Attribute
     Name="DateOfBirth"
-    IsNotNull="true"
     ColumnName="DATE_OF_BIRTH"
     SQLType="DATE"
     Type="oracle.jbo.domain.Date"
