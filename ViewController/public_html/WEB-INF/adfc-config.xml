@@ -69,6 +69,9 @@
       <id>rescheduleTF</id>
     </task-flow-reference>
   </task-flow-call>
+  <view id="createManyFlights">
+    <page>/createManyFlights.jsf</page>
+  </view>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
     <control-flow-case id="__2">
@@ -186,6 +189,10 @@
       <from-outcome>addFlight</from-outcome>
       <to-activity-id>addFlight</to-activity-id>
     </control-flow-case>
+    <control-flow-case id="__46">
+      <from-outcome>createFlights</from-outcome>
+      <to-activity-id>createManyFlights</to-activity-id>
+    </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__16">
     <from-activity-id>booking</from-activity-id>
@@ -216,6 +223,13 @@
       <to-activity-id>profile</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__50">
+    <from-activity-id>createManyFlights</from-activity-id>
+    <control-flow-case id="__51">
+      <from-outcome>backToManageFlights</from-outcome>
+      <to-activity-id>manageFlights</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__24">
     <managed-bean-name>FlightManagement</managed-bean-name>
     <managed-bean-class>com.skyjetairlines.view.bean.ManageFlightBean</managed-bean-class>
@@ -229,6 +243,11 @@
   <managed-bean id="__3">
     <managed-bean-name>CouponManageBean</managed-bean-name>
     <managed-bean-class>com.skyjetairlines.view.bean.CouponManageBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__48">
+    <managed-bean-name>createFlightBean</managed-bean-name>
+    <managed-bean-class>com.skyjetairlines.view.bean.CreateFlightBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>

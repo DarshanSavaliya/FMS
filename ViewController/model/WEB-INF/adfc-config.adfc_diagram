@@ -649,7 +649,7 @@
       <property
          name="fromOutcome">showBooking</property>
       <property
-         name="sdm:polyPoints">L50,-1088.5,555.6367,-1194.0,557.26953,R50</property>
+         name="sdm:polyPoints">L46,-1088.5542,552.1367,-1194.0,553.76953,R46</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall61">
@@ -687,5 +687,40 @@
          name="fromOutcome">back</property>
       <property
          name="sdm:polyPoints">R54,-1193.9458,560.76953,-1088.5,559.1367,L54</property>
+   </ControlFlowCase>
+   <View
+      id="View65">
+      <property
+         name="activityId">createManyFlights</property>
+      <property
+         name="x">-851.0</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>createManyFlights&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">-208.79688</property>
+      <property
+         name="page">/createManyFlights.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase67"
+      from="View5"
+      to="View65">
+      <property
+         name="fromOutcome">createFlights</property>
+      <property
+         name="sdm:polyPoints">L46,-752.51074,-50.128906,-847.5,-154.86328,B56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase70"
+      from="View65"
+      to="View5">
+      <property
+         name="fromOutcome">backToManageFlights</property>
+      <property
+         name="sdm:polyPoints">B44,-854.5,-152.18608,-755.6056,-43.128906,L54</property>
    </ControlFlowCase>
 </SDM>

@@ -265,6 +265,7 @@
                 </af:popup>
                 <af:button actionListener="#{bindings.CreateInsertFlight.execute}" text="Add New Flight"
                            disabled="#{!bindings.CreateInsertFlight.enabled}" id="b5" action="addFlight"/>
+                <af:button text="Add Many Flights" id="b6" action="createFlights"/>
               </af:toolbar>
             </f:facet>
           </af:panelCollection>
