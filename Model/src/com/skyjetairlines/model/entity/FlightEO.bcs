@@ -3,6 +3,7 @@
 package com.skyjetairlines.model.entity
 
 import oracle.jbo.script.annotation.TransientValueExpression;
+import oracle.jbo.script.annotation.ValidatorExpression;
 
 @TransientValueExpression(attributeName="ActualDeparture")
 def ActualDeparture_ExpressionScript_Expression()

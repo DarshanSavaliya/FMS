@@ -86,10 +86,10 @@ public class CouponManageBean {
         try{
             dptd=dateFormat.parse(dpt);
             arvd=dateFormat.parse(arv);
-            if(dptd.getDate()<today.getDate()) {
+            if(dptd.getYear()<today.getYear() || (dptd.getYear()==today.getYear() && dptd.getMonth() < today.getMonth())||(dptd.getYear()==today.getYear() && dptd.getMonth()==today.getMonth() && dptd.getDate() < today.getDate())) {
                 CommonViewUtil.showErrorMessage("You should not select the StartDate of the coupon before Today! Discarding ...");
             }
-            else if(arvd.getDate()<dptd.getDate()) {
+            else if(arvd.getYear()<dptd.getYear() || (arvd.getYear()==dptd.getYear() && arvd.getMonth() < dptd.getMonth())||(arvd.getYear()==dptd.getYear() && arvd.getMonth()==dptd.getMonth() && arvd.getDate() < dptd.getDate())) {
                 CommonViewUtil.showErrorMessage("EndDate should be greater than or equal to Start Date");
             }
             else {

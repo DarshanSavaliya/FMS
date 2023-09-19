@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="FLIGHTS"
   AliasName="FlightEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="FlightId"
     ColumnName="FLIGHT_ID"
@@ -87,6 +88,14 @@
           ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledArrival_FMT_FORMAT"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="ScheduledArrivalRule0"
+      ResId="com.skyjetairlines.model.entity.FlightEO.ScheduledArrival_Rule_0"
+      OnAttribute="ScheduledArrival"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="com.skyjetairlines.model.view.FlightsVO.ScheduledDeparture"/>
   </Attribute>
   <Attribute
     Name="ActualDeparture"
@@ -105,6 +114,14 @@
           ResId="com.skyjetairlines.model.entity.FlightEO.ActualDeparture_FMT_FORMATTER"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="ActualDepartureRule0"
+      ResId="com.skyjetairlines.model.entity.FlightEO.ActualDeparture_Rule_0"
+      OnAttribute="ActualDeparture"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="com.skyjetairlines.model.view.FlightsVO.ScheduledDeparture"/>
   </Attribute>
   <Attribute
     Name="ActualArrival"
@@ -119,6 +136,14 @@
           ResId="com.skyjetairlines.model.entity.FlightEO.ActualArrival_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="ActualArrivalRule0"
+      ResId="com.skyjetairlines.model.entity.FlightEO.ActualArrival_Rule_0"
+      OnAttribute="ActualArrival"
+      OperandType="JBO"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="com.skyjetairlines.model.view.FlightsVO.ActualDeparture"/>
   </Attribute>
   <Attribute
     Name="DepartureAirport"
@@ -157,6 +182,14 @@
           ResId="com.skyjetairlines.model.entity.FlightEO.ArrivalAirport_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="ArrivalAirportRule0"
+      ResId="com.skyjetairlines.model.entity.FlightEO.ArrivalAirport_Rule_0"
+      OnAttribute="ArrivalAirport"
+      OperandType="JBO"
+      Inverse="true"
+      CompareType="EQUALTO"
+      CompareValue="com.skyjetairlines.model.view.FlightsVO.DepartureAirport"/>
   </Attribute>
   <Attribute
     Name="TotalSeats"
@@ -172,6 +205,22 @@
           ResId="com.skyjetairlines.model.entity.FlightEO.TotalSeats_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="TotalSeatsLesserRule"
+      ResId="com.skyjetairlines.model.entity.FlightEO.TotalSeats_Rule_1"
+      OnAttribute="TotalSeats"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="LESSTHANEQUALTO"
+      CompareValue="100"/>
+    <validation:CompareValidationBean
+      Name="TotalSeatsGreater"
+      ResId="com.skyjetairlines.model.entity.FlightEO.TotalSeats_Rule_0"
+      OnAttribute="TotalSeats"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="10"/>
   </Attribute>
   <Attribute
     Name="AvailableSeats"
@@ -221,6 +270,22 @@
           ResId="com.skyjetairlines.model.entity.FlightEO.BaseFare_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:CompareValidationBean
+      Name="BaseFareRule0"
+      ResId="com.skyjetairlines.model.entity.FlightEO.BaseFare_Rule_0"
+      OnAttribute="BaseFare"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHANEQUALTO"
+      CompareValue="1000"/>
+    <validation:CompareValidationBean
+      Name="BaseFareRule1"
+      ResId="com.skyjetairlines.model.entity.FlightEO.BaseFare_Rule_1"
+      OnAttribute="BaseFare"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="LESSTHANEQUALTO"
+      CompareValue="90000"/>
   </Attribute>
   <Attribute
     Name="Version"
