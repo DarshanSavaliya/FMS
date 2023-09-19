@@ -36,12 +36,9 @@
           <Item Value="Flightno"/>
           <Item Value="DepartureAirport"/>
           <Item Value="ArrivalAirport"/>
-          <Item Value="ScheduledDeparture"/>
-          <Item Value="ScheduledArrival"/>
+          <Item Value="ActualDeparture"/>
           <Item Value="Duration"/>
-          <Item Value="BaseFare"/>
-          <Item Value="TotalSeats"/>
-          <Item Value="AvailableSeats"/>
+          <Item Value="ActualArrival"/>
           <Item Value="Price"/>
         </AttrNames>
       </nodeDefinition>

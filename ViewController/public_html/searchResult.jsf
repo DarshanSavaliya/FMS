@@ -38,98 +38,85 @@
                             </af:panelFormLayout>
                         </f:facet>
                         <f:facet name="second">
-                            <af:table value="#{bindings.FlightsInstance.collectionModel}" var="row"
-                                      rows="#{bindings.FlightsInstance.rangeSize}"
-                                      emptyText="#{bindings.FlightsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                      rowBandingInterval="0"
-                                      selectedRowKeys="#{bindings.FlightsInstance.collectionModel.selectedRow}"
-                                      selectionListener="#{bindings.FlightsInstance.collectionModel.makeCurrent}"
-                                      rowSelection="single" fetchSize="#{bindings.FlightsInstance.rangeSize}" id="t1">
-                                <af:column headerText="#{bindings.FlightsInstance.hints.Flightno.label}" id="c1">
-                                    <af:outputText value="#{row.Flightno}"
-                                                   shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}"
-                                                   id="ot1"/>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.DepartureAirport.label}"
-                                           id="c2">
-                                    <af:selectOneChoice value="#{row.bindings.DepartureAirport.inputValue}"
-                                                        label="#{row.bindings.DepartureAirport.label}"
-                                                        required="#{bindings.FlightsInstance.hints.DepartureAirport.mandatory}"
-                                                        shortDesc="#{bindings.FlightsInstance.hints.DepartureAirport.tooltip}"
-                                                        readOnly="true" id="soc3">
-                                        <f:selectItems value="#{row.bindings.DepartureAirport.items}" id="si3"/>
-                                        <f:validator binding="#{row.bindings.DepartureAirport.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.ArrivalAirport.label}" id="c3">
-                                    <af:selectOneChoice value="#{row.bindings.ArrivalAirport.inputValue}"
-                                                        label="#{row.bindings.ArrivalAirport.label}"
-                                                        required="#{bindings.FlightsInstance.hints.ArrivalAirport.mandatory}"
-                                                        shortDesc="#{bindings.FlightsInstance.hints.ArrivalAirport.tooltip}"
-                                                        readOnly="true" id="soc4">
-                                        <f:selectItems value="#{row.bindings.ArrivalAirport.items}" id="si4"/>
-                                        <f:validator binding="#{row.bindings.ArrivalAirport.validator}"/>
-                                    </af:selectOneChoice>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.ScheduledDeparture.label}"
-                                           id="c4">
-                                    <af:outputText value="#{row.ScheduledDeparture}"
-                                                   shortDesc="#{bindings.FlightsInstance.hints.ScheduledDeparture.tooltip}"
-                                                   id="ot2">
-                                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledDeparture.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.ScheduledArrival.label}"
-                                           id="c5">
-                                    <af:outputText value="#{row.ScheduledArrival}"
-                                                   shortDesc="#{bindings.FlightsInstance.hints.ScheduledArrival.tooltip}"
-                                                   id="ot3">
-                                        <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ScheduledArrival.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.Duration.label}" id="c6">
-                                    <af:outputText value="#{row.Duration} "
-                                                   shortDesc="#{bindings.FlightsInstance.hints.Duration.tooltip}"
-                                                   id="ot4">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.FlightsInstance.hints.Duration.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.BaseFare.label}" id="c7">
-                                    <af:outputText value="#{row.BaseFare}"
-                                                   shortDesc="#{bindings.FlightsInstance.hints.BaseFare.tooltip}"
-                                                   id="ot5">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.FlightsInstance.hints.BaseFare.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.TotalSeats.label}" id="c8">
-                                    <af:outputText value="#{row.TotalSeats}"
-                                                   shortDesc="#{bindings.FlightsInstance.hints.TotalSeats.tooltip}"
-                                                   id="ot6">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.FlightsInstance.hints.TotalSeats.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.AvailableSeats.label}" id="c9">
-                                    <af:outputText value="#{row.AvailableSeats}"
-                                                   shortDesc="#{bindings.FlightsInstance.hints.AvailableSeats.tooltip}"
-                                                   id="ot7">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.FlightsInstance.hints.AvailableSeats.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column headerText="#{bindings.FlightsInstance.hints.Price.label}" id="c10">
-                                    <af:outputText value="#{row.Price}"
-                                                   shortDesc="#{bindings.FlightsInstance.hints.Price.tooltip}" id="ot8">
-                                        <af:convertNumber groupingUsed="false"
-                                                          pattern="#{bindings.FlightsInstance.hints.Price.format}"/>
-                                    </af:outputText>
-                                </af:column>
-                                <af:column id="c11">
-                                    <af:button text="Details" id="b1" action="showDetails"/>
-                                </af:column>
-                            </af:table>
+                            <af:panelCollection id="pc1" featuresOff="detachMenuItem">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:table value="#{bindings.FlightsInstance.collectionModel}" var="row"
+                                          rows="#{bindings.FlightsInstance.rangeSize}"
+                                          emptyText="#{bindings.FlightsInstance.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.FlightsInstance.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.FlightsInstance.collectionModel.makeCurrent}"
+                                          rowSelection="single" fetchSize="#{bindings.FlightsInstance.rangeSize}"
+                                          id="t1" varStatus="rowStat" columnStretching="column:c5"
+                                          styleClass="AFStretchWidth" autoHeightRows="10" scrollPolicy="page">
+                                    <af:column id="c8" width="75" align="center">
+                                        <af:outputText id="ot6" value="#{rowStat.index+1}"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightsInstance.hints.Flightno.label}" id="c1"
+                                               width="50" align="center">
+                                        <af:outputText value="#{row.Flightno}"
+                                                       shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}"
+                                                       id="ot1"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightsInstance.hints.DepartureAirport.label}"
+                                               id="c2" width="200">
+                                        <af:selectOneChoice value="#{row.bindings.DepartureAirport.inputValue}"
+                                                            label="#{row.bindings.DepartureAirport.label}"
+                                                            required="#{bindings.FlightsInstance.hints.DepartureAirport.mandatory}"
+                                                            shortDesc="#{bindings.FlightsInstance.hints.DepartureAirport.tooltip}"
+                                                            readOnly="true" id="soc3">
+                                            <f:selectItems value="#{row.bindings.DepartureAirport.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.DepartureAirport.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightsInstance.hints.ArrivalAirport.label}"
+                                               id="c3" width="200">
+                                        <af:selectOneChoice value="#{row.bindings.ArrivalAirport.inputValue}"
+                                                            label="#{row.bindings.ArrivalAirport.label}"
+                                                            required="#{bindings.FlightsInstance.hints.ArrivalAirport.mandatory}"
+                                                            shortDesc="#{bindings.FlightsInstance.hints.ArrivalAirport.tooltip}"
+                                                            readOnly="true" id="soc4">
+                                            <f:selectItems value="#{row.bindings.ArrivalAirport.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.ArrivalAirport.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightsInstance.hints.ActualDeparture.label}"
+                                               id="c4" width="150">
+                                        <af:outputText value="#{row.ActualDeparture}"
+                                                       shortDesc="#{bindings.FlightsInstance.hints.ActualDeparture.tooltip}"
+                                                       id="ot2">
+                                            <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualDeparture.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightsInstance.hints.Duration.label}" id="c5"
+                                               align="center" width="150">
+                                        <af:outputText value="#{row.Duration}"
+                                                       shortDesc="#{bindings.FlightsInstance.hints.Duration.tooltip}"
+                                                       id="ot3"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightsInstance.hints.ActualArrival.label}"
+                                               id="c6" width="150">
+                                        <af:outputText value="#{row.ActualArrival}"
+                                                       shortDesc="#{bindings.FlightsInstance.hints.ActualArrival.tooltip}"
+                                                       id="ot4">
+                                            <af:convertDateTime pattern="#{bindings.FlightsInstance.hints.ActualArrival.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightsInstance.hints.Price.label}" id="c7">
+                                        <af:outputText value="#{row.Price}"
+                                                       shortDesc="#{bindings.FlightsInstance.hints.Price.tooltip}"
+                                                       id="ot5">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.FlightsInstance.hints.Price.format}"/>
+                                        </af:outputText>
+                                    </af:column>
+                                    <af:column id="c9" width="75" align="center">
+                                        <af:button text="Details" id="b1" action="showDetails"/>
+                                    </af:column>
+                                </af:table>
+                            </af:panelCollection>
                         </f:facet>
                     </af:panelSplitter>
                 </f:facet>

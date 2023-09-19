@@ -6,31 +6,37 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelGroupLayout id="pgl1">
-                        <af:panelGroupLayout id="pgl3">
-                            <af:button text="Change Booking Details" id="b3" action="changeBookingDetails"/>
-                        </af:panelGroupLayout>
-                        <af:spacer id="s1" height="30" width="30"/>
-                        <af:panelGroupLayout id="pgl4" layout="horizontal">
-                            <af:selectOneChoice value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.inputValue}"
-                                                label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.label}"
-                                                required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.mandatory}"
-                                                shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.tooltip}"
-                                                id="soc1">
-                                <f:selectItems value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.items}"
-                                               id="si1"/>
-                                <f:validator binding="#{bindings.PaymentMethodsInstanceForCurrentCustomer.validator}"/>
-                            </af:selectOneChoice>
-                            <af:spacer id="s3" height="10"/>
-                            <af:button text="Create Payment" id="b1" useWindow="true" action="createPayment"
-                                       returnListener="#{pageFlowScope.flightBookingBean.PaymentCreatedListener}"
-                                       windowHeight="300" windowWidth="450" immediate="true"/>
-                        </af:panelGroupLayout>
-                        <af:spacer id="s2" width="20" height="20"/>
-                        <af:panelGroupLayout id="pgl2">
-                            <af:button text="Submit" id="b2" action="viewSummary"/>
-                        </af:panelGroupLayout>
-                    </af:panelGroupLayout>
+                    <af:panelStretchLayout id="psl1" topHeight="400px" bottomHeight="200px" startWidth="200px">
+                        <f:facet name="start">
+                            <af:panelGroupLayout id="pgl3">
+                                <af:button text="Change Booking Details" id="b3" action="changeBookingDetails"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="end"/>
+                        <f:facet name="top"/>
+                        <f:facet name="bottom"/>
+                        <f:facet name="center">
+                            <af:panelGroupLayout id="pgl2" halign="center" inlineStyle="margin-top:40px;">
+                                <af:panelFormLayout id="pfl1">
+                                    <f:facet name="footer">
+                                        <af:button text="Create Payment" id="b1" useWindow="true" action="createPayment"
+                                                   returnListener="#{pageFlowScope.flightBookingBean.PaymentCreatedListener}"
+                                                   windowHeight="300" windowWidth="450" immediate="true"/>
+                                        <af:button text="Submit" id="b2" action="viewSummary"/>
+                                    </f:facet>
+                                    <af:selectOneChoice value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.inputValue}"
+                                                        label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.label}"
+                                                        required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.mandatory}"
+                                                        shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.tooltip}"
+                                                        id="soc1" inlineStyle="min-width:100em;">
+                                        <f:selectItems value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.items}"
+                                                       id="si1"/>
+                                        <f:validator binding="#{bindings.PaymentMethodsInstanceForCurrentCustomer.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelStretchLayout>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

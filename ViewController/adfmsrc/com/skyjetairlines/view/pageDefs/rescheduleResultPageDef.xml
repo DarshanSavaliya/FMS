@@ -9,10 +9,10 @@
               id="FlightsInstanceForTicketsForCurrentCustomerIterator"/>
     <iterator id="TicketsInstanceForCurrentCustomerIterator" Binds="TicketsInstanceForCurrentCustomer"
               DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
-    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
-              id="FlightsInstanceIterator"/>
     <iterator id="BookingsInstanceForCurrentCustomerIterator" Binds="BookingsInstanceForCurrentCustomer"
               DataControl="FlightManagementSystemAMDataControl" RangeSize="25"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
   </executables>
   <bindings>
     <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="DepartureAirport">
@@ -31,9 +31,9 @@
           <Item Value="Flightno"/>
           <Item Value="DepartureAirport"/>
           <Item Value="ArrivalAirport"/>
-          <Item Value="ScheduledDeparture"/>
-          <Item Value="ScheduledArrival"/>
+          <Item Value="ActualDeparture"/>
           <Item Value="Duration"/>
+          <Item Value="ActualArrival"/>
           <Item Value="Price"/>
         </AttrNames>
       </nodeDefinition>

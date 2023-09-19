@@ -21,16 +21,6 @@
                 </AttrNames>
             </nodeDefinition>
         </tree>
-        <attributeValues IterBinding="BookingsInstanceIterator" id="BookingId">
-            <AttrNames>
-                <Item Value="BookingId"/>
-            </AttrNames>
-        </attributeValues>
-        <attributeValues IterBinding="BookingsInstanceIterator" id="CustomerId">
-            <AttrNames>
-                <Item Value="CustomerId"/>
-            </AttrNames>
-        </attributeValues>
         <attributeValues IterBinding="BookingsInstanceIterator" id="BookingDate">
             <AttrNames>
                 <Item Value="BookingDate"/>
@@ -65,7 +55,5 @@
                 <Item Value="ActualArrival"/>
             </AttrNames>
         </attributeValues>
-        <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_Status" id="Status"
-              DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     </bindings>
 </pageDefinition>

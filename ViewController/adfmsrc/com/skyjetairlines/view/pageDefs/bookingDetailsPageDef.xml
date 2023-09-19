@@ -16,16 +16,6 @@
               id="CouponsInstanceForFlightsIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingId">
-      <AttrNames>
-        <Item Value="BookingId"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="CustomerId">
-      <AttrNames>
-        <Item Value="CustomerId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingDate">
       <AttrNames>
         <Item Value="BookingDate"/>

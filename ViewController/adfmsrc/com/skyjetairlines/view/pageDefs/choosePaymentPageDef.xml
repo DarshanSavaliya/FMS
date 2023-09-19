@@ -10,7 +10,7 @@
   <bindings>
     <list IterBinding="PaymentMethodsInstanceForCurrentCustomerIterator" ListOperMode="navigation"
           ListIter="PaymentMethodsInstanceForCurrentCustomerIterator" id="PaymentMethodsInstanceForCurrentCustomer"
-          DTSupportsMRU="true" SelectItemValueMode="ListObject">
+          DTSupportsMRU="false" SelectItemValueMode="ListObject">
       <AttrNames>
         <Item Value="PaymentType"/>
         <Item Value="CardNo"/>

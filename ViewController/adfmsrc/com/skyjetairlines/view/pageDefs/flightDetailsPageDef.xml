@@ -17,19 +17,19 @@
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
           DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledDeparture">
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ActualDeparture">
       <AttrNames>
-        <Item Value="ScheduledDeparture"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledArrival">
-      <AttrNames>
-        <Item Value="ScheduledArrival"/>
+        <Item Value="ActualDeparture"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="FlightsInstanceIterator" id="Duration">
       <AttrNames>
         <Item Value="Duration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ActualArrival">
+      <AttrNames>
+        <Item Value="ActualArrival"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="FlightsInstanceIterator" id="Price">

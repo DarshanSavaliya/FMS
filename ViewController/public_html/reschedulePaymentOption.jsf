@@ -6,21 +6,37 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelGroupLayout id="pgl1">
-                        <af:selectOneChoice value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.inputValue}"
-                                            label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.label}"
-                                            required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.mandatory}"
-                                            shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.tooltip}"
-                                            id="soc1">
-                            <f:selectItems value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.items}" id="si1"/>
-                            <f:validator binding="#{bindings.PaymentMethodsInstanceForCurrentCustomer.validator}"/>
-                        </af:selectOneChoice>
-                        <af:button text="Submit" id="b2" action="viewSummary"/>
-                        <af:button text="Create Payment" id="b1" useWindow="true" action="createPayment"
-                                   returnListener="#{pageFlowScope.bookingRescheduleBean.paymentCreatedListener}"
-                                   windowHeight="300" windowWidth="450" immediate="true"/>
-                        <af:button text="Change Booking Details" id="b3" action="changeBookingDetails"/>
-                    </af:panelGroupLayout>
+                     <af:panelStretchLayout id="psl1" topHeight="400px" bottomHeight="200px" startWidth="200px">
+                        <f:facet name="start">
+                            <af:panelGroupLayout id="pgl3">
+                                <af:button text="Change Booking Details" id="b3" action="changeBookingDetails"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="end"/>
+                        <f:facet name="top"/>
+                        <f:facet name="bottom"/>
+                        <f:facet name="center">
+                            <af:panelGroupLayout id="pgl2" halign="center" inlineStyle="margin-top:40px;">
+                                <af:panelFormLayout id="pfl1">
+                                    <f:facet name="footer">
+                                        <af:button text="Create Payment Method" id="b1" useWindow="true" action="createPayment"
+                                                   returnListener="#{pageFlowScope.flightBookingBean.PaymentCreatedListener}"
+                                                   windowHeight="300" windowWidth="450" immediate="true"/>
+                                        <af:button text="Submit" id="b2" action="viewSummary"/>
+                                    </f:facet>
+                                    <af:selectOneChoice value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.inputValue}"
+                                                        label="#{bindings.PaymentMethodsInstanceForCurrentCustomer.label}"
+                                                        required="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.mandatory}"
+                                                        shortDesc="#{bindings.PaymentMethodsInstanceForCurrentCustomer.hints.tooltip}"
+                                                        id="soc1" inlineStyle="min-width:100em;">
+                                        <f:selectItems value="#{bindings.PaymentMethodsInstanceForCurrentCustomer.items}"
+                                                       id="si1"/>
+                                        <f:validator binding="#{bindings.PaymentMethodsInstanceForCurrentCustomer.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                    </af:panelStretchLayout>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

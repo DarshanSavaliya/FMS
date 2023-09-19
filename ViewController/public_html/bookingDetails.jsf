@@ -63,11 +63,7 @@
                                                           readOnly="true"
                                                           columns="#{bindings.Duration.hints.displayWidth}"
                                                           maximumLength="#{bindings.Duration.hints.precision}"
-                                                          shortDesc="#{bindings.Duration.hints.tooltip}" id="it2">
-                                                <f:validator binding="#{bindings.Duration.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.Duration.format}"/>
-                                            </af:inputText>
+                                                          shortDesc="#{bindings.Duration.hints.tooltip}" id="it2"/>
                                             <af:inputText value="#{bindings.Price.inputValue}"
                                                           label="#{bindings.Price.hints.label}"
                                                           required="#{bindings.Price.hints.mandatory}" readOnly="true"
@@ -85,14 +81,14 @@
                                         <af:panelGroupLayout id="pgl2">
                                             <af:table value="#{bindings.CouponsInstanceForFlights.collectionModel}"
                                                       var="row" rows="#{bindings.CouponsInstanceForFlights.rangeSize}"
-                                                      emptyText="#{bindings.CouponsInstanceForFlights.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                      emptyText="#{bindings.CouponsInstanceForFlights.viewable ? 'No applicable coupons' : 'Access Denied.'}"
                                                       rowBandingInterval="0"
                                                       selectedRowKeys="#{bindings.CouponsInstanceForFlights.collectionModel.selectedRow}"
                                                       selectionListener="#{bindings.CouponsInstanceForFlights.collectionModel.makeCurrent}"
                                                       rowSelection="single"
                                                       fetchSize="#{bindings.CouponsInstanceForFlights.rangeSize}"
                                                       id="t3"
-                                                      visible="#{!pageFlowScope.flightBookingBean.couponApplied}">
+                                                      visible="#{!pageFlowScope.flightBookingBean.couponApplied and bindings.CouponsInstanceForFlightsIterator.estimatedRowCount ne 0}">
                                                 <af:column headerText="#{bindings.CouponsInstanceForFlights.hints.CouponCode.label}"
                                                            id="c4">
                                                     <af:outputText value="#{row.CouponCode}"
@@ -125,7 +121,7 @@
                                                        disabled="#{pageFlowScope.flightBookingBean.couponApplied}"
                                                        partialSubmit="false" partialTriggers="it3"
                                                        actionListener="#{pageFlowScope.flightBookingBean.applyCoupon}"
-                                                       visible="#{!pageFlowScope.flightBookingBean.couponApplied}"/>
+                                                       visible="#{!pageFlowScope.flightBookingBean.couponApplied and bindings.CouponsInstanceForFlightsIterator.estimatedRowCount ne 0}"/>
                                         </af:panelGroupLayout>
                                     </af:gridCell>
                                 </af:gridRow>
@@ -135,20 +131,6 @@
                             <af:panelSplitter id="ps2" splitterPosition="250" disabled="true">
                                 <f:facet name="first">
                                     <af:panelFormLayout id="pfl2">
-                                        <af:panelLabelAndMessage label="#{bindings.BookingId.hints.label}" id="plam1">
-                                            <af:outputText value="#{bindings.BookingId.inputValue}"
-                                                           shortDesc="#{bindings.BookingId.hints.tooltip}" id="ot1">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.BookingId.format}"/>
-                                            </af:outputText>
-                                        </af:panelLabelAndMessage>
-                                        <af:panelLabelAndMessage label="#{bindings.CustomerId.hints.label}" id="plam2">
-                                            <af:outputText value="#{bindings.CustomerId.inputValue}"
-                                                           shortDesc="#{bindings.CustomerId.hints.tooltip}" id="ot2">
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.CustomerId.format}"/>
-                                            </af:outputText>
-                                        </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="#{bindings.BookingDate.hints.label}" id="plam3">
                                             <af:outputText value="#{bindings.BookingDate.inputValue}"
                                                            shortDesc="#{bindings.BookingDate.hints.tooltip}" id="ot3">
@@ -177,27 +159,12 @@
                                                   selectedRowKeys="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.selectedRow}"
                                                   selectionListener="#{bindings.TicketsInstanceForCurrentCustomer.collectionModel.makeCurrent}"
                                                   fetchSize="#{bindings.TicketsInstanceForCurrentCustomer.rangeSize}"
-                                                  id="t1">
-                                            <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.label}"
-                                                       id="c1">
-                                                <af:outputText value="#{row.TicketId}"
-                                                               shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.tooltip}"
-                                                               id="ot4">
-                                                    <af:convertNumber groupingUsed="false"
-                                                                      pattern="#{bindings.TicketsInstanceForCurrentCustomer.hints.TicketId.format}"/>
-                                                </af:outputText>
+                                                  id="t1" varStatus="rowStat">
+                                            <af:column id="c1" align="center">
+                                                <af:outputText value="#{rowStat.index+1}" id="ot1"/>
                                             </af:column>
-                                            <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.BookingId.label}"
-                                                       id="c2">
-                                                <af:outputText value="#{row.BookingId}"
-                                                               shortDesc="#{bindings.TicketsInstanceForCurrentCustomer.hints.BookingId.tooltip}"
-                                                               id="ot5">
-                                                    <af:convertNumber groupingUsed="false"
-                                                                      pattern="#{bindings.TicketsInstanceForCurrentCustomer.hints.BookingId.format}"/>
-                                                </af:outputText>
-                                            </af:column>
-                                            <af:column headerText="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.label}"
-                                                       id="c3">
+                                            <af:column headerText="Select #{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.label}"
+                                                       id="c3" width="300" align="center">
                                                 <af:selectOneChoice value="#{row.bindings.PassengerId.inputValue}"
                                                                     label="#{row.bindings.PassengerId.label}"
                                                                     required="#{bindings.TicketsInstanceForCurrentCustomer.hints.PassengerId.mandatory}"

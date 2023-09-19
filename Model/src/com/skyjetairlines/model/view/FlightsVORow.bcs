@@ -7,7 +7,14 @@ import oracle.jbo.script.annotation.TransientValueExpression;
 @TransientValueExpression(attributeName="Duration")
 def Duration_ExpressionScript_Expression()
 {
-(ScheduledArrival.getTime() - ScheduledDeparture.getTime())
+def duration = groovy.time.TimeCategory.minus(
+  ActualArrival,
+  ActualDeparture
+);
+def dur = "";
+if(duration.hours > 0) dur = dur + "${duration.hours} hr ";
+if(duration.minutes) dur = dur + "${duration.minutes} min ";
+return dur;
 }
 
 

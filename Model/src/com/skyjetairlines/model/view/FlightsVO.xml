@@ -181,13 +181,12 @@
     IsSelected="false"
     IsPersistent="false"
     PrecisionRule="true"
-    Type="java.lang.Long"
+    Type="java.lang.String"
     ColumnType="FLOAT"
     AliasName="VIEW_ATTR"
-    SQLType="NUMERIC">
+    SQLType="SMALLINT">
     <TransientExpression
       Name="ExpressionScript"
-      trustMode="untrusted"
       CodeSourceName="FlightsVORow"/>
     <Properties>
       <SchemaBasedProperties>
@@ -197,9 +196,11 @@
     </Properties>
     <Dependencies>
       <Item
-        Value="ScheduledArrival"/>
+        Value="ActualArrival"
+        Type="notify"/>
       <Item
-        Value="ScheduledDeparture"/>
+        Value="ActualDeparture"
+        Type="notify"/>
     </Dependencies>
   </ViewAttribute>
   <ViewAttribute

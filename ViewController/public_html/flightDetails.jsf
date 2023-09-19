@@ -6,74 +6,80 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelGroupLayout id="pgl1">
-                        <af:panelFormLayout id="pfl1">
-                            <af:inputText value="#{bindings.Flightno.inputValue}"
-                                          label="#{bindings.Flightno.hints.label}"
-                                          required="#{bindings.Flightno.hints.mandatory}" readOnly="true"
-                                          columns="#{bindings.Flightno.hints.displayWidth}"
-                                          maximumLength="#{bindings.Flightno.hints.precision}"
-                                          shortDesc="#{bindings.Flightno.hints.tooltip}" id="it1">
-                                <f:validator binding="#{bindings.Flightno.validator}"/>
-                            </af:inputText>
-                            <af:selectOneChoice value="#{bindings.DepartureAirport.inputValue}"
-                                                label="#{bindings.DepartureAirport.label}"
-                                                required="#{bindings.DepartureAirport.hints.mandatory}"
-                                                shortDesc="#{bindings.DepartureAirport.hints.tooltip}" readOnly="true"
-                                                id="soc1">
-                                <f:selectItems value="#{bindings.DepartureAirport.items}" id="si1"/>
-                                <f:validator binding="#{bindings.DepartureAirport.validator}"/>
-                            </af:selectOneChoice>
-                            <af:selectOneChoice value="#{bindings.ArrivalAirport.inputValue}"
-                                                label="#{bindings.ArrivalAirport.label}"
-                                                required="#{bindings.ArrivalAirport.hints.mandatory}"
-                                                shortDesc="#{bindings.ArrivalAirport.hints.tooltip}" readOnly="true"
-                                                id="soc2">
-                                <f:selectItems value="#{bindings.ArrivalAirport.items}" id="si2"/>
-                                <f:validator binding="#{bindings.ArrivalAirport.validator}"/>
-                            </af:selectOneChoice>
-                            <af:inputDate value="#{bindings.ScheduledDeparture.inputValue}" readOnly="true"
-                                          label="#{bindings.ScheduledDeparture.hints.label}"
-                                          required="#{bindings.ScheduledDeparture.hints.mandatory}"
-                                          columns="#{bindings.ScheduledDeparture.hints.displayWidth}"
-                                          shortDesc="#{bindings.ScheduledDeparture.hints.tooltip}" id="id1">
-                                <f:validator binding="#{bindings.ScheduledDeparture.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.ScheduledDeparture.format}"/>
-                            </af:inputDate>
-                            <af:inputDate value="#{bindings.ScheduledArrival.inputValue}" readOnly="true"
-                                          label="#{bindings.ScheduledArrival.hints.label}"
-                                          required="#{bindings.ScheduledArrival.hints.mandatory}"
-                                          columns="#{bindings.ScheduledArrival.hints.displayWidth}"
-                                          shortDesc="#{bindings.ScheduledArrival.hints.tooltip}" id="id2">
-                                <f:validator binding="#{bindings.ScheduledArrival.validator}"/>
-                                <af:convertDateTime pattern="#{bindings.ScheduledArrival.format}"/>
-                            </af:inputDate>
-                            <af:inputText value="#{bindings.Duration.inputValue}"
-                                          label="#{bindings.Duration.hints.label}"
-                                          required="#{bindings.Duration.hints.mandatory}" readOnly="true"
-                                          columns="#{bindings.Duration.hints.displayWidth}"
-                                          maximumLength="#{bindings.Duration.hints.precision}"
-                                          shortDesc="#{bindings.Duration.hints.tooltip}" id="it2">
-                                <f:validator binding="#{bindings.Duration.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Duration.format}"/>
-                            </af:inputText>
-                            <af:inputText value="#{bindings.Price.inputValue}" label="#{bindings.Price.hints.label}"
-                                          required="#{bindings.Price.hints.mandatory}" readOnly="true"
-                                          columns="#{bindings.Price.hints.displayWidth}"
-                                          maximumLength="#{bindings.Price.hints.precision}"
-                                          shortDesc="#{bindings.Price.hints.tooltip}" id="it3">
-                                <f:validator binding="#{bindings.Price.validator}"/>
-                                <af:convertNumber groupingUsed="false" pattern="#{bindings.Price.format}"/>
-                            </af:inputText>
-                            <f:facet name="footer">
-                                <af:panelGroupLayout id="pgl2" layout="horizontal">
-                                    <af:button text="Book" id="b1" action="bookTickets"/>
-                                    <af:spacer id="s1" width="10"/>
-                                    <af:button text="Back" id="b2" action="backToResults"/>
-                                </af:panelGroupLayout>
-                            </f:facet>
-                        </af:panelFormLayout>
-                    </af:panelGroupLayout>
+                    <af:panelStretchLayout id="psl1" topHeight="100px" startWidth="100px">
+                        <f:facet name="start">
+                            <af:separator id="s1"/>
+                        </f:facet>
+                        <f:facet name="end"/>
+                        <f:facet name="top">
+                            <af:panelGroupLayout id="pgl1" inlineStyle="margin-left:30px; margin-top:30px;">
+                                <af:button text="Back" id="b1" action="backToResults"/>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="bottom"/>
+                        <f:facet name="center">
+                            <af:panelFormLayout id="pfl1">
+                                <af:inputText value="#{bindings.Flightno.inputValue}"
+                                              label="#{bindings.Flightno.hints.label}"
+                                              required="#{bindings.Flightno.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Flightno.hints.displayWidth}"
+                                              maximumLength="#{bindings.Flightno.hints.precision}"
+                                              shortDesc="#{bindings.Flightno.hints.tooltip}" id="it1">
+                                    <f:validator binding="#{bindings.Flightno.validator}"/>
+                                </af:inputText>
+                                <af:selectOneChoice value="#{bindings.DepartureAirport.inputValue}"
+                                                    label="#{bindings.DepartureAirport.label}"
+                                                    required="#{bindings.DepartureAirport.hints.mandatory}"
+                                                    shortDesc="#{bindings.DepartureAirport.hints.tooltip}"
+                                                    readOnly="true" id="soc1">
+                                    <f:selectItems value="#{bindings.DepartureAirport.items}" id="si1"/>
+                                    <f:validator binding="#{bindings.DepartureAirport.validator}"/>
+                                </af:selectOneChoice>
+                                <af:selectOneChoice value="#{bindings.ArrivalAirport.inputValue}"
+                                                    label="#{bindings.ArrivalAirport.label}"
+                                                    required="#{bindings.ArrivalAirport.hints.mandatory}"
+                                                    shortDesc="#{bindings.ArrivalAirport.hints.tooltip}" readOnly="true"
+                                                    id="soc2">
+                                    <f:selectItems value="#{bindings.ArrivalAirport.items}" id="si2"/>
+                                    <f:validator binding="#{bindings.ArrivalAirport.validator}"/>
+                                </af:selectOneChoice>
+                                <af:inputDate value="#{bindings.ActualDeparture.inputValue}" readOnly="true"
+                                              label="#{bindings.ActualDeparture.hints.label}"
+                                              required="#{bindings.ActualDeparture.hints.mandatory}"
+                                              columns="#{bindings.ActualDeparture.hints.displayWidth}"
+                                              shortDesc="#{bindings.ActualDeparture.hints.tooltip}" id="id1">
+                                    <f:validator binding="#{bindings.ActualDeparture.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.ActualDeparture.format}"/>
+                                </af:inputDate>
+                                <af:inputText value="#{bindings.Duration.inputValue}"
+                                              label="#{bindings.Duration.hints.label}"
+                                              required="#{bindings.Duration.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Duration.hints.displayWidth}"
+                                              maximumLength="#{bindings.Duration.hints.precision}"
+                                              shortDesc="#{bindings.Duration.hints.tooltip}" id="it2"/>
+                                <af:inputDate value="#{bindings.ActualArrival.inputValue}" readOnly="true"
+                                              label="#{bindings.ActualArrival.hints.label}"
+                                              required="#{bindings.ActualArrival.hints.mandatory}"
+                                              columns="#{bindings.ActualArrival.hints.displayWidth}"
+                                              shortDesc="#{bindings.ActualArrival.hints.tooltip}" id="id2">
+                                    <f:validator binding="#{bindings.ActualArrival.validator}"/>
+                                    <af:convertDateTime pattern="#{bindings.ActualArrival.format}"/>
+                                </af:inputDate>
+                                <af:inputText value="#{bindings.Price.inputValue}" label="#{bindings.Price.hints.label}"
+                                              required="#{bindings.Price.hints.mandatory}" readOnly="true"
+                                              columns="#{bindings.Price.hints.displayWidth}"
+                                              maximumLength="#{bindings.Price.hints.precision}"
+                                              shortDesc="#{bindings.Price.hints.tooltip}" id="it3">
+                                    <f:validator binding="#{bindings.Price.validator}"/>
+                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.Price.format}"/>
+                                </af:inputText>
+                                <f:facet name="footer">
+                                    <af:button text="Book" id="b2" inlineStyle="margin-left: 300px;"
+                                               action="bookTickets"/>
+                                </f:facet>
+                            </af:panelFormLayout>
+                        </f:facet>
+                    </af:panelStretchLayout>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

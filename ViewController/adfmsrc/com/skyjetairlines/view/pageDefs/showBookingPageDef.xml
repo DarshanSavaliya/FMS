@@ -13,13 +13,6 @@
               id="FlightsInstanceForTicketsForCurrentCustomerIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingId">
-      <AttrNames>
-        <Item Value="BookingId"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="BookingsInstanceForCurrentCustomerIterator" StaticList="false" Uses="LOV_CustomerId"
-          id="CustomerId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingDate">
       <AttrNames>
         <Item Value="BookingDate"/>
@@ -39,19 +32,29 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator"
-          id="FlightsInstanceForTicketsForCurrentCustomer">
-      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightsVO"
-                      Name="FlightsInstanceForTicketsForCurrentCustomer0">
-        <AttrNames>
-          <Item Value="Flightno"/>
-          <Item Value="DepartureAirport"/>
-          <Item Value="ArrivalAirport"/>
-          <Item Value="ScheduledDeparture"/>
-          <Item Value="ScheduledArrival"/>
-          <Item Value="Status"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="Flightno">
+      <AttrNames>
+        <Item Value="Flightno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" StaticList="false"
+          Uses="LOV_DepartureAirport" id="DepartureAirport" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" StaticList="false" Uses="LOV_ArrivalAirport"
+          id="ArrivalAirport" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ActualDeparture">
+      <AttrNames>
+        <Item Value="ActualDeparture"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="Duration">
+      <AttrNames>
+        <Item Value="Duration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ActualArrival">
+      <AttrNames>
+        <Item Value="ActualArrival"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

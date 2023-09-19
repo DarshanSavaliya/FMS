@@ -6,47 +6,16 @@
     <variableIterator id="variables"/>
     <iterator Binds="BookingsInstanceForCurrentCustomer" RangeSize="25"
               DataControl="FlightManagementSystemAMDataControl" id="BookingsInstanceForCurrentCustomerIterator"/>
-    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
-              id="FlightsInstanceIterator"/>
     <iterator Binds="FlightsInstanceForTicketsForCurrentCustomer" RangeSize="25"
               DataControl="FlightManagementSystemAMDataControl"
               id="FlightsInstanceForTicketsForCurrentCustomerIterator"/>
+    <iterator Binds="FlightsInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightsInstanceIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingId">
-      <AttrNames>
-        <Item Value="BookingId"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="BookingsInstanceForCurrentCustomerIterator" StaticList="false" Uses="LOV_CustomerId"
-          id="CustomerId" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="BookingsInstanceForCurrentCustomerIterator" id="BookingDate">
       <AttrNames>
         <Item Value="BookingDate"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="Flightno">
-      <AttrNames>
-        <Item Value="Flightno"/>
-      </AttrNames>
-    </attributeValues>
-    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledDeparture">
-      <AttrNames>
-        <Item Value="ScheduledDeparture"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledArrival">
-      <AttrNames>
-        <Item Value="ScheduledArrival"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="FlightsInstanceIterator" id="Duration">
-      <AttrNames>
-        <Item Value="Duration"/>
       </AttrNames>
     </attributeValues>
     <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="Flightno1">
@@ -58,19 +27,43 @@
           Uses="LOV_DepartureAirport" id="DepartureAirport1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <list IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" StaticList="false" Uses="LOV_ArrivalAirport"
           id="ArrivalAirport1" DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
-    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ScheduledDeparture1">
-      <AttrNames>
-        <Item Value="ScheduledDeparture"/>
-      </AttrNames>
-    </attributeValues>
-    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ScheduledArrival1">
-      <AttrNames>
-        <Item Value="ScheduledArrival"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="Duration1">
       <AttrNames>
         <Item Value="Duration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ActualDeparture">
+      <AttrNames>
+        <Item Value="ActualDeparture"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceForTicketsForCurrentCustomerIterator" id="ActualArrival">
+      <AttrNames>
+        <Item Value="ActualArrival"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="Flightno">
+      <AttrNames>
+        <Item Value="Flightno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ActualDeparture1">
+      <AttrNames>
+        <Item Value="ActualDeparture"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="Duration">
+      <AttrNames>
+        <Item Value="Duration"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ActualArrival1">
+      <AttrNames>
+        <Item Value="ActualArrival"/>
       </AttrNames>
     </attributeValues>
   </bindings>
