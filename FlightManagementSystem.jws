@@ -93,7 +93,7 @@
       </list>
    </hash>
    <hash n="oracle.jdeveloper.deploy.SecurityDeploymentSettings">
-      <value n="Security-Deployment-Migrate-Users-And-Groups-Key" v="false"/>
+      <value n="Security-Deployment-Migrate-Users-And-Groups-Key" v="true"/>
    </hash>
    <hash n="oracle.jdeveloper.model.PathsConfiguration">
       <hash n="ApplicationSrcContentSet">

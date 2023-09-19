@@ -13,7 +13,7 @@
                 </user>
                 <user>
                     <name>testcust</name>
-                    <credentials>{903}1hk+zARMkFAD7nY8mbjjVfV55S6mTNIa1AwykqT6yAc=</credentials>
+                    <credentials>{903}aVPp5meIxFzXNKpKa7K3qM9HwhmjrEaKFhVRw/VWJs4=</credentials>
                     <display-name>Test Customer</display-name>
                 </user>
             </users>
@@ -54,6 +54,10 @@
                             <member>
                                 <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
                                 <name>customer</name>
+                            </member>
+                            <member>
+                                <class>oracle.security.jps.internal.core.principals.JpsXmlEnterpriseRoleImpl</class>
+                                <name>admin</name>
                             </member>
                         </members>
                     </app-role>

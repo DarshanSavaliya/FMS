@@ -6,7 +6,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelSplitter id="ps1" splitterPosition="300">
+                    <af:panelSplitter id="ps1" splitterPosition="300" orientation="vertical">
                         <f:facet name="first">
                             <af:panelFormLayout id="pfl1">
                                 <af:inputText value="#{bindings.BookingId.inputValue}"
