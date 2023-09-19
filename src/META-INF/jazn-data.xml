@@ -115,6 +115,21 @@
                                 <name>/WEB-INF/searchTF.xml#searchTF</name>
                                 <actions>view</actions>
                             </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/aboutDev.xml#aboutDev</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/cusTrust.xml#cusTrust</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.checkFlightStatusPageDef</name>
+                                <actions>view</actions>
+                            </permission>
                         </permissions>
                     </grant>
                     <grant>
@@ -130,6 +145,63 @@
                             <permission>
                                 <class>oracle.adf.controller.security.TaskFlowPermission</class>
                                 <name>/WEB-INF/bookingTF.xml#bookingTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/createPassengerTF.xml#createPassengerTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/createPaymentTF.xml#createPaymentTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.controller.security.TaskFlowPermission</class>
+                                <name>/WEB-INF/rescheduleTF.xml#rescheduleTF</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.showBookingPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                        </permissions>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>admin</name>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permissions>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.addFlightPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.bookingsManagementPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.couponManagementPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.customerDetailManagementPageDef</name>
+                                <actions>view</actions>
+                            </permission>
+                            <permission>
+                                <class>oracle.adf.share.security.authorization.RegionPermission</class>
+                                <name>com.skyjetairlines.view.pageDefs.manageFlightsPageDef</name>
                                 <actions>view</actions>
                             </permission>
                         </permissions>

@@ -7,7 +7,7 @@
   Version="12.2.1.22.48"
   InheritPersonalization="merge"
   DBObjectType="table"
-  DBObjectName="COUPON"
+  DBObjectName="COUPONS"
   AliasName="CouponEO"
   BindingStyle="OracleName">
   <Attribute
@@ -19,7 +19,7 @@
     SQLType="NUMERIC"
     Type="oracle.jbo.domain.DBSequence"
     ColumnType="NUMBER"
-    TableName="COUPON"
+    TableName="COUPONS"
     PrimaryKey="true"
     RetrievedOnInsert="true"/>
   <Attribute
@@ -30,7 +30,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="COUPON">
+    TableName="COUPONS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -43,7 +43,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="COUPON">
+    TableName="COUPONS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -56,7 +56,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="COUPON">
+    TableName="COUPONS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
@@ -69,7 +69,7 @@
     SQLType="VARCHAR"
     Type="java.lang.String"
     ColumnType="VARCHAR2"
-    TableName="COUPON">
+    TableName="COUPONS">
     <DesignTime>
       <Attr Name="_DisplaySize" Value="10"/>
     </DesignTime>
@@ -81,7 +81,7 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="COUPON"/>
+    TableName="COUPONS"/>
   <Key
     Name="CouponPk"
     PrimaryKey="true">

@@ -9,11 +9,7 @@
   <pageMap>
     <page path="/profile.jsf" usageId="com_skyjetairlines_view_profilePageDef"/>
     <page path="/home.jsf" usageId="com_skyjetairlines_view_homePageDef"/>
-    <page path="/search.jsf" usageId="com_skyjetairlines_view_searchPageDef"/>
     <page path="/flightDetails.jsf" usageId="com_skyjetairlines_view_flightDetailsPageDef"/>
-    <page path="/WEB-INF/task-flow-booking-definition.xml#task-flow-booking-definition@CreateInsert"
-          usageId="com_skyjetairlines_view_task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"/>
-    <page path="/booking.jsf" usageId="com_skyjetairlines_view_bookingPageDef"/>
     <page path="/manageFlights.jsf" usageId="com_skyjetairlines_view_finalPageDef"/>
     <page path="/addFlight.jsf" usageId="com_skyjetairlines_view_addFlightPageDef"/>
     <page path="/about.jsf" usageId="com_skyjetairlines_view_aboutPageDef"/>
@@ -27,7 +23,6 @@
     <page path="/choosePayment.jsf" usageId="com_skyjetairlines_view_choosePaymentPageDef"/>
     <page path="/WEB-INF/createPaymentTF.xml#createPaymentTF@CreateInsert"
           usageId="com_skyjetairlines_view_createPaymentTF_createPaymentTF_CreateInsertPageDef"/>
-    <page path="/testPage.jsf" usageId="com_skyjetairlines_view_testPagePageDef"/>
     <page path="/viewSummary.jsf" usageId="com_skyjetairlines_view_summaryPageDef"/>
     <page path="/createPayment.jsf" usageId="com_skyjetairlines_view_createPaymentPageDef"/>
     <page path="/WEB-INF/createPassengerTF.xml#createPassengerTF@CreateInsert"
@@ -52,12 +47,8 @@
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
     <page id="com_skyjetairlines_view_homePageDef" path="com.skyjetairlines.view.pageDefs.homePageDef"/>
-    <page id="com_skyjetairlines_view_searchPageDef" path="com.skyjetairlines.view.pageDefs.searchPageDef"/>
     <page id="com_skyjetairlines_view_flightDetailsPageDef"
           path="com.skyjetairlines.view.pageDefs.flightDetailsPageDef"/>
-    <page id="com_skyjetairlines_view_task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"
-          path="com.skyjetairlines.view.pageDefs.task_flow_booking_definition_task_flow_booking_definition_CreateInsertPageDef"/>
-    <page id="com_skyjetairlines_view_bookingPageDef" path="com.skyjetairlines.view.pageDefs.bookingPageDef"/>
     <page id="com_skyjetairlines_view_finalPageDef" path="com.skyjetairlines.view.pageDefs.manageFlightsPageDef"/>
     <page id="com_skyjetairlines_view_addFlightPageDef" path="com.skyjetairlines.view.pageDefs.addFlightPageDef"/>
     <page id="com_skyjetairlines_view_aboutPageDef" path="com.skyjetairlines.view.pageDefs.aboutPageDef"/>
@@ -76,7 +67,6 @@
           path="com.skyjetairlines.view.pageDefs.createPaymentTF_createPaymentTF_CreateInsertPageDef"/>
     <page id="com_skyjetairlines_view_createPaymentPageDef"
           path="com.skyjetairlines.view.pageDefs.createPaymentPageDef"/>
-    <page id="com_skyjetairlines_view_testPagePageDef" path="com.skyjetairlines.view.pageDefs.testPagePageDef"/>
     <page id="com_skyjetairlines_view_summaryPageDef" path="com.skyjetairlines.view.pageDefs.summaryPageDef"/>
     <page id="com_skyjetairlines_view_createPassengerTF_createPassengerTF_CreateInsertPageDef"
           path="com.skyjetairlines.view.pageDefs.createPassengerTF_createPassengerTF_CreateInsertPageDef"/>
