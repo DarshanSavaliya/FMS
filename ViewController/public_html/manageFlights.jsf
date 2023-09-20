@@ -135,7 +135,7 @@
                 </af:selectOneChoice>
               </af:column>
               <af:column id="c14">
-                <af:button text="Edit" id="b1">
+                <af:button text="Edit" id="b1" icon="#{resource['images:icons8-edit-12.png']}">
                   <af:showPopupBehavior popupId="editpopup" triggerType="action"/>
                 </af:button>
                 <af:popup childCreation="deferred" autoCancel="enabled" id="editpopup" animate="true"
