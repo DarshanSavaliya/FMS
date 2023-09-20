@@ -65,5 +65,8 @@
         <to-activity-id>save</to-activity-id>
       </control-flow-case>
     </control-flow-rule>
+    <visibility>
+      <url-invoke-allowed/>
+    </visibility>
   </task-flow-definition>
 </adfc-config>
