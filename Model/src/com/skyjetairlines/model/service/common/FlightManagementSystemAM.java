@@ -10,5 +10,11 @@ import oracle.jbo.ApplicationModule;
 public interface FlightManagementSystemAM extends ApplicationModule {
     void searchFlightsWithParams(String fromAirport, String toAirport, int numberOfSeats, Date bookingDate,
                                  Integer bookedFlightId);
+
+    void totalRevenueFlightsWithParam(Date departureDate);
+
+    void passengerListForFlightWithParam(String flightNo);
+
+    void flightCapacityUtilization(String departureAirport, String arrivalAirport);
 }
 

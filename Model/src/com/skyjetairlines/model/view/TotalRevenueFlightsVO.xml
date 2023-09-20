@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TotalRevenueFlightsVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  RowClass="com.skyjetairlines.model.view.TotalRevenueFlightsVORowImpl"
+  ComponentClass="com.skyjetairlines.model.view.TotalRevenueFlightsVOImpl"
+  AccessMode="DEFAULT"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.skyjetairlines.model.view.TotalRevenueFlightsVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="b_departureDate"
+    Kind="where"
+    Type="java.sql.Timestamp"/>
+  <SQLQuery><![CDATA[SELECT 
+    FLIGHTS.FLIGHTNO, TO_CHAR(cast(FLIGHTS.ACTUAL_DEPARTURE as date),'YYYY-MM-DD') Departure_Date, 
+    SUM(TICKET_FLIGHTS.AMOUNT) Revenue
+FROM 
+    FLIGHTS,TICKET_FLIGHTS
+WHERE FLIGHTS.FLIGHT_ID = TICKET_FLIGHTS.FLIGHT_ID
+GROUP BY TO_CHAR(cast(FLIGHTS.ACTUAL_DEPARTURE as date), 'YYYY-MM-DD'),FLIGHTS.FLIGHTNO
+HAVING TO_CHAR(cast(FLIGHTS.ACTUAL_DEPARTURE as date), 'YYYY-MM-DD') = TO_CHAR(cast(:b_departureDate as date), 'YYYY-MM-DD')]]></SQLQuery>
+  <ViewAttribute
+    Name="Flightno"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="4"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="FLIGHTNO"
+    Expression="FLIGHTNO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="DepartureDate"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DEPARTURE_DATE"
+    Expression="DEPARTURE_DATE"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Revenue"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="REVENUE"
+    Expression="REVENUE"
+    SQLType="NUMERIC"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

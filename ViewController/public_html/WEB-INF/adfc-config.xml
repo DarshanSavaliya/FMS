@@ -58,6 +58,24 @@
   <view id="createManyFlights">
     <page>/createManyFlights.jsf</page>
   </view>
+  <method-call id="totalRevenue">
+    <method>#{data.com_skyjetairlines_view_adminDashboardPageDef.totalRevenueFlightsWithParam.execute}</method>
+    <outcome>
+      <fixed-outcome>viewRevenue</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="passengerList">
+    <method>#{data.com_skyjetairlines_view_adminDashboardPageDef.passengerListForFlightWithParam.execute}</method>
+    <outcome>
+      <fixed-outcome>viewList</fixed-outcome>
+    </outcome>
+  </method-call>
+  <method-call id="flightCapacityUtilization">
+    <method>#{bindings.flightCapacityUtilization.execute}</method>
+    <outcome>
+      <fixed-outcome>viewUtilization</fixed-outcome>
+    </outcome>
+  </method-call>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
     <control-flow-case id="__29">
@@ -109,6 +127,18 @@
       <from-outcome>customerDetailManagement</from-outcome>
       <to-activity-id>customerDetailManagement</to-activity-id>
     </control-flow-case>
+    <control-flow-case id="__47">
+      <from-outcome>generateTotalRevenue</from-outcome>
+      <to-activity-id>totalRevenue</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__53">
+      <from-outcome>showPassengerList</from-outcome>
+      <to-activity-id>passengerList</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__56">
+      <from-outcome>showFlightUtilization</from-outcome>
+      <to-activity-id>flightCapacityUtilization</to-activity-id>
+    </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__34">
     <from-activity-id>manageFlights</from-activity-id>
@@ -139,6 +169,34 @@
       <to-activity-id>profile</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__50">
+    <from-activity-id>createManyFlights</from-activity-id>
+    <control-flow-case id="__51">
+      <from-outcome>backToManageFlights</from-outcome>
+      <to-activity-id>manageFlights</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__49">
+    <from-activity-id>totalRevenue</from-activity-id>
+    <control-flow-case id="__52">
+      <from-outcome>viewRevenue</from-outcome>
+      <to-activity-id>adminDashboard</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__54">
+    <from-activity-id>passengerList</from-activity-id>
+    <control-flow-case id="__55">
+      <from-outcome>viewList</from-outcome>
+      <to-activity-id>adminDashboard</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__57">
+    <from-activity-id>flightCapacityUtilization</from-activity-id>
+    <control-flow-case id="__58">
+      <from-outcome>viewUtilization</from-outcome>
+      <to-activity-id>adminDashboard</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__24">
     <managed-bean-name>FlightManagement</managed-bean-name>
     <managed-bean-class>com.skyjetairlines.view.bean.ManageFlightBean</managed-bean-class>
@@ -157,6 +215,11 @@
   <managed-bean id="__48">
     <managed-bean-name>createFlightBean</managed-bean-name>
     <managed-bean-class>com.skyjetairlines.view.bean.CreateFlightBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__45">
+    <managed-bean-name>totalRevenueFlightBean</managed-bean-name>
+    <managed-bean-class>com.skyjetairlines.view.bean.TotalRevenueFlightsBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>

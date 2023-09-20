@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="adminDashboardPageDef"
+                Package="com.skyjetairlines.view.pageDefs">
+  <parameters/>
+  <executables>
+    <iterator Binds="PassengerListForFlight2" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="PassengerListForFlight2Iterator"/>
+    <iterator Binds="TotalRevenueFlights1" RangeSize="-1" DataControl="FlightManagementSystemAMDataControl"
+              id="TotalRevenueFlights1Iterator"/>
+    <iterator Binds="DepartureAirportsLOVInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="DepartureAirportsLOVInstanceIterator"/>
+    <iterator Binds="ArrivalAirportsLOVInstance" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="ArrivalAirportsLOVInstanceIterator"/>
+    <iterator Binds="FlightCapacityUtilization1" RangeSize="25" DataControl="FlightManagementSystemAMDataControl"
+              id="FlightCapacityUtilization1Iterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="totalRevenueFlightsWithParam" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="totalRevenueFlightsWithParam" IsViewObjectMethod="false"
+                  DataControl="FlightManagementSystemAMDataControl"
+                  InstanceName="bindings.totalRevenueFlightsWithParam.dataControl.dataProvider">
+      <NamedData NDName="departureDate" NDValue="#{totalRevenueFlightBean.departureDate}" NDType="java.util.Date"/>
+    </methodAction>
+    <methodAction id="passengerListForFlightWithParam" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="passengerListForFlightWithParam" IsViewObjectMethod="false"
+                  DataControl="FlightManagementSystemAMDataControl"
+                  InstanceName="bindings.passengerListForFlightWithParam.dataControl.dataProvider">
+      <NamedData NDName="flightNo" NDValue="#{requestScope.totalRevenueFlightBean.flightNo}" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="PassengerListForFlight2Iterator" id="PassengerListForFlight2">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.PassengerListForFlightVO" Name="PassengerListForFlight20">
+        <AttrNames>
+          <Item Value="PassengerName"/>
+          <Item Value="PhoneNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="TotalRevenueFlights1Iterator" id="TotalRevenueFlights1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.TotalRevenueFlightsVO" Name="TotalRevenueFlights1">
+        <AttrNames>
+          <Item Value="Revenue"/>
+          <Item Value="Flightno"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <list IterBinding="DepartureAirportsLOVInstanceIterator" ListOperMode="navigation"
+          ListIter="DepartureAirportsLOVInstanceIterator" id="DepartureAirportsLOVInstance" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="AirportCode"/>
+        <Item Value="AirportName"/>
+        <Item Value="City"/>
+      </AttrNames>
+    </list>
+    <list IterBinding="ArrivalAirportsLOVInstanceIterator" ListOperMode="navigation"
+          ListIter="ArrivalAirportsLOVInstanceIterator" id="ArrivalAirportsLOVInstance" DTSupportsMRU="true"
+          SelectItemValueMode="ListObject">
+      <AttrNames>
+        <Item Value="AirportCode"/>
+        <Item Value="AirportName"/>
+        <Item Value="City"/>
+      </AttrNames>
+    </list>
+    <methodAction id="flightCapacityUtilization" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="flightCapacityUtilization" IsViewObjectMethod="false"
+                  DataControl="FlightManagementSystemAMDataControl"
+                  InstanceName="bindings.flightCapacityUtilization.dataControl.dataProvider">
+      <NamedData NDName="departureAirport"
+                 NDValue="#{data.com_skyjetairlines_view_adminDashboardPageDef.DepartureAirportsLOVInstance.inputValue}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="arrivalAirport"
+                 NDValue="#{data.com_skyjetairlines_view_adminDashboardPageDef.ArrivalAirportsLOVInstance.inputValue}"
+                 NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="FlightCapacityUtilization1Iterator" id="FlightCapacityUtilization11">
+      <nodeDefinition DefName="com.skyjetairlines.model.view.FlightCapacityUtilizationVO"
+                      Name="FlightCapacityUtilization110">
+        <AttrNames>
+          <Item Value="DepartureAirport"/>
+          <Item Value="ArrivalAirport"/>
+          <Item Value="CapacityUtilization"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

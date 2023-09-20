@@ -1,11 +1,132 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
     <af:document title="Skyjet Airlines || Admin" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:outputText value="Admin Page" id="ot1"/>
+                    <af:outputText value="Generate Revenue " id="ot1" inlineStyle="font-size:x-large;"/>
+                    <af:spacer id="s2" height="10"/>
+                    <af:panelTabbed position="above" id="pt2">
+                        <af:showDetailItem id="tab1" text="Revenue">
+                            <af:panelGroupLayout id="pgl1" layout="vertical">
+                                <af:panelFormLayout id="pfl1">
+                                    <f:facet name="footer">
+                                        <af:button text="Get Revenue" id="b1" action="generateTotalRevenue"/>
+                                    </f:facet>
+                                    <af:inputDate label="Date:" id="id1"
+                                                  value="#{totalRevenueFlightBean.departureDate}"/>
+                                </af:panelFormLayout>
+                                <af:spacer id="s1" height="50"/>
+                                <dvt:pieChart id="pieChart1" var="row"
+                                              value="#{bindings.TotalRevenueFlights1.collectionModel}">
+                                    <dvt:chartLegend id="cl1"/>
+                                    <dvt:pieDataItem id="di1" label="#{row.Flightno}" value="#{row.Revenue}"/>
+                                </dvt:pieChart>
+                            </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem id="tab2" text="Passenger List">
+                            <af:panelGroupLayout id="pgl2" layout="vertical">
+                                <af:panelFormLayout id="pfl2">
+                                    <f:facet name="footer">
+                                        <af:button text="Submit" id="b2" action="showPassengerList"/>
+                                    </f:facet>
+                                    <af:inputText label="Enter Flight No:" id="it1" value="#{totalRevenueFlightBean.flightNo}"/>
+                                </af:panelFormLayout> 
+                                <af:spacer id="s3" height="50"/>
+                                <af:table value="#{bindings.PassengerListForFlight2.collectionModel}" var="row"
+                                          rows="#{bindings.PassengerListForFlight2.rangeSize}"
+                                          emptyText="#{bindings.PassengerListForFlight2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          selectedRowKeys="#{bindings.PassengerListForFlight2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.PassengerListForFlight2.collectionModel.makeCurrent}"
+                                          rowSelection="single"
+                                          fetchSize="#{bindings.PassengerListForFlight2.rangeSize}" id="t2"
+                                          columnStretching="last">
+                                    <af:column headerText="#{bindings.PassengerListForFlight2.hints.PassengerName.label}"
+                                               id="c3" width="700" align="center">
+                                        <af:outputText value="#{row.PassengerName}"
+                                                       shortDesc="#{bindings.PassengerListForFlight2.hints.PassengerName.tooltip}"
+                                                       id="ot4"/>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.PassengerListForFlight2.hints.PhoneNumber.label}"
+                                               id="c4" width="500" align="center">
+                                        <af:outputText value="#{row.PhoneNumber}"
+                                                       shortDesc="#{bindings.PassengerListForFlight2.hints.PhoneNumber.tooltip}"
+                                                       id="ot5"/>
+                                    </af:column>
+                                </af:table>
+                            </af:panelGroupLayout>
+                        </af:showDetailItem>
+                        <af:showDetailItem text="Flight Route Capacity Utilization" id="sdi1">
+                            <af:panelGroupLayout id="pgl3" layout="vertical">
+                                <af:panelFormLayout id="pfl3">
+                                    <f:facet name="footer">
+                                        <af:button text="Find Utilization" id="b3" action="showFlightUtilization"/>
+                                    </f:facet>
+                                    <af:selectOneChoice value="#{bindings.DepartureAirportsLOVInstance.inputValue}"
+                                                        label="Departure Airport:"
+                                                        required="#{bindings.DepartureAirportsLOVInstance.hints.mandatory}"
+                                                        shortDesc="#{bindings.DepartureAirportsLOVInstance.hints.tooltip}"
+                                                        id="soc1">
+                                        <f:selectItems value="#{bindings.DepartureAirportsLOVInstance.items}" id="si1"/>
+                                        <f:validator binding="#{bindings.DepartureAirportsLOVInstance.validator}"/>
+                                    </af:selectOneChoice>
+                                    <af:selectOneChoice value="#{bindings.ArrivalAirportsLOVInstance.inputValue}"
+                                                        label="Arrival Airport:"
+                                                        required="#{bindings.ArrivalAirportsLOVInstance.hints.mandatory}"
+                                                        shortDesc="#{bindings.ArrivalAirportsLOVInstance.hints.tooltip}"
+                                                        id="soc2">
+                                        <f:selectItems value="#{bindings.ArrivalAirportsLOVInstance.items}" id="si2"/>
+                                        <f:validator binding="#{bindings.ArrivalAirportsLOVInstance.validator}"/>
+                                    </af:selectOneChoice>
+                                </af:panelFormLayout>
+                                <af:spacer id="s4" height="10"/>
+                                <af:table value="#{bindings.FlightCapacityUtilization11.collectionModel}" var="row"
+                                          rows="#{bindings.FlightCapacityUtilization11.rangeSize}"
+                                          emptyText="#{bindings.FlightCapacityUtilization11.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                          rowBandingInterval="0"
+                                          fetchSize="#{bindings.FlightCapacityUtilization11.rangeSize}" id="t3"
+                                          columnStretching="last">
+                                    <af:column headerText="#{bindings.FlightCapacityUtilization11.hints.DepartureAirport.label}"
+                                               id="c6" width="400" align="center">
+                                        <af:selectOneChoice value="#{row.bindings.DepartureAirport.inputValue}"
+                                                            label="#{row.bindings.DepartureAirport.label}"
+                                                            required="#{bindings.FlightCapacityUtilization11.hints.DepartureAirport.mandatory}"
+                                                            shortDesc="#{bindings.FlightCapacityUtilization11.hints.DepartureAirport.tooltip}"
+                                                            readOnly="true" id="soc3">
+                                            <f:selectItems value="#{row.bindings.DepartureAirport.items}" id="si3"/>
+                                            <f:validator binding="#{row.bindings.DepartureAirport.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightCapacityUtilization11.hints.ArrivalAirport.label}"
+                                               id="c7" width="400" align="center">
+                                        <af:selectOneChoice value="#{row.bindings.ArrivalAirport.inputValue}"
+                                                            label="#{row.bindings.ArrivalAirport.label}"
+                                                            required="#{bindings.FlightCapacityUtilization11.hints.ArrivalAirport.mandatory}"
+                                                            shortDesc="#{bindings.FlightCapacityUtilization11.hints.ArrivalAirport.tooltip}"
+                                                            readOnly="true" id="soc4">
+                                            <f:selectItems value="#{row.bindings.ArrivalAirport.items}" id="si4"/>
+                                            <f:validator binding="#{row.bindings.ArrivalAirport.validator}"/>
+                                        </af:selectOneChoice>
+                                    </af:column>
+                                    <af:column headerText="#{bindings.FlightCapacityUtilization11.hints.CapacityUtilization.label}(%)"
+                                               id="c8" align="center">
+                                        <af:outputText value="#{row.CapacityUtilization}"
+                                                       shortDesc="#{bindings.FlightCapacityUtilization11.hints.CapacityUtilization.tooltip}"
+                                                       id="ot7">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.FlightCapacityUtilization11.hints.CapacityUtilization.format}"
+                                                              minFractionDigits="2" maxFractionDigits="2"
+                                                              roundingMode="CEILING"/>
+                                        </af:outputText>
+                                    </af:column>
+                                </af:table>
+                            </af:panelGroupLayout>
+                        </af:showDetailItem>
+                    </af:panelTabbed>
                 </f:facet>
             </af:pageTemplate>
         </af:form>

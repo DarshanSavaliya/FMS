@@ -5,6 +5,8 @@
     <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
              className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
     <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
   </definitionFactories>
   <pageMap>
     <page path="/profile.jsf" usageId="com_skyjetairlines_view_profilePageDef"/>
@@ -49,6 +51,9 @@
     <page path="/WEB-INF/registerUserTF.xml#registerUserTF@assignUserToGroup"
           usageId="com_skyjetairlines_view_registerUserTF_registerUserTF_assignUserToGroupPageDef"/>
     <page path="/createManyFlights.jsf" usageId="com_skyjetairlines_view_createManyFlightsPageDef"/>
+    <page path="/adminDashboard.jsf" usageId="com_skyjetairlines_view_adminDashboardPageDef"/>
+    <page path="PageFlow#flightCapacityUtilization"
+          usageId="com_skyjetairlines_view_adfc_config__flightCapacityUtilizationPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="com_skyjetairlines_view_profilePageDef" path="com.skyjetairlines.view.pageDefs.profilePageDef"/>
@@ -108,6 +113,10 @@
           path="com.skyjetairlines.view.pageDefs.registerUserTF_registerUserTF_assignUserToGroupPageDef"/>
     <page id="com_skyjetairlines_view_createManyFlightsPageDef"
           path="com.skyjetairlines.view.pageDefs.createManyFlightsPageDef"/>
+    <page id="com_skyjetairlines_view_adminDashboardPageDef"
+          path="com.skyjetairlines.view.pageDefs.adminDashboardPageDef"/>
+    <page id="com_skyjetairlines_view_adfc_config__flightCapacityUtilizationPageDef"
+          path="com.skyjetairlines.view.pageDefs.adfc_config__flightCapacityUtilizationPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="FlightManagementSystemAMDataControl" Package="com.skyjetairlines.model.service"

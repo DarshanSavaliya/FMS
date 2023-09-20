@@ -2,6 +2,21 @@ package com.skyjetairlines.model.service;
 
 import com.skyjetairlines.model.service.common.FlightManagementSystemAM;
 
+
+import com.skyjetairlines.model.view.FlightCapacityUtilizationVOImpl;
+import com.skyjetairlines.model.view.PassengerListForFlightVOImpl;
+
+
+import com.skyjetairlines.model.view.TotalRevenueFlightsVOImpl;
+
+import java.sql.Timestamp;
+
+import java.text.SimpleDateFormat;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
 import java.util.Date;
 
 import oracle.jbo.ViewCriteria;
@@ -220,6 +235,34 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
         flightsVO.applyViewCriteria(searchFlightsVC);
         flightsVO.executeQuery();
     }
+    
+    public void totalRevenueFlightsWithParam(Date departureDate){
+        LocalDateTime d1 = departureDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
+        Timestamp t = Timestamp.valueOf(d1);
+        
+        //SimpleDateFormat sdf = new SimpleDateFormat("DD/MM/yyyy");
+        //String date = sdf.format(departureDate);
+        ViewObjectImpl flightsVO = this.getTotalRevenueFlights1();
+        flightsVO.setNamedWhereClauseParam("b_departureDate", t);
+        System.out.println(t);
+        flightsVO.executeQuery();
+    }
+    
+    public void passengerListForFlightWithParam(String flightNo){
+    
+        ViewObjectImpl flightsVO = this.getPassengerListForFlight2();
+        flightsVO.setNamedWhereClauseParam("b_flightno", flightNo);
+        System.out.println(flightNo);
+        flightsVO.executeQuery();
+    }
+    
+    public void flightCapacityUtilization(String departureAirport,String arrivalAirport){
+    
+        ViewObjectImpl flightsVO = this.getFlightCapacityUtilization1();
+        flightsVO.setNamedWhereClauseParam("b_departureAirport", departureAirport);
+        flightsVO.setNamedWhereClauseParam("b_arrivalAirport", arrivalAirport);
+        flightsVO.executeQuery();
+    }
 
     /**
      * Container's getter for Airports1.
@@ -334,5 +377,29 @@ public class FlightManagementSystemAMImpl extends ApplicationModuleImpl implemen
         return (ViewLinkImpl) findViewLink("GroupmemberUserFkLink1");
     }
 
+
+    /**
+     * Container's getter for PassengerListForFlight2.
+     * @return PassengerListForFlight2
+     */
+    public PassengerListForFlightVOImpl getPassengerListForFlight2() {
+        return (PassengerListForFlightVOImpl) findViewObject("PassengerListForFlight2");
+    }
+
+    /**
+     * Container's getter for TotalRevenueFlights1.
+     * @return TotalRevenueFlights1
+     */
+    public TotalRevenueFlightsVOImpl getTotalRevenueFlights1() {
+        return (TotalRevenueFlightsVOImpl) findViewObject("TotalRevenueFlights1");
+    }
+
+    /**
+     * Container's getter for FlightCapacityUtilization1.
+     * @return FlightCapacityUtilization1
+     */
+    public FlightCapacityUtilizationVOImpl getFlightCapacityUtilization1() {
+        return (FlightCapacityUtilizationVOImpl) findViewObject("FlightCapacityUtilization1");
+    }
 }
 
