@@ -79,6 +79,15 @@
   <ViewUsage
     Name="CouponsRangeInstance"
     ViewObjectName="com.skyjetairlines.model.view.CouponsRangeVO"/>
+  <ViewUsage
+    Name="PassengerListForFlight2"
+    ViewObjectName="com.skyjetairlines.model.view.PassengerListForFlightVO"/>
+  <ViewUsage
+    Name="TotalRevenueFlights1"
+    ViewObjectName="com.skyjetairlines.model.view.TotalRevenueFlightsVO"/>
+  <ViewUsage
+    Name="FlightCapacityUtilization1"
+    ViewObjectName="com.skyjetairlines.model.view.FlightCapacityUtilizationVO"/>
   <ViewLinkUsage
     Name="BookingFkLink1"
     ViewLinkObjectName="com.skyjetairlines.model.view.link.BookingFkLink"
@@ -168,6 +177,103 @@
       <Parameter
         Name="bookedFlightId"
         Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="searchFlightsWithParams"
+      MethodName="searchFlightsWithParams">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="fromAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="toAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="numberOfSeats"
+        Type="int"/>
+      <Parameter
+        Name="bookingDate"
+        Type="java.util.Date"/>
+      <Parameter
+        Name="bookedFlightId"
+        Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="totalRevenueFlightsWithParam"
+      MethodName="totalRevenueFlightsWithParam">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="departureDate"
+        Type="java.util.Date"/>
+    </Method>
+    <Method
+      Name="passengerListForFlightWithParam"
+      MethodName="passengerListForFlightWithParam">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="flightNo"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="searchFlightsWithParams"
+      MethodName="searchFlightsWithParams">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="fromAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="toAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="numberOfSeats"
+        Type="int"/>
+      <Parameter
+        Name="bookingDate"
+        Type="java.util.Date"/>
+      <Parameter
+        Name="bookedFlightId"
+        Type="java.lang.Integer"/>
+    </Method>
+    <Method
+      Name="totalRevenueFlightsWithParam"
+      MethodName="totalRevenueFlightsWithParam">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="departureDate"
+        Type="java.util.Date"/>
+    </Method>
+    <Method
+      Name="passengerListForFlightWithParam"
+      MethodName="passengerListForFlightWithParam">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="flightNo"
+        Type="java.lang.String"/>
+    </Method>
+    <Method
+      Name="flightCapacityUtilization"
+      MethodName="flightCapacityUtilization">
+      <Return
+        Name="_return_type_"
+        Type="void"/>
+      <Parameter
+        Name="departureAirport"
+        Type="java.lang.String"/>
+      <Parameter
+        Name="arrivalAirport"
+        Type="java.lang.String"/>
     </Method>
   </ClientInterface>
 </AppModule>

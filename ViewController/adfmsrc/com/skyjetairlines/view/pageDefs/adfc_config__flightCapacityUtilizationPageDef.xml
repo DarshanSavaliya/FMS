@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="adfc_config__flightCapacityUtilizationPageDef" Package="com.skyjetairlines.view.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="DepartureAirportsLOVInstance" RangeSize="10" DataControl="FlightManagementSystemAMDataControl"
+              id="DepartureAirportsLOVInstanceIterator"/>
+    <iterator Binds="ArrivalAirportsLOVInstance" RangeSize="10" DataControl="FlightManagementSystemAMDataControl"
+              id="ArrivalAirportsLOVInstanceIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="flightCapacityUtilization" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="flightCapacityUtilization" IsViewObjectMethod="false"
+                  DataControl="FlightManagementSystemAMDataControl"
+                  InstanceName="bindings.flightCapacityUtilization.dataControl.dataProvider">
+      <NamedData NDName="departureAirport" NDValue="#{bindings.DepartureAirport.inputValue}" NDType="java.lang.String"/>
+      <NamedData NDName="arrivalAirport" NDValue="#{bindings.ArrivalAirport.inputValue}" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="DepartureAirportsLOVInstanceIterator" id="DepartureAirport">
+      <AttrNames>
+        <Item Value="AirportCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ArrivalAirportsLOVInstanceIterator" id="ArrivalAirport">
+      <AttrNames>
+        <Item Value="AirportCode"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

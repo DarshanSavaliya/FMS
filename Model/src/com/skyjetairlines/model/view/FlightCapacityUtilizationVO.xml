@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FlightCapacityUtilizationVO"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  RowClass="com.skyjetairlines.model.view.FlightCapacityUtilizationVORowImpl"
+  ComponentClass="com.skyjetairlines.model.view.FlightCapacityUtilizationVOImpl"
+  AccessMode="DEFAULT"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Coll"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.skyjetairlines.model.view.FlightCapacityUtilizationVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="b_departureAirport"
+    Kind="where"
+    Type="java.lang.String"/>
+  <Variable
+    Name="b_arrivalAirport"
+    Kind="where"
+    Type="java.lang.String"/>
+  <ViewAccessor
+    Name="AirportsVO1"
+    ViewObjectName="com.skyjetairlines.model.view.AirportsVO"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="AirportsVO2"
+    ViewObjectName="com.skyjetairlines.model.view.AirportsVO"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_DepartureAirport"
+    ListVOName="AirportsVO1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="DepartureAirport"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AirportCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AirportCode"/>
+      <Item Value="AirportName"/>
+      <Item Value="City"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <ListBinding
+    Name="LOV_ArrivalAirport"
+    ListVOName="AirportsVO2"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ArrivalAirport"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="AirportCode"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="AirportCode"/>
+      <Item Value="AirportName"/>
+      <Item Value="City"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <SQLQuery><![CDATA[SELECT 
+    FLIGHTS.DEPARTURE_AIRPORT DEPARTURE_AIRPORT,
+    FLIGHTS.ARRIVAL_AIRPORT ARRIVAL_AIRPORT,
+    (SUM(FLIGHTS.TOTAL_SEATS - FLIGHTS.AVAILABLE_SEATS)/SUM(FLIGHTS.TOTAL_SEATS))*100 Capacity_utilization
+FROM 
+    FLIGHTS
+WHERE FLIGHTS.DEPARTURE_AIRPORT = :b_departureAirport AND FLIGHTS.ARRIVAL_AIRPORT = :b_arrivalAirport 
+GROUP BY FLIGHTS.DEPARTURE_AIRPORT,FLIGHTS.ARRIVAL_AIRPORT]]></SQLQuery>
+  <ViewAttribute
+    Name="DepartureAirport"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="255"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="DEPARTURE_AIRPORT"
+    Expression="DEPARTURE_AIRPORT"
+    SQLType="VARCHAR"
+    LOVName="LOV_DepartureAirport">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="ArrivalAirport"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="3"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ARRIVAL_AIRPORT"
+    Expression="ARRIVAL_AIRPORT"
+    SQLType="VARCHAR"
+    LOVName="LOV_ArrivalAirport">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CapacityUtilization"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="CAPACITY_UTILIZATION"
+    Expression="CAPACITY_UTILIZATION"
+    SQLType="NUMERIC"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.skyjetairlines.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
