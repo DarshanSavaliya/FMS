@@ -180,7 +180,8 @@
     SQLType="NUMERIC"
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
-    TableName="FLIGHTS">
+    TableName="FLIGHTS"
+    RetrievedOnUpdate="true">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
@@ -231,7 +232,8 @@
     ColumnType="NUMBER"
     TableName="FLIGHTS"
     HistoryColumn="VersionHistory"
-    ChangeIndicator="true"/>
+    ChangeIndicator="true"
+    RetrievedOnUpdate="true"/>
   <Attribute
     Name="Price"
     ColumnName="PRICE"

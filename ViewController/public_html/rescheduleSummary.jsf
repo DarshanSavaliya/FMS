@@ -6,7 +6,7 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelSplitter id="ps1" splitterPosition="300" orientation="vertical">
+                    <af:panelSplitter id="ps1" splitterPosition="300" orientation="vertical" disabled="true">
                         <f:facet name="first">
                             <af:panelFormLayout id="pfl1">
                                 <af:outputText value="Reschedule details" id="ot5"
