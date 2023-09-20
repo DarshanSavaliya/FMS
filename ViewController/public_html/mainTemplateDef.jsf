@@ -27,6 +27,9 @@
                             <af:spacer id="pt_s1" height="20" width="40" visible="#{securityContext.authenticated}"/>
                             <af:link text="Admin Dashboard" id="pt_l3" destination="/faces/adminDashboard" inlineStyle="font-size:large;"
                                      immediate="true" visible="#{securityContext.userInRole['admin']}" action="IsAdmin"/>
+                            <af:spacer id="pt_s5" height="20" width="20"/>
+                            <af:link text="Check Flight Status" id="pt_l4" destination="/faces/checkFlightStatus"
+                                     inlineStyle="font-size:large;"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="33%" marginEnd="40px" id="pt_gc5" halign="end">

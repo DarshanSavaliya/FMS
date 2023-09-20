@@ -8,11 +8,6 @@
               DataControl="FlightManagementSystemAMDataControl" id="PaymentMethodsInstanceForCurrentCustomerIterator"/>
   </executables>
   <bindings>
-    <attributeValues IterBinding="PaymentMethodsInstanceForCurrentCustomerIterator" id="CustomerId">
-      <AttrNames>
-        <Item Value="CustomerId"/>
-      </AttrNames>
-    </attributeValues>
     <attributeValues IterBinding="PaymentMethodsInstanceForCurrentCustomerIterator" id="PaymentType">
       <AttrNames>
         <Item Value="PaymentType"/>

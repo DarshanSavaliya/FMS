@@ -18,7 +18,7 @@
                       fetchSize="#{bindings.FlightsInstance.rangeSize}"
                       filterModel="#{bindings.FlightsInstanceQuery.queryDescriptor}" filterVisible="true"
                       queryListener="#{bindings.FlightsInstanceQuery.processQuery}" varStatus="vs" id="t1"
-                      partialTriggers="::b5">
+                      partialTriggers="::b5" scrollPolicy="page" autoHeightRows="10">
               <af:column sortProperty="#{bindings.FlightsInstance.hints.Flightno.name}" filterable="true"
                          sortable="true" headerText="#{bindings.FlightsInstance.hints.Flightno.label}" id="c13">
                 <af:outputText value="#{row.Flightno}" shortDesc="#{bindings.FlightsInstance.hints.Flightno.tooltip}"
@@ -178,10 +178,12 @@
               <af:toolbar id="t2">
                 <af:button actfionListener="#{bindings.Delete.execute}" text="Schedule multiple flights" id="b4"
                            action="createFlights"/>
+                <af:spacer id="s1" height="10" width="10"/>
                 <af:button actionListener="#{bindings.CreateInsertFlight.execute}" text="Add New Flight"
                            disabled="#{!bindings.CreateInsertFlight.enabled}" id="b5">
                   <af:showPopupBehavior popupId="addflight" triggerType="action"/>
                 </af:button>
+                <af:spacer id="s2" height="10" width="10"/>
                 <af:popup childCreation="deferred" autoCancel="enabled" id="addflight" partialTriggers="b5"
                           popupFetchListener="#{FlightManagement.createinsertflight}"
                           popupCanceledListener="#{FlightManagement.rollbackpopup}" contentDelivery="lazyUncached">
@@ -245,6 +247,8 @@
                   </af:dialog>
                 </af:popup>
                 <af:button text="Cancel Flight" id="b2" actionListener="#{FlightManagement.cancelFlight}"/>
+                <af:spacer id="s3" height="10" width="10"/>
+                <af:button text="Add Coupons" id="b3" action="manageCoupons"/>
               </af:toolbar>
             </f:facet>
           </af:panelCollection>

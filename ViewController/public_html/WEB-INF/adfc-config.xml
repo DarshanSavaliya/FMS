@@ -21,9 +21,6 @@
   <view id="customerDetailManagement">
     <page>/customerDetailManagement.jsf</page>
   </view>
-  <view id="addFlight">
-    <page>/addFlight.jsf</page>
-  </view>
   <task-flow-call id="searchTF">
     <task-flow-reference>
       <document>/WEB-INF/searchTF.xml</document>
@@ -76,6 +73,12 @@
       <fixed-outcome>viewUtilization</fixed-outcome>
     </outcome>
   </method-call>
+  <view id="couponManagement">
+    <page>/couponManagement.jsf</page>
+  </view>
+  <view id="checkFlightStatus">
+    <page>/checkFlightStatus.jsf</page>
+  </view>
   <control-flow-rule id="__1">
     <from-activity-id>home</from-activity-id>
     <control-flow-case id="__29">
@@ -112,6 +115,10 @@
       <from-outcome>registerUser</from-outcome>
       <to-activity-id>registerUserTF</to-activity-id>
     </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome>checkStatus</from-outcome>
+      <to-activity-id>checkFlightStatus</to-activity-id>
+    </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__30">
     <from-activity-id>adminDashboard</from-activity-id>
@@ -142,20 +149,13 @@
   </control-flow-rule>
   <control-flow-rule id="__34">
     <from-activity-id>manageFlights</from-activity-id>
-    <control-flow-case id="__25">
-      <from-outcome>addFlight</from-outcome>
-      <to-activity-id>addFlight</to-activity-id>
-    </control-flow-case>
     <control-flow-case id="__46">
       <from-outcome>createFlights</from-outcome>
       <to-activity-id>createManyFlights</to-activity-id>
     </control-flow-case>
-  </control-flow-rule>
-  <control-flow-rule id="__26">
-    <from-activity-id>addFlight</from-activity-id>
-    <control-flow-case id="__27">
-      <from-outcome>manageFlights</from-outcome>
-      <to-activity-id>manageFlights</to-activity-id>
+    <control-flow-case id="__9">
+      <from-outcome>manageCoupons</from-outcome>
+      <to-activity-id>couponManagement</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__3">
@@ -167,13 +167,6 @@
     <control-flow-case id="__44">
       <from-outcome>back</from-outcome>
       <to-activity-id>profile</to-activity-id>
-    </control-flow-case>
-  </control-flow-rule>
-  <control-flow-rule id="__50">
-    <from-activity-id>createManyFlights</from-activity-id>
-    <control-flow-case id="__51">
-      <from-outcome>backToManageFlights</from-outcome>
-      <to-activity-id>manageFlights</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <control-flow-rule id="__49">
@@ -195,6 +188,13 @@
     <control-flow-case id="__58">
       <from-outcome>viewUtilization</from-outcome>
       <to-activity-id>adminDashboard</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__7">
+    <from-activity-id>couponManagement</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome>backToDashboard</from-outcome>
+      <to-activity-id>manageFlights</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__24">

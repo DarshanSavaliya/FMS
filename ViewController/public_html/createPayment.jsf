@@ -3,12 +3,6 @@
   <af:document id="d1">
     <af:form id="f1">
       <af:panelFormLayout id="pfl1">
-        <af:panelLabelAndMessage label="#{bindings.CustomerId.hints.label}" id="plam1">
-          <af:outputText value="#{bindings.CustomerId.inputValue}" shortDesc="#{bindings.CustomerId.hints.tooltip}"
-                         id="ot1">
-            <af:convertNumber groupingUsed="false" pattern="#{bindings.CustomerId.format}"/>
-          </af:outputText>
-        </af:panelLabelAndMessage>
         <af:inputText value="#{bindings.PaymentType.inputValue}" label="#{bindings.PaymentType.hints.label}"
                       required="#{bindings.PaymentType.hints.mandatory}"
                       columns="#{bindings.PaymentType.hints.displayWidth}"

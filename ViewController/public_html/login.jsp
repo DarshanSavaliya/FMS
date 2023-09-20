@@ -26,9 +26,8 @@
     <% response.addHeader("X-FRAME-OPTIONS", "SAMEORIGIN"); %>
     <body>
     <div>
-        <h1> SkyJet Airways </h1> 
+        <h1> <a href="/FlightManagementSystem-ViewController-context-root/faces/home">SkyJet Airlines</a> </h1> 
         <div style="justify-content:right; display: flex;">
-            <button type="button"><a href="/FlightManagementSystem-ViewController-context-root/faces/registerUserTF/register">Register</a></button>
         </div>
     </div>
             

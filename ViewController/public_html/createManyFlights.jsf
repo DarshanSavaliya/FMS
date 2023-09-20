@@ -27,8 +27,9 @@
                         </af:selectOneChoice>
                         <af:inputDate label="From Date:" id="id1" required="true" value="#{createFlightBean.fromDate}"
                                       minValue="#{createFlightBean.minDate}"/>
-                        <af:inputDate label="To Date:" id="id2" required="true" value="#{createFlightBean.toDate}"
-                                      minValue="#{createFlightBean.minDate + 1}"/>
+                        <af:inputDate label="To Date:" id="id2" required="true"
+                                      value="#{createFlightBean.toDate}"
+                                      minValue="#{createFlightBean.minDate}"/>
                         <af:inputDate label="Departure Time:" id="id3" required="true"
                                       value="#{createFlightBean.departureTime}">
                             <af:convertDateTime pattern="H:mm"/>

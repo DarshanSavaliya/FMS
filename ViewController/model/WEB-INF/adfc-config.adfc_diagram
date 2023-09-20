@@ -22,11 +22,11 @@
       <property
          name="activityId">manageFlights</property>
       <property
-         name="x">-711.51074</property>
+         name="x">-564.51074</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>manageFlights&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">-46.5625</property>
+         name="y">88.171875</property>
       <property
          name="page">/manageFlights.jsf</property>
       <property
@@ -52,11 +52,11 @@
       <property
          name="activityId">bookingsManagement</property>
       <property
-         name="x">-478.57324</property>
+         name="x">-459.57324</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>bookingsManagement&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">98.37109</property>
+         name="y">189.23828</property>
       <property
          name="page">/bookingsManagement.jsf</property>
       <property
@@ -108,11 +108,11 @@
       <property
          name="activityId">customerDetailManagement</property>
       <property
-         name="x">-860.4375</property>
+         name="x">-787.4375</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>customerDetailManagement&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">66.171875</property>
+         name="y">-94.22656</property>
       <property
          name="page">/customerDetailManagement.jsf</property>
       <property
@@ -144,7 +144,7 @@
       <property
          name="fromsrcid">__17</property>
       <property
-         name="sdm:polyPoints">R50,-728.0,537.9375,-514.5,541.5039,L50</property>
+         name="sdm:polyPoints">R55,-728.0,541.4375,-514.5,541.5039,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -172,7 +172,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">R50,-669.5791,188.3711,-519.57324,98.30469,L50</property>
+         name="sdm:polyPoints">R50,-669.5791,188.3711,-500.57324,189.17188,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -200,7 +200,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">T67,-700.0791,127.13629,-711.51074,7.3710938,B50</property>
+         name="sdm:polyPoints">T56,-707.0791,134.3711,-605.51074,88.10547,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -214,42 +214,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">T33,-721.0791,134.3711,-819.4375,66.10547,R50</property>
-   </ControlFlowCase>
-   <View
-      id="View57">
-      <property
-         name="activityId">addFlight</property>
-      <property
-         name="x">-712.612</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>addFlight&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
-      <property
-         name="y">-204.49738</property>
-      <property
-         name="page">/addFlight.jsf</property>
-      <property
-         name="exceptionHandler">false</property>
-   </View>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase58"
-      from="View5"
-      to="View57">
-      <property
-         name="fromOutcome">addFlight</property>
-      <property
-         name="sdm:polyPoints">T44,-715.01074,-100.62891,-716.112,-150.48654,B44</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase59"
-      from="View57"
-      to="View5">
-      <property
-         name="fromOutcome">manageFlights</property>
-      <property
-         name="sdm:polyPoints">B56,-709.112,-150.56378,-708.01074,-100.706085,T56</property>
+         name="sdm:polyPoints">T44,-714.0791,134.3711,-787.4375,-40.29297,B50</property>
    </ControlFlowCase>
    <TaskFlowCall
       id="TaskFlowCall56">
@@ -371,11 +336,11 @@
          <property
             name="activityId">createManyFlights</property>
          <property
-            name="x">-851.0</property>
+            name="x">-590.0</property>
          <property
             name="description">&lt;html>&lt;p>&lt;b>createManyFlights&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
          <property
-            name="y">-208.79688</property>
+            name="y">-97.0625</property>
          <property
             name="page">/createManyFlights.jsf</property>
          <property
@@ -389,7 +354,7 @@
          <property
             name="fromOutcome">backToManageFlights</property>
          <property
-            name="sdm:polyPoints">B50,-851.0,-152.19388,-755.6125,-46.628906,L50</property>
+            name="sdm:polyPoints">B44,-593.5,-41.995777,-568.01074,34.10547,T44</property>
       </ControlFlowCase>
    </ControlFlowCase>
    <ControlFlowCase
@@ -404,18 +369,18 @@
       <property
          name="fromsrcid">__34</property>
       <property
-         name="sdm:polyPoints">L58,-758.70087,-39.628906,-858.0,-149.57172,B39</property>
+         name="sdm:polyPoints">T56,-561.01074,32.98023,-586.5,-43.128906,B56</property>
    </ControlFlowCase>
    <MethodCall
       id="MethodCall81">
       <property
          name="activityId">passengerList</property>
       <property
-         name="x">-1235.9512</property>
+         name="x">-1156.9512</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>passengerList&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">-180.5</property>
+         name="y">272.96875</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -424,11 +389,11 @@
       <property
          name="activityId">totalRevenue</property>
       <property
-         name="x">-1148.4033</property>
+         name="x">-1212.4033</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>totalRevenue&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">-180.5</property>
+         name="y">99.96875</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -437,11 +402,11 @@
       <property
          name="activityId">flightCapacityUtilization</property>
       <property
-         name="x">-1026.1299</property>
+         name="x">-1030.1299</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>flightCapacityUtilization&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">-180.5</property>
+         name="y">-66.89844</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
@@ -457,7 +422,7 @@
       <property
          name="fromsrcid">__54</property>
       <property
-         name="sdm:polyPoints">B44,-1239.4512,-122.77154,-758.3443,198.8711,L62</property>
+         name="sdm:polyPoints">R46,-1115.9512,269.40234,-752.25037,198.8711,L62</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -471,7 +436,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">L54,-756.2306,191.8711,-1232.4512,-126.5,B56</property>
+         name="sdm:polyPoints">L70,-751.5791,205.8711,-1115.2793,276.40234,R54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -485,7 +450,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">L38,-751.5791,177.8711,-1144.9033,-126.5,B56</property>
+         name="sdm:polyPoints">L54,-755.881,191.8711,-1171.4033,103.40234,R54</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -499,21 +464,7 @@
       <property
          name="fromsrcid">__57</property>
       <property
-         name="sdm:polyPoints">R46,-981.9758,-184.0,-707.0791,128.6067,T56</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase88"
-      from="View65"
-      to="View5">
-      <property
-         name="tosrcid">__51</property>
-      <property
-         name="fromOutcome">backToManageFlights</property>
-      <property
-         name="fromsrcid">__50</property>
-      <property
-         name="sdm:polyPoints">B61,-844.0,-154.86328,-752.51074,-53.628906,L42</property>
+         name="sdm:polyPoints">B44,-1033.6299,-9.244509,-753.71387,177.8711,L38</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -527,7 +478,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">T44,-714.0791,131.2299,-985.1299,-177.0,R54</property>
+         name="sdm:polyPoints">L30,-751.5791,170.8711,-1026.6299,-12.964844,B56</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -541,6 +492,70 @@
       <property
          name="fromsrcid">__49</property>
       <property
-         name="sdm:polyPoints">B44,-1151.9033,-123.07742,-753.9761,184.8711,L46</property>
+         name="sdm:polyPoints">R46,-1170.667,96.40234,-755.1514,184.8711,L46</property>
+   </ControlFlowCase>
+   <View
+      id="View51">
+      <property
+         name="activityId">couponManagement</property>
+      <property
+         name="x">-294.81738</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>couponManagement&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">92.10156</property>
+      <property
+         name="page">/couponManagement.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase53"
+      from="View51"
+      to="View5">
+      <property
+         name="fromOutcome">backToDashboard</property>
+      <property
+         name="sdm:polyPoints">L46,-335.81738,88.53516,-523.4375,84.60547,R46</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase54"
+      from="View5"
+      to="View51">
+      <property
+         name="tosrcid">__9</property>
+      <property
+         name="fromOutcome">manageCoupons</property>
+      <property
+         name="fromsrcid">__34</property>
+      <property
+         name="sdm:polyPoints">R54,-523.51074,91.60547,-335.89066,95.53516,L54</property>
+   </ControlFlowCase>
+   <View
+      id="View55">
+      <property
+         name="activityId">checkFlightStatus</property>
+      <property
+         name="x">-757.0703</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>checkFlightStatus&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">673.2344</property>
+      <property
+         name="page">/checkFlightStatus.jsf</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase56"
+      from="WildcardControlFlowRule17"
+      to="View55">
+      <property
+         name="fromOutcome">checkStatus</property>
+      <property
+         name="sdm:polyPoints">B50,-764.0,580.4375,-757.0703,619.16797,T50</property>
    </ControlFlowCase>
 </SDM>

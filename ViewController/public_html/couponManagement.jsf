@@ -6,10 +6,10 @@
         <af:form id="f1">
             <af:pageTemplate viewId="/mainTemplateDef.jsf" id="pt1">
                 <f:facet name="body">
-                    <af:panelTabbed position="left" id="pt2"
-                                    maxTabSize="infinity" dimensionsFrom="disclosedChild" verticalTabMode="iconAndText">
-                        <af:showDetailItem id="tab1" text="RouteCoupons"
-                                           inflexibleHeight="100" inlineStyle="text-align:center;" flex="0">
+                    <af:panelTabbed position="left" id="pt2" maxTabSize="infinity" dimensionsFrom="disclosedChild"
+                                    verticalTabMode="iconAndText" inlineStyle="margin-top: 100px;">
+                        <af:showDetailItem id="tab1" text="RouteCoupons" inflexibleHeight="100"
+                                           inlineStyle="text-align:center;" flex="0">
                             <af:panelCollection id="pc1">
                                 <f:facet name="menus"/>
                                 <f:facet name="toolbar"/>
@@ -24,7 +24,7 @@
                                           filterModel="#{bindings.CouponsPlaceInstanceQuery.queryDescriptor}"
                                           filterVisible="true"
                                           queryListener="#{bindings.CouponsPlaceInstanceQuery.processQuery}"
-                                          varStatus="vs" id="t1" >
+                                          varStatus="vs" id="t1">
                                     <af:column sortProperty="#{bindings.CouponsPlaceInstance.hints.CouponCode.name}"
                                                filterable="true" sortable="true"
                                                headerText="#{bindings.CouponsPlaceInstance.hints.CouponCode.label}"
@@ -87,7 +87,7 @@
                                                         <f:validator binding="#{row.bindings.Dpt.validator}"/>
                                                     </af:selectOneChoice>
                                                     <af:selectOneChoice value="#{row.bindings.Arv.inputValue}"
-                                                                         label="#{row.bindings.Arv.label}"
+                                                                        label="#{row.bindings.Arv.label}"
                                                                         required="#{bindings.CouponsPlaceInstance.hints.Arv.mandatory}"
                                                                         shortDesc="#{bindings.CouponsPlaceInstance.hints.Arv.tooltip}"
                                                                         id="soc2"
@@ -124,6 +124,7 @@
                                         <af:button text="Delete Coupon" id="b5">
                                             <af:showPopupBehavior popupId="deletecoup" triggerType="action"/>
                                         </af:button>
+                                        <af:button text="Back" id="b7" action="backToDashboard"/>
                                         <af:popup childCreation="deferred" autoCancel="enabled" id="createcoup"
                                                   partialTriggers="b4"
                                                   popupFetchListener="#{CouponManageBean.createAndInsertCouponPlace}"
@@ -310,6 +311,7 @@
                                         <af:button text="Delete Coupon" id="b10">
                                             <af:showPopupBehavior popupId="deleteTime" triggerType="action"/>
                                         </af:button>
+                                        <af:button text="Back" id="b8" action="backToDashboard"/>
                                         <af:popup childCreation="deferred" autoCancel="enabled" id="createTime"
                                                   popupFetchListener="#{CouponManageBean.createAndInsertCouponTime}"
                                                   animate="true" contentDelivery="lazyUncached"
@@ -364,7 +366,8 @@
                                             <af:dialog id="d7"
                                                        dialogListener="#{CouponManageBean.deleteCommitCouponTime}">
                                                 <f:facet name="buttonBar"/>
-                                                <af:outputFormatted value="Confirm to delete the selected coupon!" id="of3"/>
+                                                <af:outputFormatted value="Confirm to delete the selected coupon!"
+                                                                    id="of3"/>
                                             </af:dialog>
                                         </af:popup>
                                     </af:toolbar>
@@ -482,8 +485,9 @@
                                         <af:button text="Delete Coupon" id="b15">
                                             <af:showPopupBehavior popupId="deleteCommitRange" triggerType="action"/>
                                         </af:button>
-                                        <af:popup childCreation="deferred" autoCancel="enabled"
-                                                  id="createInsertRange" partialTriggers="b14"
+                                        <af:button text="Back" id="b2" action="backToDashboard"/>
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="createInsertRange"
+                                                  partialTriggers="b14"
                                                   popupFetchListener="#{CouponManageBean.createInsertCouponRange}"
                                                   popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}"
                                                   contentDelivery="lazyUncached">
@@ -531,13 +535,14 @@
                                                 </af:panelFormLayout>
                                             </af:dialog>
                                         </af:popup>
-                                        <af:popup childCreation="deferred" autoCancel="enabled"
-                                                  id="deleteCommitRange" contentDelivery="lazyUncached"
+                                        <af:popup childCreation="deferred" autoCancel="enabled" id="deleteCommitRange"
+                                                  contentDelivery="lazyUncached"
                                                   popupCanceledListener="#{CouponManageBean.couponPlaceRollBack}">
                                             <af:dialog id="d10"
                                                        dialogListener="#{CouponManageBean.deleteCommitCouponRange}">
                                                 <f:facet name="buttonBar"/>
-                                                <af:outputFormatted value="Confirm to delete the selected coupon!" id="of4"/>
+                                                <af:outputFormatted value="Confirm to delete the selected coupon!"
+                                                                    id="of4"/>
                                             </af:dialog>
                                         </af:popup>
                                     </af:toolbar>
