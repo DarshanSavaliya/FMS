@@ -8,7 +8,7 @@
                 <f:facet name="body">
                     <af:outputText value="Manage your Profile" id="ot1"
                                    inlineStyle="font-size:large; font-weight:bold;"/>
-                    <af:button text="Notification" id="b15">
+                    <af:button text="Notification" id="b15" inlineStyle="margin-left: 1250px;">
                         <af:showPopupBehavior popupId="notification"/>
                     </af:button>
                     <af:popup childCreation="deferred" autoCancel="enabled" id="notification">

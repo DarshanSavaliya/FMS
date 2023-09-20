@@ -176,15 +176,8 @@
             </af:table>
             <f:facet name="secondaryToolbar">
               <af:toolbar id="t2">
-                <af:button actfionListener="#{bindings.Delete.execute}" text="Delete" id="b4">
-                  <af:showPopupBehavior popupId="deletepopup" triggerType="action"/>
-                </af:button>
-                <af:popup childCreation="deferred" autoCancel="disabled" id="deletepopup">
-                  <af:dialog id="d3" dialogListener="#{FlightManagement.deleteAndCommit}">
-                    <f:facet name="buttonBar"/>
-                    <af:activeOutputText value="Confirm to delete the Fligth?" id="aot1"/>
-                  </af:dialog>
-                </af:popup>
+                <af:button actfionListener="#{bindings.Delete.execute}" text="Schedule multiple flights" id="b4"
+                           action="createFlights"/>
                 <af:button actionListener="#{bindings.CreateInsertFlight.execute}" text="Add New Flight"
                            disabled="#{!bindings.CreateInsertFlight.enabled}" id="b5">
                   <af:showPopupBehavior popupId="addflight" triggerType="action"/>

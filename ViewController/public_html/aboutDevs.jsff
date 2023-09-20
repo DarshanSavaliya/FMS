@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <ui:composition xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
                 xmlns:f="http://java.sun.com/jsf/core">
-  <af:panelGroupLayout id="pgl4" layout="scroll">
+  <af:panelGroupLayout id="pgl4" layout="scroll" inlineStyle="height:700px;">
     <af:panelGroupLayout id="pgl3" layout="scroll">
       <af:panelBox text="Darshan" id="pb1" rendered="true" background="dark" type="flow">
         <f:facet name="toolbar"/>
