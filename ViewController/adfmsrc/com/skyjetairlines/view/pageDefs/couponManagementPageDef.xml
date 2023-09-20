@@ -29,10 +29,6 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
-            DataControl="FlightManagementSystemAMDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
-            DataControl="FlightManagementSystemAMDataControl"/>
     <attributeValues IterBinding="CouponsPlaceInstanceIterator" id="CouponCode">
       <AttrNames>
         <Item Value="CouponCode"/>
@@ -132,5 +128,9 @@
     <action IterBinding="CouponsRangeInstanceIterator" id="DeleteRange"
             InstanceName="FlightManagementSystemAMDataControl.CouponsRangeInstance"
             DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <action id="Rollback" DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
   </bindings>
 </pageDefinition>

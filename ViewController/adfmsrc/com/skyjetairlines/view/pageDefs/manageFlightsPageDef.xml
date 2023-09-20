@@ -10,10 +10,6 @@
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="FlightsInstanceQuery"/>
   </executables>
   <bindings>
-    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
-            DataControl="FlightManagementSystemAMDataControl"/>
-    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction"
-            DataControl="FlightManagementSystemAMDataControl"/>
     <action IterBinding="FlightsInstanceIterator" id="DeleteFlight" RequiresUpdateModel="false" Action="removeCurrentRow"/>
     <action IterBinding="FlightsInstanceIterator" id="CreateInsertFlight" RequiresUpdateModel="true"
             Action="createInsertRow"/>
@@ -35,5 +31,38 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="Flightno">
+      <AttrNames>
+        <Item Value="Flightno"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_DepartureAirport" id="DepartureAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <list IterBinding="FlightsInstanceIterator" StaticList="false" Uses="LOV_ArrivalAirport" id="ArrivalAirport"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledDeparture">
+      <AttrNames>
+        <Item Value="ScheduledDeparture"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="ScheduledArrival">
+      <AttrNames>
+        <Item Value="ScheduledArrival"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="BaseFare">
+      <AttrNames>
+        <Item Value="BaseFare"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="FlightsInstanceIterator" id="TotalSeats">
+      <AttrNames>
+        <Item Value="TotalSeats"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="true"
+            Action="commitTransaction"/>
+    <action id="Rollback" DataControl="FlightManagementSystemAMDataControl" RequiresUpdateModel="false"
+            Action="rollbackTransaction"/>
   </bindings>
 </pageDefinition>

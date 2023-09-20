@@ -82,6 +82,14 @@
           ResId="com.skyjetairlines.model.entity.PaymentMethodEO.CardNo_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:LengthValidationBean
+      Name="CardNoRule0"
+      ResId="com.skyjetairlines.model.entity.PaymentMethodEO.CardNo_Rule_0"
+      OnAttribute="CardNo"
+      CompareType="EQUALTO"
+      DataType="CHARACTER"
+      CompareLength="16"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="ExpiryMonth"
@@ -109,6 +117,14 @@
       MinValue="01"
       MaxValue="12"
       ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryMonth_Rule_0"/>
+    <validation:CompareValidationBean
+      Name="ExpiryMonthRule1"
+      ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryMonth_Rule_1"
+      OnAttribute="ExpiryMonth"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="LESSTHAN"
+      CompareValue="12"/>
   </Attribute>
   <Attribute
     Name="ExpiryYear"
@@ -136,6 +152,14 @@
       Inverse="false"
       MinValue="1970"
       MaxValue="2041"/>
+    <validation:CompareValidationBean
+      Name="ExpiryYearRule1"
+      ResId="com.skyjetairlines.model.entity.PaymentMethodEO.ExpiryYear_Rule_1"
+      OnAttribute="ExpiryYear"
+      OperandType="LITERAL"
+      Inverse="false"
+      CompareType="GREATERTHAN"
+      CompareValue="2022"/>
   </Attribute>
   <AccessorAttribute
     Name="Customer"

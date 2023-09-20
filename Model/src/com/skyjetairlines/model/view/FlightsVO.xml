@@ -267,7 +267,8 @@
     PrecisionRule="true"
     EntityAttrName="AvailableSeats"
     EntityUsage="FlightEO"
-    AliasName="AVAILABLE_SEATS">
+    AliasName="AVAILABLE_SEATS"
+    DefaultValue="90">
     <Properties>
       <SchemaBasedProperties>
         <LABEL
