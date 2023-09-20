@@ -23,10 +23,10 @@ public class ManageFlightBean {
 
     public void deleteAndCommit(DialogEvent dialogEvent) {
         Row selectedFlight = CommonViewUtil.getIterator("FlightsInstanceIterator").getCurrentRow();
-        String aarv= selectedFlight.getAttribute("ActualArrival").toString();
+        String actualArrival= selectedFlight.getAttribute("ActualArrival").toString();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
         try{
-            Date arv = dateFormat.parse(aarv),today=new Date();
+            Date arv = dateFormat.parse(actualArrival),today=new Date();
             if(today.getTime()-arv.getTime()<=0) {
                 CommonViewUtil.showErrorMessage("You cannot delte a flight that has not arrived");
             }
@@ -90,6 +90,7 @@ public class ManageFlightBean {
     }
 
     public void editFlight(DialogEvent dialogEvent) {
+        
         Row selectedFlight = CommonViewUtil.getIterator("FlightsInstanceIterator").getCurrentRow();
         String status = selectedFlight.getAttribute("Status").toString();
         if(status.equals("CANCELLED")) {
@@ -97,20 +98,27 @@ public class ManageFlightBean {
             CommonViewUtil.executeOperation("Rollback");
             return;
         }
-        String adpt= selectedFlight.getAttribute("ActualDeparture").toString();
-        String aarv= selectedFlight.getAttribute("ActualArrival").toString();
-        String sdpt= selectedFlight.getAttribute("ScheduledDeparture").toString();
-        String sarv= selectedFlight.getAttribute("ScheduledArrival").toString();
+        
+        String actualDeparture= selectedFlight.getAttribute("ActualDeparture").toString();
+        String actualArrival= selectedFlight.getAttribute("ActualArrival").toString();
+        String scheduledDeparture= selectedFlight.getAttribute("ScheduledDeparture").toString();
+        String scheduledArrival= selectedFlight.getAttribute("ScheduledArrival").toString();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
         try{
-            Date add,aad,sdd,sad;
-            add=dateFormat.parse(adpt);
-            aad=dateFormat.parse(aarv);
-            sdd=dateFormat.parse(sdpt);
-            sad=dateFormat.parse(sarv);
-            long diff = sad.getTime()-sdd.getTime();
-            long adiff = aad.getTime()-add.getTime();
-            if(aad.getTime()-add.getTime()<1800000) {
+            Date actualDepartureDate,actualArrivalDate,scheduledDepartureDate,scheduledArrivalDate;
+            
+            actualDepartureDate=dateFormat.parse(actualDeparture);
+            actualArrivalDate=dateFormat.parse(actualArrival);
+            scheduledDepartureDate=dateFormat.parse(scheduledDeparture);
+            scheduledArrivalDate=dateFormat.parse(scheduledArrival);
+            
+            long diff = scheduledArrivalDate.getTime()-scheduledDepartureDate.getTime();
+            long adiff = actualArrivalDate.getTime()-actualDepartureDate.getTime();
+            if(actualDepartureDate.getTime() -scheduledDepartureDate.getTime()<0){
+                CommonViewUtil.showErrorMessage("You should enter acutal departure greater than the shceduled departure");
+                CommonViewUtil.executeOperation("Rollback");
+            }
+            else if(actualArrivalDate.getTime()-actualDepartureDate.getTime()<1800000) {
                 CommonViewUtil.showErrorMessage("actual arrival cannot be early by 30 minutes from actual departure");
                 CommonViewUtil.executeOperation("Rollback");
             }
@@ -134,13 +142,13 @@ public class ManageFlightBean {
 
     public void cancelFlight(ActionEvent actionEvent) {
         Row selectedFlight = CommonViewUtil.getIterator("FlightsInstanceIterator").getCurrentRow();
-        String adpt= selectedFlight.getAttribute("ActualDeparture").toString();
-        String aarv= selectedFlight.getAttribute("ActualArrival").toString();
+        String actualDeparture= selectedFlight.getAttribute("ActualDeparture").toString();
+        String actualArrival= selectedFlight.getAttribute("ActualArrival").toString();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.S");
         try{
             Date dpt,arv,today= new Date();
-            dpt=dateFormat.parse(adpt);
-            arv=dateFormat.parse(aarv);
+            dpt=dateFormat.parse(actualDeparture);
+            arv=dateFormat.parse(actualArrival);
             if(today.getTime()-dpt.getTime()>=0 && arv.getTime()-today.getTime() >=0){
                 CommonViewUtil.showErrorMessage("You cannot Cancel the ongoing flight");
             }

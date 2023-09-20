@@ -81,6 +81,7 @@ public class CouponManageBean {
         Row couponSelected = CommonViewUtil.getIterator("CouponsTimeInstanceIterator").getCurrentRow();
         String dpt = couponSelected.getAttribute("StartDate").toString();
         String arv = couponSelected.getAttribute("EndDate").toString();
+        double discount = Double.parseDouble(couponSelected.getAttribute("Discount").toString());
         Date dptd,arvd,today=new Date();
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try{
@@ -92,6 +93,10 @@ public class CouponManageBean {
             else if(arvd.getYear()<dptd.getYear() || (arvd.getYear()==dptd.getYear() && arvd.getMonth() < dptd.getMonth())||(arvd.getYear()==dptd.getYear() && arvd.getMonth()==dptd.getMonth() && arvd.getDate() < dptd.getDate())) {
                 CommonViewUtil.showErrorMessage("EndDate should be greater than or equal to Start Date");
             }
+            else if(discount <0 || discount >10000){
+                CommonViewUtil.showErrorMessage("Discount should be between 0 and 10000");
+            }
+            
             else {
                 couponSelected.setAttribute("Dpt", couponSelected.getAttribute("StartDate").toString());
                 couponSelected.setAttribute("Arv",couponSelected.getAttribute("EndDate").toString());
@@ -125,20 +130,28 @@ public class CouponManageBean {
         Row couponSelected = CommonViewUtil.getIterator("CouponsRangeInstanceIterator").getCurrentRow();
         double dpt = Double.parseDouble(couponSelected.getAttribute("Dpt").toString());
         double arv = Double.parseDouble(couponSelected.getAttribute("Arv").toString());
-        System.out.println(dpt);
-        System.out.println(arv);
-        if(dpt>=0 && arv >=0 && arv>=dpt) {
+        double discount = Double.parseDouble(couponSelected.getAttribute("Discount").toString());
+        if(dpt>=0 && arv >=0 && arv>=dpt && discount >=0 && discount <=10000) {
             CommonViewUtil.executeOperation("Commit");
             CommonViewUtil.showSuccessfulMessage("Successfully created New coupon of Type Price Range");
         }
         else {
             if(dpt<0 || arv < 0) {
                 CommonViewUtil.showErrorMessage("Both Beginning of the range and Ending of the Range should be positive value! Discarding ...");
+                CommonViewUtil.executeOperation("Rollback");
+                return;
             }
-            else {
+            else if(dpt > arv) {
                 CommonViewUtil.showErrorMessage("Ending of the range should be greater than or equal to beginning of the range! Discarding ...");
                 CommonViewUtil.executeOperation("Rollback");
+                return;
             }
+            else if(discount <0 || discount >10000){
+                CommonViewUtil.showErrorMessage("Discount should be between 0 and 10000");
+                CommonViewUtil.executeOperation("Rollback");
+                return;
+            }
+            CommonViewUtil.executeOperation("Rollback");
         }
     }
 
@@ -146,10 +159,15 @@ public class CouponManageBean {
         Row couponSelected = CommonViewUtil.getIterator("CouponsPlaceInstanceIterator").getCurrentRow();
         String dpt = couponSelected.getAttribute("Dpt").toString();
         String arv = couponSelected.getAttribute("Arv").toString();
+        double discount = Double.parseDouble(couponSelected.getAttribute("Discount").toString());
         System.out.println(dpt);
         System.out.println(arv);
         if(dpt.equals(arv)) {
             CommonViewUtil.showErrorMessage("Should not create a Coupon having same Departure and Arrival Place! Discarding ...");
+        }
+        else if(discount <0 || discount >10000){
+            CommonViewUtil.showErrorMessage("Discount should be between 0 and 10000");
+            CommonViewUtil.executeOperation("Rollback");
         }
         else {
             CommonViewUtil.executeOperation("Commit");

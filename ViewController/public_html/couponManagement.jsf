@@ -264,7 +264,7 @@
                                                     </af:panelLabelAndMessage>
                                                     <af:inputDate value="#{row.bindings.StartDate.inputValue}"
                                                                   label="#{bindings.CouponsTimeInstance.hints.StartDate.label}"
-                                                                  required="#{bindings.CouponsTimeInstance.hints.StartDate.mandatory}"
+                                                                  required="#{bindings.CouponsTimeInstance.hints.Dpt.mandatory}"
                                                                   columns="#{bindings.CouponsTimeInstance.hints.StartDate.displayWidth}"
                                                                   shortDesc="#{bindings.CouponsTimeInstance.hints.StartDate.tooltip}"
                                                                   id="id1">
@@ -279,7 +279,7 @@
                                                     </af:panelLabelAndMessage>
                                                     <af:inputDate value="#{row.bindings.EndDate.inputValue}"
                                                                   label="#{bindings.CouponsTimeInstance.hints.EndDate.label}"
-                                                                  required="#{bindings.CouponsTimeInstance.hints.EndDate.mandatory}"
+                                                                  required="#{bindings.CouponsTimeInstance.hints.Dpt.mandatory}"
                                                                   columns="#{bindings.CouponsTimeInstance.hints.EndDate.displayWidth}"
                                                                   shortDesc="#{bindings.CouponsTimeInstance.hints.EndDate.tooltip}"
                                                                   id="id2">
@@ -330,7 +330,7 @@
                                                     </af:inputText>
                                                     <af:inputDate value="#{bindings.StartDate.inputValue}"
                                                                   label="#{bindings.StartDate.hints.label}"
-                                                                  required="#{bindings.StartDate.hints.mandatory}"
+                                                                  required="#{bindings.Dpt.hints.mandatory}"
                                                                   columns="#{bindings.StartDate.hints.displayWidth}"
                                                                   shortDesc="#{bindings.StartDate.hints.tooltip}"
                                                                   id="id3">
@@ -339,7 +339,7 @@
                                                     </af:inputDate>
                                                     <af:inputDate value="#{bindings.EndDate.inputValue}"
                                                                   label="#{bindings.EndDate.hints.label}"
-                                                                  required="#{bindings.EndDate.hints.mandatory}"
+                                                                  required="#{bindings.Dpt.hints.mandatory}"
                                                                   columns="#{bindings.EndDate.hints.displayWidth}"
                                                                   shortDesc="#{bindings.EndDate.hints.tooltip}"
                                                                   id="id4">
