@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="PASSENGERS"
   AliasName="PassengerEO"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="PassengerId"
     ColumnName="PASSENGER_ID"
@@ -47,6 +48,14 @@
           ResId="com.skyjetairlines.model.entity.PassengerEO.PassenegerName_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:LengthValidationBean
+      Name="PassenegerNameRule0"
+      ResId="com.skyjetairlines.model.entity.PassengerEO.PassenegerName_Rule_0"
+      OnAttribute="PassenegerName"
+      CompareType="GREATERTHANEQUALTO"
+      DataType="CHARACTER"
+      CompareLength="2"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="Phone"
@@ -66,6 +75,14 @@
           ResId="com.skyjetairlines.model.entity.PassengerEO.Phone_LABEL"/>
       </SchemaBasedProperties>
     </Properties>
+    <validation:LengthValidationBean
+      Name="PhoneRule0"
+      ResId="com.skyjetairlines.model.entity.PassengerEO.Phone_Rule_0"
+      OnAttribute="Phone"
+      CompareType="EQUALTO"
+      DataType="CHARACTER"
+      CompareLength="10"
+      Inverse="false"/>
   </Attribute>
   <Attribute
     Name="CustomerId"
