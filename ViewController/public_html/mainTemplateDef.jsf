@@ -22,15 +22,18 @@
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="33%" id="pt_gc4" halign="center">
                         <af:panelGroupLayout id="pt_pgl3" halign="center" layout="horizontal">
-                            <af:link text="About" id="pt_l1" destination="/faces/about" inlineStyle="font-size:large;"
-                                     immediate="true"/>
+                            <af:link text="About" id="pt_l1" inlineStyle="font-size:large;"
+                                     immediate="true" destination="/faces/about"/>
+                            <af:spacer id="pt_s1" height="20" width="40" visible="#{securityContext.authenticated}"/>
+                            <af:link text="Admin Dashboard" id="pt_l3" destination="/faces/adminDashboard" inlineStyle="font-size:large;"
+                                     immediate="true" visible="#{securityContext.userInRole['admin']}" action="IsAdmin"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="33%" marginEnd="40px" id="pt_gc5" halign="end">
                         <af:panelGroupLayout id="pt_pgl4">
                             <af:outputText value="Hello, #{securityContext.userName}" id="pt_ot2"
                                            inlineStyle="font-size:large;" visible="#{securityContext.authenticated}"/>
-                            <af:spacer id="pt_s1" height="20" width="20" visible="#{securityContext.authenticated}"/>
+                            <af:spacer id="pt_s4" height="20" width="20" visible="#{securityContext.authenticated}"/>
                             <af:button text="Profile" id="pt_b3" destination="/faces/profile" immediate="true"
                                        visible="#{securityContext.authenticated}"/>
                             <af:spacer id="pt_s2" height="20" width="20" visible="#{securityContext.authenticated}"/>
@@ -39,8 +42,8 @@
                             <af:button text="Login" id="pt_b1" destination="/adfAuthentication"
                                        visible="#{!securityContext.authenticated}" immediate="true"/>
                             <af:spacer id="pt_s3" height="20" width="20"/>
-                            <af:button text="Register" id="pt_b4" destination="/faces/register" immediate="true"
-                                       visible="#{!securityContext.authenticated}"/>
+                            <af:button text="Register" id="pt_b4" immediate="true"
+                                       visible="#{!securityContext.authenticated}" action="registerUser"/>
                         </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
