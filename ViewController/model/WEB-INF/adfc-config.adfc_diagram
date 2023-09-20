@@ -200,7 +200,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">T50,-710.5791,134.3711,-711.51074,7.3710938,B50</property>
+         name="sdm:polyPoints">T67,-700.0791,127.13629,-711.51074,7.3710938,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -214,7 +214,7 @@
       <property
          name="fromsrcid">__30</property>
       <property
-         name="sdm:polyPoints">L50,-751.5791,188.3711,-860.4375,120.10547,B50</property>
+         name="sdm:polyPoints">T33,-721.0791,134.3711,-819.4375,66.10547,R50</property>
    </ControlFlowCase>
    <View
       id="View57">
@@ -389,7 +389,7 @@
          <property
             name="fromOutcome">backToManageFlights</property>
          <property
-            name="sdm:polyPoints">B56,-847.5,-154.86328,-752.51074,-50.128906,L46</property>
+            name="sdm:polyPoints">B50,-851.0,-152.19388,-755.6125,-46.628906,L50</property>
       </ControlFlowCase>
    </ControlFlowCase>
    <ControlFlowCase
@@ -404,105 +404,143 @@
       <property
          name="fromsrcid">__34</property>
       <property
-         name="sdm:polyPoints">L54,-755.6056,-43.128906,-854.5,-152.18608,B44</property>
+         name="sdm:polyPoints">L58,-758.70087,-39.628906,-858.0,-149.57172,B39</property>
    </ControlFlowCase>
    <MethodCall
-      id="MethodCall69">
-      <property
-         name="activityId">totalRevenue</property>
-      <property
-         name="x">-344.0</property>
-      <property
-         name="description">&lt;html>&lt;p>&lt;b>totalRevenue&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
-      <property
-         name="y">191.33594</property>
-      <property
-         name="exceptionHandler">false</property>
-   </MethodCall>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase71"
-      from="View3"
-      to="MethodCall69">
-      <property
-         name="fromOutcome">generateTotalRevenue</property>
-      <property
-         name="sdm:polyPoints">R50,-653.07086,192.23828,-385.03305,194.76953,L54</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase72"
-      from="MethodCall69"
-      to="View3">
-      <property
-         name="fromOutcome">viewRevenue</property>
-      <property
-         name="sdm:polyPoints">L46,-385.0,187.76953,-653.0381,185.23828,R42</property>
-   </ControlFlowCase>
-   <MethodCall
-      id="MethodCall73">
+      id="MethodCall81">
       <property
          name="activityId">passengerList</property>
       <property
-         name="x">-444.0</property>
+         name="x">-1235.9512</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>passengerList&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">288.60156</property>
+         name="y">-180.5</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase74"
-      from="View3"
-      to="MethodCall73">
-      <property
-         name="fromOutcome">showPassengerList</property>
-      <property
-         name="sdm:polyPoints">R58,-653.91785,199.23828,-485.0,285.03516,L46</property>
-   </ControlFlowCase>
-   <ControlFlowCase
-      islink="true"
-      id="ControlFlowCase75"
-      from="MethodCall73"
-      to="View3">
-      <property
-         name="fromOutcome">viewList</property>
-      <property
-         name="sdm:polyPoints">L54,-486.66855,292.03516,-655.5791,206.23828,R66</property>
-   </ControlFlowCase>
    <MethodCall
-      id="MethodCall76">
+      id="MethodCall82">
+      <property
+         name="activityId">totalRevenue</property>
+      <property
+         name="x">-1148.4033</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>totalRevenue&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
+      <property
+         name="y">-180.5</property>
+      <property
+         name="exceptionHandler">false</property>
+   </MethodCall>
+   <MethodCall
+      id="MethodCall83">
       <property
          name="activityId">flightCapacityUtilization</property>
       <property
-         name="x">-1040.0</property>
+         name="x">-1026.1299</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>flightCapacityUtilization&lt;/b>&lt;/p>&lt;p>Activity Type:  Method Call&lt;/p></property>
       <property
-         name="y">296.26953</property>
+         name="y">-180.5</property>
       <property
          name="exceptionHandler">false</property>
    </MethodCall>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase77"
-      from="View3"
-      to="MethodCall76">
+      id="ControlFlowCase84"
+      from="MethodCall81"
+      to="View3">
       <property
-         name="fromOutcome">showFlightUtilization</property>
+         name="tosrcid">__55</property>
       <property
-         name="sdm:polyPoints">L54,-738.8355,195.73828,-999.0,292.70312,R46</property>
+         name="fromOutcome">viewList</property>
+      <property
+         name="fromsrcid">__54</property>
+      <property
+         name="sdm:polyPoints">B44,-1239.4512,-122.77154,-758.3443,198.8711,L62</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
-      id="ControlFlowCase78"
-      from="MethodCall76"
+      id="ControlFlowCase85"
+      from="View3"
+      to="MethodCall81">
+      <property
+         name="tosrcid">__53</property>
+      <property
+         name="fromOutcome">showPassengerList</property>
+      <property
+         name="fromsrcid">__30</property>
+      <property
+         name="sdm:polyPoints">L54,-756.2306,191.8711,-1232.4512,-126.5,B56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase86"
+      from="View3"
+      to="MethodCall82">
+      <property
+         name="tosrcid">__47</property>
+      <property
+         name="fromOutcome">generateTotalRevenue</property>
+      <property
+         name="fromsrcid">__30</property>
+      <property
+         name="sdm:polyPoints">L38,-751.5791,177.8711,-1144.9033,-126.5,B56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase87"
+      from="MethodCall83"
       to="View3">
+      <property
+         name="tosrcid">__58</property>
       <property
          name="fromOutcome">viewUtilization</property>
       <property
-         name="sdm:polyPoints">R54,-997.7408,299.70312,-737.5791,202.73828,L62</property>
+         name="fromsrcid">__57</property>
+      <property
+         name="sdm:polyPoints">R46,-981.9758,-184.0,-707.0791,128.6067,T56</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase88"
+      from="View65"
+      to="View5">
+      <property
+         name="tosrcid">__51</property>
+      <property
+         name="fromOutcome">backToManageFlights</property>
+      <property
+         name="fromsrcid">__50</property>
+      <property
+         name="sdm:polyPoints">B61,-844.0,-154.86328,-752.51074,-53.628906,L42</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase89"
+      from="View3"
+      to="MethodCall83">
+      <property
+         name="tosrcid">__56</property>
+      <property
+         name="fromOutcome">showFlightUtilization</property>
+      <property
+         name="fromsrcid">__30</property>
+      <property
+         name="sdm:polyPoints">T44,-714.0791,131.2299,-985.1299,-177.0,R54</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase90"
+      from="MethodCall82"
+      to="View3">
+      <property
+         name="tosrcid">__52</property>
+      <property
+         name="fromOutcome">viewRevenue</property>
+      <property
+         name="fromsrcid">__49</property>
+      <property
+         name="sdm:polyPoints">B44,-1151.9033,-123.07742,-753.9761,184.8711,L46</property>
    </ControlFlowCase>
 </SDM>
